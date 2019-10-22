@@ -58,30 +58,10 @@
 
 \pagenumbering{arabic}
 \input{intro.tex}
-\chapter{Experimental setup}
-\section{OKTAVIAN}
-\begin{figure}
-  \centering
-  \includegraphics[width=0.5\columnwidth]{eps/E-C.eps}
-  \caption{simbol}
-  \label{fig:simbol}
-\end{figure}
-\ref{fig:simbol}
-\section{検出器セットアップ}
-\subsection{検出ガスの決定}
-$\alpha$粒子のレンジで決めた。
-efficiency が一番大きくなるように。
-\subsection{ドリフトスピード}
-ドリフト速度の決定方法は30 degree 方向に$\alpha$線源から$\alpha$を出して、
-その飛跡がデータ上でどう見えるかで決定する。
-ドリフト速度の時間依存性も見た。
-\chapter{Analysis}
-\subsection{機械学習}
-これまではHough 変換を使って解析を行ってきたが、
-高速に処理をするためにニューラルネットワークを用いた解析方法を開発した。
-\subsection{解析}
-\chapter{Conclusion and discussion}
-\chapter{Acknowledge}
+\input{setup.tex}
+\input{analysis.tex}
+\input{conclusion.tex}
+\input{acknowledge.tex}
 
 \bibliography{mybibfile}
 \end{document}
