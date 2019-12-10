@@ -10,22 +10,20 @@ ${TARGET}.pdf: ${TARGET}.dvi
 	$(DVIPDF) $<
 
 ${TARGET}.dvi: ${TARGET}.tex eps/*.eps ${TARGET}.bbl
-	$(TEX) $<
+	$(TEX) ${TARGET}.tex
 #	$(MENDEX) $<
 #	$(TEX) $<
 
 ${TARGET}.bbl: ${TARGET}.aux
-	$(TEX) ${TARGET}.tex
 	$(BIBTEX) ${TARGET}
 	$(TEX) ${TARGET}.tex
 
 ${TARGET}.aux: ${TARGET}.tex
 	$(TEX) ${TARGET}.tex
 
-force2:
-	$(TEX) ${TARGET}.tex
+force:
 	$(TEX) ${TARGET}.tex
 	$(DVIPDF) ${TARGET}.dvi
 
 clean:
-	rm ${TARGET}.dvi ${TARGET}.log ${TARGET}.pdf ${TARGET}.aux
+	rm ${TARGET}.dvi ${TARGET}.log ${TARGET}.pdf ${TARGET}.aux ${TARGET}.bbl

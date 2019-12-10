@@ -12,7 +12,8 @@
 \usepackage{fancyhdr}
 \usepackage{makeidx}
 \usepackage{braket}
-\bibliographystyle{jplain}
+%\bibliographystyle{jplain} % sorted by abc
+\bibliographystyle{junsrt} % sorted by appearance
 
 \makeatletter
 \renewcommand{\chapter}{%
@@ -41,6 +42,8 @@
 %\fancyfoot{}
 %\fancyfoot[LE,RO]{{\small \thepage}}
 %\cfoot{}
+% modify the width of caption
+\setlength{\captionmargin}{50pt}
 
 \makeindex
 \title {\Huge{MAIKo TPC を用いた${}^{12}\rm{C}(n,n'){}^{12}\rm{C}(0_{2}^{+})$の}\\\Huge{散乱断面積の測定}}
