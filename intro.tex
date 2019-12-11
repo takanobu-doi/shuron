@@ -144,14 +144,30 @@ Beard らによる$R$と温度の依存性の計算結果~\cite{hotdensemedium}�
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.6\columnwidth]{eps/R_T.eps}
-  \caption{$\gamma$線による脱励起の寿命と粒子散乱による脱励起の寿命の比~\cite{hotdensemedium}。
+  \caption[$\gamma$線による脱励起の寿命と粒子散乱による脱励起の寿命の比。]
+          {$\gamma$線による脱励起の寿命と粒子散乱による脱励起の寿命の比~\cite{hotdensemedium}。
     Rnn、Rpp、R$\alpha\alpha$はそれぞれ中性子、陽子、$\alpha$粒子と散乱した際の寿命の比を表す。}
   \label{fig::R}
 \end{figure}
 図\ref{fig::R}は$\rho = 10^{6}{\rm g}~{\rm cm}^{-3}$の場合の結果を示している。
 
-\section{高温高密度環境}
-$\rho\sim10^{6}{\rm g~cm^{-3}}, T\sim10^{9}{\rm K}$のような高温高密度の環境は超新星爆発初期に起きている考えられる。
+$\rho\sim10^{6}{\rm g~cm^{-3}}, T\sim10^{9}{\rm K}$のような高温高密度の環境は宇宙の何処にあるだろうか。
+一つの候補として超新星爆発が考えられる。
+10--30$\rm M_{\odot}$程度の大質量星は、重力崩壊を起こして星の一生を終える。
+重力崩壊の際に恒星の中心にある鉄コアの温度が急激に上昇する。
+極めて高い温度では高エネルギーの光子によって鉄コアの原子核が陽子や中性子に分解される (光分解反応)。
+また、密度が非常に高いため式 (\ref{eq::neutronize}) のように陽子が中性子へ変わる。
+\begin{equation}
+  {\rm p}+{\rm e}^{-} \rightarrow {\rm p}+\nu_{\rm e}
+  \label{eq::neutronize}
+\end{equation}
+すると、恒星の中心に原子中性子星が形成され、中心に振ってくる物質の跳ね返りが起こる。
+この物質の跳ね返りが超新星爆発である。
+崩壊前の恒星が持っていた重力エネルギーが熱エネルギーに変換されるので、
+原子中性子星の表面温度は$10^10$~Kに達する。
+跳ね返った物質が膨張することで温度が下がっていき、
+$7\times10^9$~Kほどになると2つの陽子と2つの中性子が融合し$\alpha$粒子ができる。
+このとき、$\alpha$粒子と中性子が高密度かつ高温で存在する環境ができるのである。
 
 \section{測定を行う中性子のエネルギー}
 $R$を計算するためには、実験によって断面積 ($\sigma_{\rm nn'}$) のエネルギー分布が必要となる。
@@ -168,7 +184,8 @@ Beardら~\cite{hotdensemedium}が考えているような$T\sim10^{9}~{\rm K}$�
 \begin{figure}
   \centering
   \includegraphics[clip,width=0.6\columnwidth]{eps/cross_section_p_and_n.eps}
-  \caption{${}^{12}{\rm C}$と中性子 (上段) および陽子 (下段) との非弾性散乱断面積~\cite{hotdensemedium}。
+  \caption[${}^{12}{\rm C}$と中性子 (上段) および陽子 (下段) との非弾性散乱断面積。]
+          {${}^{12}{\rm C}$と中性子 (上段) および陽子 (下段) との非弾性散乱断面積~\cite{hotdensemedium}。
   実線はTALYSを用いた理論計算、点は測定値を表す。}
   \label{fig::crosssection_pres}
 \end{figure}
@@ -187,29 +204,66 @@ ITERなどの核融合炉ではDT反応を用いて質量エネルギーを取�
 単色エネルギーの中性子を生成可能であること、他データと測定結果の比較が可能であることの2点より、
 測定方法の検証として$14.1~{\rm MeV}$の中性子で断面積の測定を行う。
 
-\section{先行研究}
-$E_{\rm n}=14~{\rm MeV}$での${}^{12}{\rm C}({\rm n},{\rm n}'){}^{12}{\rm C}^{*}$の散乱断面積は
-Ref~\cite{takahashietal,kondoetal}によりすでに測定されている。
+$E_{\rm n}=14.1~{\rm MeV}$での${}^{12}{\rm C}({\rm n},{\rm n}'){}^{12}{\rm C}^{*}$の散乱断面積は
+Ref.~\cite{takahashietal,kondoetal}によりすでに測定されている。
+${}^{12}{\rm C}({\rm n},{\rm n}'+3\alpha)$反応の全断面積は209 mb、分岐比は表\ref{tab::branchingratio}となっている。
+Ex = 7.65, 9.64, および10.3 MeVへ励起する反応が大部分を占めている。
+また、微分断面積の角度分布は図\ref{fig::sigangledist}のようである。
+これらの測定値と比較することによって測定方法の妥当性を確認することが可能となる。
+
+\begin{table}
+  \centering
+  \caption[${}^{12}{\rm C}(n,n'+3\alpha)$反応のチャンネルとその分岐比。]
+          {${}^{12}{\rm C}(n,n'+3\alpha)$反応のチャンネルとその分岐比。
+  ${}^{12}{\rm C}$の励起状態から$3\alpha$に、${}^{9}{\rm Be}$の励起状態から$2\alpha$に崩壊する。}
+  \label{tab::branchingratio}
+  \begin{tabular}{cc}
+    \toprule
+    Reaction channel & Branching ratio (\%)\\
+    \midrule
+    ${}^{12}{\rm C}({\rm n},{\rm n}'){}^{12}{\rm C}^{*}(7.65~{\rm MeV})$ & 4\\
+    ${}^{12}{\rm C}({\rm n},{\rm n}'){}^{12}{\rm C}^{*}(9.64~{\rm MeV})$ & 33\\
+    ${}^{12}{\rm C}({\rm n},{\rm n}'){}^{12}{\rm C}^{*}(10.3~{\rm MeV})$ & 16\\
+    ${}^{12}{\rm C}({\rm n},{\rm n}'){}^{12}{\rm C}^{*}(10.84~{\rm MeV})$ & 6\\
+    ${}^{12}{\rm C}({\rm n},{\rm n}'){}^{12}{\rm C}^{*}(11.83~{\rm MeV})$ & 4\\
+    ${}^{12}{\rm C}({\rm n},{\rm n}'){}^{9}{\rm Be}^{*}(1.68$--$3.05~{\rm MeV})$ & 24\\
+    ${}^{12}{\rm C}({\rm n},{\rm n}'){}^{9}{\rm Be}^{*}(4.7~{\rm MeV})$ & 13\\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 \section{測定に用いる実験装置}
-本研究では${}^{12}{\rm C}$のHoyle状態から崩壊して生成した3つの$\alpha$粒子を直接測定する。
-$\alpha$粒子は数百${\rm keV}$の運動エネルギーを持って生成する。
+本研究では${}^{12}{\rm C}$のHoyle状態から崩壊して生成した3つの$\alpha$粒子を直接測定を行う。
+${}^{12}{\rm C}^{\rm Hoyle}$から放出された$\alpha$粒子は図\ref{fig::alpha_E_dist}のような分布を持つ。
+図\ref{fig::alpha_E_dist}から分かるように、多くの$\alpha$粒子は数百${\rm keV}$の運動エネルギーを持っている。
 このようなエネルギーの$\alpha$粒子を効率よく検出するためには、
 標的中で$\alpha$粒子が停止しないようにしなければならない。
-例えば、$500~{\rm keV}$の$\alpha$粒子では炭素箔標的およそ$0.35~{\rm mg/cm^2}$で停止する。
-また、すべて検出するためには大立体角を持つ検出器が必要となる。% alphaがどのくらいの立体角に産卵するかを言えると尚良
-図\ref{fig::alpha_theta_dist}は$\alpha$粒子の角度分布を示す。
-この図からもわかるようにほげほげ。
+例えば、$500~{\rm keV}$の$\alpha$粒子ではおよそ$0.35~{\rm mg/cm^2}$の炭素箔標的で停止する。
+また、3つの$\alpha$粒子すべてを検出するためには大立体角を持つ検出器が必要となる。
+%図\ref{fig::alpha_theta_dist}は$\alpha$粒子の角度分布を示す。
+%この図からもわかるように。
 このような要求を満たす検出器としてMAIKo TPC ($\mu$-PIC based active target for inverse kinematics .
 time projection chamber)~\cite{maiko, mupic}がある。
-MAIKo TPC はTPC の検出ガスを散乱標的として用いる検出器であり、
-低エネルギー粒子を大立体角で検出するために開発された。
+MAIKo TPC はTPC の検出ガスを散乱標的として用い、
+低エネルギー粒子を大立体角で検出するために開発された検出器である。
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.7\columnwidth]{eps/alpha_theta_dist.eps}
-  \caption{}
-  \label{fig::alpha_theta_dist}
+  %  \includegraphics[clip, width=0.7\columnwidth]{eps/alpha_E_dist.eps}
+  \caption[${}^{12}{\rm C}^{\rm Hoyle}$から放出された$\alpha$粒子のエネルギー分布。]
+          {${}^{12}{\rm C}^{\rm Hoyle}$から放出された$\alpha$粒子のエネルギー分布。}
+  \label{fig::alpha_E_dist}
+%  \includegraphics[clip, width=0.7\columnwidth]{eps/alpha_theta_dist.eps}
+%  \caption[${}^{12}{\rm C}^{\rm Hoyle}$から放出された$\alpha$粒子の角度分布。]
+%          {${}^{12}{\rm C}^{\rm Hoyle}$から放出された$\alpha$粒子の角度分布。
+%            $\alpha$粒子を位相空間で位置分布させた場合に、図のような角度分布を持って崩壊する。
+%            図は${}^{12}{\rm C}$から放出される3つの$\alpha$粒子すべての分布を表している。
+%          }
+%  \label{fig::alpha_theta_dist}
 \end{figure}
 
-\section{本研究の目的}
-\label{thiswork}
+また、TPC は荷電粒子の飛跡を検出することができる検出器である。
+荷電粒子を入射粒子として用いる実験では、標的粒子と散乱しなかった入射粒子の飛跡も検出する。
+このような事象は背景事象となる。
+本研究では中性子を入射するため、そのような背景事象は発生しない。
+そのため、高強度の中性子ビームを用いた実験が可能であり、
+散乱事象を効率的に検出することができる。
