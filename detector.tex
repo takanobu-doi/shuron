@@ -32,7 +32,7 @@ MAIKo TPC では3次元のトラックを図\ref{fig::MAIKo_view}のように2�
 図\ref{fig::MAIKo_cage}にMAIKo TPC の構造を示す。
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.9\columnwidth]{eps/MAIKo_cage.eps}
+  \includegraphics[clip, width=\columnwidth]{eps/MAIKo_cage.eps}
   \caption{MAIKo TPC の構造。}
   \label{fig::MAIKo_cage}
 \end{figure}
@@ -94,47 +94,290 @@ anode strip とcathode strip はそれぞれ256~chで構成され、
 \end{figure}
 
 \section{検出ガスの候補}
-標的には炭素の含まれる炭化水素を用いる。
-この実験では低エネルギーの荷電粒子のトラックを検出するため、
-トラックが比較的長くなるエネルギーロスが小さいガスが適する。
-そこで、質量数が最も小さいメタン ($\rm{CH}_{4}$) を用いた。
-また、ガスの圧力によってトラックの長さが変化する。
-そこで、$\alpha$粒子の検出効率がよくなるガス圧を求めた。
+標的に${}^{12}{\rm C}$を用いるため分子中に炭素を含むガスを検出ガスに用いる。
+${}^{12}{\rm C}$以外の原子核が含まれるガスを用いると背景事象となるため、
+水素と炭素以外の原子が含まれない炭化水素を用いる。
+炭化水素には代表的なものでも、メタン (${\rm CH_{4}}$) やメタン (${\rm C_{2}H_{6}}$)、
+イソブタン (iso-${\rm C_{4}H_{10}}$) などいくつもある。
+また、水素ガスやヘリウムガスとの混合ガスも用いることができる。
+検出ガスとして求められる性能には以下のようなものがある。
+\begin{itemize}
+\item
+  放電しない
+\item
+  荷電粒子のエネルギー損失 ($dE/dx$) が適切な大きさである
+\item
+  ${}^{12}{\rm C}$の量が少なすぎない
+\item
+  適切なドリフト速度を達成できる
+\item
+  適切なドリフト電場のもとでディフュージョンが小さい
+\end{itemize}
+これらの項目を基準に検出ガスの種類と圧力の決定を行う。
 
-ガス圧はシミュレーションによって決定した。
-${}^{12}\rm{C}$と中性子との散乱をKondo らの実験で求められた
-微分断面積の角度分布を用いて再現し、
-散乱後に${}^{12}\rm{C}$が$Ex = 7.65\rm{MeV}$に励起し、
-${}^{12}\rm{C}\rightarrow{}^{8}\rm{Be}+{}^{4}\rm{He}\rightarrow{}^{4}\rm{He}\times 3$
-と崩壊する過程を考えた。
-この時、$\alpha$粒子が持つエネルギーの分布は図\ref{fig::alphaenergydist}のようになる。
-このような粒子に対して
-\begin{enumerate}
-\item
-  MAIKoの有感領域内 ($102.4\rm{mm}\times 102.4\rm{mm}\times 140\rm{mm}$) で停止する
-\item
-  トラックの長さが$20\rm{mm}$以上である
-\end{enumerate}
-という条件の時に検出可能とすると、検出効率の圧力依存は図\ref{fig::alphaefficiency}のようになる。
-%図\ref{fig::alphaefficiency}より、$75\rm{hPa}$付近が最も検出効率が高いことが分かる。
-%そこで、$50\rm{hPa}$、$100\rm{hPa}$の3通りでのオペレートを決定した。
+\subsection{エネルギー損失}
+荷電粒子のエネルギー損失 ($dE/dx$) が大きくなりすぎるとガス中での飛行距離が短くなり、
+トラックとして認識することが難しくなる。
+また、MAIKo TPC では粒子のエネルギーをトラックの長さから決定する。
+そのため、$dE/dx$ が小さくなりすぎるとトラックが有感領域で止まらず、
+トラックの長さ (エネルギー) を決定することができない。
+検出する対象である$\alpha$粒子の $dE/dx$ が適切な大きさとなるガスの種類と圧力の候補を選出する。
+
+まず、代表的な炭化水素である${\rm CH{4}}$を考える
+ガス中で15 mm 以上飛行し、MAIKo TPC の有感領域中で停止する$\alpha$粒子を検出可能な$\alpha$粒子と定義する。
+図\ref{fig::alpha_E_dist}に示したエネルギー分布の$\alpha$粒子を
+検出できた割合を図\ref{fig::efficiency_P_dist}に示す。
+このとき、散乱点がビーム軸上に一様に分布しているとして計算した。
+図\ref{fig::efficiency_P_dist}から分かるように、50 hPa で最大となっている。
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.7\columnwidth]{eps/efficiency_P_dist.eps}
+  \caption[${\rm CH_{4}}$の圧力による検出効率の分布。]
+          {${\rm CH_{4}}$の圧力による検出効率の分布。
+            $\alpha$粒子は図\ref{fig::alpha_E_dist}に示したエネルギー分布を仮定した。
+           }
+  \label{fig::efficiency_P_dist}
+\end{figure}
+
+50 hPa のときの${\rm CH_{4}}$の各種の値は表\ref{tab::CH4_50_params}のとおりである。
+\begin{table}
+  \centering
+  \caption{50 hPa のときの${\rm CH_{4}}$のパラメータ。}
+  \label{tab::CH4_50_params}
+  \begin{tabular}{cc}
+    \toprule
+    項目 & 値\\
+    \midrule
+    密度 & $3.29\times10^{-5}~{\rm g/cm^{-3}}$\\
+    $dE/dx$ ($E_{\alpha} = 0.5~{\rm MeV}$, 10 mm) & 0.107 MeV\\
+    飛距離 ($E_{\alpha} = 0.5~{\rm MeV}$) & 65.6 mm\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+50 hPa のときの${\rm CH_{4}}$の$dE/dx$と同じ程度になる、他のガスの種類を考えていく。
+候補としてiso-${\rm C_{4}H_{10}}$単体と2つの炭化水素に水素とヘリウムの混合ガスの6種類を考える。
+単体のガスでは圧力、混合ガスでは圧力を100 hPa に固定し混合比をパラメータとして$dE/dx$を合わせる。
+ガスの混合パターン、圧力、$dE/dx$は表\ref{tab::mixture}のとおりである。
+分子の括弧は混合の割合を示す。
+\begin{table}
+  \centering
+  \caption[ガスの混合パターン、圧力、$dE/dx$。]
+          {ガスの混合パターン、圧力、$dE/dx$。
+          括弧はガスの混合の割合を示す。}
+  \label{tab::mixture}
+  \begin{tabular}{ccccc}
+    \toprule
+    gas &
+    \begin{tabular}{c}
+      pressure \\
+      (hPa)
+    \end{tabular} &
+    \begin{tabular}{c}
+      density \\
+      (${\rm g/cm^{3}}$)
+    \end{tabular} &
+    \begin{tabular}{c}
+      $dE/dx$ (MeV)\\
+      $E_{\alpha} = 0.5~{\rm MeV}$ \\
+      10 mm
+    \end{tabular} &
+    \begin{tabular}{c}
+      electric field (V/mm) \\
+      @ 0.014 mm/ns
+    \end{tabular}\\
+    \midrule
+    ${\rm CH_{4}}$                                & 50  & 3.29$\times 10^{-5}$ & 0.107 & 0.418 \\
+    ${\rm CH_{4}} (3) + {\rm H_{2}} (7)$          & 100 & 2.55$\times 10^{-5}$ & 0.107 & 4.31 \\
+    ${\rm CH_{4}} (4) + {\rm He} (6)$             & 100 & 3.62$\times 10^{-5}$ & 0.109 & 1.89 \\
+    iso-${\rm C_{4}H_{10}}$                       & 15  & 3.58$\times 10^{-5}$ & 0.102 & 0.644 \\
+    iso-${\rm C_{4}H_{10}} (1) + {\rm H_{2}} (9)$ & 100 & 3.13$\times 10^{-5}$ & 0.122 & 6.80 \\
+    iso-${\rm C_{4}H_{10}} (1) + {\rm He} (9)$    & 100 & 3.86$\times 10^{-5}$ & 0.102 & 3.26 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+これらの6種類の候補から検出ガスを選ぶ。
 
 \subsection{ドリフトスピード}
-TPCの特性上、ドリフト電場方向の有感領域は電子のドリフト速度に依存する。
-ドリフトケージの大きさ ($140\rm{mm}$) を可能な限り使用するためには、
-MAIKo TPC のタイムウィンドウ ($10.24\rm{\mu s}$) で$140\rm{mm}$となるようなドリフトスピード
-($140\rm{mm}/10.24\rm{\mu s} \sim 0.0135\rm{mm/ns}$) に調整する必要がある。
+MAIKo TPC では100 MHzで1024 samples データを取得するため、ドリフト方向は10.24 $\mu$s のタイムウィンドウが開いている。
+ドリフトケージの大きさ ($140\rm{mm}$) を可能な限りタイムウィンドウに収めるためには、
+MAIKo TPC のタイムウィンドウ ($10.24\rm{\mu s}$) で140 mmとなるようなドリフトスピード
+($140\rm{mm}/10.24\rm{\mu s} \sim 0.014\rm{mm/ns}$) に調整する必要がある。
+%($140\rm{mm}/10.24\rm{\mu s} \sim 0.0135\rm{mm/ns}$) に調整する必要がある。
 
-\subsection{拡散効果}
+Magboltz~\cite{magboltz} によって計算したドリフト電場とドリフトスピードの関係を図\ref{fig::drift_v_magboltz}に、
+ドリフトスピードが0.014 mm/ns となるドリフト電場の値を表\ref{tab::mixture}に示す。
+以降、これらのドリフト電場で計算を行う。
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.9\columnwidth]{eps/drift_v_magboltz.eps}
+  \caption[ドリフト電場とドリフトスピードの関係。]
+          {ドリフト電場とドリフトスピードの関係。
+          ${\rm CH_{4}}$は50 hPa、${\rm C_{4}H_{10}}$は15 hPa、その他は100 hPa である。}
+  \label{fig::drift_v_magboltz}
+\end{figure}
 
-\subsection{ガスの種類及び圧力の決定}
+\subsection{ディフュージョン}
+ドリフト電場によって電子が移動する間に検出ガスとの相互作用により拡散 (ディフュージョン) が起きる。
+ディフュージョンの効果が大きくなると、$\mu$-PICに到達するまでに荷電粒子で同じ位置に生成された電子が広がるため、
+トラックが太く検出される。
+トラックが太くなると、複数のトラックを分離するのが難しくなる。
+そのため、ディフュージョンの効果が小さいことが望まれる。
+Magboltz によって計算したディフュージョンの係数を表\ref{tab::diffusion}に示す。
+電子が生成した点から$L$離れた位置で、電子が$\sigma = D\times\sqrt{L}$のガウシアンで広がる。
+表\ref{tab::diffusion}中の$D_{t}$は電子の運動方向に対して垂直な方向への拡散、$D_{l}$は電子の運動方向への拡散の係数を表す。
+\begin{table}
+  \centering
+  \caption[Magboltz で計算したディフュージョンの係数。]
+          {Magboltz で計算したディフュージョンの係数。
+            ディフージョンの大きさはドリフト電場に依存するため、
+            ここではドリフトスピードが0.014 mm/ns になるドリフト電場での値を示す。}
+  \label{tab::diffusion}
+  \begin{tabular}{ccc}
+    \toprule
+    gas & $D_{t}~(\sqrt{\rm mm})$ & $D_{l}~(\sqrt{\rm mm})$ \\
+    \midrule
+    ${\rm CH_{4}}$ & 0.433 & 0.547\\
+    ${\rm CH_{4} (3) + H_{2} (7)}$ & 0.214 & 0.171\\
+    ${\rm CH_{4} (4) + He (6)}$ & 0.270  & 0.248 \\
+    iso-${\rm C_{4}H_{10}}$ & 0.357 & 0.414 \\
+    iso-${\rm C_{4}H_{10} (1) + H_{2}}$ & 0.196 & 0.145 \\
+    iso-${\rm C_{4}H_{10} (1) + He}$ & 0.246 & 0.197 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+${\rm CH_{4}}$および${\rm C_{4}H_{10}}$の単体ではディフージョンが大きいことが分かる。
+同じドリフトスピードのとき、ドリフト電場が大きいほどディフュージョンが小さい。
 
 \section{$\alpha$線源を用いた測定}
+$\alpha$線源を用いてMAIKo TPC の動作確認を行う。
+線源では、電子のドリフトスピード、増幅率、トラックの太さを確認する。
+
 \subsection{HV系}
+%ここでは電圧の変数名を説明する。
+
 \subsection{ガス系}
+
 \subsection{回路系}
-\subsection{電子のドリフト速度}
-\subsection{電子の増幅率}
+
+\subsection{ドリフトスピード}
+電子のドリフトスピードを線源によって得られるトラックから求める。
+図\ref{pic::collimator}のような線源のコリメータを用いる。
+このコリメータはアクリルで作られており、1つの0${}^{\circ}$、4つの30${}^{\circ}$の穴が開いている。
+\begin{figure}
+  \centering
+  \includegraphics[clip, height=0.7\columnwidth, angle=90]{pic/IMG_20191023_145443_trmd.jpg}
+  \caption[線源コリメータ。]
+          {線源コリメータ。中央に0${}^{\circ}$、上下左右に30${}^{\circ}$の穴が開いている。}
+  \label{pic::collimator}  
+\end{figure}
+このコリメータを用いることで$\alpha$線を30${}^{\circ}$の方向に限定することができる。
+\begin{figure}
+  \centering
+  \begin{minipage}{0.45\columnwidth}
+    \centering
+    \includegraphics[clip, width=0.9\columnwidth]{eps/drift_v_source.eps}
+  \end{minipage}
+  \begin{minipage}{0.45\columnwidth}
+    \centering
+    \includegraphics[clip, width=0.9\columnwidth]{eps/drift_v_image.eps}
+  \end{minipage}
+  \caption[30${}^{\circ}$に方向を限定した$\alpha$線と取得される画像データのイメージ。]
+          {30${}^{\circ}$に方向を限定した$\alpha$線 (左) と取得される画像データ (右) のイメージ。}
+  \label{fig::drift_v_image}
+\end{figure}
+図\ref{fig::drift_v_image}の右のようにドリフト方向に$\Delta y$、それと垂直な方向に$\Delta z$移動するとき、
+\begin{equation}
+  \Delta y = \tan(30^{\circ})\Delta z \label{eq::deltay_deltaz}
+\end{equation}
+となる。
+取得されたデータのトラックが横方向に$\Delta strip$、縦方向に$\Delta t$、
+ドリフトスピードを$drift\_v$とすると、
+\begin{align}
+  \frac{\Delta z}{0.4 {\rm mm}} & = \Delta strip \label{eq::deltaz}\\
+  \frac{\Delta y}{drift\_v} & = \Delta t \label{eq::deltay}
+\end{align}
+式 (\ref{eq::deltay_deltaz}, \ref{eq::deltaz}, \ref{eq::deltay}) より
+\begin{equation}
+  drift\_v = \frac{\tan(30^{\circ})~\Delta strip\times0.4~{\rm mm}}{\Delta t}
+\end{equation}
+とドリフトスピードが求まる。
+
+$\alpha$線源を用いて測定したドリフトスピードとMagboltz との比較を
+図\ref{fig::drift_v_CH4}, \ref{fig::drift_v_CH4_H2}, \ref{fig::drift_v_CH4_He},
+\ref{fig::drift_v_iC4H10}, \ref{fig::drift_v_iC4H10_H2}, \ref{fig::drift_v_iC4H10_He}に示す。
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.9\columnwidth]{eps/drift_v_CH4.eps}
+  \caption{}
+  \label{fig::drift_v_CH4}
+%  \includegraphics[clip, width=0.7\columnwidth]{eps/drift_v_CH4_H2.eps}
+  \caption{}
+  \label{fig::drift_v_CH4_H2}
+%  \includegraphics[clip, width=0.7\columnwidth]{eps/drift_v_CH4_He.eps}
+  \caption{}
+  \label{fig::drift_v_CH4_He}
+%  \includegraphics[clip, width=0.7\columnwidth]{eps/drift_v_iC4H10.eps}
+  \caption{}
+  \label{fig::drift_v_iC4H10}
+%  \includegraphics[clip, width=0.7\columnwidth]{eps/drift_v_iC4H10_H2.eps}
+  \caption{}
+  \label{fig::drift_v_iC4H10_H2}
+%  \includegraphics[clip, width=0.7\columnwidth]{eps/drift_v_iC4H10_He.eps}
+  \caption{}
+  \label{fig::drift_v_iC4H10_He}
+\end{figure}
+$\alpha$線源を用いて測定したドリフトスピードと Magboltz を用いて計算したドリフトスピードが一致していることが分かる。
+
+\subsection{ガス増幅率}
+電圧パラメータを変更させたときの増幅率の変化を測定した。
+増幅率を計算するためには荷電粒子が検出ガス中を通過した際に発生する電子数 ($N_{\rm e}$) と
+増幅後に$\mu$-PICによって収集された電子数 ($N'_{\rm e}$) の比を取る。
+$N_{\rm e}$はガス中での荷電粒子のエネルギー損失とガスのW値から求める。
+$N'_{\rm e}$は$\mu$-PICで収集した電荷から求める。
+詳しい計算方法について以下で述べる。
+
+ガス中で荷電粒子がエネルギーを落とすと、W値あたり平均1個の電子を電離する。
+そのため、荷電粒子のエネルギー損失をW値で割ることで$N_{\rm e}$が求まる。
+各ガスのエネルギー損失とW値~\cite{energy_per_ion_pair,pdg}を表\ref{tab::energy_loss_and_W_val}に示す。
+測定に用いた$\alpha$線源からは平均4.2 MeVの$\alpha$粒子が出ていることが他の測定によりわかっている。
+エネルギー損失は4.2 MeVの$\alpha$粒子が$\mu$-PIC 32 strip分の距離 (12.8 mm) で落とすエネルギーを示している。
+\begin{table}
+  \centering
+  \caption[検出ガスのW値とエネルギー損失と$N_{\rm e}$。]
+          {検出ガスのW値とエネルギー損失と$N_{\rm e}$。
+          エネルギー損失は荷電粒子がガス中を12.8 mm 進んだ時のものである。}
+  \label{tab::energy_loss_and_W_val}
+  \begin{tabular}{cccc}
+    \toprule
+    gas & W (eV) & energy loss (MeV) & $N_{\rm e}$\\
+    \midrule
+    ${\rm CH_{4}}$                          & 29.1 & 0.0565 & 1.94$\times 10^{3}$ \\
+    ${\rm CH_{4} (3) + H_{2} (7)}$          & 34.2 & 0.0534 & 1.56$\times 10^{3}$ \\
+    ${\rm CH_{4} (4) + He (7)}$             & 39.2 & 0.0593 & 1.51$\times 10^{3}$ \\
+    iso-${\rm C_{4}H_{10}}$                 & 26.0 & 0.0552 & 2.12$\times 10^{3}$ \\
+    iso-${\rm C_{4}H_{10} (1) + H_{2} (9)}$ & 35.4 & 0.0620 & 1.75$\times 10^{3}$ \\
+    iso-${\rm C_{4}H_{10} (1) + He (9)}$    & 44.0 & 0.0580 & 1.32$\times 10^{3}$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+$\mu$-PICからの信号波形は32 strips まとめて図\ref{fig::FADC_waveform}のようなFADC情報として取得している。
+この信号波形を時間で積分することによって32 strips で収集した電荷量を計算することができる。
+$\mu$-PICで取得した電気信号は読み出し回路内部で800倍に増幅され、
+入力インピーダンス50$\Omega$ で電流値を電圧値に変換して取得している。
+よって、式 (\ref{eq::N'e})で求めることができる。
+$e$は電荷素量である。
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.7\columnwidth]{eps/0101_waveform_8.eps}
+  \caption{FADCで取得された$\mu$-PICの信号波形。}
+  \label{fig::FADC_waveform}
+\end{figure}
+\begin{equation}
+  N'_{\rm e} = \frac{\int V (t) dt}{ 50 \times 800 \times e}
+  \label{eq::N'e}
+\end{equation}
 
 \section{検出ガスの決定}
 
