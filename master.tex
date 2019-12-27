@@ -1,3 +1,4 @@
+%\documentclass[titlepage,twoside,openright,report]{jsbook}
 \documentclass[titlepage,twoside,openright]{jsreport}
 %\usepackage{thesisj}
 \usepackage[dvipdfmx]{graphicx,xcolor}
@@ -58,16 +59,15 @@
 
 \begin{document}
 \maketitle
-
+%\frontmatter
 \input{abstract.tex}
-
 \tableofcontents
 %\pagenumbering{roman}
 %\listoffigures
 %\listoftables
 \pagenumbering{Roman}
 \newpage
-
+%\mainmatter
 \pagenumbering{arabic}
 \input{intro.tex}
 \input{detector.tex}
@@ -76,6 +76,8 @@
 \input{analysis.tex}
 \input{conclusion.tex}
 \input{acknowledge.tex}
+
+\appendix
 
 \bibliography{mybibfile}
 \end{document}

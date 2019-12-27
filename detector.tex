@@ -190,7 +190,7 @@ ${}^{12}{\rm C}$以外の原子核が含まれるガスを用いると背景事�
     ${\rm CH_{4}}$                                & 50  & 3.29$\times 10^{-5}$ & 0.107 & 0.418 \\
     ${\rm CH_{4}} (3) + {\rm H_{2}} (7)$          & 100 & 2.55$\times 10^{-5}$ & 0.107 & 4.31 \\
     ${\rm CH_{4}} (4) + {\rm He} (6)$             & 100 & 3.62$\times 10^{-5}$ & 0.109 & 1.89 \\
-    iso-${\rm C_{4}H_{10}}$                       & 15  & 3.58$\times 10^{-5}$ & 0.102 & 0.644 \\
+%    iso-${\rm C_{4}H_{10}}$                       & 15  & 3.58$\times 10^{-5}$ & 0.102 & 0.644 \\
     iso-${\rm C_{4}H_{10}} (1) + {\rm H_{2}} (9)$ & 100 & 3.13$\times 10^{-5}$ & 0.122 & 6.80 \\
     iso-${\rm C_{4}H_{10}} (1) + {\rm He} (9)$    & 100 & 3.86$\times 10^{-5}$ & 0.102 & 3.26 \\
     \bottomrule
@@ -231,7 +231,8 @@ Magboltz によって計算したディフュージョンの係数を表\ref{tab
   \caption[Magboltz で計算したディフュージョンの係数。]
           {Magboltz で計算したディフュージョンの係数。
             ディフージョンの大きさはドリフト電場に依存するため、
-            ここではドリフトスピードが0.014 mm/ns になるドリフト電場での値を示す。}
+            ここではドリフトスピードが0.014 mm/ns になるドリフト電場での値を示す。
+          $D_{t}$、$D_{l}$はそれぞれ運動方向に垂直、平行方向のディフュージョン。}
   \label{tab::diffusion}
   \begin{tabular}{ccc}
     \toprule
@@ -240,7 +241,7 @@ Magboltz によって計算したディフュージョンの係数を表\ref{tab
     ${\rm CH_{4}}$ & 0.433 & 0.547\\
     ${\rm CH_{4} (3) + H_{2} (7)}$ & 0.214 & 0.171\\
     ${\rm CH_{4} (4) + He (6)}$ & 0.270  & 0.248 \\
-    iso-${\rm C_{4}H_{10}}$ & 0.357 & 0.414 \\
+%    iso-${\rm C_{4}H_{10}}$ & 0.357 & 0.414 \\
     iso-${\rm C_{4}H_{10} (1) + H_{2}}$ & 0.196 & 0.145 \\
     iso-${\rm C_{4}H_{10} (1) + He}$ & 0.246 & 0.197 \\
     \bottomrule
@@ -249,18 +250,21 @@ Magboltz によって計算したディフュージョンの係数を表\ref{tab
 ${\rm CH_{4}}$および${\rm C_{4}H_{10}}$の単体ではディフージョンが大きいことが分かる。
 同じドリフトスピードのとき、ドリフト電場が大きいほどディフュージョンが小さい。
 
-\section{$\alpha$線源を用いた測定}
-$\alpha$線源を用いてMAIKo TPC の動作確認を行う。
-線源では、電子のドリフトスピード、増幅率、トラックの太さを確認する。
+%\section{$\alpha$線源を用いた測定}
+%$\alpha$線源を用いてMAIKo TPC の動作確認を行う。
+%線源では、電子のドリフトスピード、増幅率、トラックの太さを確認する。
 
-\subsection{HV系}
-%ここでは電圧の変数名を説明する。
+%\subsection{HV系}
+%%ここでは電圧の変数名を説明する。
+%
+%\subsection{ガス系}
+%
+%\subsection{回路系}
+%
+\section{ドリフトスピード}
+${}^{241}{\rm Am}$ $\alpha$線源を用いてドリフトスピードの測定を行った。
 
-\subsection{ガス系}
-
-\subsection{回路系}
-
-\subsection{ドリフトスピード}
+\subsection{各検出ガスにおけるドリフトスピード}
 電子のドリフトスピードを線源によって得られるトラックから求める。
 図\ref{pic::collimator}のような線源のコリメータを用いる。
 このコリメータはアクリルで作られており、1つの0${}^{\circ}$、4つの30${}^{\circ}$の穴が開いている。
@@ -305,11 +309,13 @@ $\alpha$線源を用いてMAIKo TPC の動作確認を行う。
 
 $\alpha$線源を用いて測定したドリフトスピードとMagboltz との比較を
 図\ref{fig::drift_v_CH4}, \ref{fig::drift_v_CH4_H2}, \ref{fig::drift_v_CH4_He},
-\ref{fig::drift_v_iC4H10}, \ref{fig::drift_v_iC4H10_H2}, \ref{fig::drift_v_iC4H10_He}に示す。
+\ref{fig::drift_v_iC4H10_H2}, \ref{fig::drift_v_iC4H10_He}に示す。
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.9\columnwidth]{eps/drift_v_CH4.eps}
-  \caption{}
+  \caption[検出ガスに${\rm CH_{4}}$を用いたときのドリフトスピードの電場依存性。]
+          {検出ガスに${\rm CH_{4}}$を用いたときのドリフトスピードの電場依存性。
+            図中の点線は0.014 mm/ns を示す。}
   \label{fig::drift_v_CH4}
 %  \includegraphics[clip, width=0.7\columnwidth]{eps/drift_v_CH4_H2.eps}
   \caption{}
@@ -317,11 +323,10 @@ $\alpha$線源を用いて測定したドリフトスピードとMagboltz との
 %  \includegraphics[clip, width=0.7\columnwidth]{eps/drift_v_CH4_He.eps}
   \caption{}
   \label{fig::drift_v_CH4_He}
-%  \includegraphics[clip, width=0.7\columnwidth]{eps/drift_v_iC4H10.eps}
-  \caption{}
-  \label{fig::drift_v_iC4H10}
-%  \includegraphics[clip, width=0.7\columnwidth]{eps/drift_v_iC4H10_H2.eps}
-  \caption{}
+  \includegraphics[clip, width=0.9\columnwidth]{eps/drift_v_iC4H10_H2.eps}
+  \caption[検出ガスにiso-${\rm C_{4}H_{10}}$を用いたときのドリフトスピードの電場依存性。]
+          {検出ガスにiso-${\rm C_{4}H_{10}}$を用いたときのドリフトスピードの電場依存性。
+            図中の点線は0.014 mm/ns を示す。}
   \label{fig::drift_v_iC4H10_H2}
 %  \includegraphics[clip, width=0.7\columnwidth]{eps/drift_v_iC4H10_He.eps}
   \caption{}
@@ -329,7 +334,12 @@ $\alpha$線源を用いて測定したドリフトスピードとMagboltz との
 \end{figure}
 $\alpha$線源を用いて測定したドリフトスピードと Magboltz を用いて計算したドリフトスピードが一致していることが分かる。
 
-\subsection{ガス増幅率}
+\subsection{ドリフトスピードの時間安定性}
+低圧では露点などの不純物が混ざることによって、ドリフトスピードが変化することが懸念される。
+そこで、ドリフトスピードの時間安定性の測定を行った。
+この測定は$\rm CH_{4}$ 50 hPa で行った。
+
+\section{ガス増幅率}
 電圧パラメータを変更させたときの増幅率の変化を測定した。
 増幅率を計算するためには荷電粒子が検出ガス中を通過した際に発生する電子数 ($N_{\rm e}$) と
 増幅後に$\mu$-PICによって収集された電子数 ($N'_{\rm e}$) の比を取る。
@@ -355,7 +365,7 @@ $N'_{\rm e}$は$\mu$-PICで収集した電荷から求める。
     ${\rm CH_{4}}$                          & 29.1 & 0.0565 & 1.94$\times 10^{3}$ \\
     ${\rm CH_{4} (3) + H_{2} (7)}$          & 34.2 & 0.0534 & 1.56$\times 10^{3}$ \\
     ${\rm CH_{4} (4) + He (7)}$             & 39.2 & 0.0593 & 1.51$\times 10^{3}$ \\
-    iso-${\rm C_{4}H_{10}}$                 & 26.0 & 0.0552 & 2.12$\times 10^{3}$ \\
+%    iso-${\rm C_{4}H_{10}}$                 & 26.0 & 0.0552 & 2.12$\times 10^{3}$ \\
     iso-${\rm C_{4}H_{10} (1) + H_{2} (9)}$ & 35.4 & 0.0620 & 1.75$\times 10^{3}$ \\
     iso-${\rm C_{4}H_{10} (1) + He (9)}$    & 44.0 & 0.0580 & 1.32$\times 10^{3}$ \\
     \bottomrule
@@ -371,13 +381,19 @@ $e$は電荷素量である。
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.7\columnwidth]{eps/0101_waveform_8.eps}
-  \caption{FADCで取得された$\mu$-PICの信号波形。}
+  \caption{FADCで取得された$\mu$-PICの信号波形の一例。}
   \label{fig::FADC_waveform}
 \end{figure}
 \begin{equation}
   N'_{\rm e} = \frac{\int V (t) dt}{ 50 \times 800 \times e}
   \label{eq::N'e}
 \end{equation}
+
+\subsection{GEMによるガス増幅}
+
+\subsection{$\mu$-PICによるガス増幅}
+
+\subsection{GEMとgrid間の電位差による電子の収集効率}
 
 \section{検出ガスの決定}
 
