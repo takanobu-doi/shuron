@@ -2,8 +2,9 @@
 %\section{MAIKo TPC}
 \section{MAIKo TPC とは}
 Time Projection Chamber (TPC) は荷電粒子のトラックを検出するために広く用いられている検出器である。
-荷電粒子がMAIKo TPC のガス中を通過するときに電子を発生させる。
-この電子をドリフト電場 ($y$軸方向) により読み出し面にドリフトさせることでトラックを検出する。
+荷電粒子がTPC の検出ガス中を通過するとき、飛跡の周囲の粒子をイオン化させる。
+イオン化で発生した電子をドリフト電場 (図\ref{fig::MAIKo_view}$y$軸方向) により
+読み出し面にドリフトさせることでトラックを検出する。
 図\ref{fig::MAIKo_view}のようにTPC の有感領域中で入射粒子と標的粒子を反応させることで、
 散乱点の周りを有感領域で覆うことができる。
 そのため、散乱で放出される低エネルギーの荷電粒子を大立体角で検出することができる。
@@ -25,10 +26,9 @@ MAIKo TPC の写真を図\ref{pic::MAIKo}に示す。
   \caption[MAIKo TPC の概観。]{MAIKo TPC の概観。}
   \label{pic::MAIKo}
 \end{figure}
-MAIKo TPC では3次元のトラックを図\ref{fig::MAIKo_view}のように2つの平面 ($zy, xy$平面) に射影された画像として取得される。
 
 \subsection{MAIKo TPC の構造}
-図\ref{fig::MAIKo_view}にMAIKo TPC の概観図、
+\label{sec::maiko-cage}
 図\ref{fig::MAIKo_cage}にMAIKo TPC の構造を示す。
 \begin{figure}
   \centering
@@ -36,36 +36,42 @@ MAIKo TPC では3次元のトラックを図\ref{fig::MAIKo_view}のように2�
   \caption{MAIKo TPC の構造。}
   \label{fig::MAIKo_cage}
 \end{figure}
-plate とgrid の間のドリフト領域に電圧をかけることでドリフト電場を形成する。
-ドリフト領域を荷電粒子が通過する際に生成された電子が増幅領域へ移動する。
-MAIKo TPC ではGEM (gas electron multiplier) と$\mu$-PIC によってドリフト領域からドリフトしてきた電子を増幅する。
-増幅した電子およびイオンによって$\mu$-PIC のanode とcathode に誘起される信号を読み出す。
+MAIKo TPC はplate、wire、grid、GEM (gas electron multiplier)、$\mu$-PICからなる。
+plate、grid、GEM、$\mu$-PICにHV が接続されている。
+plate、wire、girdの間は10 M$\Omega$の抵抗で繋がれている。
+GEM とHV は1 M$\Omega$と20 M$\Omega$の抵抗で繋がれている。
+plateからgridの間の領域をドリフト領域、
+gridから$\mu$-PICの間の領域を増幅領域、
+$\mu$-PICの周囲を読み出し領域と呼ぶ。
+
+%plate とgrid に電圧をかけることでドリフト領域にドリフト電場を形成する。
+%ドリフト領域を荷電粒子が通過する際に生成された電子がドリフト電場によって増幅領域へ移動する。
+%ドリフト電場を一様に形成するために5 mm間隔でドリフト領域の周囲にwire を巻いてある。
+%ドリフト領域はドリフト方向に140 mm である。
+%ドリフトしてきた電子は、まずGEM (gas electron multiplier) で増幅される。
+%増幅した電子およびイオンによって$\mu$-PIC のanode とcathode に誘起された信号を読み出す。
+%$\mu$-PIC では信号の読み出しだけでなく電子の増幅も行われる。
 
 \subsection{ドリフト領域}
-plateとwire、grid によって囲まれた領域をドリフト領域と呼ぶ。
 grid からplate の方向 (図\ref{fig::MAIKo_cage}では上向き) にドリフト電場を作ることで
-荷電粒子の周りに発生した電子を増幅領域へドリフトさせる。
+トラックの周りに発生した電子を増幅領域へドリフトさせる。
 ドリフト電場の一様性が高いほど、電子を均等にドリフトすることができる。
 ドリフト電場を一様に形成するためにwire が5 mm 間隔で巻かれている。
-plate とgrid のそれぞれに高電圧をかけることによってドリフト電場を調整する。
+ドリフト領域はドリフト電場の方向に140 mmである。
+この領域がMAIKo TPC の有感領域となる。
 
-\subsection{GEM}
-$\mu$-PIC にも増幅機構があるが、より大きく増幅するためにGEM を用いた増幅機構を設けている。
-GEM は、図\ref{pic::GEM}のようにポリマーのフルムの表面を銅で被覆し、
+\subsection{増幅領域}
+MAIKo TPC ではGEM と$\mu$-PICを用いて電子の増幅を行う。
+GEM は、図\ref{pic::GEM}のようにポリマーのフィルムの表面を銅で被覆し、
 直径70 $\mu$m の穴を140 $\mu$m 間隔で1 mm$^2$あたり100 個の密度で開けたものである。
 銅の2つの層はポリマーによって絶縁されている。
-銅の両面に電圧を印加することによって、高電場が形成されてドリフトしてきた種電子が増幅される。
+銅の両面に電圧を印加することによって、高電場が形成されドリフトしてきた電子が増幅される。
 \begin{figure}
   \centering
   %\includegraphics[clip, width=0.7\colmunwidth]{}
   \caption{GEM の拡大図。}
-  \label{pic::GEM}
+  \label{pic::GEM}  
 \end{figure}
-
-\subsection{$\mu$-PIC}
-読み出しパッドである$\mu$-PICは図\ref{fig::mupic}のようにanode strip とcathode strip が垂直に配置されている。
-anode strip、cathode stripともに400~$\mu$m 間隔で256~chに分割されており、
-合計512~chで信号を読み出している。
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.7\columnwidth]{eps/upic_struc_xyz.eps}
@@ -74,40 +80,59 @@ anode strip、cathode stripともに400~$\mu$m 間隔で256~chに分割されて
   }
   \label{fig::mupic}
 \end{figure}
-図\ref{fig::MAIKo_view}中でanode strip は$z$軸、cathode strip は$x$軸と平行に配置されている。
+$\mu$-PIC は図\ref{fig::mupic}のようにanode strip とcathode strip が直交するように配置されている。
+anode strip、cathode strip ともに400~$\mu$m 間隔でそれぞれ256~ch分割されている。
+直径50~$\mu$mの円柱状のanode 電極に高電圧をかけることで高電場を形成することができ、
+$\mu$-PICによって信号が読み出される直前に電子が増幅される。
+
+\subsection{読み出し領域}
+\label{sec::mu-pic}
+図\ref{fig::MAIKo_view}中でanode strip は$z$軸、cathode strip は$x$軸と平行になるように$\mu$-PICが配置されている。
 ドリフト電場により移動してきた電子をanode strip、cathode strip により読み出し、
 それぞれ$x$軸、$z$軸座標を検出することができる。
 また、anode strip、cathode strip で検出される信号の時間分布により$y$軸座標を決定することができる。
 
-MAIKo TPC からは図\ref{fig::track_demo}のようにanode strip に垂直な面 ($z-y$平面) に射影されたトラックと
-cathode strip に垂直な面 ($z-y$平面) に射影されたトラックの2つの画像が出力される。
+MAIKo TPC からは図\ref{fig::track_demo}のようにトラックが
+anode strip に垂直な面 ($z-y$平面) に射影されたanode image と
+cathode strip に垂直な面 ($z-y$平面) に射影されたcathode image の2つの画像が出力される。
 anode strip とcathode strip はそれぞれ256~chで構成され、
-読み出される信号波高の時間変化は100~MHzで1,024~samples測定される。
-そのため、出力される画像の解像度は$256\times1,014$~pixels となる。
+読み出される信号波高の時間変化は100~MHzで1,024~samples測定されるため、
+出力される画像の解像度は$256\times1,014$~pixels となる。
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.7\columnwidth]{eps/10016_6.eps}
+  \includegraphics[clip, width=0.9\columnwidth]{eps/10024_4.eps}
   \caption[MAIKo TPC から得られず画像データの一例。]
           {MAIKo TPC から得られず画像データの一例。
           このイベントは\ref{chap::simulation}章で述べるシミュレーションによって生成したデータである。}
   \label{fig::track_demo}
+\end{figure}
+また、anode strip、cathode strip ともに32~chごとにまとめて信号をFADC で波形を取得している。
+FADC で取得した信号の一例を図\ref{fig::FADC_waveform}に示す。
+FADC では25 MHzで信号波形を取得される。
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.7\columnwidth]{eps/0101_waveform_8.eps}
+  \caption{FADCで取得された$\mu$-PICの信号波形の一例。}
+  \label{fig::FADC_waveform}
 \end{figure}
 
 \section{検出ガスの候補}
 標的に${}^{12}{\rm C}$を用いるため分子中に炭素を含むガスを検出ガスに用いる。
 ${}^{12}{\rm C}$以外の原子核が含まれるガスを用いると背景事象となるため、
 水素と炭素以外の原子が含まれない炭化水素を用いる。
-炭化水素には代表的なものでも、メタン (${\rm CH_{4}}$) やメタン (${\rm C_{2}H_{6}}$)、
-イソブタン (iso-${\rm C_{4}H_{10}}$) などいくつもある。
+陽子、${}^{4}{\rm He}$と14 MeV の中性子の散乱は複数の荷電粒子に崩壊しないため、
+トラックの本数から背景事象を取り除くことができる。
+炭化水素の代表的なガスは、メタン (${\rm CH_{4}}$) やエタン (${\rm C_{2}H_{6}}$)、
+イソブタン (iso-${\rm C_{4}H_{10}}$) である。
 また、水素ガスやヘリウムガスとの混合ガスも用いることができる。
 検出ガスとして求められる性能には以下のようなものがある。
 \begin{itemize}
 \item
-  放電しない
+  放電しにくい
 \item
-  荷電粒子のエネルギー損失 ($dE/dx$) が適切な大きさである
+  荷電粒子のエネルギー損失 ($dE/dx$) が適切である
 \item
-  ${}^{12}{\rm C}$の量が少なすぎない
+  ${}^{12}{\rm C}$の量が少なくない
 \item
   適切なドリフト速度を達成できる
 \item
@@ -118,15 +143,15 @@ ${}^{12}{\rm C}$以外の原子核が含まれるガスを用いると背景事�
 \subsection{エネルギー損失}
 荷電粒子のエネルギー損失 ($dE/dx$) が大きくなりすぎるとガス中での飛行距離が短くなり、
 トラックとして認識することが難しくなる。
-また、MAIKo TPC では粒子のエネルギーをトラックの長さから決定する。
+本実験では荷電粒子のエネルギーをトラックの長さから決定する。
 そのため、$dE/dx$ が小さくなりすぎるとトラックが有感領域で止まらず、
-トラックの長さ (エネルギー) を決定することができない。
+トラックの長さ (エネルギー) を決定することができなくなる。
 検出する対象である$\alpha$粒子の $dE/dx$ が適切な大きさとなるガスの種類と圧力の候補を選出する。
 
-まず、代表的な炭化水素である${\rm CH{4}}$を考える
+まず、代表的な炭化水素である${\rm CH{4}}$を考える。
 ガス中で15 mm 以上飛行し、MAIKo TPC の有感領域中で停止する$\alpha$粒子を検出可能な$\alpha$粒子と定義する。
-図\ref{fig::alpha_E_dist}に示したエネルギー分布の$\alpha$粒子を
-検出できた割合を図\ref{fig::efficiency_P_dist}に示す。
+図\ref{fig::alpha_E_dist}に示したエネルギー分布の$\alpha$粒子のうち、
+検出できた割合の圧力依存性を図\ref{fig::efficiency_P_dist}に示す。
 このとき、散乱点がビーム軸上に一様に分布しているとして計算した。
 図\ref{fig::efficiency_P_dist}から分かるように、50 hPa で最大となっている。
 \begin{figure}
@@ -138,7 +163,6 @@ ${}^{12}{\rm C}$以外の原子核が含まれるガスを用いると背景事�
            }
   \label{fig::efficiency_P_dist}
 \end{figure}
-
 50 hPa のときの${\rm CH_{4}}$の各種の値は表\ref{tab::CH4_50_params}のとおりである。
 \begin{table}
   \centering
@@ -150,21 +174,20 @@ ${}^{12}{\rm C}$以外の原子核が含まれるガスを用いると背景事�
     \midrule
     密度 & $3.29\times10^{-5}~{\rm g/cm^{-3}}$\\
     $dE/dx$ ($E_{\alpha} = 0.5~{\rm MeV}$, 10 mm) & 0.107 MeV\\
-    飛距離 ($E_{\alpha} = 0.5~{\rm MeV}$) & 65.6 mm\\
+    飛距離 ($E_{\alpha} = 0.5~{\rm MeV}$) & 65.6 mm \\
     \bottomrule
   \end{tabular}
 \end{table}
 
-50 hPa のときの${\rm CH_{4}}$の$dE/dx$と同じ程度になる、他のガスの種類を考えていく。
-候補としてiso-${\rm C_{4}H_{10}}$単体と2つの炭化水素に水素とヘリウムの混合ガスの6種類を考える。
-単体のガスでは圧力、混合ガスでは圧力を100 hPa に固定し混合比をパラメータとして$dE/dx$を合わせる。
-ガスの混合パターン、圧力、$dE/dx$は表\ref{tab::mixture}のとおりである。
-分子の括弧は混合の割合を示す。
+50 hPa のときの${\rm CH_{4}}$の$dE/dx$と同程度となる、他のガスを考えていく。
+表\ref{tab::mixture}に示した6つを候補とした。
+混合ガスでは圧力を100 hPa に固定し混合比をパラメータとして$dE/dx$を合わせる。
+括弧内はガスの混合の割合を示す。
 \begin{table}
   \centering
   \caption[ガスの混合パターン、圧力、$dE/dx$。]
           {ガスの混合パターン、圧力、$dE/dx$。
-          括弧はガスの混合の割合を示す。}
+          括弧内はガスの混合の割合を示す。}
   \label{tab::mixture}
   \begin{tabular}{ccccc}
     \toprule
@@ -190,7 +213,7 @@ ${}^{12}{\rm C}$以外の原子核が含まれるガスを用いると背景事�
     ${\rm CH_{4}}$                                & 50  & 3.29$\times 10^{-5}$ & 0.107 & 0.418 \\
     ${\rm CH_{4}} (3) + {\rm H_{2}} (7)$          & 100 & 2.55$\times 10^{-5}$ & 0.107 & 4.31 \\
     ${\rm CH_{4}} (4) + {\rm He} (6)$             & 100 & 3.62$\times 10^{-5}$ & 0.109 & 1.89 \\
-%    iso-${\rm C_{4}H_{10}}$                       & 15  & 3.58$\times 10^{-5}$ & 0.102 & 0.644 \\
+    iso-${\rm C_{4}H_{10}}$                       & 15  & 3.58$\times 10^{-5}$ & 0.102 & 0.644 \\
     iso-${\rm C_{4}H_{10}} (1) + {\rm H_{2}} (9)$ & 100 & 3.13$\times 10^{-5}$ & 0.122 & 6.80 \\
     iso-${\rm C_{4}H_{10}} (1) + {\rm He} (9)$    & 100 & 3.86$\times 10^{-5}$ & 0.102 & 3.26 \\
     \bottomrule
@@ -201,31 +224,38 @@ ${}^{12}{\rm C}$以外の原子核が含まれるガスを用いると背景事�
 \subsection{ドリフトスピード}
 MAIKo TPC では100 MHzで1024 samples データを取得するため、ドリフト方向は10.24 $\mu$s のタイムウィンドウが開いている。
 ドリフトケージの大きさ ($140\rm{mm}$) を可能な限りタイムウィンドウに収めるためには、
-MAIKo TPC のタイムウィンドウ ($10.24\rm{\mu s}$) で140 mmとなるようなドリフトスピード
-($140\rm{mm}/10.24\rm{\mu s} \sim 0.014\rm{mm/ns}$) に調整する必要がある。
-%($140\rm{mm}/10.24\rm{\mu s} \sim 0.0135\rm{mm/ns}$) に調整する必要がある。
-
+ドリフトスピードを$140\rm{mm}/10.24\rm{\mu s} \sim 0.014\rm{mm/ns}$ に調整する必要がある。
 Magboltz~\cite{magboltz} によって計算したドリフト電場とドリフトスピードの関係を図\ref{fig::drift_v_magboltz}に、
 ドリフトスピードが0.014 mm/ns となるドリフト電場の値を表\ref{tab::mixture}に示す。
-以降、これらのドリフト電場で計算を行う。
+図\ref{fig::drift_v_magboltz}の横方向の点線は0.014 mm/ns を表す。
+以降、これらのドリフト電場で評価を行う。
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.9\columnwidth]{eps/drift_v_magboltz.eps}
   \caption[ドリフト電場とドリフトスピードの関係。]
           {ドリフト電場とドリフトスピードの関係。
-          ${\rm CH_{4}}$は50 hPa、${\rm C_{4}H_{10}}$は15 hPa、その他は100 hPa である。}
+            ${\rm CH_{4}}$は50 hPa、${\rm C_{4}H_{10}}$は15 hPa、その他は100 hPa である。
+          横方向の点線は0.014 mm/ns を示す。}
   \label{fig::drift_v_magboltz}
 \end{figure}
 
 \subsection{ディフュージョン}
-ドリフト電場によって電子が移動する間に検出ガスとの相互作用により拡散 (ディフュージョン) が起きる。
-ディフュージョンの効果が大きくなると、$\mu$-PICに到達するまでに荷電粒子で同じ位置に生成された電子が広がるため、
-トラックが太く検出される。
+ドリフト電場によって電子が移動する間にガスとの相互作用によりディフュージョンが起きる。
+ディフュージョンの効果が大きくなると、図\ref{fig::diffusion-image}のように荷電粒子によって同じ場所に生成された電子が
+$\mu$-PICに到達するまでに広がるため、トラックが太く検出される。
 トラックが太くなると、複数のトラックを分離するのが難しくなる。
 そのため、ディフュージョンの効果が小さいことが望まれる。
-Magboltz によって計算したディフュージョンの係数を表\ref{tab::diffusion}に示す。
-電子が生成した点から$L$離れた位置で、電子が$\sigma = D\times\sqrt{L}$のガウシアンで広がる。
+Magboltz によって計算したディフュージョン係数を表\ref{tab::diffusion}に示す。
+電子が生成した点から$L$離れた位置では、電子が$\sigma = D\times\sqrt{L}$のガウス分布で広がる。
 表\ref{tab::diffusion}中の$D_{t}$は電子の運動方向に対して垂直な方向への拡散、$D_{l}$は電子の運動方向への拡散の係数を表す。
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.4\columnwidth]{eps/diffusion_image.eps}
+  \caption[ディフュージョンによって電子が拡散するイメージ。]
+          {ディフュージョンによって電子が拡散するイメージ。
+          同じ位置で生成された電子でもドリフトする間に位置が拡散する。}
+  \label{fig::diffusion-image}
+\end{figure}
 \begin{table}
   \centering
   \caption[Magboltz で計算したディフュージョンの係数。]
@@ -234,21 +264,26 @@ Magboltz によって計算したディフュージョンの係数を表\ref{tab
             ここではドリフトスピードが0.014 mm/ns になるドリフト電場での値を示す。
           $D_{t}$、$D_{l}$はそれぞれ運動方向に垂直、平行方向のディフュージョン。}
   \label{tab::diffusion}
-  \begin{tabular}{ccc}
+  \begin{tabular}{cccc}
     \toprule
-    gas & $D_{t}~(\sqrt{\rm mm})$ & $D_{l}~(\sqrt{\rm mm})$ \\
+    gas & $D_{t}~(\sqrt{\rm mm})$ & $D_{l}~(\sqrt{\rm mm})$ & electric field (V/mm) \\
     \midrule
-    ${\rm CH_{4}}$ & 0.433 & 0.547\\
-    ${\rm CH_{4} (3) + H_{2} (7)}$ & 0.214 & 0.171\\
-    ${\rm CH_{4} (4) + He (6)}$ & 0.270  & 0.248 \\
-%    iso-${\rm C_{4}H_{10}}$ & 0.357 & 0.414 \\
-    iso-${\rm C_{4}H_{10} (1) + H_{2}}$ & 0.196 & 0.145 \\
-    iso-${\rm C_{4}H_{10} (1) + He}$ & 0.246 & 0.197 \\
+    ${\rm CH_{4}}$ & 0.433 & 0.547 & 0.418\\
+    ${\rm CH_{4} (3) + H_{2} (7)}$ & 0.214 & 0.171 & 4.31\\
+    ${\rm CH_{4} (4) + He (6)}$ & 0.270  & 0.248 & 1.89\\
+    iso-${\rm C_{4}H_{10}}$ & 0.357 & 0.414 & 0.644\\
+    iso-${\rm C_{4}H_{10} (1) + H_{2}} (9)$ & 0.196 & 0.145 & 6.80\\
+    iso-${\rm C_{4}H_{10} (1) + He} (9) $ & 0.246 & 0.197 & 3.26\\
     \bottomrule
   \end{tabular}
 \end{table}
-${\rm CH_{4}}$および${\rm C_{4}H_{10}}$の単体ではディフージョンが大きいことが分かる。
-同じドリフトスピードのとき、ドリフト電場が大きいほどディフュージョンが小さい。
+${\rm CH_{4}}$およびiso-${\rm C_{4}H_{10}}$の単体ではディフージョン係数が大きく、
+同じドリフトスピードのとき、ドリフト電場が大きいほどディフュージョン係数が小さいことが分かる。
+
+iso-${\rm C_{4}H_{10} (1) + H_{2}} (9)$が最もディフュージョン係数が小さく、
+検出ガスの最有力候補である。
+シミュレーションにより生成した${}^{12}{\rm C}({\rm n},{\rm n}'){}^{12}{\rm C}^{\rm Hoyle}$イベントを解析し、
+その解析効率により検出ガスを決定する。
 
 %\section{$\alpha$線源を用いた測定}
 %$\alpha$線源を用いてMAIKo TPC の動作確認を行う。
