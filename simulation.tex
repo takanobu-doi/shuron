@@ -1,11 +1,26 @@
 \chapter{シミュレーション}
 \label{chap::simulation}
-\section{$\alpha$線源での測定}
-${}^{241}{\rm Am}$ $\alpha$線源を用いて測定を行った。
+\section{各種パラメータの測定}
+\ref{sec::detection_gas_candidate}節で考えた各ガスについて、
+ドリフトスピード、ガス増幅率、トラックの幅を測定した。
+測定には${}^{241}{\rm Am}$の$\alpha$線源を用いた。
+図\ref{fig::a_source_track}に$\alpha$線源のトラックの一例を示す。
+図\ref{fig::a_source_track}ではiso-$\rm C_{4}H_{10} (1) + H_{2} (9)$を用いた。
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.9\columnwidth]{eps/0210_7.eps}
+  \caption[$\alpha$線源のトラック。]
+          {$\alpha$線源のトラック。
+          検出ガスはiso-$\rm C_{4}H_{10} (1) + H_{2} (9)$を用いた。}
+  \label{fig::a_source_track}
+\end{figure}
+\ref{sec::detection_gas_candidate}節では6種類の候補を考えたが、
+ここからは単体のiso-$\rm C_{4}H_{10}$を除いた5種類で考えていく。
+これはディフュージョン係数が大きいことと圧力が低く安定したTPC の動作が難しいと予測されるためである。
 
-\subsection{各検出ガスにおけるドリフトスピード}
+\subsection{ドリフトスピード}
 電子のドリフトスピードを線源によって得られるトラックから求める。
-図\ref{pic::collimator}のような線源のコリメータを用いる。
+測定には図\ref{pic::collimator}のような線源コリメータを用いる。
 このコリメータはアクリルで作られており、1つの0${}^{\circ}$、4つの30${}^{\circ}$の穴が開いている。
 \begin{figure}
   \centering
@@ -14,7 +29,7 @@ ${}^{241}{\rm Am}$ $\alpha$線源を用いて測定を行った。
           {線源コリメータ。中央に0${}^{\circ}$、上下左右に30${}^{\circ}$の穴が開いている。}
   \label{pic::collimator}  
 \end{figure}
-このコリメータを用いることで$\alpha$線を30${}^{\circ}$の方向に限定することができる。
+このコリメータを用いることで$\alpha$線を0${}^{\circ}$と30${}^{\circ}$の方向に限定することができる。
 \begin{figure}
   \centering
   \begin{minipage}{0.45\columnwidth}
@@ -34,7 +49,7 @@ ${}^{241}{\rm Am}$ $\alpha$線源を用いて測定を行った。
   \Delta y = \tan(30^{\circ})\Delta z \label{eq::deltay_deltaz}
 \end{equation}
 となる。
-取得されたデータのトラックが横方向に$\Delta strip$、縦方向に$\Delta t$、
+MAIKo TPC で取得したトラックの横方向の変分を$\Delta strip$、縦方向の変分を$\Delta t$、
 ドリフトスピードを$drift\_v$とすると、
 \begin{align}
   \frac{\Delta z}{0.4 {\rm mm}} & = \Delta strip \label{eq::deltaz}\\
@@ -46,36 +61,51 @@ ${}^{241}{\rm Am}$ $\alpha$線源を用いて測定を行った。
 \end{equation}
 とドリフトスピードが求まる。
 
-$\alpha$線源を用いて測定したドリフトスピードとMagboltz との比較を
-図\ref{fig::drift_v_CH4}, \ref{fig::drift_v_CH4_H2}, \ref{fig::drift_v_CH4_He},
-\ref{fig::drift_v_iC4H10_H2}, \ref{fig::drift_v_iC4H10_He}に示す。
-\begin{figure}
+$\alpha$線源を用いて測定したドリフトスピードとMagboltz で求めた値を
+表\ref{tab::drift_speed_compare}に示す。
+\begin{table}
   \centering
-  \includegraphics[clip, width=0.9\columnwidth]{eps/drift_v_CH4.eps}
-  \caption[検出ガスに${\rm CH_{4}}$を用いたときのドリフトスピードの電場依存性。]
-          {検出ガスに${\rm CH_{4}}$を用いたときのドリフトスピードの電場依存性。
-            図中の点線は0.014 mm/ns を示す。}
-  \label{fig::drift_v_CH4}
-%  \includegraphics[clip, width=0.7\columnwidth]{eps/drift_v_CH4_H2.eps}
-  \caption{}
-  \label{fig::drift_v_CH4_H2}
-%  \includegraphics[clip, width=0.7\columnwidth]{eps/drift_v_CH4_He.eps}
-  \caption{}
-  \label{fig::drift_v_CH4_He}
-  \includegraphics[clip, width=0.9\columnwidth]{eps/drift_v_iC4H10_H2.eps}
-  \caption[検出ガスにiso-${\rm C_{4}H_{10}}$を用いたときのドリフトスピードの電場依存性。]
-          {検出ガスにiso-${\rm C_{4}H_{10}}$を用いたときのドリフトスピードの電場依存性。
-            図中の点線は0.014 mm/ns を示す。}
-  \label{fig::drift_v_iC4H10_H2}
-%  \includegraphics[clip, width=0.7\columnwidth]{eps/drift_v_iC4H10_He.eps}
-  \caption{}
-  \label{fig::drift_v_iC4H10_He}
-\end{figure}
-$\alpha$線源を用いて測定したドリフトスピードと Magboltz を用いて計算したドリフトスピードが一致していることが分かる。
+  \caption{実測したドリフトスピードとMagboltzで求めたドリフトスピードの比較。}
+  \label{tab::drift_speed_compare}
+  \begin{tabular}{cccc}
+    \toprule
+    gas & ドリフト電場 (V/mm) & 実測 (mm/ns) & Magboltz (mm/ns)\\
+    \midrule
+    ${\rm CH_{4}}$ & 0.429 & 0.0126 & 0.0145 \\
+    ${\rm CH_{4}} (3) + {\rm H_{2}} (7)$ & 4.32 & 0.0140 & 0.0140 \\
+    ${\rm CH_{4}} (4) + {\rm He} (6)$ & 1.89 & 0.0135 & 0.0140 \\
+    iso-${\rm C_{4}H_{10}} (1) + {\rm H_{2}} (9)$ & 6.82 & 0.0137 & 0.0140 \\
+    iso-${\rm C_{4}H_{10}} (1) + {\rm He} (9)$ & 3.29 & 0.0139 & 0.0141 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+%\begin{figure}
+%  \centering
+%  \includegraphics[clip, width=0.9\columnwidth]{eps/drift_v_CH4.eps}
+%  \caption[検出ガスに${\rm CH_{4}}$を用いたときのドリフトスピードの電場依存性。]
+%          {検出ガスに${\rm CH_{4}}$を用いたときのドリフトスピードの電場依存性。
+%            図中の点線は0.014 mm/ns を示す。}
+%  \label{fig::drift_v_CH4}
+%%  \includegraphics[clip, width=0.7\columnwidth]{eps/drift_v_CH4_H2.eps}
+%  \caption{}
+%  \label{fig::drift_v_CH4_H2}
+%%  \includegraphics[clip, width=0.7\columnwidth]{eps/drift_v_CH4_He.eps}
+%  \caption{}
+%  \label{fig::drift_v_CH4_He}
+%  \includegraphics[clip, width=0.9\columnwidth]{eps/drift_v_iC4H10_H2.eps}
+%  \caption[検出ガスにiso-${\rm C_{4}H_{10}}$を用いたときのドリフトスピードの電場依存性。]
+%          {検出ガスにiso-${\rm C_{4}H_{10}}$を用いたときのドリフトスピードの電場依存性。
+%            図中の点線は0.014 mm/ns を示す。}
+%  \label{fig::drift_v_iC4H10_H2}
+%%  \includegraphics[clip, width=0.7\columnwidth]{eps/drift_v_iC4H10_He.eps}
+%  \caption{}
+%  \label{fig::drift_v_iC4H10_He}
+%\end{figure}
+$\alpha$線源を用いて測定したドリフトスピードと Magboltz を用いて計算したドリフトスピードがおおよそ一致していることが分かる。
+$\rm CH_{4}$は実測とMagboltz とがずれているが、ガスに含まれる水分の影響が考えられる。
+$\rm CH_{4}$のみ50 hPa とその他のガスと比較して圧力が半分であるため、不純物の影響が大きく出ていると考えられる。
 
-\section{各種パラメータ}
-\subsection{ドリフトスピード}
-\subsection{ガス増幅率}
+\subsection{電子増幅率}
 電圧パラメータを変更させたときの増幅率の変化を測定した。
 増幅率を計算するためには荷電粒子が検出ガス中を通過した際に発生する電子数 ($N_{\rm e}$) と
 増幅後に$\mu$-PICによって収集された電子数 ($N'_{\rm e}$) の比を取る。
@@ -111,21 +141,62 @@ $N'_{\rm e}$は$\mu$-PICで収集した電荷から求める。
 $\mu$-PICからの信号波形は32 strips まとめて図\ref{fig::FADC_waveform}のようなFADC情報として取得している。
 この信号波形を時間で積分することによって32 strips で収集した電荷量を計算することができる。
 $\mu$-PICで取得した電気信号は読み出し回路内部で800倍に増幅され、
-入力インピーダンス50$\Omega$ で電流値を電圧値に変換して取得している。
+入力インピーダンス50 $\Omega$ で電流値を電圧値に変換して取得している。
 よって、式 (\ref{eq::N'e})で求めることができる。
 $e$は電荷素量である。
 \begin{equation}
   N'_{\rm e} = \frac{\int V (t) dt}{ 50 \times 800 \times e}
   \label{eq::N'e}
 \end{equation}
-
-\subsubsection{GEMによるガス増幅}
-
-\subsubsection{$\mu$-PICによるガス増幅}
-
-\subsubsection{GEMとgrid間の電位差による電子の収集効率}
+各ガスの増幅率を表\ref{tab::multiplying_rate}に示す。
+ここでは、GEMと$\mu$-PIC の両方による増幅率となっている。
+\begin{table}
+  \centering
+  \caption{各ガスの電子増幅率。}
+  \label{tab::multiplying_rate}
+  \begin{tabular}{cc}
+    \toprule
+    gas & 増幅率 (倍) \\
+    \midrule
+    ${\rm CH_{4}}$                          & 700 \\
+    ${\rm CH_{4} (3) + H_{2} (7)}$          & 354 \\
+    ${\rm CH_{4} (4) + He (7)}$             & 322 \\
+    iso-${\rm C_{4}H_{10} (1) + H_{2} (9)}$ & 272 \\
+    iso-${\rm C_{4}H_{10} (1) + He (9)}$    & 392 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 \subsection{幅}
+本実験の目的である3$\alpha$に崩壊するイベントではトラックが太いと複数のトラックを区別できなくなり、
+背景事象と識別できなくなる。
+0${}^{\circ}$の$\alpha$粒子によるトラック幅を測定した。
+図\ref{fig::track_width}に示すようにanode strip 128~chのclock方向の幅を用いる。
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.6\columnwidth]{eps/track_width.eps}
+  \caption{トラックの幅。トラックの幅は有感領域の中央であるanode strip 128~chのclock方向の幅を用いる。}
+  \label{fig::track_width}
+\end{figure}
+このようにして決定したトラックの幅を表\ref{tab::track_width}に示す。
+\begin{table}
+  \centering
+  \caption{各ガスのトラックの幅。}
+  \label{tab::track_width}
+  \begin{tabular}{cc}
+    \toprule
+    gas & トラックの幅 ($\times 10~{\rm ns}$)\\
+    \midrule
+    ${\rm CH_{4}}$                          & \\
+    ${\rm CH_{4} (3) + H_{2} (7)}$          & \\
+    ${\rm CH_{4} (4) + He (7)}$             & \\
+    iso-${\rm C_{4}H_{10} (1) + H_{2} (9)}$ & \\
+    iso-${\rm C_{4}H_{10} (1) + He (9)}$    & \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+トラックの幅とでぃふゅーじょんを比較したいなー
 
 \section{シミュレーションによる線源データの再現}
 %\subsection{CH$_{\text 4}$}
