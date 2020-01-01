@@ -1,6 +1,6 @@
 \documentclass[../master]{subfiles}
 
-\graphicspath{{../eps/}}
+\graphicspath{{../eps/}{../pic/}}
 
 \begin{document}
 
@@ -277,12 +277,12 @@ Ex = 7.65, 9.64, および10.3 MeVへ励起する反応が大部分を占めて�
 \section{大阪大学14 MeV 中性子工学実験装置 (OKTAVIAN)}
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.9\columnwidth]{pic/oktavian-sketch.png}
+  \includegraphics[clip, width=0.9\columnwidth]{oktavian-sketch.png}
   \caption[OKTAVIAN の施設図。]
           {OKTAVIAN の施設図。パルスビームラインとDC ビームラインがそれぞれ大実験室と重照射室に伸びている。}
   \label{pic::oktavian-sketch}
 \end{figure}
-大阪大学工学研究科のOKTAVIAN ではDT 反応により14 MeV の中性子を発生させることができる。
+大阪大学工学研究科のOKTAVIAN~\cite{oktavian} ではDT 反応により14 MeV の中性子を発生させることができる。
 図\ref{pic::oktavian-sketch}にOKTAVIAN の施設図を示す。
 OKTAVIAN は1981年から運転を開始し、核融合中性子工学研究に用いられてきた。
 コッククロフト・ワルトン型加速器を用いて加速したデューテリウムをトリチウムターゲットに照射することで、
@@ -304,15 +304,19 @@ DC 中性子ビームを用いた測定を行うことができる。
 中性子の入射領域をコリメートできることから、DC ビームラインを用いる。
 
 \section{測定に用いる実験装置}
+\label{seq::detector_using_experiment}
 本研究では${}^{12}{\rm C}^{\rm Hoyle}$から崩壊して生成した3つの$\alpha$粒子の直接測定を行う。
 ${}^{12}{\rm C}^{\rm Hoyle}$から放出された$\alpha$粒子は図\ref{fig::alpha_E_dist}のような分布を持つ。
-図\ref{fig::alpha_E_dist}から分かるように、多くの$\alpha$粒子の運動エネルギーは数百${\rm keV}$と小さい。
-このようなエネルギーの$\alpha$粒子を効率よく検出するためには、
+図\ref{fig::alpha_E_dist}の塗りつぶしは全体の8割となる領域を示しており、
+0--0.6 MeV である。
+このような低エネルギーの$\alpha$粒子を効率よく検出するためには、
 標的中で$\alpha$粒子が停止しないようにしなければならない。
 例えば、$500~{\rm keV}$の$\alpha$粒子ではおよそ$350~{\rm \mu g/cm^2}$の炭素箔標的で停止してしまう。
 標的中で止まってしまうような低エネルギー粒子の測定には、検出器が標的となるアクティブ標的が有効である。
 図\ref{fig::alpha_theta_dist}は$\alpha$粒子の角度分布である。
-この図からもわかるように広い角度領域に$\alpha$粒子は崩壊する。
+図\ref{fig::alpha_theta_dist}の塗りつぶしは全体の8割となる領域を示しており、
+0.13--1.31 rad. である。
+%この図からもわかるように広い角度領域に$\alpha$粒子は崩壊する。
 そのため、3つの$\alpha$粒子すべてを効率的に検出するためには大立体角を持つ検出器が必要となる。
 このような要求を満たす検出器としてMAIKo TPC ($\mu$-PIC based active target for inverse kinematics .
 time projection chamber)~\cite{maiko, mupic}がある。
@@ -320,22 +324,21 @@ MAIKo TPC はTPC の検出ガスを散乱標的として用い、
 低エネルギーの荷電粒子を大立体角で検出するために開発された検出器である。
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.7\columnwidth]{alpha_e_dist_sim.eps}
+  \includegraphics[clip, width=0.7\columnwidth]{alpha_e_dist_sim_region.eps}
   \caption[${}^{12}{\rm C}^{\rm Hoyle}$から放出された$\alpha$粒子のエネルギー分布。]
           {${}^{12}{\rm C}^{\rm Hoyle}$から放出された$\alpha$粒子のエネルギー分布。
-          $\alpha$粒子を位相空間で位置分布させた場合に、図のようなエネルギー分布を持って崩壊する。
             図は${}^{12}{\rm C}$から放出される3つの$\alpha$粒子すべての分布を表している。}
   \label{fig::alpha_E_dist}
-  \includegraphics[clip, width=0.7\columnwidth]{alpha_theta_dist.eps}
+  \includegraphics[clip, width=0.7\columnwidth]{alpha_theta_dist_region.eps}
   \caption[${}^{12}{\rm C}^{\rm Hoyle}$から放出された$\alpha$粒子の角度分布。]
           {${}^{12}{\rm C}^{\rm Hoyle}$から放出された$\alpha$粒子の角度分布。
-            $\alpha$粒子を位相空間で位置分布させた場合に、図のような角度分布を持って崩壊する。
             図は${}^{12}{\rm C}$から放出される3つの$\alpha$粒子すべての分布を表している。
           }
   \label{fig::alpha_theta_dist}
 \end{figure}
 MAIKo TPC を用いることで原理的には低エネルギーの$\alpha$粒子をほぼ4$\pi$で検出することができる。
 本研究ではこれらの要求によりMAIKo TPC を用いて${}^{12}{\rm C}({\rm n},{\rm n}')3\alpha$反応を測定する。
+%ピーク周りに8割を取ってくると0.13 rad -- 1.31 rad, 0 -- 0.595 MeV
 
 %また、TPC は荷電粒子のトラックを検出することができる検出器である。
 %荷電粒子を入射粒子として用いる実験では、標的粒子と散乱しなかった入射粒子のトラックも検出する。
@@ -344,10 +347,13 @@ MAIKo TPC を用いることで原理的には低エネルギーの$\alpha$粒�
 %そのため、高強度の中性子ビームを用いた実験が可能であり、
 %散乱事象を効率的に検出することができる。
 
-%\section{本研究の目的}
-%MAIKo TPC を用いた${}^{12}{\rm C}({\rm n},{\rm n}'){}^{12}{\rm C}^{\rm Hoyle}$の断面積測定のためには、
-%低エネルギーの$\alpha$粒子を検出する必要がある。
-%このような$\alpha$粒子を効率よく検出することができる検出ガスの種類、圧力等の条件を検討する。
-%また、安定したMAIKo TPC のオペレートの条件を検討する。
+\section{本研究の目的}
+MAIKo TPC を用いた${}^{12}{\rm C}({\rm n},{\rm n}'){}^{12}{\rm C}^{\rm Hoyle}$の断面積測定のためには、
+低エネルギーの$\alpha$粒子を検出する必要がある。
+\ref{seq::detector_using_experiment}節で述べたように、
+MAIKo TPC を用いることで効率的に3つの低エネルギー$\alpha$粒子を検出することが可能となる。
+MAIKo TPC では使用する検出ガスの種類、圧力、電圧等の多くのパラメータを調整することができる。
+本研究では効率よく$\alpha$粒子を検出することができる検出ガスの種類、圧力を検討した。
+また、安定したにMAIKo TPC をオペレートする条件を検討した。
 
 \end{document}
