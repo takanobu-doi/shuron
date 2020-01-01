@@ -30,7 +30,7 @@
 このコリメータはアクリルで作られており、1つの0${}^{\circ}$、4つの30${}^{\circ}$の穴が開いている。
 \begin{figure}
   \centering
-  \includegraphics[clip, height=0.7\columnwidth, angle=90]{pic/IMG_20191023_145443_trmd.jpg}
+  \includegraphics[clip, height=0.7\columnwidth, angle=90]{IMG_20191023_145443_trmd.jpg}
   \caption[線源コリメータ。]
           {線源コリメータ。中央に0${}^{\circ}$、上下左右に30${}^{\circ}$の穴が開いている。}
   \label{pic::collimator}  
@@ -212,11 +212,12 @@ $e$は電荷素量である。
 \end{figure}
 
 \section{シミュレーションによる線源データの再現}
-MAIKo TPC から得られるトラックをGarfield++~\cite{garfield++}、
+MAIKo TPC から得られるトラックをGarfield++~\cite{garfield++}と
 Magboltz~\cite{magboltz}を用いたシミュレーションにより再現した。
 シミュレーションでは、ドリフト電場、W値、電子増幅率、密度をfixed parameters、
 TOTの閾値をfree parameterとした。
-シミュレーションは以下のような手順 (図\ref{fig::simulation_flow}) で行った。
+シミュレーションは以下のような手順%(図\ref{fig::simulation_flow})
+で行った。
 \begin{enumerate}
 \item\label{sim::particle_generate}
   トラックを生成する荷電粒子のエネルギー、運動量を決定し、
@@ -231,17 +232,138 @@ TOTの閾値をfree parameterとした。
 \item
   設定した閾値により、信号波形をTOTに変換する。
 \end{enumerate}
-%\subsection{CH$_{\text 4}$}
-%\subsection{CH$_{\text 4}$ + He}
-%\subsection{CH$_{\text 4}$ + H$_{\text 2}$}
-%\subsection{iso-C$_{\text 4}$H$_{\text 10}$ + He}
-%\subsection{iso-C$_{\text 4}$H$_{\text 10}$ + H$_{\text 2}$}
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.9\columnwidth]{waveform.eps}
+  \caption{1電子が$\mu$-PICに到達した時に読み出される電気信号。}
+  \label{fig::mu-pic_readout}
+\end{figure}
+TOTの閾値は0.1 mV ととした。
+$\alpha$線源を用いた場合のシミュレーションと測定の比較を図\ref{fig::track_comp_ch4},
+\ref{fig::track_comp_ch4_h2}, \ref{fig::track_comp_ch4_he}, 
+\ref{fig::track_comp_ic4h10_h2}, \ref{fig::track_comp_ic4h10_he}に示す。
+$\alpha$線源によるトラックをシミュレーションで再現できていることが分かる。
+\begin{figure}
+  \centering
+  \begin{subfigure}{0.48\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{CH4_0.eps}
+    \caption{シミュレーションによるトラック。}
+  \end{subfigure}
+  \begin{subfigure}{0.48\columnwidth}
+    \centering
+    \includegraphics[width=\columnwidth, trim=0 0 50 0]{0160_5.eps}
+    \caption{$\alpha$線源によるトラック。}
+  \end{subfigure}
+  \caption{$\rm CH_{4}$の場合。}
+  \label{fig::track_comp_ch4}
+\end{figure}
+\begin{figure}
+  \centering
+  \begin{subfigure}{0.48\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{CH4_3_H2_7_0.eps}
+    \caption{シミュレーションによるトラック。}
+  \end{subfigure}
+  \begin{subfigure}{0.48\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{0207_7.eps}
+    \caption{$\alpha$線源によるトラック。}
+  \end{subfigure}
+  \caption{$\rm CH_{4} (3) + H_{2} (7)$の場合。}
+  \label{fig::track_comp_ch4_h2}
+\end{figure}
+\begin{figure}
+  \centering
+  \begin{subfigure}{0.48\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{CH4_4_He_6_0.eps}
+    \caption{シミュレーションによるトラック。}
+  \end{subfigure}
+  \begin{subfigure}{0.48\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{0163_3.eps}
+    \caption{$\alpha$線源によるトラック。}
+  \end{subfigure}
+  \caption{$\rm CH_{4} (4) + He (6)$の場合。}
+  \label{fig::track_comp_ch4_he}
+\end{figure}
+\begin{figure}
+  \centering
+  \begin{subfigure}{0.48\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{iC4H10_1_H2_9_0.eps}
+    \caption{シミュレーションによるトラック。}
+  \end{subfigure}
+  \begin{subfigure}{0.48\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{0210_14.eps}
+    \caption{$\alpha$線源によるトラック。}
+  \end{subfigure}
+  \caption{iso-$\rm C_{4}H_{10} (1) + H_{2} (9)$の場合。}
+  \label{fig::track_comp_ic4h10_h2}
+\end{figure}
+\begin{figure}
+  \centering
+  \begin{subfigure}{0.48\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{iC4H10_1_He_9_0.eps}
+    \caption{シミュレーションによるトラック。}
+  \end{subfigure}
+  \begin{subfigure}{0.48\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{0176_1.eps}
+    \caption{$\alpha$線源によるトラック。}
+  \end{subfigure}
+  \caption{iso-$\rm C_{4}H_{10} (1) + He (9)$の場合。}
+  \label{fig::track_comp_ic4h10_he}
+\end{figure}
 
 \section{トリプルアルファ反応のシミュレーション}
-%\subsection{CH$_{\text 4}$}
-%\subsection{CH$_{\text 4}$ + He}
-%\subsection{CH$_{\text 4}$ + H$_{\text 2}$}
-%\subsection{iso-C$_{\text 4}$H$_{\text 10}$ + He}
-%\subsection{iso-C$_{\text 4}$H$_{\text 10}$ + H$_{\text 2}$}
+$\alpha$線源のトラックを再現することができたので、
+同じ設定で${}^{12}{\rm C}({\rm n},{\rm n}')3\alpha$のシミュレーションを行う。
+このシミュレーションでは以下のように3つの$\alpha$粒子を生成した。
+\begin{enumerate}
+\item
+  ${}^{12}{\rm C}$が14 MeV の中性子との散乱によりHoyle状態に励起させる。
+  この際、重心系で一様な散乱角で散乱させる。
+\item
+  Hoyle状態の${}^{12}{\rm C}$を$\alpha$粒子と${}^{8}{\rm Be}$に位相空間で一様に崩壊させる。
+\item
+  ${}^{8}{\rm Be}$を2つの$\alpha$粒子に位相空間で一様に崩壊させる。
+\end{enumerate}
+このようにして生成した3つの$\alpha$粒子を元にトラックを生成する。
+生成したトラックを図\ref{fig::three_alpha_ch4}, \ref{fig::three_alpha_ch4_h2}, \ref{fig::three_alpha_ch4_he},
+\ref{fig::three_alpha_ic4h10_h2}, \ref{fig::three_alpha_ic4h10_he}に示す。
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.8\columnwidth]{10020_7.eps}
+  \caption{$\rm CH_{4}$の場合。}
+  \label{fig::three_alpha_ch4}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.8\columnwidth]{10022_15.eps}
+  \caption{$\rm CH_{4} (3) + H_{2} (7)$の場合。}
+  \label{fig::three_alpha_ch4_h2}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.8\columnwidth]{10021_5.eps}
+  \caption{$\rm CH_{4} (4) + He (6)$の場合。}
+  \label{fig::three_alpha_ch4_he}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.8\columnwidth]{10024_9.eps}
+  \caption{iso-$\rm C_{4}H_{10} (1) + H_{2} (9)$の場合。}
+  \label{fig::three_alpha_ic4h10_h2}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.8\columnwidth]{10023_0.eps}
+  \caption{iso-$\rm C_{4}H_{10} (1) + He$の場合。}
+  \label{fig::three_alpha_ic4h10_he}
+\end{figure}
 
 \end{document}
