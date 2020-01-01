@@ -1,3 +1,9 @@
+\documentclass[../master]{subfiles}
+
+\graphicspath{{../eps/}}
+
+\begin{document}
+
 \chapter{MAIKo TPC}
 %\section{MAIKo TPC}
 \section{MAIKo TPC とは}
@@ -12,7 +18,7 @@ Time Projection Chamber (TPC) は荷電粒子のトラックを検出するた�
 MAIKo TPC の写真を図\ref{pic::MAIKo}に示す。
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.7\columnwidth]{eps/MAIKo2.eps}
+  \includegraphics[clip, width=0.7\columnwidth]{MAIKo2.eps}
   \caption[MAIKo TPC の概観図。]{MAIKo TPC の概観図。
     図では紙面手前から入射した中性子 (青) がTPCの中の${}^{12}{\rm C}$と散乱して3つの$\alpha$粒子 (赤) に崩壊した事象を表す。
     anode image ($zy$平面) と cathode image ($zy$平面) の2平面に荷電粒子のトラックが射影される。
@@ -32,7 +38,7 @@ MAIKo TPC の写真を図\ref{pic::MAIKo}に示す。
 図\ref{fig::MAIKo_cage}にMAIKo TPC の構造を示す。
 \begin{figure}
   \centering
-  \includegraphics[clip, width=\columnwidth]{eps/MAIKo_cage.eps}
+  \includegraphics[clip, width=\columnwidth]{MAIKo_cage.eps}
   \caption{MAIKo TPC の構造。}
   \label{fig::MAIKo_cage}
 \end{figure}
@@ -74,7 +80,7 @@ GEM は、図\ref{pic::GEM}のようにポリマーのフィルムの表面を�
 \end{figure}
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.7\columnwidth]{eps/upic_struc_xyz.eps}
+  \includegraphics[clip, width=0.7\columnwidth]{upic_struc_xyz.eps}
   \caption[$\mu$-PICの概観図。]{$\mu$-PICの概観図。
     図中の横方向にanode strip、奥行き方向にcathode strip が配置されている。
   }
@@ -100,7 +106,7 @@ anode strip とcathode strip はそれぞれ256~chで構成され、
 出力される画像の解像度は$256\times1,014$~pixels となる。
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.9\columnwidth]{eps/10024_4.eps}
+  \includegraphics[clip, width=0.9\columnwidth]{10024_4.eps}
   \caption[MAIKo TPC から得られず画像データの一例。]
           {MAIKo TPC から得られず画像データの一例。
           このイベントは\ref{chap::simulation}章で述べるシミュレーションによって生成したデータである。}
@@ -111,7 +117,7 @@ FADC で取得した信号の一例を図\ref{fig::FADC_waveform}に示す。
 FADC では25 MHzで信号波形を取得される。
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.7\columnwidth]{eps/0101_waveform_8.eps}
+  \includegraphics[clip, width=0.7\columnwidth]{0101_waveform_8.eps}
   \caption{FADCで取得された$\mu$-PICの信号波形の一例。}
   \label{fig::FADC_waveform}
 \end{figure}
@@ -157,7 +163,7 @@ ${}^{12}{\rm C}$以外の原子核が含まれるガスを用いると背景事�
 図\ref{fig::efficiency_P_dist}から分かるように、50 hPa で最大となっている。
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.7\columnwidth]{eps/efficiency_P_dist.eps}
+  \includegraphics[clip, width=0.7\columnwidth]{efficiency_P_dist.eps}
   \caption[${\rm CH_{4}}$の圧力による検出効率の分布。]
           {${\rm CH_{4}}$の圧力による検出効率の分布。
             $\alpha$粒子は図\ref{fig::alpha_E_dist}に示したエネルギー分布を仮定した。
@@ -232,7 +238,7 @@ Magboltz~\cite{magboltz} によって計算したドリフト電場とドリフ�
 以降、これらのドリフト電場で評価を行う。
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.9\columnwidth]{eps/drift_v_magboltz.eps}
+  \includegraphics[clip, width=0.9\columnwidth]{drift_v_magboltz.eps}
   \caption[ドリフト電場とドリフトスピードの関係。]
           {ドリフト電場とドリフトスピードの関係。
             ${\rm CH_{4}}$は50 hPa、${\rm C_{4}H_{10}}$は15 hPa、その他は100 hPa である。
@@ -251,7 +257,7 @@ Magboltz によって計算したディフュージョン係数を表\ref{tab::d
 表\ref{tab::diffusion}中の$D_{t}$は電子の運動方向に対して垂直な方向への拡散、$D_{l}$は電子の運動方向への拡散の係数を表す。
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.4\columnwidth]{eps/diffusion_image.eps}
+  \includegraphics[clip, width=0.4\columnwidth]{diffusion_image.eps}
   \caption[ディフュージョンによって電子が拡散するイメージ。]
           {ディフュージョンによって電子が拡散するイメージ。
           同じ位置で生成された電子でもドリフトする間に位置が拡散する。}
@@ -309,3 +315,5 @@ iso-${\rm C_{4}H_{10} (1) + H_{2}} (9)$が最もディフュージョン係数�
 %
 %\section{中性子カウンター (金属箔)}
 %
+
+\end{document}

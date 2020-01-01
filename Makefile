@@ -1,29 +1,103 @@
-TEX=platex
-DVIPDF=dvipdfmx
-MENDEX=mendex
-BIBTEX=pbibtex
-TARGET=master
+TEX = platex
+DVIPDF = dvipdfmx
+MENDEX = mendex
+BIBTEX = pbibtex
+MAIN = master
+#BODY = intro.tex detector.tex simulation.tex analysis.tex iso-butane.tex \
+#       conclusion.tex acknowledge.tex abstract.tex collimator.tex scinti.tex
+BODYDIR = body
 
-all: ${TARGET}.pdf
+all: ${MAIN}.pdf
 
-${TARGET}.pdf: ${TARGET}.dvi
+${MAIN}.pdf: ${MAIN}.dvi
 	$(DVIPDF) $<
 
-${TARGET}.dvi: ${TARGET}.tex eps/*.eps ${TARGET}.bbl
-	$(TEX) ${TARGET}.tex
+${MAIN}.dvi: ${MAIN}.tex eps/*.eps ${MAIN}.bbl
+	$(TEX) ${MAIN}.tex
 #	$(MENDEX) $<
 #	$(TEX) $<
 
-${TARGET}.bbl: ${TARGET}.aux
-	$(BIBTEX) ${TARGET}
-	$(TEX) ${TARGET}.tex
+${MAIN}.bbl: ${MAIN}.aux
+	$(BIBTEX) ${MAIN}
+	$(TEX) ${MAIN}.tex
 
-${TARGET}.aux: ${TARGET}.tex
-	$(TEX) ${TARGET}.tex
+${MAIN}.aux: ${MAIN}.tex
+	$(TEX) ${MAIN}.tex
 
 force:
-	$(TEX) ${TARGET}.tex
-	$(DVIPDF) ${TARGET}.dvi
+	$(TEX) ${MAIN}.tex
+	$(DVIPDF) ${MAIN}.dvi
+
+intro: ${BODYDIR}/intro.pdf
+
+${BODYDIR}/intro.pdf: ${BODYDIR}/intro.tex
+	cd ${BODYDIR}/;\
+	$(TEX) intro.tex;\
+	$(DVIPDF) intro.dvi
+
+detector: ${BODYDIR}/detector.pdf
+
+${BODYDIR}/detector.pdf: ${BODYDIR}/detector.tex
+	cd ${BODYDIR}/;\
+	$(TEX) detector.tex;\
+	$(DVIPDF) detector.dvi
+
+simulation: ${BODYDIR}/simulation.pdf
+
+${BODYDIR}/simulation.pdf: ${BODYDIR}/simulation.tex
+	cd ${BODYDIR}/;\
+	$(TEX) simulation.tex;\
+	$(DVIPDF) simulation.dvi
+
+analysis: ${BODYDIR}/analysis.pdf
+
+${BODYDIR}/analysis.pdf: ${BODYDIR}/analysis.tex
+	cd ${BODYDIR}/;\
+	$(TEX) analysis.tex;\
+	$(DVIPDF) analysis.dvi
+
+iso-butane: ${BODYDIR}/iso-butane.pdf
+
+${BODYDIR}/iso-butane.pdf: ${BODYDIR}/iso-butane.tex
+	cd ${BODYDIR}/;\
+	$(TEX) iso-butane.tex;\
+	$(DVIPDF) iso-butane.dvi
+
+conclusion: ${BODYDIR}/conclusion.pdf
+
+${BODYDIR}/conclusion.pdf: ${BODYDIR}/conclusion.tex
+	cd ${BODYDIR}/;\
+	$(TEX) conclusion.tex;\
+	$(DVIPDF) conclusion.dvi
+
+abstract: ${BODYDIR}/abstract.pdf
+
+${BODYDIR}/abstract.pdf: ${BODYDIR}/abstract.tex
+	cd ${BODYDIR}/;\
+	$(TEX) abstract.tex;\
+	$(DVIPDF) abstract.dvi
+
+acknowledge: ${BODYDIR}/acknowledge.pdf
+
+${BODYDIR}/acknowledge.pdf: ${BODYDIR}/acknowledge.tex
+	cd ${BODYDIR}/;\
+	$(TEX) acknowledge.tex;\
+	$(DVIPDF) acknowledge.dvi
+
+scinti: ${BODYDIR}/scinti.pdf
+
+${BODYDIR}/scinti.pdf: ${BODYDIR}/scinti.tex
+	cd ${BODYDIR}/;\
+	$(TEX) scinti.tex;\
+	$(DVIPDF) scinti.dvi
+
+collimator: ${BODYDIR}/collimator.pdf
+
+${BODYDIR}/collimator.pdf: ${BODYDIR}/collimator.tex
+	cd ${BODYDIR}/;\
+	$(TEX) collimator.tex;\
+	$(DVIPDF) collimator.dvi
 
 clean:
-	rm ${TARGET}.dvi ${TARGET}.log ${TARGET}.pdf ${TARGET}.aux ${TARGET}.bbl
+	rm *.dvi *.log *.pdf *.aux *.bbl \
+        ${BODYDIR}/*.dvi ${BODYDIR}/*.log ${BODYDIR}/*.pdf ${BODYDIR}/*.aux ${BODYDIR}/*.bbl

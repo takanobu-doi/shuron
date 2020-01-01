@@ -13,8 +13,11 @@
 \usepackage{fancyhdr}
 \usepackage{makeidx}
 \usepackage{braket}
+\usepackage{subfiles}
 %\bibliographystyle{jplain} % sorted by abc
 \bibliographystyle{junsrt} % sorted by appearance
+
+\graphicspath{{eps/}}
 
 \makeatletter
 \renewcommand{\chapter}{%
@@ -69,18 +72,18 @@
 \newpage
 %\mainmatter
 \pagenumbering{arabic}
-\input{intro.tex}
-\input{detector.tex}
-%\input{oktavian.tex}
-\input{simulation.tex}
-\input{analysis.tex}
-\input{iso-butane.tex}
-\input{conclusion.tex}
-\input{acknowledge.tex}
+\subfile{body/intro.tex}
+\subfile{body/detector.tex}
+%\subfile{body/oktavian.tex}
+\subfile{body/simulation.tex}
+\subfile{body/analysis.tex}
+\subfile{body/iso-butane.tex}
+\subfile{body/conclusion.tex}
+\subfile{body/acknowledge.tex}
 
 \appendix
-\input{scinti.tex}
-\input{collimator.tex}
+\subfile{body/scinti.tex}
+\subfile{body/collimator.tex}
 
 \bibliography{mybibfile}
 \end{document}

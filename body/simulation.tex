@@ -1,3 +1,9 @@
+\documentclass[../master]{subfiles}
+
+\graphicspath{{../eps/}}
+
+\begin{document}
+
 \chapter{シミュレーション}
 \label{chap::simulation}
 \section{各種パラメータの測定}
@@ -8,7 +14,7 @@
 図\ref{fig::a_source_track}ではiso-$\rm C_{4}H_{10} (1) + H_{2} (9)$を用いた。
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.9\columnwidth]{eps/0210_7.eps}
+  \includegraphics[clip, width=0.9\columnwidth]{0210_7.eps}
   \caption[$\alpha$線源のトラック。]
           {$\alpha$線源のトラック。
           検出ガスはiso-$\rm C_{4}H_{10} (1) + H_{2} (9)$を用いた。}
@@ -34,11 +40,11 @@
   \centering
   \begin{minipage}{0.45\columnwidth}
     \centering
-    \includegraphics[clip, width=0.9\columnwidth]{eps/drift_v_source.eps}
+    \includegraphics[clip, width=0.9\columnwidth]{drift_v_source.eps}
   \end{minipage}
   \begin{minipage}{0.45\columnwidth}
     \centering
-    \includegraphics[clip, width=0.9\columnwidth]{eps/drift_v_image.eps}
+    \includegraphics[clip, width=0.9\columnwidth]{drift_v_image.eps}
   \end{minipage}
   \caption[30${}^{\circ}$に方向を限定した$\alpha$線と取得される画像データのイメージ。]
           {30${}^{\circ}$に方向を限定した$\alpha$線 (左) と取得される画像データ (右) のイメージ。}
@@ -81,23 +87,23 @@ $\alpha$線源を用いて測定したドリフトスピードとMagboltz で求
 \end{table}
 %\begin{figure}
 %  \centering
-%  \includegraphics[clip, width=0.9\columnwidth]{eps/drift_v_CH4.eps}
+%  \includegraphics[clip, width=0.9\columnwidth]{drift_v_CH4.eps}
 %  \caption[検出ガスに${\rm CH_{4}}$を用いたときのドリフトスピードの電場依存性。]
 %          {検出ガスに${\rm CH_{4}}$を用いたときのドリフトスピードの電場依存性。
 %            図中の点線は0.014 mm/ns を示す。}
 %  \label{fig::drift_v_CH4}
-%%  \includegraphics[clip, width=0.7\columnwidth]{eps/drift_v_CH4_H2.eps}
+%%  \includegraphics[clip, width=0.7\columnwidth]{drift_v_CH4_H2.eps}
 %  \caption{}
 %  \label{fig::drift_v_CH4_H2}
-%%  \includegraphics[clip, width=0.7\columnwidth]{eps/drift_v_CH4_He.eps}
+%%  \includegraphics[clip, width=0.7\columnwidth]{drift_v_CH4_He.eps}
 %  \caption{}
 %  \label{fig::drift_v_CH4_He}
-%  \includegraphics[clip, width=0.9\columnwidth]{eps/drift_v_iC4H10_H2.eps}
+%  \includegraphics[clip, width=0.9\columnwidth]{drift_v_iC4H10_H2.eps}
 %  \caption[検出ガスにiso-${\rm C_{4}H_{10}}$を用いたときのドリフトスピードの電場依存性。]
 %          {検出ガスにiso-${\rm C_{4}H_{10}}$を用いたときのドリフトスピードの電場依存性。
 %            図中の点線は0.014 mm/ns を示す。}
 %  \label{fig::drift_v_iC4H10_H2}
-%%  \includegraphics[clip, width=0.7\columnwidth]{eps/drift_v_iC4H10_He.eps}
+%%  \includegraphics[clip, width=0.7\columnwidth]{drift_v_iC4H10_He.eps}
 %  \caption{}
 %  \label{fig::drift_v_iC4H10_He}
 %\end{figure}
@@ -170,15 +176,16 @@ $e$は電荷素量である。
 \subsection{幅}
 本実験の目的である3$\alpha$に崩壊するイベントではトラックが太いと複数のトラックを区別できなくなり、
 背景事象と識別できなくなる。
-0${}^{\circ}$の$\alpha$粒子によるトラック幅を測定した。
-図\ref{fig::track_width}に示すようにanode strip 128~chのclock方向の幅を用いる。
+0${}^{\circ}$の$\alpha$粒子によるトラックで幅を測定した。
+図\ref{fig::track_width}に示すように、
+トラックの幅にはanode strip 128~chのclock方向の幅を用いる。
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.6\columnwidth]{eps/track_width.eps}
+  \includegraphics[clip, width=0.5\columnwidth]{track_width.eps}
   \caption{トラックの幅。トラックの幅は有感領域の中央であるanode strip 128~chのclock方向の幅を用いる。}
   \label{fig::track_width}
 \end{figure}
-このようにして決定したトラックの幅を表\ref{tab::track_width}に示す。
+このようにして決定したトラックの幅を表\ref{tab::track_width}、図\ref{fig::diffusion_compare}に示す。
 \begin{table}
   \centering
   \caption{各ガスのトラックの幅。}
@@ -187,18 +194,43 @@ $e$は電荷素量である。
     \toprule
     gas & トラックの幅 ($\times 10~{\rm ns}$)\\
     \midrule
-    ${\rm CH_{4}}$                          & \\
-    ${\rm CH_{4} (3) + H_{2} (7)}$          & \\
-    ${\rm CH_{4} (4) + He (7)}$             & \\
-    iso-${\rm C_{4}H_{10} (1) + H_{2} (9)}$ & \\
-    iso-${\rm C_{4}H_{10} (1) + He (9)}$    & \\
+    ${\rm CH_{4}}$                          & 91.1 \\
+    ${\rm CH_{4} (3) + H_{2} (7)}$          & 42.3 \\
+    ${\rm CH_{4} (4) + He (7)}$             & 62.5 \\
+    iso-${\rm C_{4}H_{10} (1) + H_{2} (9)}$ & 35.4 \\
+    iso-${\rm C_{4}H_{10} (1) + He (9)}$    & 54.9 \\
     \bottomrule
   \end{tabular}
 \end{table}
-
-トラックの幅とでぃふゅーじょんを比較したいなー
+図\ref{fig::diffusion_compare}から分かるようにトラックの幅とディフュージョンには相関がある。
+ディフュージョン係数、トラックの幅ともにiso-$\rm C_{4}H_{10} (1) + H_{2} (9)$ が最も小さいことが分かる。
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.9\columnwidth]{diffusion_compare.eps}
+  \caption{Magboltz で求めたディフージョン係数とトラックの幅。}
+  \label{fig::diffusion_compare}
+\end{figure}
 
 \section{シミュレーションによる線源データの再現}
+MAIKo TPC から得られるトラックをGarfield++~\cite{garfield++}、
+Magboltz~\cite{magboltz}を用いたシミュレーションにより再現した。
+シミュレーションでは、ドリフト電場、W値、電子増幅率、密度をfixed parameters、
+TOTの閾値をfree parameterとした。
+シミュレーションは以下のような手順 (図\ref{fig::simulation_flow}) で行った。
+\begin{enumerate}
+\item\label{sim::particle_generate}
+  トラックを生成する荷電粒子のエネルギー、運動量を決定し、
+  Garfield++のSrimTrack に登録する。
+\item
+  SrimTrack によりトラックの周囲に電子を生成する。
+\item
+  電子をMagboltz で求めたドリフトスピードで読み出し領域へドリフトさせる。
+\item
+  読み出し領域に到達した電子1つにつき図\ref{fig::mu-pic_readout}にあるような電気信号を
+  各strip の信号波形に追加する。
+\item
+  設定した閾値により、信号波形をTOTに変換する。
+\end{enumerate}
 %\subsection{CH$_{\text 4}$}
 %\subsection{CH$_{\text 4}$ + He}
 %\subsection{CH$_{\text 4}$ + H$_{\text 2}$}
@@ -211,3 +243,5 @@ $e$は電荷素量である。
 %\subsection{CH$_{\text 4}$ + H$_{\text 2}$}
 %\subsection{iso-C$_{\text 4}$H$_{\text 10}$ + He}
 %\subsection{iso-C$_{\text 4}$H$_{\text 10}$ + H$_{\text 2}$}
+
+\end{document}

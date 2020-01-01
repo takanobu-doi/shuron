@@ -1,3 +1,9 @@
+\documentclass[../master]{subfiles}
+
+\graphicspath{{../eps/}}
+
+\begin{document}
+
 \chapter{中性子検出器}
 \section{液体シンチレータ}
 中性子は電荷をもっていないため、中性子と検出器中の粒子とが反応して
@@ -17,7 +23,7 @@ CAEN V1742 は入力信号の波形をそのまま取得することができる
 図\ref{fig::pulse_shape_n_gamma}に中性子と$\gamma$線の波形の違いの模式図を示す。
 \begin{figure}
   \centering
-%  \includegraphics[clip, width=0.8\columnwidth]{eps/}
+%  \includegraphics[clip, width=0.8\columnwidth]{}
   \caption{液体シンチレータから得られる中性子および$\gamma$線の波形。}
   \label{fig::pulse_shape_n_gamma} 
 \end{figure}
@@ -32,3 +38,5 @@ CAEN V1742 は入力信号の波形をそのまま取得することができる
 検出器中に入射した中性子が他の粒子と反応しない場合は検出されない。
 そのため、検出器に入射した中性子の絶対数を求めるためには検出効率を知る必要がある。
 液体シンチレータの検出効率を求める計算コードにSCINFUL-CG~\cite{scinful-cg}がある。
+
+\end{document}

@@ -1,3 +1,9 @@
+\documentclass[../master]{subfiles}
+
+\graphicspath{{../eps/}}
+
+\begin{document}
+
 \chapter{はじめに}
 \section{宇宙での元素合成過程}
 \label{seq::nucleaosynthesis}
@@ -49,7 +55,7 @@ A = 5, 8の壁を超えることはできない。
 %\end{gather}
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.9\columnwidth]{eps/pp_chain.eps}
+  \includegraphics[clip, width=0.9\columnwidth]{pp_chain.eps}
   \caption{代表的なpp チェイン。pp チェインでは4つの陽子から1つの$\alpha$が生成される。}
   \label{fig::pp_chain}
 \end{figure}
@@ -78,7 +84,7 @@ Hoyle状態の${}^{12}{\rm C}$が$\gamma$線を放出し脱励起することで
 
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.7\columnwidth]{eps/triple_alpha.eps}
+  \includegraphics[clip, width=0.7\columnwidth]{triple_alpha.eps}
   %  \caption{トリプルアルファ反応。3つの$\alpha$粒子が反応し1つの${}^{12}{\rm C}$が生成される。}
   \caption[トリプルアルファ反応。]{トリプルアルファ反応。
     左は$\gamma$線を放出して脱励起するルート、右は中性子との散乱により脱励起するルートを表す。}
@@ -106,7 +112,7 @@ $\gamma$線を放出することによって脱励起し、安定な${}^{12}{\rm
 
 %\begin{figure}
 %  \centering
-%  \includegraphics[clip, width=0.5\columnwidth]{eps/triple_alpha_n.eps}
+%  \includegraphics[clip, width=0.5\columnwidth]{triple_alpha_n.eps}
 %  \caption[粒子との散乱により脱励起するトリプルアルファ反応。]{粒子との散乱により脱励起するトリプルアルファ反応。
 %  この図では中性子と散乱する場合を表している。}
 %  \label{fig::triple_alpha_n}
@@ -167,7 +173,7 @@ $2_{1}^{+}$からの場合5となる。
 Beard らによる$R$と温度の依存性の計算結果~\cite{hotdensemedium}を図\ref{fig::R}に示す。
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.6\columnwidth]{eps/R_T.eps}
+  \includegraphics[clip, width=0.6\columnwidth]{R_T.eps}
   \caption[$\gamma$線による脱励起の寿命と粒子散乱による脱励起の寿命の比。]
           {$\gamma$線による脱励起の寿命と粒子散乱による脱励起の寿命の比~\cite{hotdensemedium}。
     Rnn、Rpp、R$\alpha\alpha$はそれぞれ中性子、陽子、$\alpha$粒子と散乱した際の寿命の比を表す。}
@@ -211,7 +217,7 @@ Beardら~\cite{hotdensemedium}が考えているような$T\sim10^{9}~{\rm K}$�
 そのため、このエネルギー領域での ${}^{12}{\rm C}({\rm n,n'}){}^{12}{\rm C}^{{\rm Hoyle}}$ の断面積の測定が必要である。
 \begin{figure}
   \centering
-  \includegraphics[clip,width=0.6\columnwidth]{eps/cross_section_p_and_n.eps}
+  \includegraphics[clip,width=0.6\columnwidth]{cross_section_p_and_n.eps}
   \caption[${}^{12}{\rm C}$と中性子 (上段) および陽子 (下段) との非弾性散乱断面積。]
           {${}^{12}{\rm C}$と中性子 (上段) および陽子 (下段) との非弾性散乱断面積~\cite{hotdensemedium}。
   実線はTALYSを用いた理論計算、点は測定値を表す。}
@@ -262,7 +268,7 @@ Ex = 7.65, 9.64, および10.3 MeVへ励起する反応が大部分を占めて�
 
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.6\columnwidth]{eps/cross_section_12C_n_n_12C_7.65.eps}
+  \includegraphics[clip, width=0.6\columnwidth]{cross_section_12C_n_n_12C_7.65.eps}
   \caption[${}^{12}{\rm C}({\rm n},{\rm n}'){}^{12}{\rm C}^{\rm Hoyle}$の微分断面積の角度分布。]
           {${}^{12}{\rm C}({\rm n},{\rm n}'){}^{12}{\rm C}^{\rm Hoyle}$の微分断面積の角度分布~\cite{kondoetal}。}
   \label{fig::sig_angle_dist}
@@ -314,13 +320,13 @@ MAIKo TPC はTPC の検出ガスを散乱標的として用い、
 低エネルギーの荷電粒子を大立体角で検出するために開発された検出器である。
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.7\columnwidth]{eps/alpha_e_dist_sim.eps}
+  \includegraphics[clip, width=0.7\columnwidth]{alpha_e_dist_sim.eps}
   \caption[${}^{12}{\rm C}^{\rm Hoyle}$から放出された$\alpha$粒子のエネルギー分布。]
           {${}^{12}{\rm C}^{\rm Hoyle}$から放出された$\alpha$粒子のエネルギー分布。
           $\alpha$粒子を位相空間で位置分布させた場合に、図のようなエネルギー分布を持って崩壊する。
             図は${}^{12}{\rm C}$から放出される3つの$\alpha$粒子すべての分布を表している。}
   \label{fig::alpha_E_dist}
-  \includegraphics[clip, width=0.7\columnwidth]{eps/alpha_theta_dist.eps}
+  \includegraphics[clip, width=0.7\columnwidth]{alpha_theta_dist.eps}
   \caption[${}^{12}{\rm C}^{\rm Hoyle}$から放出された$\alpha$粒子の角度分布。]
           {${}^{12}{\rm C}^{\rm Hoyle}$から放出された$\alpha$粒子の角度分布。
             $\alpha$粒子を位相空間で位置分布させた場合に、図のような角度分布を持って崩壊する。
@@ -343,3 +349,5 @@ MAIKo TPC を用いることで原理的には低エネルギーの$\alpha$粒�
 %低エネルギーの$\alpha$粒子を検出する必要がある。
 %このような$\alpha$粒子を効率よく検出することができる検出ガスの種類、圧力等の条件を検討する。
 %また、安定したMAIKo TPC のオペレートの条件を検討する。
+
+\end{document}
