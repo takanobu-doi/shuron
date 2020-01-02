@@ -31,11 +31,13 @@ $y$座標はTPC では荷電粒子が通過した位置から読み出し面に�
 散乱点と停止点の座標から粒子が飛行した方向ベクトルと距離が決定される。
 同じ粒子であれば、飛行距離から運動エネルギーが一意に決まる。
 図\ref{fig::range_to_ene_alpha}に$\rm CH_{4}$ 50 hPa 中での荷電粒子の飛行距離と運動エネルギーの対応を示す。
+飛行距離と運動エネルギーの相関はSRIM~\cite{srim}を用いて求めた。
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{range_to_ene.eps}
   \caption[$\rm CH_{4}$ 50 hPa 中での荷電粒子の飛行距離と運動エネルギー。]
           {$\rm CH_{4}$ 50 hPa 中での荷電粒子の飛行距離と運動エネルギー。
+            この相関はSRIM を用いて求めた。
           }
   \label{fig::range_to_ene_alpha}
 \end{figure}
@@ -76,17 +78,19 @@ ${}^{12}{\rm C}({\rm n},{\rm n}')3\alpha$イベントであっても、
 検出効率を表\ref{tab::detection_efficiency}に示す。
 \begin{table}
   \centering
-  \caption{シミュレーションデータに対する検出効率。}
+  \caption[シミュレーションデータに対する検出効率。]
+          {シミュレーションデータに対する検出効率。
+            検出効率は全イベントに対して3本のトラックをすべて認識できた割合である。}
   \label{tab::detection_efficiency}
   \begin{tabular}{cc}
     \toprule
     gas & 検出効率 (\%)\\
     \midrule
-    $\rm CH_{4}$ & $55 \pm 7.42$ \\
-    $\rm CH_{4} (3) + H_{2} (7)$ & $91 \pm 9.54$ \\
-    $\rm CH_{4} (4) + He (6)$ & $78 \pm 8.83$ \\
-    iso-$\rm C_{4}H_{10} (1) + H_{2} (9)$ & $87 \pm 9.33$ \\
-    iso-$\rm C_{4}H_{10} (1) + He (9)$ & $90 \pm 9.49$ \\
+    $\rm CH_{4}$ & $55$ \\% \pm 7.42$ \\
+    $\rm CH_{4} (3) + H_{2} (7)$ & $91$ \\% \pm 9.54$ \\
+    $\rm CH_{4} (4) + He (6)$ & $78$ \\% \pm 8.83$ \\
+    iso-$\rm C_{4}H_{10} (1) + H_{2} (9)$ & $87$ \\% \pm 9.33$ \\
+    iso-$\rm C_{4}H_{10} (1) + He (9)$ & $90$ \\% \pm 9.49$ \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -101,7 +105,7 @@ $\alpha$粒子の飛行距離の分解能により、エネルギー分解能が
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{dE_10020_fit.eps}
-    \caption{$\rm CH_{4}$}
+    \caption{$\rm CH_{4}$の場合のエネルギー差。}
     \label{fig::dE_ch4}
   \end{minipage}
 \end{figure}
@@ -109,14 +113,14 @@ $\alpha$粒子の飛行距離の分解能により、エネルギー分解能が
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{dE_10022_fit.eps}
-    \caption{$\rm CH_{4} (3) + H_{2} (7)$}
+    \caption{$\rm CH_{4} (3) + H_{2} (7)$の場合のエネルギー差。}
     \label{fig::dE_ch4_h2}
   \end{minipage}
   \centering
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{dE_10021_fit.eps}
-    \caption{$\rm CH_{4} (4) + He(6)$}
+    \caption{$\rm CH_{4} (4) + He(6)$の場合のエネルギー差。}
     \label{fig::dE_ch4_he}
   \end{minipage}
 \end{figure}
@@ -124,14 +128,14 @@ $\alpha$粒子の飛行距離の分解能により、エネルギー分解能が
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{dE_10024_fit.eps}
-    \caption{iso-$\rm C_{4}H_{10} (1) + H_{2} (9)$}
+    \caption{iso-$\rm C_{4}H_{10} (1) + H_{2} (9)$の場合のエネルギー差。}
     \label{fig::dE_ic4h10_h2}
   \end{minipage}
   \centering
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{dE_10023_fit.eps}
-    \caption{iso-$\rm C_{4}H_{10} (1) + He (9)$}
+    \caption{iso-$\rm C_{4}H_{10} (1) + He (9)$の場合のエネルギー差。}
     \label{fig::dE_ic4h10_he}
   \end{minipage}
 \end{figure}
@@ -168,7 +172,7 @@ eye-scanによって決定した$\alpha$粒子のエネルギーの差分を$dE$
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{dtheta_10020_fit.eps}
-    \caption{$\rm CH_{4}$}
+    \caption{$\rm CH_{4}$の場合の角度差。}
     \label{fig::dtheta_ch4}
   \end{minipage}  
 \end{figure}
@@ -177,13 +181,13 @@ eye-scanによって決定した$\alpha$粒子のエネルギーの差分を$dE$
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{dtheta_10022_fit.eps}
-    \caption{$\rm CH_{4} (3) + H_{2} (7)$}
+    \caption{$\rm CH_{4} (3) + H_{2} (7)$の場合の角度差。}
     \label{fig::dtheta_ch4_h2}
   \end{minipage}
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{dtheta_10021_fit.eps}
-    \caption{$\rm CH_{4} (4) + He (6)$}
+    \caption{$\rm CH_{4} (4) + He (6)$の場合の角度差。}
     \label{fig::dtheta_ch4_he}
   \end{minipage}
 \end{figure}
@@ -192,13 +196,13 @@ eye-scanによって決定した$\alpha$粒子のエネルギーの差分を$dE$
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{dtheta_10024_fit.eps}
-    \caption{iso-$\rm C_{4}H_{10} (1) + H_{2} (9)$}
+    \caption{iso-$\rm C_{4}H_{10} (1) + H_{2} (9)$の場合の角度差。}
     \label{fig::dtheta_ic4h10_h2}
   \end{minipage}
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{dtheta_10023_fit.eps}
-    \caption{iso-$\rm C_{4}H_{10} (1) + He (9)$}
+    \caption{iso-$\rm C_{4}H_{10} (1) + He (9)$の場合の角度差。}
     \label{fig::dtheta_ic4h10_he}
   \end{minipage}
 \end{figure}
@@ -234,7 +238,7 @@ eye-scanで決定した不変質量から基底状態の${}^{12}{\rm C}$の質�
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{Ex_10020_fit.eps}
-    \caption{}
+    \caption{$\rm CH_{4}$の場合の${}^{12}{\rm C}$の励起エネルギー。}
     \label{fig::Ex_ch4}
   \end{minipage}
 \end{figure}
@@ -243,13 +247,13 @@ eye-scanで決定した不変質量から基底状態の${}^{12}{\rm C}$の質�
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{Ex_10022_fit.eps}
-    \caption{}
+    \caption{$\rm CH_{4} (3) + H_{2} (7)$の場合の${}^{12}{\rm C}$の励起エネルギー。}
     \label{fig::Ex_ch4_h2}
   \end{minipage}
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{Ex_10021_fit.eps}
-    \caption{}
+    \caption{$\rm CH_{4} (4) + He (6)$の場合の${}^{12}{\rm C}$の励起エネルギー。}
     \label{fig::Ex_ch4_he}
   \end{minipage}
 \end{figure}
@@ -258,29 +262,29 @@ eye-scanで決定した不変質量から基底状態の${}^{12}{\rm C}$の質�
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{Ex_10024_fit.eps}
-    \caption{}
+    \caption{iso-$\rm C_{4}H_{10} (1) + H_{2} (9)$の場合の${}^{12}{\rm C}$の励起エネルギー。}
     \label{fig::Ex_ic4h10_h2}
   \end{minipage}
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{Ex_10023_fit.eps}
-    \caption{}
+    \caption{iso-$\rm C_{4}H_{10} (1) + He (9)$の場合の${}^{12}{\rm C}$の励起エネルギー。}
     \label{fig::Ex_ic4h10_he}
   \end{minipage}
 \end{figure}
 \begin{table}
   \centering
-  \caption{}
+  \caption{各ガスで求めた励起エネルギー。}
   \label{tab::Ex_resolution}
   \begin{tabular}{ccc}
     \toprule
     gas & Ex (MeV) & $\sigma$ (MeV) \\
     \midrule
     $\rm CH_{4}$ & 7.63 & $4.91\times 10^{-2}$ \\
-    $\rm CH_{4} (3) + H_{2} (7)$ & 7.67 & $2.05\times 10^{-2}$ \\
-    $\rm CH_{4} (4) + He (6)$ & 7.67 & $1.66\times 10^{-2}$ \\
-    iso-$\rm C_{4}H_{10} (1) + H_{2} (9)$ & 7.67 & $1.90\times 10^{-2}$ \\
-    iso-$\rm C_{4}H_{10} (1) + He (9)$ & 7.67 & $1.75\times 10^{-2}$ \\
+    $\rm CH_{4} (3) + H_{2} (7)$ & 7.67 & $1.66\times 10^{-2}$ \\
+    $\rm CH_{4} (4) + He (6)$ & 7.67 & $2.05\times 10^{-2}$ \\
+    iso-$\rm C_{4}H_{10} (1) + H_{2} (9)$ & 7.67 & $1.75\times 10^{-2}$ \\
+    iso-$\rm C_{4}H_{10} (1) + He (9)$ & 7.67 & $1.90\times 10^{-2}$ \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -288,5 +292,14 @@ Hoyle状態の7.65 MeV を再構成できていることが分かる。
 また、分解能も他の状態と分けるのに十分良いことも分かる。
 
 \section{検出ガスの決定}
+ディフュージョンとトラックの幅の観点では$\rm CH_{4} (3) + H_{2} (7)$, iso-$\rm C_{4}H_{10} (1) + H_{2} (9)$ が良い。
+検出効率は$\rm CH_{4} (3) + H_{2} (7)$, iso-$\rm C_{4}H_{10} (1) + H_{2} (9)$, iso-$\rm C_{4}H_{10} (1) + He (9)$が良い。
+$\alpha$粒子のエネルギー分解能の観点では$\rm CH_{4} (3) + H_{2} (7)$が良い。
+角度分解能の観点では$\rm CH_{4} (3) + H_{2} (7)$, iso-$\rm C_{4}H_{10} (1) + H_{2} (9)$が良い。
+これらから考えると、$\rm CH_{4} (3) + H_{2} (7)$またはiso-$\rm C_{4}H_{10} (1) + H_{2} (9)$が適すると判断できる。
+$\rm CH_{4} (3) + H_{2} (7)$と iso-$\rm C_{4}H_{10} (1) + H_{2} (9)$とで
+含まれる${}^{12}{\rm C}$の量を比較すると、
+iso-$\rm C_{4}H_{10} (1) + H_{2} (9)$の方が4/3倍多い。
+よって、検出ガスにはiso-$\rm C_{4}H_{10} (1) + H_{2} (9)$を用いる。
 
 \end{document}
