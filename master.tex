@@ -2,6 +2,7 @@
 \documentclass[titlepage,twoside,openright]{jsreport}
 %\usepackage{thesisj}
 \usepackage[dvipdfmx]{graphicx,xcolor}
+\graphicspath{{./eps/}{../eps/}{./pic/}{../pic/}}
 \usepackage{subcaption}
 \usepackage{amsmath,amssymb}
 \usepackage{booktabs}
@@ -16,8 +17,6 @@
 \usepackage{subfiles}
 %\bibliographystyle{jplain} % sorted by abc
 \bibliographystyle{junsrt} % sorted by appearance
-
-\graphicspath{{eps/}}
 
 \makeatletter
 \renewcommand{\chapter}{%
@@ -63,7 +62,7 @@
 \begin{document}
 \maketitle
 %\frontmatter
-\input{abstract.tex}
+\input{abstract}
 \pagenumbering{Roman}
 \tableofcontents
 %\pagenumbering{roman}
@@ -72,18 +71,18 @@
 \newpage
 %\mainmatter
 \pagenumbering{arabic}
-\subfile{body/intro.tex}
-\subfile{body/detector.tex}
-%\subfile{body/oktavian.tex}
-\subfile{body/simulation.tex}
-\subfile{body/analysis.tex}
-\subfile{body/iso-butane.tex}
-\subfile{body/conclusion.tex}
-\subfile{body/acknowledge.tex}
+\subfile{body/intro}
+\subfile{body/detector}
+%\subfile{body/oktavian}
+\subfile{body/simulation}
+\subfile{body/analysis}
+\subfile{body/iso-butane}
+\subfile{body/conclusion}
+\subfile{body/acknowledge}
 
 \appendix
-\subfile{body/scinti.tex}
-\subfile{body/collimator.tex}
+\subfile{body/scinti}
+\subfile{body/collimator}
 
 \bibliography{mybibfile}
 \end{document}
