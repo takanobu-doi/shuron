@@ -1,15 +1,14 @@
 \documentclass[../master]{subfiles}
 
-\graphicspath{{../eps/}}
+%\graphicspath{{../eps/}}
 
 \begin{document}
 
 \chapter{MAIKo TPC}
-%\section{MAIKo TPC}
 \section{MAIKo TPC とは}
 Time Projection Chamber (TPC) は荷電粒子のトラックを検出するために広く用いられている検出器である。
 荷電粒子がTPC の検出ガス中を通過するとき、飛跡の周囲の粒子をイオン化させる。
-イオン化で発生した電子をドリフト電場 (図\ref{fig::MAIKo_view}$y$軸方向) により
+イオン化で発生した電子をドリフト電場 (図\ref{fig::MAIKo_view}中$y$軸方向) により
 読み出し面にドリフトさせることでトラックを検出する。
 図\ref{fig::MAIKo_view}のようにTPC の有感領域中で入射粒子と標的粒子を反応させることで、
 散乱点の周りを有感領域で覆うことができる。
@@ -247,14 +246,8 @@ Magboltz~\cite{magboltz} によって計算したドリフト電場とドリフ�
 \end{figure}
 
 \subsection{ディフュージョン}
-ドリフト電場によって電子が移動する間にガスとの相互作用によりディフュージョンが起きる。
-ディフュージョンの効果が大きくなると、図\ref{fig::diffusion-image}のように荷電粒子によって同じ場所に生成された電子が
-$\mu$-PICに到達するまでに広がるため、トラックが太く検出される。
-トラックが太くなると、複数のトラックを分離するのが難しくなる。
-そのため、ディフュージョンの効果が小さいことが望まれる。
-Magboltz によって計算したディフュージョン係数を表\ref{tab::diffusion}に示す。
-電子が生成した点から$L$離れた位置では、電子が$\sigma = D\times\sqrt{L}$のガウス分布で広がる。
-表\ref{tab::diffusion}中の$D_{t}$は電子の運動方向に対して垂直な方向への拡散、$D_{l}$は電子の運動方向への拡散の係数を表す。
+ドリフト電場によって電子が移動する間に検出ガスとの散乱と電子の熱運動により、
+図\ref{fig::diffusion-image}のように広がりながらドリフトする。
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.4\columnwidth]{diffusion_image.eps}
@@ -263,6 +256,66 @@ Magboltz によって計算したディフュージョン係数を表\ref{tab::d
           同じ位置で生成された電子でもドリフトする間に位置が拡散する。}
   \label{fig::diffusion-image}
 \end{figure}
+電子が広がることをディフュージョンと呼ぶ。
+この効果が大きくなると、
+荷電粒子によって同じ場所に生成された電子が$\mu$-PICに到達するまでに広がるため、
+トラックが太く検出される。
+トラックが太くなると、複数のトラックを分離することが難しくなる。
+そのため、ディフュージョンの効果が小さいことが望まれる。
+
+ドリフト電場がない場合のディフュージョンは以下のように理解できる。
+電子は熱運動により発生点から拡散する。
+熱運動の平均速度$v$はMaxwell 分布により
+\begin{equation}
+  v = \sqrt{\frac{8k_{B}T}{\pi m}}
+  \label{eq::maxwell_velocity}
+\end{equation}
+と表せる。
+ここで$k_{B}$はボルツマン定数、$T$は温度、$m$は粒子の質量である。
+電子が発生した時刻から$\Delta t$後では、
+\begin{equation}
+  \frac{N_0}{\sqrt{4\pi D t}}\exp\left(-\frac{x^{2}}{4 D t}\right)
+  \label{eq::gaus_dist}
+\end{equation}
+のガウス分布で電子が広がる。
+ここで$N_{0}$は全粒子数、$x$は発生した点からの距離、$D$はディフュージョン係数を表す。
+ディフュージョン係数$D$は電子の平均自由工程$\lambda$を用いて
+\begin{equation}
+  D = \frac{1}{3}v\lambda
+  \label{eq::diffusion_coef}
+\end{equation}
+と表せる。
+理想気体において平均自由工程$\lambda$は、ガスとの散乱の全断面積$\sigma_{0}$、圧力$p$のもとで
+\begin{equation}
+  \lambda = \frac{1}{\sqrt{2}}\frac{k_{B}T}{\sigma_{0}p}
+  \label{eq::lambda}
+\end{equation}
+と表される。
+式\ref{eq::maxwell_velocity}, \ref{eq::diffusion_coef}, \ref{eq::lambda}により、
+\begin{equation}
+  D = \frac{2}{3\sqrt{\pi}}\frac{1}{p\sigma_{0}}\sqrt{\frac{\left(k_{B}T\right)^{3}}{m}}
+  \label{eq::diffusion_coef_2}
+\end{equation}
+となる。
+式\ref{eq::diffusion_coef_2}より、
+同じガスでは圧力が高いほど、温度が低いほどディフュージョン係数が小さいことが分かる。
+
+ドリフト電場がある場合、発生点からの距離を$L$、ドリフトスピードを$drift\_v$とすると、
+\begin{equation}
+  \Delta t = \frac{L}{drift\_v}
+  \label{eq::delta_t}
+\end{equation}
+となる。
+直感的には、式\ref{eq::gaus_dist}の分散$\sigma(L)$は
+\begin{align}
+  \sigma(L) & = \sqrt{2 D \Delta t}\\
+  & = \sqrt{\frac{2 D}{drift\_v}}\times\sqrt{L}\\
+  & = D_{\rm Magboltz}\times\sqrt{L}
+\end{align}
+となる。
+Magboltz によってディフュージョン係数$D_{\rm Magboltz}$が得られる。
+Magboltz によって計算したディフュージョン係数を表\ref{tab::diffusion}に示す。
+表\ref{tab::diffusion}中の$D_{t}$はドリフト方向に対して垂直な方向への拡散、$D_{l}$は電子の運動方向への拡散の係数を表す。
 \begin{table}
   \centering
   \caption[Magboltz で計算したディフュージョンの係数。]
