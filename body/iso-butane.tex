@@ -1,14 +1,12 @@
 \documentclass[../master]{subfiles}
 
-%\graphicspath{{../eps/}}
-
 \begin{document}
 
 \chapter{iso-C$_{\text 4}$H$_{\text{10}}$(10) + H$_{\text 2}$(9)のガス特性}
 本章では検出ガスとして用いるiso-$\rm C_{4}H_{10} (1) + H_{2} (9)$の特性について述べる．
 \section{ドリフトスピード}
 ドリフトスピードのドリフト電場依存性を調べた．
-plate, grid間の電場を3.25 V/mm -- 10.4 V/mm の間で変化させた．
+plate, grid間の電場を\SI{3.25}{\volt/\milli\metre} -- \SI{10.4}{\volt/\milli\metre} の間で変化させた．
 線源を用いて測定したドリフトスピードとMagboltz により求めたドリフトスピードを図\ref{fig::drift_speed_E_dep}に示す．
 \begin{figure}
   \centering
@@ -30,7 +28,7 @@ plate, grid間の電場を3.25 V/mm -- 10.4 V/mm の間で変化させた．
   \label{tab::voltage_configuration}
   \begin{tabular}{cc}
     \toprule
-    & 電圧 (V)\\
+    & 電圧 (\si{\volt})\\
     \midrule
     plate & -2255 \\
     grid & -1300 \\
@@ -46,23 +44,25 @@ plate, grid間の電場を3.25 V/mm -- 10.4 V/mm の間で変化させた．
 GEM は絶縁体のフィルムの両面を銅で被覆し，微細な穴を開けたものである．
 GEMの各面に電圧をかけることで高電場を形成し，電子のアバランシェ増幅を起こす．
 両面にかける電圧を変化させることで電子の増幅率が変化する．
-GEMの両面の電位差を$\Delta V_{\rm GEM}$とすると，増幅率の電位差依存性は図\ref{fig::gain_GEM_V_dep}に示す．
+GEMの両面の電位差を$\Delta V_{\text{GEM}}$とすると，増幅率の電位差依存性は図\ref{fig::gain_GEM_V_dep}に示す．
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.8\columnwidth]{gain_GEM_V_dep.eps}
-  \caption{電子増幅率の$\Delta V_{\rm GEM}$依存性．}
+% \includegraphics[clip, width=0.8\columnwidth]{gain_GEM_V_dep.eps}
+  \scalebox{0.7}{\input{gain_GEM_V_dep.tex}}
+  \caption{電子増幅率の$\Delta V_{\text{GEM}}$依存性．}
   \label{fig::gain_GEM_V_dep}
 \end{figure}
 $\Delta V_{\rm GEM}$に対して増幅率が単調に増加していることが分かる．
 $\Delta V_{\rm GEM} = 350 {\rm V}$とそれ以外では測定するタイミングが2時間ほどずれている．
-そのため，図\ref{fig::gain_GEM_V_dep}で$V_{\rm GEM} = 350 {\rm V}$のみ不連続に変化している．
+そのため，図\ref{fig::gain_GEM_V_dep}で$V_{\text{GEM}} = 350 {\text{V}}$のみ不連続に変化している．
 
 \subsection{$\mu$-PICによる電子増幅率}
 電子は$\mu$-PICで読み出される直前に，$\mu$-PICによって作られた高電場によって増幅される．
-$\mu$-PICのanode電極にかける電圧 ($V_{\rm\mu-PIC}$) に対する依存性を図\ref{fig::gain_uPIC_V_dep}に示す．
+$\mu$-PICのanode電極にかける電圧 ($V_{\mu\text{-PIC}}$) に対する依存性を図\ref{fig::gain_uPIC_V_dep}に示す．
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.8\columnwidth]{gain_uPIC_V_dep.eps}
+%  \includegraphics[clip, width=0.8\columnwidth]{gain_uPIC_V_dep.eps}
+  \scalebox{0.7}{\input{gain_uPIC_V_dep.tex}}
   \caption{電子増幅率の$V_{\rm\mu-PIC}$依存性．}
   \label{fig::gain_uPIC_V_dep}
 \end{figure}
@@ -72,17 +72,18 @@ GEMによる増幅率と異なり，$\mu$-PICの電圧依存性はほぼ同時�
 
 \subsection{gridとGEM間の電位差による電子の増幅率}
 gridとGEMの間の電位差によって電子がドリフト領域から増幅領域へ移動する効率が変化することがわかっている~\cite{furuno}．
-最終的に得られる電子の増幅率のgridとGEMの間の電位差 ($\Delta V_{\rm grid-GEM}$) 依存性を
+最終的に得られる電子の増幅率のgridとGEMの間の電位差 ($\Delta V_{\text{grid-GEM}}$) 依存性を
 図\ref{fig::gain_grid_GEM_V_dep}に示す．
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.8\columnwidth]{gain_grid_V_dep_fit.eps}
-  \caption{電子増幅率の$\Delta V_{\rm grid-GEM}$依存性．}
+%  \includegraphics[clip, width=0.8\columnwidth]{gain_grid_V_dep_fit.eps}
+  \scalebox{0.7}{\input{../texfig/gain_grid_V_dep.tex}}
+  \caption{電子増幅率の$\Delta V_{\text{grid-GEM}}$依存性．}
   \label{fig::gain_grid_GEM_V_dep}
 \end{figure}
 $\Delta V_{\rm grid-GEM}$にたいして増幅率が単調に増幅していることが分かる．
-依存性は$4.27\times 10^{-2}\times \exp(7.75\times 10^{-3}\times \Delta V_{\rm grid-GEM})$でフィットできる．
-図\ref{fig::gain_GEM_V_dep}と同様に$\Delta V_{\rm grid-GEM} = 720 {\rm V}$で不連続性が見られる．
+依存性は$4.27\times 10^{-2}\times \exp(7.75\times 10^{-3}\times \Delta V_{\text{grid-GEM}})$でフィットできる．
+図\ref{fig::gain_GEM_V_dep}と同様に$\Delta V_{\rm grid-GEM} = $\SI{720}{\volt}で不連続性が見られる．
 これは，1時間ほどの時間のズレがあるためである．
 
 \section{ディフュージョン}
