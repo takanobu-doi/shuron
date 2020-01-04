@@ -1,7 +1,8 @@
 %\documentclass[titlepage,twoside,openright,report]{jsbook}
 \documentclass[titlepage,twoside,openright]{jsreport}
 %\usepackage{thesisj}
-\usepackage[dvipdfmx]{graphicx,xcolor}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[dvipdfmx, svgnames]{xcolor}
 \graphicspath{{./eps/}{../eps/}{./pic/}{../pic/}}
 \usepackage{subcaption}
 \usepackage{amsmath,amssymb}
@@ -9,14 +10,26 @@
 \usepackage{tabularx}
 \usepackage{url}
 \usepackage[dvipdfmx]{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=MidnightBlue,
+  citecolor=red,
+%  linkbordercolor={1 1 1},
+}
 \usepackage{multirow}
 \usepackage[cc]{titlepic}
 \usepackage{fancyhdr}
 \usepackage{makeidx}
 \usepackage{braket}
 \usepackage{subfiles}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary{plotmarks}
+\usepackage{siunitx}
 %\bibliographystyle{jplain} % sorted by abc
-\bibliographystyle{junsrt} % sorted by appearance
+%\bibliographystyle{junsrt} % sorted by appearance
+%\bibliographystyle{unsrt} % sorted by appearance
+\bibliographystyle{report} 
 
 \makeatletter
 \renewcommand{\chapter}{%
@@ -57,7 +70,6 @@
   \LARGE{土井 隆暢}}
 \date{}
 \titlepic{\includegraphics[width=0.5\columnwidth]{eps/E-C.eps}}
-
 
 \begin{document}
 \maketitle
