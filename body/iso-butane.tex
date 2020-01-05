@@ -1,21 +1,174 @@
-\documentclass[../master]{document}
-
-\graphicspath{{../eps/}}
-
+\documentclass[../master]{subfiles}
 \begin{document}
 
-\chapter{iso-C$_{\text 4}$H$_{\text{10}}$(10) + H$_{\text 2}$(9)のガス特性}
-
+\chapter{iso-C$_{\text 4}$H$_{\text{10}}$ (10) + H$_{\text 2}$ (9)のガス特性}
+本章では検出ガスとして用いる\isoButaneHydro の特性について述べる．
 \section{ドリフトスピード}
+ドリフトスピードのドリフト電場依存性を調べた．
+Magboltz でドリフトスピードが\SI{0.014}{\milli\metre/\nano\second}となるドリフト電場は\SI{6.80}{\volt/\milli\metre}である．
+ドリフト領域の長さは\SI{140}{\milli\metre}であるので，plateとgridの電位差は\SI{952}{\volt}となる．
+調整の行いやすさを考え\SI{955}{\volt}を中心に\SI{100}{\volt}間隔で
+\SI{455}{}--\SI{1455}{\volt}の範囲で変化させて計10点測定した．
+線源を用いて測定したドリフトスピードとMagboltz により求めたドリフトスピードを図\ref{fig::drift_speed_E_dep}に示す．
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.8\columnwidth]{drift_E_dep.eps}
+  \caption{ドリフトスピードの電場依存性．点は測定したドリフトスピード，実線はMagboltz で求めたドリフトスピードを示す．}
+  \label{fig::drift_speed_E_dep}
+\end{figure}
+線源を用いて測定したドリフトスピードと Magboltz で求めたドリフトスピードがおよそ一致していることが分かる．
+ただ，全体的に測定値のドリフトスピードの方が小さくなている．
+これは測定で用いた検出ガスに水分などの不純物が含まれていることが原因と考えられる．
+水分によるドリフトスピードの変化は付録\ref{app::drift_speed_humid_dep}で述べる．
+
 \section{電子増幅率}
-\subsection{GEMによる電子増幅}
-電子の増幅率のGEM の両面に印加する電圧依存性を調べた。
+電子の増幅率はGEM，$\mu$-PICの電圧によって変化する．
+また，gridやGEMを通過する際に電子の一部が増幅されずに吸収されてしまう．
+そこで，電子増幅率の電位差依存性を調べる．
+grid とGEM との電位差を$\Delta V_{\text{grid-GEM}}$, GEMの両面間の電位差を$\Delta V_{\text{GEM}}$,
+GEM の$\mu$-PIC側と$\mu$-PICとの電位差を$\Delta V_{\text{GEM-}\mu\text{-PIC}}$,
+$\mu$-PICのanode 電極の電圧を$V_{\mu\text{-PIC}}$とする．
+$\mu$-PICのcathode 電極は接地されている．
+\begin{table}
+  \centering
+  \caption{基準となる電圧構成．}
+  \label{tab::voltage_configuration}
+%  \begin{tabular}{cc}
+%    \toprule
+%    & 電圧 (\si{\volt})\\
+%    \midrule
+%    plate & -2255 \\
+%    grid & -1300 \\
+%    GEM (top) & -600 \\
+%    GEM (bottom) & -250 \\
+%    $\mu$-PIC & 400\\
+%    \bottomrule 
+%  \end{tabular}
+%\end{table}
+%\begin{table}
+%  \centering
+%  \caption{}
+%  
+  \begin{tabular}{cc}
+    \toprule
+    項目 & 電位差 (\si{\volt}) \\
+    \midrule
+    $\Delta V_{\text{grid-GEM}}$ & 700 \\
+    $\Delta V_{\text{GEM}}$ & 350 \\
+    $\Delta V_{\text{GEM-}\mu\text{-PIC}}$ & 650 \\
+    $V_{\mu\text{-PIC}}$ & 400 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+表\ref{tab::voltage_configuration}にあるような電位差を基準として，
+各項目の電位差依存性を調べた．
+表\ref{tab::voltage_configuration}は\ref{chap::simulation}章でドリフトスピードを測定したときの構成である．
+増幅率の測定方法は\ref{chap::simulation}章で述べた通りである．
+本測定ではGEM，$\mu$-PICの増幅率や電子の収集効率をそれぞれで求めることができないので，
+それらを畳み込んだ増幅率として求める．
 
-\subsection{$\mu$-PICによる電子増幅}
+%ここで，GEMのうちgrid側をtop, $\mu$-PIC側をbottomと呼ぶ．
 
-\subsection{GEMとgrid間の電位差による電子の収集効率}
+\subsection{gridとGEMとの電位差による電子の増幅率}
+gridとGEMの間の電位差によって電子がドリフト領域から増幅領域へ移動する効率が変化することがわかっている~\cite{furuno}．
+$\Delta V_{\text{grid-GEM}}$を\SI{20}{\volt}間隔で\SI{600}{}--\SI{780}{\volt}の範囲で変化させて計10点測定した．
+電子の増幅率の$\Delta V_{\text{grid-GEM}}$による変化を図\ref{fig::gain_grid_GEM_V_dep}に示す．
+\begin{figure}
+  \centering
+%  \includegraphics[clip, width=0.8\columnwidth]{gain_grid_V_dep_fit.eps}
+  \scalebox{0.7}{\input{gain_grid_V_dep.tex}}
+  \caption{電子増幅率の$\Delta V_{\text{grid-GEM}}$依存性．}
+  \label{fig::gain_grid_GEM_V_dep}
+\end{figure}
+%$\Delta V_{\text{grid-GEM}}$にたいして増幅率が単調に増加していることが分かる．
+増幅率の変化は$\mathit{gain} = 0.00704\times{\Delta V_{\text{grid-GEM}}}^2-7.92\times{\Delta V_{\text{grid-GEM}}}+2330$と
+表すことができる．
+ドリフト電場に対して増幅領域の電場を強くすることで，電子をより強く増幅領域へ吸い出すことができるため，
+増幅率が増加したと考えられる．
+%gridとGEMの距離は\SI{5}{\milli\metre}である．
+$\Delta V_{\text{grid-GEM}} = $\SI{700}{\volt}のとき，\SI{140}{\volt/\milli\metre}であり，
+ドリフト電場の約20倍となっている．
+%図\ref{fig::gain_GEM_V_dep}と同様に$\Delta V_{\rm grid-GEM} = $\SI{720}{\volt}で不連続性が見られる．
+%これは，1時間ほどの時間のズレがあるためである．
 
-\section{ディフュージョン}
+\subsection{GEMによる電子増幅率}
+GEM は絶縁体のフィルムの両面を銅で被覆し，微細な穴を開けたものである．
+GEM の各面に電圧をかけることで高電場を形成し，電子のアバランシェ増幅を起こす．
+%$\Delta V_{\text{GEM}}$を変化させることで電子の増幅率が変化する．
+$\Delta V_{\text{GEM}}$を\SI{10}{\volt}間隔で\SI{300}{}--\SI{390}{\volt}の範囲で変化させて計10点測定した．
+電子の増幅率の$\Delta V_{\text{GEM}}$による変化を図\ref{fig::gain_GEM_V_dep}に示す．
+\begin{figure}
+  \centering
+% \includegraphics[clip, width=0.8\columnwidth]{gain_GEM_V_dep.eps}
+  \scalebox{0.7}{\input{gain_GEM_V_dep.tex}}
+  \caption{電子増幅率の$\Delta V_{\text{GEM}}$依存性．}
+  \label{fig::gain_GEM_V_dep}
+\end{figure}
+%$\Delta V_{\rm GEM}$に対して増幅率が単調に増加していることが分かる．
+増幅率の変化は$\mathit{gain} = 0.0188\times{\Delta V_{\text{GEM}}}^2-0.67\times{\Delta V_{\text{GEM}}}+1340$と
+表すことができる．
+$\Delta V_{\text{GEM}}$を大きくして，GEMの穴の中に生成される電場を強くすることでより強く増幅されることが確認された．
+
+%$\Delta V_{\rm GEM} = 350 {\rm V}$とそれ以外では測定するタイミングが2時間ほどずれている．
+%そのため，図\ref{fig::gain_GEM_V_dep}で$V_{\text{GEM}} = 350 {\text{V}}$のみ不連続に変化している．
+
+\subsection{GEMと$\mu$-PICとの電位差による電子の増幅率}
+$\Delta V_{\text{GEM-}\mu\text{-PIC}}$によってGEM で増幅された電子の$\mu$-PICによる収集率が変化する．
+$\Delta V_{\text{GEM-}\mu\text{-PIC}}$を\SI{50}{\volt}間隔で\SI{550}{}--\SI{750}{\volt}の範囲で変化させて計10点測定した．
+電子の増幅率の$\Delta V_{\text{GEM-}\mu\text{-PIC}}$による変化を図\ref{fig::gain_GEM_uPIC_V_dep}に示す．
+\begin{figure}
+  \centering
+  \scalebox{0.7}{\input{gain_GEM_uPIC_V_dep.tex}}
+  \caption{電子増幅率の$\Delta V_{\text{GEM-}\mu\text{-PIC}}$依存性．}
+  \label{fig::gain_GEM_uPIC_V_dep}
+\end{figure}
+増幅率の変化は$\mathit{gain} = 0.767\times{\Delta V_{\text{GEM-}\mu\text{-PIC}}}$と
+表すことができる．
+GEMで増幅された電子をより強い電場で移動させることで，効率よく$\mu$-PICに電子が輸送されたと考えられる．
+
+\subsection{$\mu$-PICによる電子増幅率}
+電子は$\mu$-PICで読み出される直前に，$\mu$-PICによって作られた高電場によって増幅される．
+$V_{\mu\text{-PIC}}$を\SI{10}{\volt}間隔で\SI{350}{}--\SI{440}{\volt}の範囲で変化させて計10点測定した．
+電子の増幅率の$V_{\mu\text{-PIC}}$ による変化を図\ref{fig::gain_uPIC_V_dep}に示す．
+\begin{figure}
+  \centering
+%  \includegraphics[clip, width=0.8\columnwidth]{gain_uPIC_V_dep.eps}
+  \scalebox{0.7}{\input{gain_uPIC_V_dep.tex}}
+  \caption{電子増幅率の$V_{\mu\text{-PIC}}$依存性．}
+  \label{fig::gain_uPIC_V_dep}
+\end{figure}
+%$V_{\rm\mu-PIC}$に対して増幅率が単調に増加していることが分かる．
+増幅率の変化は$\mathit{gain} = 2.06\times{V_{\mu\text{-PIC}}}-253$と表すことができる．
+$\mu$-PICのanode 電極の周りにより強い電場が形成されることで，より強く電子が増幅されることが確認された．
+%GEMによる増幅率と異なり，$\mu$-PICの電圧依存性はほぼ同時に測定したため，
+%図\ref{fig::gain_GEM_V_dep}に見られたような不連続性は見られない．
+
+\section{拡散効果}
+ドリフトスピードが一定である場合は，電子の拡散は$\sqrt{L}$に比例する．
+線源は線源導入機によって，チェンバーの気密性を保持したまま電子のドリフト方向に移動可能である．
+線源導入機は2016年度の森本修論~\cite{morimoto_thesis}で開発された．
+図\ref{pic::source_insirtion}に線源導入機の先に線源を取り付けた様子を示す．
+図\ref{pic::source_insirtion}中の矢印の方向に線源を移動させることができる．
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.8\columnwidth]{IMG_2923_drawed.jpg}
+  \caption[線源導入機に取り付けたれた線源．]
+          {線源導入機に取り付けたれた線源．
+          矢印の方向に移動させることができる．}
+  \label{pic::source_insirtion}
+\end{figure}
+線源導入機によって線源の位置を変化させることで，拡散効果の$L$依存性を調べることができる．
+拡散効果とトラックの太さが比例していると仮定すると，track width $\sim\sqrt{L}$にとなる．
+トラックの太さと線源の位置との依存性を図\ref{fig::diff_x}に示す．
+図\ref{fig::diff_x}の$L$は線源コリメータの$0^{\circ}$穴とgridとのドリフト方向の距離である．
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.8\columnwidth]{diff_x.eps}
+  \caption{トラックの太さの位置依存性．}
+  \label{fig::diff_x}
+\end{figure}
+$\text{track width} = 1.27\times\sqrt{L-19.2}+23.1$となり，
+$\sqrt{L}$に比例していることが確認された．
 
 %\subsection{ドリフトスピードの時間安定性}
 %低圧では露点などの不純物が混ざることによって、ドリフトスピードが変化することが懸念される。

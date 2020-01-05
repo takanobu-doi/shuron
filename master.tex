@@ -1,23 +1,35 @@
 %\documentclass[titlepage,twoside,openright,report]{jsbook}
 \documentclass[titlepage,twoside,openright]{jsreport}
 %\usepackage{thesisj}
-\usepackage[dvipdfmx]{graphicx,xcolor}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[dvipdfmx, svgnames]{xcolor}
+\graphicspath{{./eps/}{../eps/}{./pic/}{../pic/}}
 \usepackage{subcaption}
 \usepackage{amsmath,amssymb}
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{url}
 \usepackage[dvipdfmx]{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=MediumBlue,
+  citecolor=ForestGreen,
+%  linkbordercolor={1 1 1},
+}
 \usepackage{multirow}
 \usepackage[cc]{titlepic}
 \usepackage{fancyhdr}
 \usepackage{makeidx}
 \usepackage{braket}
 \usepackage{subfiles}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary{plotmarks}
+\usepackage{siunitx}
 %\bibliographystyle{jplain} % sorted by abc
-\bibliographystyle{junsrt} % sorted by appearance
-
-\graphicspath{{eps/}}
+%\bibliographystyle{junsrt} % sorted by appearance
+%\bibliographystyle{unsrt} % sorted by appearance
+\bibliographystyle{report} 
 
 \makeatletter
 \renewcommand{\chapter}{%
@@ -49,21 +61,27 @@
 % modify the width of caption
 \setlength{\captionmargin}{50pt}
 
-\makeindex
-\title {\Huge{MAIKo TPC を用いた${}^{12}\rm{C}(n,n'){}^{12}\rm{C}(0_{2}^{+})$の}\\\Huge{散乱断面積の測定}}
-\author{\Large{京都大学大学院 理学研究科}\\
-  \Large{物理学・宇宙物理学専攻}\\
-  \Large{物理学第二教室}\\
-  \Large{原子核・ハドロン物理学研究室}\\
-  \LARGE{土井 隆暢}}
-\date{}
-\titlepic{\includegraphics[width=0.5\columnwidth]{eps/E-C.eps}}
+\newcommand{\Methane}{$\mathrm{CH}_{4}$}
+\newcommand{\MethaneHydro}{$\mathrm{CH}_{4}\ (3) + \mathrm{H}_{2}\ (7)$}
+\newcommand{\MethaneHerium}{$\mathrm{CH}_{4}\ (4) + \mathrm{He}\ (6)$}
+\newcommand{\isoButaneHydro}{iso-$\mathrm{C}_{4}\mathrm{H}_{10}\ (1) + \mathrm{H}_{2}\ (9)$}
+\newcommand{\isoButaneHerium}{iso-$\mathrm{C}_{4}\mathrm{H}_{10}\ (1) + \mathrm{He}\ (9)$}
 
+\makeindex
+\title {{2019年度 修士論文}\\%
+  \Huge{MAIKo TPC を用いた${}^{12}\rm{C}(n,n'){}^{12}\rm{C}(0_{2}^{+})$の}\\\Huge{散乱断面積の測定}}
+\author{\includegraphics[width=0.5\columnwidth]{eps/E-C.eps}\\\\\\
+  \Large{京都大学大学院 理学研究科}\\
+  \Large{物理学・宇宙物理学専攻 物理学第二教室}\\
+  \Large{原子核・ハドロン物理学研究室}\\
+  \huge{土井 隆暢}}
+\date{}
+\titlepic{}
 
 \begin{document}
 \maketitle
 %\frontmatter
-\input{abstract.tex}
+\input{abstract}
 \pagenumbering{Roman}
 \tableofcontents
 %\pagenumbering{roman}
@@ -72,18 +90,18 @@
 \newpage
 %\mainmatter
 \pagenumbering{arabic}
-\subfile{body/intro.tex}
-\subfile{body/detector.tex}
-%\subfile{body/oktavian.tex}
-\subfile{body/simulation.tex}
-\subfile{body/analysis.tex}
-\subfile{body/iso-butane.tex}
-\subfile{body/conclusion.tex}
-\subfile{body/acknowledge.tex}
+\subfile{body/intro}
+\subfile{body/detector}
+%\subfile{body/oktavian}
+\subfile{body/simulation}
+\subfile{body/analysis}
+\subfile{body/iso-butane}
+\subfile{body/conclusion}
+\subfile{body/acknowledge}
 
 \appendix
-\subfile{body/scinti.tex}
-\subfile{body/collimator.tex}
+\subfile{body/scinti}
+\subfile{body/collimator}
 
 \bibliography{mybibfile}
 \end{document}
