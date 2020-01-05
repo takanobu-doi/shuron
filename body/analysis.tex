@@ -30,13 +30,13 @@ $y$座標はTPC では荷電粒子が通過した位置から読み出し面に�
 
 散乱点と停止点の座標から粒子が飛行した方向ベクトルと距離が決定される．
 同じ粒子であれば，飛行距離から運動エネルギーが一意に決まる．
-図\ref{fig::range_to_ene_alpha}に$\mathrm{CH}_{4}$ 50 hPa 中での荷電粒子の飛行距離と運動エネルギーの対応を示す．
+図\ref{fig::range_to_ene_alpha}に\Methane 50 hPa 中での荷電粒子の飛行距離と運動エネルギーの対応を示す．
 飛行距離と運動エネルギーの相関はSRIM~\cite{srim}を用いて求めた．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{range_to_ene.eps}
-  \caption[$\mathrm{CH}_{4}$ 50 hPa 中での荷電粒子の飛行距離と運動エネルギー．]
-          {$\mathrm{CH}_{4}$ 50 hPa 中での荷電粒子の飛行距離と運動エネルギー．
+  \caption[\Methane 50 hPa 中での荷電粒子の飛行距離と運動エネルギー．]
+          {\Methane 50 hPa 中での荷電粒子の飛行距離と運動エネルギー．
             この相関はSRIM を用いて求めた．
           }
   \label{fig::range_to_ene_alpha}
@@ -86,15 +86,15 @@ ${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}')3\alpha$イベントであっても，
 %    \toprule
 %    gas & 検出効率 (\%)\\
 %    \midrule
-%    $\mathrm{CH}_{4}$ & $55$ \\% \pm 7.42$ \\
-%    $\mathrm{CH}_{4}\ (3) + \mathrm{H}_{2}\ (7)$ & $91$ \\% \pm 9.54$ \\
-%    $\mathrm{CH}_{4}\ (4) + \mathrm{He}\ (6)$ & $78$ \\% \pm 8.83$ \\
-%    iso-$\mathrm{C}_{4}\mathrm{H}_{10}\ (1) + \mathrm{H}_{2}\ (9)$ & $87$ \\% \pm 9.33$ \\
-%    iso-$\mathrm{C}_{4}\mathrm{H}_{10}\ (1) + \mathrm{He}\ (9)$ & $90$ \\% \pm 9.49$ \\
+%    \Methane & $55$ \\% \pm 7.42$ \\
+%    \MethaneHydro & $91$ \\% \pm 9.54$ \\
+%    \MethaneHerium & $78$ \\% \pm 8.83$ \\
+%    \isoButaneHydro & $87$ \\% \pm 9.33$ \\
+%    \isoButaneHerium & $90$ \\% \pm 9.49$ \\
 %    \bottomrule
 %  \end{tabular}
 %\end{table}
-$\mathrm{CH}_{4}$単体と$\mathrm{CH}_{4}\ (4) + \mathrm{He}\ (6)$以外は約90\%の検出効率となっている．
+\Methane 単体と\MethaneHerium 以外は約90\%の検出効率となっている．
 
 %\subsection{検出効率の角度依存性}
 \subsection{エネルギー分解能}
@@ -110,7 +110,7 @@ eye-scanによって決定した$\alpha$粒子のエネルギー ($E_{\text{eye-
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{E_corr_10020.eps}
-    \caption{$\mathrm{CH}_{4}$の場合の$E_{\text{eye-scan}}$と$E_{\text{ideal}}$の相関．}
+    \caption{\Methane の場合の$E_{\text{eye-scan}}$と$E_{\text{ideal}}$の相関．}
     \label{fig::E_corr_ch4}
   \end{minipage}  
 \end{figure}
@@ -119,13 +119,13 @@ eye-scanによって決定した$\alpha$粒子のエネルギー ($E_{\text{eye-
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{E_corr_10022.eps}
-    \caption{$\mathrm{CH}_{4}\ (3) + \mathrm{H}_{2}\ (7)$の場合の$E_{\text{eye-scan}}$と$E_{\text{ideal}}$の相関．}
+    \caption{\MethaneHydro の場合の$E_{\text{eye-scan}}$と$E_{\text{ideal}}$の相関．}
     \label{fig::E_corr_ch4_h2}
   \end{minipage}
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{E_corr_10021.eps}
-    \caption{$\mathrm{CH}_{4}\ (4) + \mathrm{He}\ (6)$の場合の$E_{\text{eye-scan}}$と$E_{\text{ideal}}$の相関．}
+    \caption{\MethaneHerium の場合の$E_{\text{eye-scan}}$と$E_{\text{ideal}}$の相関．}
     \label{fig::E_corr_ch4_he}
   \end{minipage}
 \end{figure}
@@ -154,11 +154,11 @@ eye-scanによって決定した$\alpha$粒子のエネルギー ($E_{\text{eye-
     \toprule
     gas & $p_0$ & $p_1$ \\
     \midrule
-    $\mathrm{CH}_{4}$ & 0.985 & 0.0179 \\
-    $\mathrm{CH}_{4}\ (3) + \mathrm{H}_{2}\ (7)$ & 0.991 & 0.00260 \\
-    $\mathrm{CH}_{4}\ (4) + \mathrm{He}\ (6)$ & 0.972 & 0.0157 \\
-    iso-$\mathrm{C}_{4}\mathrm{H}_{10}\ (1) + \mathrm{H}_{2}\ (9)$ & 0.929 & 0.0309 \\
-    iso-$\mathrm{C}_{4}\mathrm{H}_{10}\ (1) + \mathrm{He}\ (9)$ & 0.962 & 0.0166 \\
+    \Methane  & 0.985 & 0.0179 \\
+    \MethaneHydro & 0.991 & 0.00260 \\
+    \MethaneHerium  & 0.972 & 0.0157 \\
+    \isoButaneHydro & 0.929 & 0.0309 \\
+    \isoButaneHerium  & 0.962 & 0.0166 \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -170,7 +170,7 @@ $E_{\text{eye-scan}}$をフィットした1次関数で補正したエネルギ�
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{dE_10020_mod.eps}
-    \caption{$\mathrm{CH}_{4}$の場合の$dE$．}
+    \caption{\Methane の場合の$dE$．}
     \label{fig::dE_ch4}
   \end{minipage}
 \end{figure}
@@ -178,14 +178,14 @@ $E_{\text{eye-scan}}$をフィットした1次関数で補正したエネルギ�
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{dE_10022_mod.eps}
-    \caption{$\mathrm{CH}_{4}\ (3) + \mathrm{H}_{2}\ (7)$の場合の$dE$．}
+    \caption{\MethaneHydro の場合の$dE$．}
     \label{fig::dE_ch4_h2}
   \end{minipage}
   \centering
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{dE_10021_mod.eps}
-    \caption{$\mathrm{CH}_{4}\ (4) + \mathrm{He}\ (6)$の場合の$dE$．}
+    \caption{\MethaneHerium の場合の$dE$．}
     \label{fig::dE_ch4_he}
   \end{minipage}
 \end{figure}
@@ -193,14 +193,14 @@ $E_{\text{eye-scan}}$をフィットした1次関数で補正したエネルギ�
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{dE_10024_mod.eps}
-    \caption{iso-$\mathrm{C}_{4}\mathrm{H}_{10}\ (1) + \mathrm{H}_{2}\ (9)$の場合の$dE$．}
+    \caption{\isoButaneHydro の場合の$dE$．}
     \label{fig::dE_ic4h10_h2}
   \end{minipage}
   \centering
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{dE_10023_mod.eps}
-    \caption{iso-$\mathrm{C}_{4}\mathrm{H}_{10}\ (1) + \mathrm{He}\ (9)$の場合の$dE$．}
+    \caption{\isoButaneHerium の場合の$dE$．}
     \label{fig::dE_ic4h10_he}
   \end{minipage}
 \end{figure}
@@ -212,15 +212,15 @@ $E_{\text{eye-scan}}$をフィットした1次関数で補正したエネルギ�
 %    \toprule
 %    gas & $dE$ (keV) & $\sigma$ (keV) \\
 %    \midrule
-%    $\mathrm{CH}_{4}$ & 11.0 & 33.0  \\
-%    $\mathrm{CH}_{4}\ (3) + \mathrm{H}_{2}\ (7)$ & 1.25 & 20.0 \\
-%    $\mathrm{CH}_{4}\ (4) + \mathrm{He}\ (6)$ & 9.30 & 23.7 \\
-%    iso-$\mathrm{C}_{4}\mathrm{H}_{10}\ (1) + \mathrm{H}_{2}\ (9)$ & 4.56 & 23.6 \\
-%    iso-$\mathrm{C}_{4}\mathrm{H}_{10}\ (1) + \mathrm{He}\ (9)$ & 5.00 & 22.3 \\
+%    \Methane  & 11.0 & 33.0  \\
+%    \MethaneHydro & 1.25 & 20.0 \\
+%    \MethaneHerium  & 9.30 & 23.7 \\
+%    \isoButaneHydro  & 4.56 & 23.6 \\
+%    \isoButaneHerium  & 5.00 & 22.3 \\
 %    \bottomrule
 %  \end{tabular}
 %\end{table}
-エネルギー分解能は，他と比較して$\mathrm{CH}_{4}\ (3) + \mathrm{H}_{2}\ (7)$の場合に最も小さいことが分かる．
+エネルギー分解能は，他と比較して\MethaneHydro の場合に最も小さいことが分かる．
 %混合ガスの場合，分散は約20 keV となっている．
 
 \subsection{角度分解能}
@@ -233,7 +233,7 @@ $E_{\text{eye-scan}}$をフィットした1次関数で補正したエネルギ�
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{dtheta_10020_fit.eps}
-    \caption{$\mathrm{CH}_{4}$の場合の角度差．}
+    \caption{\Methane の場合の角度差．}
     \label{fig::dtheta_ch4}
   \end{minipage}  
 \end{figure}
@@ -242,13 +242,13 @@ $E_{\text{eye-scan}}$をフィットした1次関数で補正したエネルギ�
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{dtheta_10022_fit.eps}
-    \caption{$\mathrm{CH}_{4}\ (3) + \mathrm{H}_{2}\ (7)$の場合の角度差．}
+    \caption{\MethaneHydro の場合の角度差．}
     \label{fig::dtheta_ch4_h2}
   \end{minipage}
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{dtheta_10021_fit.eps}
-    \caption{$\mathrm{CH}_{4}\ (4) + \mathrm{He}\ (6)$の場合の角度差．}
+    \caption{\MethaneHerium の場合の角度差．}
     \label{fig::dtheta_ch4_he}
   \end{minipage}
 \end{figure}
@@ -257,13 +257,13 @@ $E_{\text{eye-scan}}$をフィットした1次関数で補正したエネルギ�
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{dtheta_10024_fit.eps}
-    \caption{iso-$\mathrm{C}_{4}\mathrm{H}_{10}\ (1) + \mathrm{H}_{2}\ (9)$の場合の角度差．}
+    \caption{\isoButaneHydro の場合の角度差．}
     \label{fig::dtheta_ic4h10_h2}
   \end{minipage}
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{dtheta_10023_fit.eps}
-    \caption{iso-$\mathrm{C}_{4}\mathrm{H}_{10}\ (1) + \mathrm{He}\ (9)$の場合の角度差．}
+    \caption{\isoButaneHerium の場合の角度差．}
     \label{fig::dtheta_ic4h10_he}
   \end{minipage}
 \end{figure}
@@ -275,15 +275,15 @@ $E_{\text{eye-scan}}$をフィットした1次関数で補正したエネルギ�
 %    \toprule
 %    gas & $d\theta$ (mrad.) & $\sigma$ (mrad.) \\
 %    \midrule
-%    $\mathrm{CH}_{4}$ & 46.4 & 77.9 \\
-%    $\mathrm{CH}_{4}\ (3) + \mathrm{H}_{2}\ (7)$ & 2.10 & 24.6 \\
-%    $\mathrm{CH}_{4}\ (4) + \mathrm{He}\ (6)$ & 3.34 & 28.2 \\
-%    iso-$\mathrm{C}_{4}\mathrm{H}_{10}\ (1) + \mathrm{H}_{2}\ (9)$ & -1.27 & 29.8 \\
+%    \Methane  & 46.4 & 77.9 \\
+%    \MethaneHydro & 2.10 & 24.6 \\
+%    \MethaneHerium  & 3.34 & 28.2 \\
+%    \isoButaneHydro  & -1.27 & 29.8 \\
 %    iso-$\mathrm{C}_{4}\mathrm{H}_{10}\ (1) + \mathrm{He}\ (9) $ & 3.05 & 31.4 \\
 %    \midrule
 %  \end{tabular}
 %\end{table}
-角度分解能は，他と比較して$\mathrm{CH}_{4}$単体の場合に大きいことが分かる．
+角度分解能は，他と比較して\Methane 単体の場合に大きいことが分かる．
 
 \subsection{励起エネルギー分解能}
 測定で${}^{12}\mathrm{C}$の励起状態を特定する際に，
@@ -299,7 +299,7 @@ eye-scanで決定した不変質量から基底状態の${}^{12}\mathrm{C}$の�
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{Ex_10020_fit.eps}
-    \caption{$\mathrm{CH}_{4}$の場合の${}^{12}\mathrm{C}$の励起エネルギー．}
+    \caption{\Methane の場合の${}^{12}\mathrm{C}$の励起エネルギー．}
     \label{fig::Ex_ch4}
   \end{minipage}
 \end{figure}
@@ -308,13 +308,13 @@ eye-scanで決定した不変質量から基底状態の${}^{12}\mathrm{C}$の�
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{Ex_10022_fit.eps}
-    \caption{$\mathrm{CH}_{4}\ (3) + \mathrm{H}_{2}\ (7)$の場合の${}^{12}\mathrm{C}$の励起エネルギー．}
+    \caption{\MethaneHydro の場合の${}^{12}\mathrm{C}$の励起エネルギー．}
     \label{fig::Ex_ch4_h2}
   \end{minipage}
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{Ex_10021_fit.eps}
-    \caption{$\mathrm{CH}_{4}\ (4) + \mathrm{He}\ (6)$の場合の${}^{12}\mathrm{C}$の励起エネルギー．}
+    \caption{\MethaneHerium の場合の${}^{12}\mathrm{C}$の励起エネルギー．}
     \label{fig::Ex_ch4_he}
   \end{minipage}
 \end{figure}
@@ -323,13 +323,13 @@ eye-scanで決定した不変質量から基底状態の${}^{12}\mathrm{C}$の�
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{Ex_10024_fit.eps}
-    \caption{iso-$\mathrm{C}_{4}\mathrm{H}_{10}\ (1) + \mathrm{H}_{2}\ (9)$の場合の${}^{12}\mathrm{C}$の励起エネルギー．}
+    \caption{\isoButaneHydro の場合の${}^{12}\mathrm{C}$の励起エネルギー．}
     \label{fig::Ex_ic4h10_h2}
   \end{minipage}
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{Ex_10023_fit.eps}
-    \caption{iso-$\mathrm{C}_{4}\mathrm{H}_{10}\ (1) + \mathrm{He}\ (9)$の場合の${}^{12}\mathrm{C}$の励起エネルギー．}
+    \caption{\isoButaneHerium の場合の${}^{12}\mathrm{C}$の励起エネルギー．}
     \label{fig::Ex_ic4h10_he}
   \end{minipage}
 \end{figure}
@@ -341,11 +341,11 @@ eye-scanで決定した不変質量から基底状態の${}^{12}\mathrm{C}$の�
 %    \toprule
 %    gas & Ex (MeV) & $\sigma$ (MeV) \\
 %    \midrule
-%    $\mathrm{CH}_{4}$ & 7.63 & $4.91\times 10^{-2}$ \\
-%    $\mathrm{CH}_{4}\ (3) + \mathrm{H}_{2}\ (7)$ & 7.67 & $1.66\times 10^{-2}$ \\
-%    $\mathrm{CH}_{4}\ (4) + \mathrm{He}\ (6)$ & 7.67 & $2.05\times 10^{-2}$ \\
-%    iso-$\mathrm{C}_{4}\mathrm{H}_{10}\ (1) + \mathrm{H}_{2}\ (9)$ & 7.67 & $1.75\times 10^{-2}$ \\
-%    iso-$\mathrm{C}_{4}\mathrm{H}_{10}\ (1) + \mathrm{He}\ (9)$ & 7.67 & $1.90\times 10^{-2}$ \\
+%    \Methane  & 7.63 & $4.91\times 10^{-2}$ \\
+%    \MethaneHydro & 7.67 & $1.66\times 10^{-2}$ \\
+%    \MethaneHerium  & 7.67 & $2.05\times 10^{-2}$ \\
+%    \isoButaneHydro  & 7.67 & $1.75\times 10^{-2}$ \\
+%    \isoButaneHerium  & 7.67 & $1.90\times 10^{-2}$ \\
 %    \bottomrule
 %  \end{tabular}
 %\end{table}
@@ -362,28 +362,28 @@ Hoyle状態を再構成できていることが分かる．
     $d\theta\pm\sigma$ (\si{\milli\radian}) &
     Ex$\pm\sigma$ (\si{\mega\electronvolt})\\
     \midrule
-    $\mathrm{CH}_{4}$ & 55 & $-4.21\times10^{-3}\pm3.13\times10^{-2}$ & $46.4\pm77.9$ & $7.63\pm4.91\times10^{-2}$ \\
-    $\mathrm{CH}_{4}\ (3) + \mathrm{H}_{2}\ (7)$ & 91 & $1.36\times10^{-3}\pm1.97\times10^{-2}$ & $2.10\pm24.6$ & $7.67\pm1.66\times10^{-2}$ \\
-    $\mathrm{CH}_{4}\ (4) + \mathrm{He}\ (6)$ & 78 & $3.75\times10^{-3}\pm2.34\times10^{-2}$ & $3.34\pm28.2$ & $7.67\pm2.05\times10^{-2}$ \\
-    iso-$\mathrm{C}_{4}\mathrm{H}_{10}\ (1) + \mathrm{H}_{2}\ (9)$ & 87 & $3.75\times10^{-4}\pm2.80\times10^{-2}$ & $-1.27\pm29.8$ & $7.67\pm1.75\times10^{-2}$ \\
-    iso-$\mathrm{C}_{4}\mathrm{H}_{10}\ (1) + \mathrm{He}\ (9)$ & 90 & $2.14\times10^{-3}\pm2.20\times10^{-2}$ & $3.05\pm31.4$ & $7.67\pm1.90\times10^{-2}$ \\
+    \Methane  & 55 & $-4.21\times10^{-3}\pm3.13\times10^{-2}$ & $46.4\pm77.9$ & $7.63\pm4.91\times10^{-2}$ \\
+    \MethaneHydro & 91 & $1.36\times10^{-3}\pm1.97\times10^{-2}$ & $2.10\pm24.6$ & $7.67\pm1.66\times10^{-2}$ \\
+    \MethaneHerium & 78 & $3.75\times10^{-3}\pm2.34\times10^{-2}$ & $3.34\pm28.2$ & $7.67\pm2.05\times10^{-2}$ \\
+    \isoButaneHydro  & 87 & $3.75\times10^{-4}\pm2.80\times10^{-2}$ & $-1.27\pm29.8$ & $7.67\pm1.75\times10^{-2}$ \\
+    \isoButaneHerium  & 90 & $2.14\times10^{-3}\pm2.20\times10^{-2}$ & $3.05\pm31.4$ & $7.67\pm1.90\times10^{-2}$ \\
     \bottomrule
   \end{tabular}
 \end{table}
 
 \section{検出ガスの決定}
-ディフュージョンとトラックの幅の観点では$\mathrm{CH}_{4}\ (3) + \mathrm{H}_{2}\ (7)$,
-iso-$\mathrm{C}_{4}\mathrm{H}_{10}\ (1) + \mathrm{H}_{2}\ (9)$ が良い．
-検出効率は$\mathrm{CH}_{4}\ (3) + \mathrm{H}_{2}\ (7)$, iso-$\mathrm{C}_{4}\mathrm{H}_{10}\ (1) + \mathrm{H}_{2}\ (9)$,
-iso-$\mathrm{C}_{4}\mathrm{H}_{10}\ (1) + \mathrm{He}\ (9)$が良い．
-$\alpha$粒子のエネルギー分解能の観点では$\mathrm{CH}_{4}\ (3) + \mathrm{H}_{2}\ (7)$が良い．
-角度分解能の観点では$\mathrm{CH}_{4}\ (3) + \mathrm{H}_{2}\ (7)$,
-iso-$\mathrm{C}_{4}\mathrm{H}_{10}\ (1) + \mathrm{H}_{2}\ (9)$が良い．
-これらから考えると，$\mathrm{CH}_{4}\ (3) + \mathrm{H}_{2}\ (7)$または
-iso-$\mathrm{C}_{4}\mathrm{H}_{10}\ (1) + \mathrm{H}_{2}\ (9)$が適すると判断できる．
-$\mathrm{CH}_{4}\ (3) + \mathrm{H}_{2}\ (7)$と iso-$\mathrm{C}_{4}\mathrm{H}_{10}\ (1) + \mathrm{H}_{2}\ (9)$とで
+ディフュージョンとトラックの幅の観点では\MethaneHydro ,
+\isoButaneHydro  が良い．
+検出効率は\MethaneHydro , \isoButaneHydro ,
+\isoButaneHerium が良い．
+$\alpha$粒子のエネルギー分解能の観点では\MethaneHydro が良い．
+角度分解能の観点では\MethaneHydro ,
+\isoButaneHydro が良い．
+これらから考えると，\MethaneHydro または
+\isoButaneHydro が適すると判断できる．
+\MethaneHydro と \isoButaneHydro とで
 含まれる${}^{12}\mathrm{C}$の量を比較すると，
-iso-$\mathrm{C}_{4}\mathrm{H}_{10}\ (1) + \mathrm{H}_{2}\ (9)$の方が4/3倍多い．
-よって，検出ガスにはiso-$\mathrm{C}_{4}\mathrm{H}_{10}\ (1) + \mathrm{H}_{2}\ (9)$を用いる．
+\isoButaneHydro の方が4/3倍多い．
+よって，検出ガスには\isoButaneHydro を用いる．
 
 \end{document}
