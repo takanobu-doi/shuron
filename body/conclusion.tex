@@ -3,9 +3,35 @@
 \begin{document}
 
 \chapter{まとめと今後の展望}
-\section{まとめ}
+%\section{まとめ}
+本研究では${}^{12}\mathrm{C}(\mathrm{n}, \mathrm{n}'){}^{12}\mathrm{C}^{\text{Hoyle}}$反応の断面積測定のための
+MAIKo TPC の検出ガスの選定を行った．
+測定では${}^{12}\mathrm{C}^{\text{Hoyle}}$から放出される3つの$\alpha$粒子を検出しなければならない．
+$\alpha$粒子のエネルギーの決定はMAIKo TPC で取得されたトラックの長さから行うため，
+$\alpha$粒子がMAIKo TPC の有感領域で停止するとが必要となる．
+また，トラックが短くなるとトラックを識別できなくなるため，
+物質厚が大きすぎないことが必要となる．
+トラックが太いと複数のトラックを識別できなくなるため，
+電子の拡散効果が小さいガスが必要となる．
+このような要求を満たす検出ガスを決定した．
 
-\section{本測定に向けて}
-OKTAVIAN での測定を2/25--2/28の4日間で行う．
+$\alpha$粒子が適当な飛距離で効率的に停止する観点から，
+\Methane~(\SI{50}{\hecto\pascal})，\MethaneHydro~(\SI{100}{\hecto\pascal})，\MethaneHerium~(\SI{100}{\hecto\pascal})，
+\isoButaneHydro~(\SI{100}{\hecto\pascal})，\isoButaneHerium~(\SI{100}{\hecto\pascal}) の
+5種類が検出ガスの候補として選出された．
+MAIKo TPC がタイムウィンドウは\SI{10}{\micro\second}，ドリフト方向の長さが\SI{140}{\milli\metre}であるため，
+ドリフトスピードが\SI{0.014}{\milli\metre/\nano\second}となる必要がある．
+このドリフトスピードを実現するドリフト電場で測定を行う．
+
+$\alpha$線源を用いてトラックを測定し，そのトラックを再現するようなシミュレーションを作成した．
+シミュレーションで${}^{12}\mathrm{C}(\mathrm{n}, \mathrm{n}'){}^{12}\mathrm{C}^{\text{Hoyle}}$反応のトラックを生成し，
+eye-scan による解析を行った．
+解析の結果より，検出効率，エネルギー分解能などの観点で\MethaneHydro と\isoButaneHydro が適していることが分かった．
+\MethaneHydro と\isoButaneHydro を比較すると${}^{12}\mathrm{C}$の含まれる量が\isoButaneHydro の方が$4/3$多い．
+そのため，検出ガスは\isoButaneHydro に決定した．
+
+%\section{本測定に向けて}
+2/25--2/28の4日間でOKTAVIAN で14 MeV の中性子を用いた測定を行う予定である．
+本研究で決定した検出ガスを用いて測定を行う．
 
 \end{document}
