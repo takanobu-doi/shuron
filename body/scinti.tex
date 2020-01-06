@@ -61,18 +61,69 @@ V1742 によって取得した波形のピーク位置に対して
 AmBe 中性子線源で取得したregion 1 とregion 2 の相関を図\ref{fig::n_gamma_correlation}に示す．
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.8\columnwidth]{n_gamma_corr.eps}
+  \includegraphics[clip, width=0.8\columnwidth]{n_gamma_corr_w_thr.eps}
   \caption[region 1 とregion 2 と2つの区間での積分値の相関．]
           {region 1 とregion 2 と2つの区間での積分値の相関．
             AmBe 中性子線源を用いて測定した．
-          信号がV1742 のダイナミックレンジを超えたものはカットしている．}
+            \SI{1}{\mega\electronvolt ee}以下は取り除いた．
+            また，信号がV1742 のダイナミックレンジを超えたものは取り除いた．}
   \label{fig::n_gamma_correlation}
 \end{figure}
+図\ref{fig::n_gamma_correlation}中，上が中性子，下が$\gamma$線である．
+中性子の中心となる位置を直線近似し (図\ref{fig::n_gamma_correlation}中の赤線)，
+region 2との差分を取ったものが図\ref{fig::n_gamma_projection}である．
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.8\columnwidth]{n_gamma_pro_fit.eps}
+  \caption{region 2 と中性子の近似直線との差分．}
+  \label{fig::n_gamma_projection}
+\end{figure}
+図\ref{fig::n_gamma_projection}において，中性子側のピーク (0付近のピーク)
+をガウス分布でフィットすることで中性子の検出数を決定する．
 
-\section{キャリブレーション}
+%\section{キャリブレーション}
 \section{SCINFUL-CG による中性子の検出効率}
-検出器中に入射した中性子が他の粒子と反応しない場合は検出されない．
-そのため、検出器に入射した中性子の絶対数を求めるためには検出効率を知る必要がある．
-液体シンチレータの検出効率を求める計算コードにSCINFUL-CG~\cite{scinful-cg}がある．
+検出器中に入射した中性子が陽子と反応しない場合は検出されない．
+そのため、検出器に入射した中性子の絶対数を求めるためには検出効率が必要である．
+液体シンチレータの検出効率SCINFUL-CG~\cite{scinful-cg}を用いる．
+SCINFUL-CGは任意形状の中性子用シンチレータに対する応答関数を計算するコードである．
+中性子の検出効率は発光量の閾値により変化する．
+図\ref{fig::neutron_efficiency}に閾値が\SI{0.5}{}，\SI{1.0}{}，\SI{1.5}{\mega\electronvolt ee}のときの検出効率を示す．
+ここでは単色の中性子が入射しているとして計算した．
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.8\columnwidth]{neutron_efficiency.eps}
+  \caption[SCINFUL-CG で求めた中性子の検出効率．]
+          {SCINFUL-CG で求めた中性子の検出効率．
+          閾値が高いほど，中性子のエネルギーが大きいほど検出効率は小さくなる．}
+  \label{fig::neutron_efficiency}
+\end{figure}
+図\ref{fig::neutron_efficiency}から分かるように閾値を高くすると検出効率が低下する．
+また，高エネルギーの中性子ほど検出効率が低下する．
+
+中性子検出器で測定した中性子数 ($N_{\text{detect}}$) をSCINFUL-CGで求めた検出効率 ($\varepsilon$) で
+式\ref{eq::neutron_collection}のように補正することで，
+実際に入射した中性子数 ($N_{\text{in}}$) を求めることができる．
+\begin{equation}
+  N_{\text{in}} = \frac{N_{\text{detect}}}{\varepsilon}
+  \label{eq::neutron_collection}
+\end{equation}
+実際の測定で用いる\SI{14}{\mega\electronvolt}の単色中性子に対する
+検出効率は表\ref{tab::neutron_efficiency}の通りとなる．
+\begin{table}
+  \centering
+  \caption{\SI{14}{\mega\electronvolt}の単色中性子に対する検出効率．}
+  \label{tab::neutron_efficiency}
+  \begin{tabular}{cc}
+    \toprule
+    閾値 (\si{\mega\electronvolt}) & 検出効率 \\
+    \midrule
+    0.25 & 0.171 \\
+    0.50 & 0.144 \\
+    1.00 & 0.122 \\
+    1.50 & 0.108 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 \end{document}
