@@ -70,12 +70,12 @@
 MAIKo TPC で取得したトラックの横方向の変分を$\Delta strip$，縦方向の変分を$\Delta t$，
 ドリフトスピードを$drift\_v$とすると，
 \begin{align}
-  \frac{\Delta z}{\SI{0.4}{\milli\metre}} & = \Delta strip \label{eq::deltaz}\\
+  \frac{\Delta z}{\SIU{0.4}{\milli\metre}} & = \Delta strip \label{eq::deltaz}\\
   \frac{\Delta y}{drift\_v} & = \Delta t \label{eq::deltay}
 \end{align}
 式 (\ref{eq::deltay_deltaz}, \ref{eq::deltaz}, \ref{eq::deltay}) より
 \begin{equation}
-  drift\_v = \frac{\tan(\ang{30})~\Delta strip\times\SI{0.4}{\milli\metre}}{\Delta t}
+  drift\_v = \frac{\tan(\ang{30})~\Delta strip\times\SIU{0.4}{\milli\metre}}{\Delta t}
 \end{equation}
 とドリフトスピードが求まる．
 
@@ -87,7 +87,7 @@ $\alpha$線源を用いて測定したドリフトスピードとMagboltz で求
   \label{tab::drift_speed_compare}
   \begin{tabular}{cccc}
     \toprule
-    gas & ドリフト電場 (\si{\volt/\milli\metre}) & 実測 (\si{\milli\metre/\nano\second}) & Magboltz (\si{\milli\metre/\nano\second})\\
+    gas & ドリフト電場 (\siu{\volt/\milli\metre}) & 実測 (\siu{\milli\metre/\nano\second}) & Magboltz (\siu{\milli\metre/\nano\second})\\
     \midrule
     \Methane & 0.429 & 0.0126 & 0.0145 \\
     \MethaneHydro & 4.32 & 0.0140 & 0.0140 \\
@@ -121,7 +121,7 @@ $\alpha$線源を用いて測定したドリフトスピードとMagboltz で求
 %\end{figure}
 $\alpha$線源を用いて測定したドリフトスピードと Magboltz を用いて計算したドリフトスピードがおおよそ一致していることが分かる．
 \Methane は実測とMagboltz とがずれているが，ガスに含まれる水分の影響が考えられる．
-\Methane のみ\SI{50}{\hecto\pascal} とその他のガスと比較して圧力が半分であるため，不純物の影響が大きく出ていると考えられる．
+\Methane のみ\SIU{50}{\hecto\pascal} とその他のガスと比較して圧力が半分であるため，不純物の影響が大きく出ていると考えられる．
 
 \subsection{電子増幅率}
 電圧パラメータを変更させたときの増幅率の変化を測定した．
@@ -144,7 +144,7 @@ $N'_{\rm e}$は$\mu$-PICで収集した電荷から求める．
   \label{tab::energy_loss_and_W_val}
   \begin{tabular}{cccc}
     \toprule
-    gas & W (\si{\electronvolt}) & energy loss (\si{\mega\electronvolt}) & $N_{\rm e}$\\
+    gas & W (\siu{\electronvolt}) & energy loss (\siu{\mega\electronvolt}) & $N_{\rm e}$\\
     \midrule
     \Methane         & 29.1 & 0.0565 & 1.94$\times 10^{3}$ \\
     \MethaneHydro    & 34.2 & 0.0534 & 1.56$\times 10^{3}$ \\
@@ -159,11 +159,11 @@ $N'_{\rm e}$は$\mu$-PICで収集した電荷から求める．
 $\mu$-PICからの信号波形は32 strips まとめて図\ref{fig::FADC_waveform}のようなFADC情報として取得している．
 この信号波形を時間で積分することによって32 strips で収集した電荷量を計算することができる．
 $\mu$-PICで取得した電気信号は読み出し回路内部で800倍に増幅され，
-入力インピーダンス\SI{50}{\ohm}で電流値を電圧値に変換して取得している．
+入力インピーダンス\SIU{50}{\ohm}で電流値を電圧値に変換して取得している．
 よって，式 (\ref{eq::N'e})で求めることができる．
 $e$は電荷素量である．
 \begin{equation}
-  N'_{\rm e} = \frac{\int V (t) dt}{ 50 \times 800 \times \si{\elementarycharge}}
+  N'_{\rm e} = \frac{\int V (t) dt}{ 50 \times 800 \times \siu{\elementarycharge}}
   \label{eq::N'e}
 \end{equation}
 各ガスの増幅率を表\ref{tab::multiplying_rate}に示す．
@@ -204,7 +204,7 @@ $e$は電荷素量である．
   \label{tab::track_width}
   \begin{tabular}{cc}
     \toprule
-    gas & トラックの幅 ($\times \SI{10}{\nano\second}$)\\
+    gas & トラックの幅 ($\times \SIU{10}{\nano\second}$)\\
     \midrule
     \Methane         & 91.1 \\
     \MethaneHydro    & 42.3 \\
@@ -338,7 +338,7 @@ $\alpha$線源のトラックを再現することができたので，
 このシミュレーションでは以下のように3つの$\alpha$粒子を生成した．
 \begin{enumerate}
 \item
-  ${}^{12}{\rm C}$が\SI{14}{\mega\electronvolt}の中性子との散乱によりHoyle状態に励起させる．
+  ${}^{12}{\rm C}$が\SIU{14}{\mega\electronvolt}の中性子との散乱によりHoyle状態に励起させる．
   この際，重心系で一様な散乱角で散乱させる．
 \item
   Hoyle状態の${}^{12}{\rm C}$を$\alpha$粒子と${}^{8}{\rm Be}$に位相空間で一様に崩壊させる．
