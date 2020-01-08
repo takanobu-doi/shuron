@@ -98,6 +98,19 @@ ${BODYDIR}/collimator.pdf: ${BODYDIR}/collimator.tex
 	$(TEX) collimator.tex;\
 	$(DVIPDF) collimator.dvi
 
+drift-speed: ${BODYDIR}/drift-speed.pdf
+
+${BODYDIR}/drift-speed.pdf: ${BODYDIR}/drift-speed.tex
+	cd ${BODYDIR}/;\
+	$(TEX) drift-speed.tex;\
+	$(DVIPDF) drift-speed.dvi
+
 clean:
 	rm *.dvi *.log *.pdf *.aux *.bbl \
         ${BODYDIR}/*.dvi ${BODYDIR}/*.log ${BODYDIR}/*.pdf ${BODYDIR}/*.aux ${BODYDIR}/*.bbl
+
+clean-master:
+	rm *.dvi *.log *.pdf *.aux *.bbl
+
+clean-body:
+	rm ${BODYDIR}/*.dvi ${BODYDIR}/*.log ${BODYDIR}/*.pdf ${BODYDIR}*/.aus ${BODYDIR}/*.bbl
