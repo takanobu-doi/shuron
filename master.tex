@@ -14,7 +14,7 @@
   colorlinks=true,
   linkcolor=MediumBlue,
   citecolor=ForestGreen,
-%  linkbordercolor={1 1 1},
+  %  linkbordercolor={1 1 1},
 }
 \usepackage{pxjahyper}
 \usepackage{multirow}
@@ -33,7 +33,18 @@
 %\bibliographystyle{jplain} % sorted by abc
 %\bibliographystyle{junsrt} % sorted by appearance
 %\bibliographystyle{unsrt} % sorted by appearance
-\bibliographystyle{report} 
+%\bibliographystyle{report}
+%\bibliographystyle{elsarticle-num}
+\bibliographystyle{jpsj}
+%\usepackage[%
+%  backend=bibtex,%
+%  style=phys, %
+%  articletitle=false, %
+%  biblabel=brackets, %
+%  chaptertitle=false, %
+%  pageranges=false]{biblatex}
+%\addbibresource{mybibfile.bib}
+%\bibliography{mybibfile.bib}
 
 \makeatletter
 \renewcommand{\chapter}{%
@@ -109,5 +120,6 @@
 %\subfile{body/collimator}
 \subfile{body/drift-speed}
 
+%\printbibliography%[title=参考文献]
 \bibliography{mybibfile}
 \end{document}
