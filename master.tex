@@ -27,8 +27,9 @@
 \usetikzlibrary{patterns}
 \usetikzlibrary{plotmarks}
 \usepackage{siunitx}
-\newcommand{\siu}[1]{\si[per-mode=symbol]{#1}}
-\newcommand{\SIU}[2]{\SI[per-mode=symbol]{#1}{#2}}
+\sisetup{per-mode=symbol, range-phrase=--,range-units=single}
+%\newcommand{\siu}[1]{\si[per-mode=symbol]{#1}}
+%\newcommand{\SIU}[2]{\SI[per-mode=symbol]{#1}{#2}}
 
 %\bibliographystyle{jplain} % sorted by abc
 %\bibliographystyle{junsrt} % sorted by appearance
