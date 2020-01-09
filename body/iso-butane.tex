@@ -5,10 +5,11 @@
 本章では検出ガスとして用いる\isoButaneHydro の特性について述べる．
 \section{ドリフトスピード}
 ドリフトスピードのドリフト電場依存性を調べた．
-Magboltz でドリフトスピードが\SI{0.014}{\milli\metre/\nano\second}となるドリフト電場は\SI{6.80}{\volt/\milli\metre}である．
+Magboltz でドリフトスピードが\SI{0.014}{\milli\metre\per\nano\second}となる
+ドリフト電場は\SI{6.80}{\volt\per\milli\metre}である．
 ドリフト領域の長さは\SI{140}{\milli\metre}であるので，plateとgridの電位差は\SI{952}{\volt}となる．
 調整の行いやすさを考え\SI{955}{\volt}を中心に\SI{100}{\volt}間隔で
-\SI{455}{}--\SI{1455}{\volt}の範囲で変化させて計10点測定した．
+\SIrange{455}{1455}{\volt}の範囲で変化させて計10点測定した．
 線源を用いて測定したドリフトスピードとMagboltz により求めたドリフトスピードを図\ref{fig::drift_speed_E_dep}に示す．
 \begin{figure}
   \centering
@@ -86,7 +87,7 @@ $\Delta V_{\text{grid-GEM}}$を\SI{20}{\volt}間隔で\SI{600}{}--\SI{780}{\volt
 ドリフト電場に対して増幅領域の電場を強くすることで，電子をより強く増幅領域へ吸い出すことができるため，
 増幅率が増加したと考えられる．
 %gridとGEMの距離は\SI{5}{\milli\metre}である．
-$\Delta V_{\text{grid-GEM}} = $\SI{700}{\volt}のとき，\SI{140}{\volt/\milli\metre}であり，
+$\Delta V_{\text{grid-GEM}} = $\SI{700}{\volt}のとき，\SI{140}{\volt\per\milli\metre}であり，
 ドリフト電場の約20倍となっている．
 %図\ref{fig::gain_GEM_V_dep}と同様に$\Delta V_{\rm grid-GEM} = $\SI{720}{\volt}で不連続性が見られる．
 %これは，1時間ほどの時間のズレがあるためである．
@@ -95,7 +96,7 @@ $\Delta V_{\text{grid-GEM}} = $\SI{700}{\volt}のとき，\SI{140}{\volt/\milli\
 GEM は絶縁体のフィルムの両面を銅で被覆し，微細な穴を開けたものである．
 GEM の各面に電圧をかけることで高電場を形成し，電子のアバランシェ増幅を起こす．
 %$\Delta V_{\text{GEM}}$を変化させることで電子の増幅率が変化する．
-$\Delta V_{\text{GEM}}$を\SI{10}{\volt}間隔で\SI{300}{}--\SI{390}{\volt}の範囲で変化させて計10点測定した．
+$\Delta V_{\text{GEM}}$を\SI{10}{\volt}間隔で\SIrange{300}{390}{\volt}の範囲で変化させて計10点測定した．
 電子の増幅率の$\Delta V_{\text{GEM}}$による変化を図\ref{fig::gain_GEM_V_dep}に示す．
 \begin{figure}
   \centering
@@ -114,7 +115,7 @@ $\Delta V_{\text{GEM}}$を大きくして，GEMの穴の中に生成される電
 
 \subsection{GEMと$\mu$-PICとの電位差による電子の増幅率}
 $\Delta V_{\text{GEM-}\mu\text{-PIC}}$によってGEM で増幅された電子の$\mu$-PICによる収集率が変化する．
-$\Delta V_{\text{GEM-}\mu\text{-PIC}}$を\SI{50}{\volt}間隔で\SI{550}{}--\SI{750}{\volt}の範囲で変化させて計10点測定した．
+$\Delta V_{\text{GEM-}\mu\text{-PIC}}$を\SI{50}{\volt}間隔で\SIrange{550}{750}{\volt}の範囲で変化させて計10点測定した．
 電子の増幅率の$\Delta V_{\text{GEM-}\mu\text{-PIC}}$による変化を図\ref{fig::gain_GEM_uPIC_V_dep}に示す．
 \begin{figure}
   \centering
@@ -128,7 +129,7 @@ GEMで増幅された電子をより強い電場で移動させることで，�
 
 \subsection{$\mu$-PICによる電子増幅率}
 電子は$\mu$-PICで読み出される直前に，$\mu$-PICによって作られた高電場によって増幅される．
-$V_{\mu\text{-PIC}}$を\SI{10}{\volt}間隔で\SI{350}{}--\SI{440}{\volt}の範囲で変化させて計10点測定した．
+$V_{\mu\text{-PIC}}$を\SI{10}{\volt}間隔で\SIrange{350}{440}{\volt}の範囲で変化させて計10点測定した．
 電子の増幅率の$V_{\mu\text{-PIC}}$ による変化を図\ref{fig::gain_uPIC_V_dep}に示す．
 \begin{figure}
   \centering
@@ -160,7 +161,7 @@ $\mu$-PICのanode 電極の周りにより強い電場が形成されること�
 線源導入機によって線源の位置を変化させることで，拡散効果の$L$依存性を調べることができる．
 拡散効果とトラックの太さが比例していると仮定すると，track width $\sim\sqrt{L}$にとなる．
 トラックの太さと線源の位置との依存性を図\ref{fig::diff_x}に示す．
-図\ref{fig::diff_x}の$L$は線源コリメータの$0^{\circ}$穴とgridとのドリフト方向の距離である．
+図\ref{fig::diff_x}の$L$は線源コリメータの\ang{0}穴とgridとのドリフト方向の距離である．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{diff_x.eps}
