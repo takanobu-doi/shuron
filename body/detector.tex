@@ -41,8 +41,8 @@ MAIKo TPC の写真を図\ref{pic::MAIKo}に示す．
 \end{figure}
 MAIKo TPC はplate，wire，grid，GEM (gas electron multiplier)，$\mu$-PICからなる．
 plate，grid，GEM，$\mu$-PICにHV が接続されている．
-plate，wire，girdの間は\SIU{10}{\mega\ohm}の抵抗で繋がれている．
-GEM とHV は\SIU{1}{\mega\ohm}と\SIU{20}{\mega\ohm}の抵抗で繋がれている．
+plate，wire，girdの間は\SI{10}{\mega\ohm}の抵抗で繋がれている．
+GEM とHV は\SI{1}{\mega\ohm}と\SI{20}{\mega\ohm}の抵抗で繋がれている．
 plateからgridの間の領域をドリフト領域，
 gridから$\mu$-PICの間の領域を増幅領域，
 $\mu$-PICの周囲を読み出し領域と呼ぶ．
@@ -59,14 +59,14 @@ $\mu$-PICの周囲を読み出し領域と呼ぶ．
 grid からplate の方向 (図\ref{fig::MAIKo_cage}では上向き) にドリフト電場を作ることで
 トラックの周りに発生した電子を増幅領域へドリフトさせる．
 ドリフト電場の一様性が高いほど，電子を均等にドリフトすることができる．
-ドリフト電場を一様に形成するためにwire が\SIU{5}{\milli\metre}間隔で巻かれている~\cite{furuno}．
-ドリフト領域はドリフト電場の方向に\SIU{140}{\milli\metre}である．
+ドリフト電場を一様に形成するためにwire が\SI{5}{\milli\metre}間隔で巻かれている~\cite{furuno}．
+ドリフト領域はドリフト電場の方向に\SI{140}{\milli\metre}である．
 この領域がMAIKo TPC の有感領域となる．
 
 \subsection{増幅領域}
 MAIKo TPC ではGEM と$\mu$-PICを用いて電子の増幅を行う．
 GEM は，図\ref{pic::GEM}のようにポリマーのフィルムの表面を銅で被覆し，
-直径\SIU{70}{\micro\metre} の穴を\SIU{140}{\micro\metre}間隔で\SIU{1}{\square\milli\metre}あたり
+直径\SI{70}{\micro\metre} の穴を\SI{140}{\micro\metre}間隔で\SI{1}{\square\milli\metre}あたり
 100 個の密度で開けたものである．
 銅の2つの層はポリマーによって絶縁されている．
 銅の両面に電圧を印加することによって，高電場が形成されドリフトしてきた電子が増幅される．
@@ -85,8 +85,8 @@ GEM は，図\ref{pic::GEM}のようにポリマーのフィルムの表面を�
   \label{fig::mupic}
 \end{figure}
 $\mu$-PIC は図\ref{fig::mupic}のようにanode strip とcathode strip が直交するように配置されている．
-anode strip，cathode strip ともに\SIU{400}{\micro\metre}間隔でそれぞれ256~ch分割されている．
-直径\SIU{50}{\micro\metre}の円柱状のanode 電極に高電圧をかけることで高電場を形成することができ，
+anode strip，cathode strip ともに\SI{400}{\micro\metre}間隔でそれぞれ256~ch分割されている．
+直径\SI{50}{\micro\metre}の円柱状のanode 電極に高電圧をかけることで高電場を形成することができ，
 $\mu$-PICによって信号が読み出される直前に電子が増幅される．
 
 \subsection{読み出し領域}
@@ -100,7 +100,7 @@ MAIKo TPC からは図\ref{fig::track_demo}のようにトラックが
 anode strip に垂直な面 ($z-y$平面) に射影されたanode image と
 cathode strip に垂直な面 ($z-y$平面) に射影されたcathode image の2つの画像が出力される．
 anode strip とcathode strip はそれぞれ256~chで構成され，
-読み出される信号波高の時間変化は\SIU{100}{\mega\hertz}で1,024~samples測定されるため，
+読み出される信号波高の時間変化は\SI{100}{\mega\hertz}で1,024~samples測定されるため，
 出力される画像の解像度は$256\times1,014$~pixels となる．
 \begin{figure}
   \centering
@@ -112,7 +112,7 @@ anode strip とcathode strip はそれぞれ256~chで構成され，
 \end{figure}
 また，anode strip，cathode strip ともに32~chごとにまとめて信号をFADC で波形を取得している．
 FADC で取得した信号の一例を図\ref{fig::FADC_waveform}に示す．
-FADC では\SIU{25}{\mega\hertz}で信号波形を取得される．
+FADC では\SI{25}{\mega\hertz}で信号波形を取得される．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.7\columnwidth]{0101_waveform_8.eps}
@@ -154,11 +154,11 @@ ${}^{12}{\rm C}$以外の原子核が含まれるガスを用いると背景事�
 検出する対象である$\alpha$粒子の $dE/dx$ が適切な大きさとなるガスの種類と圧力の候補を選出する．
 
 まず，代表的な炭化水素である\Methane を考える．
-ガス中で\SIU{15}{\milli\metre} 以上飛行し，MAIKo TPC の有感領域中で停止する$\alpha$粒子を検出可能な$\alpha$粒子と定義する．
+ガス中で\SI{15}{\milli\metre} 以上飛行し，MAIKo TPC の有感領域中で停止する$\alpha$粒子を検出可能な$\alpha$粒子と定義する．
 図\ref{fig::alpha_E_dist}に示したエネルギー分布の$\alpha$粒子のうち，
 検出できた割合の圧力依存性を図\ref{fig::efficiency_P_dist}に示す．
 このとき，散乱点がビーム軸上に一様に分布しているとして計算した．
-図\ref{fig::efficiency_P_dist}から分かるように，\SIU{50}{\hecto\pascal} で最大となっている．
+図\ref{fig::efficiency_P_dist}から分かるように，\SI{50}{\hecto\pascal} で最大となっている．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.7\columnwidth]{efficiency_P_dist.eps}
@@ -168,25 +168,25 @@ ${}^{12}{\rm C}$以外の原子核が含まれるガスを用いると背景事�
            }
   \label{fig::efficiency_P_dist}
 \end{figure}
-\SIU{50}{\hecto\pascal}のときの\Methane の各種の値は表\ref{tab::CH4_50_params}のとおりである．
+\SI{50}{\hecto\pascal}のときの\Methane の各種の値は表\ref{tab::CH4_50_params}のとおりである．
 \begin{table}
   \centering
-  \caption{\SIU{50}{\hecto\pascal}のときの\Methane のパラメータ．}
+  \caption{\SI{50}{\hecto\pascal}のときの\Methane のパラメータ．}
   \label{tab::CH4_50_params}
   \begin{tabular}{cc}
     \toprule
     項目 & 値\\
     \midrule
-    密度 & \SIU{3.29e-5}{\gram\per\cubic\centi\metre} \\
-    $dE/dx$ ($E_{\alpha} = \SIU{0.5}{\mega\electronvolt}$, \SIU{10}{\milli\metre}) & \SIU{0.107}{\mega\electronvolt}\\
-    飛距離 ($E_{\alpha} = \SIU{0.5}{\mega\electronvolt}$) & \SIU{65.6}{\milli\metre} \\
+    密度 & \SI{3.29e-5}{\gram\per\cubic\centi\metre} \\
+    $dE/dx$ ($E_{\alpha} = \SI{0.5}{\mega\electronvolt}$, \SI{10}{\milli\metre}) & \SI{0.107}{\mega\electronvolt}\\
+    飛距離 ($E_{\alpha} = \SI{0.5}{\mega\electronvolt}$) & \SI{65.6}{\milli\metre} \\
     \bottomrule
   \end{tabular}
 \end{table}
 
-\SIU{50}{\hecto\pascal}のときの\Methane の$dE/dx$と同程度となる，他のガスを考えていく．
+\SI{50}{\hecto\pascal}のときの\Methane の$dE/dx$と同程度となる，他のガスを考えていく．
 表\ref{tab::mixture}に示した6つを候補とした．
-混合ガスでは圧力を\SIU{100}{\hecto\pascal} に固定し混合比をパラメータとして$dE/dx$を合わせる．
+混合ガスでは圧力を\SI{100}{\hecto\pascal} に固定し混合比をパラメータとして$dE/dx$を合わせる．
 括弧内はガスの混合の割合を示す．
 \begin{table}
   \centering
@@ -199,20 +199,20 @@ ${}^{12}{\rm C}$以外の原子核が含まれるガスを用いると背景事�
     gas &
     \begin{tabular}{c}
       pressure \\
-      (\siu{\hecto\pascal})
+      (\si{\hecto\pascal})
     \end{tabular} &
     \begin{tabular}{c}
       density \\
-      (\siu{\gram\per\cubic\centi\metre})
+      (\si{\gram\per\cubic\centi\metre})
     \end{tabular} &
     \begin{tabular}{c}
-      $dE/dx$ (\siu{\mega\electronvolt})\\
-      $E_{\alpha} = \SIU{0.5}{\mega\electronvolt}$ \\
-      \SIU{10}{\milli\metre}
+      $dE/dx$ (\si{\mega\electronvolt})\\
+      $E_{\alpha} = \SI{0.5}{\mega\electronvolt}$ \\
+      \SI{10}{\milli\metre}
     \end{tabular} &
     \begin{tabular}{c}
-      ドリフト電場 (\siu{\volt\per\milli\metre}) \\
-      @ \SIU{0.014}{\milli\metre\per\nano\second}
+      ドリフト電場 (\si{\volt\per\milli\metre}) \\
+      @ \SI{0.014}{\milli\metre\per\nano\second}
     \end{tabular}\\
     \midrule
     \Methane         & 50  & 3.29$\times 10^{-5}$ & 0.107 & 0.418 \\
@@ -227,22 +227,22 @@ ${}^{12}{\rm C}$以外の原子核が含まれるガスを用いると背景事�
 これらの6種類の候補から検出ガスを選ぶ．
 
 \subsection{ドリフトスピード}
-MAIKo TPC では\SIU{100}{\mega\hertz}で1024 samples データを取得するため，
-ドリフト方向は\SIU{10.24}{\micro\second}のタイムウィンドウが開いている．
-ドリフトケージの大きさ (\SIU{140}{\milli\metre}) を可能な限りタイムウィンドウに収めるためには，\siu{\micro\second}
-ドリフトスピードを$\SIU{140}{\milli\metre}/\SIU{10.24}{\micro\second} \sim \SIU{0.014}{\milli\metre\per\nano\second}$
+MAIKo TPC では\SI{100}{\mega\hertz}で1024 samples データを取得するため，
+ドリフト方向は\SI{10.24}{\micro\second}のタイムウィンドウが開いている．
+ドリフトケージの大きさ (\SI{140}{\milli\metre}) を可能な限りタイムウィンドウに収めるためには，\si{\micro\second}
+ドリフトスピードを$\SI{140}{\milli\metre}/\SI{10.24}{\micro\second} \sim \SI{0.014}{\milli\metre\per\nano\second}$
 に調整する必要がある．
 Magboltz~\cite{magboltz} によって計算したドリフト電場とドリフトスピードの関係を図\ref{fig::drift_v_magboltz}に，
-ドリフトスピードが\SIU{0.014}{\milli\metre\per\nano\second}となるドリフト電場の値を表\ref{tab::mixture}に示す．
-図\ref{fig::drift_v_magboltz}の横方向の点線は\SIU{0.014}{\milli\metre\per\nano\second}を表す．
+ドリフトスピードが\SI{0.014}{\milli\metre\per\nano\second}となるドリフト電場の値を表\ref{tab::mixture}に示す．
+図\ref{fig::drift_v_magboltz}の横方向の点線は\SI{0.014}{\milli\metre\per\nano\second}を表す．
 以降，これらのドリフト電場で評価を行う．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.9\columnwidth]{drift_v_magboltz.eps}
   \caption[ドリフト電場とドリフトスピードの関係．]
           {ドリフト電場とドリフトスピードの関係．
-            \Methane は\SIU{50}{\hecto\pascal}，\isoButane は\SIU{15}{\hecto\pascal}，その他は\SIU{100}{\hecto\pascal}である．
-          横方向の点線は\SIU{0.014}{\milli\metre\per\nano\second}を示す．}
+            \Methane は\SI{50}{\hecto\pascal}，\isoButane は\SI{15}{\hecto\pascal}，その他は\SI{100}{\hecto\pascal}である．
+          横方向の点線は\SI{0.014}{\milli\metre\per\nano\second}を示す．}
   \label{fig::drift_v_magboltz}
 \end{figure}
 
@@ -327,7 +327,7 @@ Magboltz によって計算したディフュージョン係数を表\ref{tab::d
   \label{tab::diffusion}
   \begin{tabular}{cccc}
     \toprule
-    gas & $D_{t}~(\sqrt{\siu{mm}})$ & $D_{l}~(\sqrt{\siu{mm}})$ & ドリフト電場 (\siu{\volt\per\milli\metre}) \\
+    gas & $D_{t}~(\sqrt{\si{mm}})$ & $D_{l}~(\sqrt{\si{mm}})$ & ドリフト電場 (\si{\volt\per\milli\metre}) \\
     \midrule
     \Methane & 0.433 & 0.547 & 0.418\\
     \MethaneHydro & 0.214 & 0.171 & 4.31\\
