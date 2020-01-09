@@ -22,7 +22,7 @@ MAIKo TCP の解析では背景事象の除去とトラック情報の抽出の2
 トラックの情報は中性子と${}^{12}\mathrm{C}$とが散乱した座標，
 $\alpha$粒子が停止した点である．
 anode image から$y, z$座標を，cathode image から$x, y$座標を決定することができる．
-$x, z$座標は$\mu$-PIC のstrip 数に400 $\mu$mをかけることで決定できる．
+$x, z$座標は$\mu$-PIC のstrip 数に\SI{400}{\micro\metre}をかけることで決定できる．
 $y$座標はTPC では荷電粒子が通過した位置から読み出し面に到達するまでの時間として測定される．
 そのため，anode image, cathode image のclock にドリフトスピードをかけることで$y$座標を決定できる．
 このようにして決定したanode image, cathode image の座標を合わせることで，
@@ -30,13 +30,13 @@ $y$座標はTPC では荷電粒子が通過した位置から読み出し面に�
 
 散乱点と停止点の座標から粒子が飛行した方向ベクトルと距離が決定される．
 同じ粒子であれば，飛行距離から運動エネルギーが一意に決まる．
-図\ref{fig::range_to_ene_alpha}に\Methane 50 hPa 中での荷電粒子の飛行距離と運動エネルギーの対応を示す．
+図\ref{fig::range_to_ene_alpha}に\Methane (\SI{50}{\hecto\pascal}) 中での荷電粒子の飛行距離と運動エネルギーの対応を示す．
 飛行距離と運動エネルギーの相関はSRIM~\cite{srim}を用いて求めた．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{range_to_ene.eps}
-  \caption[\Methane 50 hPa 中での荷電粒子の飛行距離と運動エネルギー．]
-          {\Methane 50 hPa 中での荷電粒子の飛行距離と運動エネルギー．
+  \caption[\Methane (\SI{50}{\hecto\pascal}) 中での荷電粒子の飛行距離と運動エネルギー．]
+          {\Methane (\SI{50}{\hecto\pascal}) 中での荷電粒子の飛行距離と運動エネルギー．
             この相関はSRIM を用いて求めた．
           }
   \label{fig::range_to_ene_alpha}
@@ -94,7 +94,7 @@ ${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}')3\alpha$イベントであっても，
 %    \bottomrule
 %  \end{tabular}
 %\end{table}
-\Methane 単体と\MethaneHerium 以外は約90\%の検出効率となっている．
+\Methane 単体と\MethaneHerium 以外は約\SI{90}{\percent}の検出効率となっている．
 
 %\subsection{検出効率の角度依存性}
 \subsection{エネルギー分解能}
@@ -134,13 +134,13 @@ eye-scanによって決定した$\alpha$粒子のエネルギー ($E_{\text{eye-
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{E_corr_10024.eps}
-    \caption{iso-$\mathrm{C}_{4}\mathrm{H}_{1}\ (1) + \mathrm{H}_{2}\ (9)$の場合の$E_{\text{eye-scan}}$と$E_{\text{ideal}}$の相関．}
+    \caption{\isoButaneHydro の場合の$E_{\text{eye-scan}}$と$E_{\text{ideal}}$の相関．}
     \label{fig::E_corr_ic4h10_h2}
   \end{minipage}
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{E_corr_10023.eps}
-    \caption{iso-$\mathrm{C}_{4}\mathrm{H}_{1}\ (1) + \mathrm{He}\ (9)$の場合の$E_{\text{eye-scan}}$と$E_{\text{ideal}}$の相関．}
+    \caption{\isoButaneHerium の場合の$E_{\text{eye-scan}}$と$E_{\text{ideal}}$の相関．}
     \label{fig::E_corr_ic4h10_he}
   \end{minipage}
 \end{figure}
@@ -289,9 +289,9 @@ $E_{\text{eye-scan}}$をフィットした1次関数で補正したエネルギ�
 測定で${}^{12}\mathrm{C}$の励起状態を特定する際に，
 励起エネルギーの分解能が悪ければ各状態を分離することができない．
 シミュレーションではHoyle状態経由での崩壊を考えているので，
-${}^{12}\mathrm{C}$の励起エネルギーは7.65 MeV となっている．
+${}^{12}\mathrm{C}$の励起エネルギーは\SI{7.65}{\mega\electronvolt} となっている．
 eye-scanで決定した不変質量から基底状態の${}^{12}\mathrm{C}$の質量を引くことで励起エネルギーを求め，
-7.65 MeV を再構築できるか評価する．
+\SI{7.65}{\mega\electronvolt} を再構築できるか評価する．
 各ガスで再構成した励起エネルギーを図\ref{fig::Ex_ch4}, \ref{fig::Ex_ch4_h2}, \ref{fig::Ex_ch4_he},
 \ref{fig::Ex_ic4h10_h2}, \ref{fig::Ex_ic4h10_he}, 表\ref{tab::gas_summary}に示す．
 \begin{figure}
@@ -357,7 +357,7 @@ Hoyle状態を再構成できていることが分かる．
   \label{tab::gas_summary}
   \begin{tabular}{ccccc}
     \toprule
-    gas & 検出効率 (\%) & 
+    gas & 検出効率 (\si{\percent}) & 
     $dE\pm\sigma$ (\si{\kilo\electronvolt}) &
     $d\theta\pm\sigma$ (\si{\milli\radian}) &
     Ex$\pm\sigma$ (\si{\mega\electronvolt})\\
@@ -384,6 +384,6 @@ $\alpha$粒子のエネルギー分解能の観点では\MethaneHydro が良い�
 \MethaneHydro と \isoButaneHydro とで
 含まれる${}^{12}\mathrm{C}$の量を比較すると，
 \isoButaneHydro の方が4/3倍多い．
-よって，検出ガスには\isoButaneHydro を用いる．
+よって，検出ガスには\isoButaneHydro (\SI{100}{\hecto\pascal}) を用いる．
 
 \end{document}
