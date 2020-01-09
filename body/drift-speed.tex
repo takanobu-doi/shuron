@@ -2,6 +2,7 @@
 
 \begin{document}
 \chapter{ドリフトスピード}
+\label{app::drift_speed_humid_dep}
 \section{水分のドリフトスピードへの影響}
 本研究では用いた検出ガスは低圧であるため，
 水分などの不純物からの影響が大きいと考えられる．
@@ -11,7 +12,7 @@
 露点温度は水が凝結を始める温度であるので，高いほど含まれる水分が多いことを示す．
 \begin{table}
   \centering
-  \caption{露点温度と水分濃度と蒸気密度の対応．ppmはparts par millionの略であり, 10,000 ppm = 1\% となる．}
+  \caption{露点温度と水分濃度と蒸気密度の対応．ppmはparts par millionの略であり, 10,000 ppm = \SI{1}{\percent} となる．}
   \label{tab::dew_point_humidity}
   \begin{tabular}{ccc}
     \toprule
@@ -39,7 +40,7 @@
   \label{tab::configuration_for_drift_dep}
   \begin{tabular}{cc}
     \toprule
-    & 電位差 (\si{volt}) \\
+    & 電位差 (\si{\volt}) \\
     \midrule
     $\Delta V_{\text{plate-grid}}$ & 80 \\
     $\Delta V_{\text{grid-GEM}}$ & 710 \\
@@ -57,7 +58,7 @@
 また，露点温度の上昇に伴ってドリフトスピードが減少する．
 露点温度とドリフトスピードの時間経過を図\ref{fig::drift_time_dep}に示す．
 表\ref{tab::configuration_for_drift_dep}に示したドリフト電場のとき，
-Magboltz によるドリフトスピードは\SI{0.0208}{\milli\metre/\nano\second}である．
+Magboltz によるドリフトスピードは\SI{0.0208}{\milli\metre\per\nano\second}である．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{drift_time_dep.eps}
