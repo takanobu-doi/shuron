@@ -1,5 +1,5 @@
 \documentclass[../master]{subfiles}
-
+\usepackage{float}
 \begin{document}
 
 \chapter{はじめに}
@@ -298,18 +298,40 @@ OKTAVIAN にはパルスビームラインとDCビームラインの2つのビ�
 DC ビームラインは重照射室に設置されたトリチウムターゲットを用いて中性子を生成する．
 
 DC ビームラインで生成された中性子はトリチウムターゲットを中心に放射状に重照射室へ放出される．
-この中性子を大実験室側へ取り出すための直径約\SI{100}{\milli\metre}の取り出し穴が重照射室と
+この中性子を大実験室側へ取り出すための直径約\SI{100}{\milli\metre}の取り出し穴が図\ref{pic::hole}のように重照射室と
 大実験室を隔てる壁に開いている．
 この取り出し穴から中性子を取り出すことで直径が約\SI{100}{\milli\metre}にコリメートされた
 DC 中性子ビームを用いた測定を行うことができる．
 ただし，DC ビームであるため中性子が入射した時間情報を得ることはできない．
-一方で，パルスビームラインでは大実験室中にトリチウム標的が設置されているため，
+一方で，パルスビームラインでは図\ref{pic::pulse_beam_line}のように大実験室中にトリチウム標的が設置されているため，
 中性子をコリメートすることができない．
 その反面，パルス状に中性子が発生するので，中性子の時間情報を得ることができる．
 本測定では，実験室内で反射した中性子によるバックグラウンドイベントを低減することや，
 中性子の入射領域を制限できることから，DC ビームラインを用いて測定を行う予定である．
 また，取り出し穴に任意の形状のコリメータを入れることで，
 ビームの形状を制御することができる．
+本実験では図\ref{pic::collimator}のような半径\SI{10}{\milli\metre}の穴が開いたコリメータを用いる．
+\begin{figure}[h]
+  \centering
+  \includegraphics[clip, width=0.9\columnwidth]{IMG_20190805_152904_drawed.jpg}
+  \caption{}
+  \label{pic::hole}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[clip, width=0.9\columnwidth]{IMG_2778_drawed.jpg}
+  \caption[大実験室およびパルスビームライン．]
+          {大実験室およびパルスビームライン．
+            写真中央にパルスビームラインのトリチウムターゲットが設置されている．
+          写真右手前から加速されたデューテリウムが照射される．}
+  \label{pic::pulse_beam_line}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.8\columnwidth, angle=270]{IMG_2755.jpg}
+  \caption{コリメータ．外半径\SI{53}{\milli\metre}，内半径\SI{10}{\milli\metre}の円柱型のポリエチレンを用いる．}
+  \label{pic:collimator}
+\end{figure}
 
 \section{測定に用いる実験装置}
 \label{seq::detector_using_experiment}
