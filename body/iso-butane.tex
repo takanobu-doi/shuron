@@ -177,13 +177,13 @@ $\sqrt{L}$に比例していることが確認された．
 %この測定は$\rm CH_{4}$ 50 hPa で行った。
 
 \section{検出効率}
-\subsection{検出器による検出効率}
 測定されたトラックの長さから粒子のエネルギーを決定する．
 しかし，散乱点や粒子の運動エネルギー，角度によってはMAIKo TPC の有感領域から外に出てしまう．
 有感領域の外へ出てしまった粒子のトラックの長さは決定することができないので，
 その粒子の運動エネルギーと運動量を決定できなくなってしまう．
-そこで，有感領域内で停止する割合を考える．
-ここでは，条件は以下のようなである．
+そこで，有感領域内で停止する割合（検出効率）を考える．
+
+ここでは，以下のようなで状況を考える．
 \begin{itemize}
 \item
   半径\SI{10}{\milli\metre}の\SI{14}{\mega\electronvolt}の中性子ビームが$z$軸正の向きでMAIKo TPC に入射している．
@@ -208,7 +208,7 @@ $y$座標の絶対値を決定することができない．
 
 この条件のもとで，散乱点および3つの停止点が有感領域にある時に検出可能とする．
 すると検出効率は\SI{48.2}{\percent}となった．
-検出率の散乱点の$z$座標依存性を図\ref{fig::detection_efficiency_beam_axis}に，
+検出効率の散乱点の$z$座標依存性を図\ref{fig::detection_efficiency_beam_axis}に，
 ${}^{12}\mathrm{C}$の重心系での散乱角依存性を図\ref{fig::detection_efficiency_theta_cm}に示す．
 図\ref{fig::detection_efficiency_beam_axis}から分かるように，
 $z$座標が小さいまたは大きい（つまり，MAIKo TPC の奥側）で反応が起きた場合に，
@@ -228,14 +228,13 @@ $\theta_{\text{c.m.}}$が小さいところで検出効率が低下している�
   \label{fig::detection_efficiency_theta_cm}
 \end{figure}
 
-%\subsection{解析による検出効率}
 \section{期待される収量}
 Ref.~\cite{takahashietal,kondoetal}によると${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}(0_{2}^{+})$の
 断面積 ($\sigma$) は\SI{8.36}{\milli\barn}である．
 OKTAVIAN で現在得られるビーム量 ($N_{\text{b}}$) は最大で$4\pi$に\SI{5e9}{\per\second}である．
 この時，半径\SI{10}{\milli\metre}のコリメータからは\SI{1.95e4}{\per\second}の中性子が得られる．
-検出器の検出効率 ($\varepsilon_{\text{det.}}$) が\SI{48.2}{\percent}，
-解析の検出効率 ($\varepsilon_{\text{ana.}}$) が\SI{87}{\percent}である．
+検出効率 ($\varepsilon_{\text{det.}}$) が\SI{48.2}{\percent}，
+解析効率 ($\varepsilon_{\text{ana.}}$) が\SI{87}{\percent}である．
 \isoButaneHydro (\SI{100}{\hecto\pascal}) における${}^{12}\mathrm{C}$の
 面密度 ($N_{\text{t}}$) は\SI{1.01e17}{\per\square\milli\metre}である．
 %\SI{9.904e-3}{\per\cubic\milli\metre}%\rho = 2.3846e-5\gram\per\cubic\cm
