@@ -314,7 +314,7 @@ DC 中性子ビームを用いた測定を行うことができる．
 \begin{figure}[h]
   \centering
   \includegraphics[clip, width=0.9\columnwidth]{IMG_20190805_152904_drawed.jpg}
-  \caption{}
+  \caption{大実験室側からDC中性子の取り出し穴のある壁を見たときの様子．}
   \label{pic::hole}
 \end{figure}
 \begin{figure}[h]
@@ -339,17 +339,29 @@ DC 中性子ビームを用いた測定を行うことができる．
 ${}^{12}\mathrm{C}^{\text{Hoyle}}$から放出された$\alpha$粒子は
 図\ref{fig::alpha_E_En_dep_w_l}のようなエネルギーの分布を持つ．
 横軸は入射中性子のエネルギー，縦軸は崩壊後の$\alpha$粒子のエネルギーである．
+図\ref{fig::alpha_E_En_dep_w_l}から中性子のエネルギーに関わらず約\SI{0.1}{\mega\electronvolt}が最大値となっている．
+\SI{1}{\mega\electronvolt}より大きい領域は重心運動と同じ方向に放出された$\alpha$粒子がブーストされている．
+それに対し，重心運動と異なる方向に放出された$\alpha$粒子は，
+あまりブーストされずに典型的には励起エネルギーと3$\alpha$崩壊閾値の差分を3等分したエネルギー
+($\SI{0.38}{\mega\electronvolt}\div 3 \sim \SI{0.1}{\mega\electronvolt}$) を持つ.
+図\ref{fig::sig_angle_dist}から分かるように前方散乱の断面積が大きく，
+${}^{12}\mathrm{C}^{\text{Hoyle}}$が重心運動方向と異なる方向に散乱される確率が高い．
+そのため，$\alpha$粒子はあまり重心運動によるブーストの効果を受けずに，
+中性子のエネルギーに関わらず\SI{0.1}{\mega\electronvolt}付近で最大となる．
 図\ref{fig::alpha_E_dist}は中性子のエネルギーが\SI{14}{\mega\electronvolt}のときの分布である．
-図\ref{fig::alpha_E_En_dep_w_l}から中性子のエネルギーにかかわらず約
-図\ref{fig::alpha_E_dist}の塗りつぶしは最大値を中心に全体の8割となる領域を示しており，
-\SIrange{0}{0.6}{\mega\electronvolt}である．
+図\ref{fig::alpha_E_dist}の塗りつぶし部分は最大値を中心に全体の8割となる領域を示しており，
+\SIrange{0}{0.6}{\mega\electronvolt}の範囲である．
 このような低エネルギーの$\alpha$粒子を効率よく検出するためには，
 標的中で$\alpha$粒子が停止しないようにしなければならない．
 例えば，\SI{500}{\kilo\electronvolt}の$\alpha$粒子ではおよそ\SI{350}{\micro\gram\per\square\centi\metre}の
 炭素箔標的で停止してしまう．
 更に低いエネルギーの$\alpha$粒子も検出しようとすると，更に標的を薄くしなければならない．
 このような低エネルギー粒子の測定には，検出器そのものが標的となるアクティブ標的が有効である．
-図\ref{fig::alpha_theta_dist}は$\alpha$粒子の角度分布である．
+
+図\ref{fig::alpha_theta_En_dep}は$\alpha$粒子の角度分布である．
+横軸は入射中性子のエネルギー，縦軸は$\alpha$粒子の入射中性子の運動方向に対する角度を表す．
+$\alpha$粒子のエネルギー分布と同様に入射中性子のエネルギーにあまり依存していない．
+図\ref{fig::alpha_theta_dist}は入射中性子が\SI{14}{\mega\electronvolt}のときの角度分布である．
 図\ref{fig::alpha_theta_dist}の塗りつぶしは最大値を中心に全体の8割となる領域を示しており，
 \SIrange{0.13}{1.31}{\radian} である．
 %この図からもわかるように広い角度領域に$\alpha$粒子は崩壊する．
@@ -375,6 +387,12 @@ MAIKo TPC はTPC の検出ガスを散乱標的として用いたTPC であり�
             入射中性子のエネルギーが\SI{14}{\mega\electronvolt}のときの分布．
             図は${}^{12}\mathrm{C}$から放出される3つの$\alpha$粒子すべての分布を表している．}
           \label{fig::alpha_E_dist}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.8\columnwidth]{alpha_theta_En_dep.eps}
+  \caption{${}^{12}{\rm C}^{\text{Hoyle}}$から放出された$\alpha$粒子の角度分布．}
+  \label{fig::alpha_theta_En_dep}
 \end{figure}
 \begin{figure}
   \centering
