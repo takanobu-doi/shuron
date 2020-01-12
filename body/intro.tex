@@ -156,7 +156,7 @@ ${}^{12}{\rm C}$ (Hoyle状態) の中性子非弾性散乱による脱励起の�
 \end{equation}
 となる．
 
-中性子比弾性散乱による脱励起の寿命と$\gamma$線による脱励起の寿命 ($\tau_{\gamma} = \SI{1.710e-13}{\second}$) との比を
+中性子非弾性散乱による脱励起の寿命と$\gamma$線による脱励起の寿命 ($\tau_{\gamma} = \SI{1.710e-13}{\second}$) との比を
 $R$とすると，
 \begin{equation}
   R = 6.557\times10{-6}\times\rho_{\rm n}T_{9}^{-1.5}{\rm C}_{{\rm spin}}
@@ -205,16 +205,16 @@ $\rho\sim\SI{e6}{\gram\per\cubic\centi\metre}, T\sim\SI{e9}{\kelvin}$のよう�
 
 \section{測定を行う中性子のエネルギー}
 式\eqref{eq::R}から分かるように$R$を計算するためには，
-実験によって断面積 ($\sigma_{\rm nn'} (E)$) のエネルギー分布が必要となる．
+中性子と${}^{12}\mathrm{C}$の非弾性散乱断面積 ($\sigma_{\rm nn'} (E)$) のエネルギー分布が必要となる．
 特に，天体中で${}^{12}{\rm C}$と散乱した後に中性子が持つエネルギー領域を狙う必要がある．
 Beardら~\cite{hotdensemedium}が考えているような$T\sim\SI{e9}{\kelvin}$では，
 $k_{B}T\sim\SI{100}{\kilo\electronvolt}$である．% 1K = 8.61734e-5 eV
 このような中性子がHoyle状態 (Ex = \SI{7.65}{\mega\electronvolt}) の${}^{12}{\rm C}$と散乱すると，
 散乱後の中性子は$E_{\rm n}\sim\SI{8}{\mega\electronvolt}$となる．
 つまり，式\eqref{eq::tau}に示した脱励起の寿命の計算には
-数--十数 \si{\mega\electronvolt}のエネルギーを持つ中性子と${}^{12}{\rm C}$との断面積のエネルギー分布が必要となる．
+数 \si{\mega\electronvolt}のエネルギーを持つ中性子と${}^{12}{\rm C}$との断面積のエネルギー分布が必要となる．
 しかし，図\ref{fig::crosssection_pres} (上) からも分かるように，
-数--十数 \si{\mega\electronvolt}の領域におけるg.s. $\rightarrow$ Hoyle状態のデータがない．
+数 \si{\mega\electronvolt}の領域におけるg.s. $\rightarrow$ Hoyle状態のデータがない．
 そのため，このエネルギー領域での ${}^{12}{\rm C}({\rm n,n'}){}^{12}{\rm C}^{{\rm Hoyle}}$ の断面積の測定が必要である．
 \begin{figure}
   \centering
@@ -226,7 +226,8 @@ $k_{B}T\sim\SI{100}{\kilo\electronvolt}$である．% 1K = 8.61734e-5 eV
 \end{figure}
 
 本研究ではその第一歩として
-$E_{\rm n} = \SI{14}{\mega\electronvolt}$の中性子を用いて断面積の測定を行う．
+$E_{\rm n} = \SI{14}{\mega\electronvolt}$の中性子を用いて断面積の測定を行い，
+${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C} (0_2^+)$反応の断面積測定の実現可能性を確認する．
 \SI{14}{\mega\electronvolt}は式\eqref{eq::dt}に示すDT 反応で単色で生成可能なエネルギーである．
 \begin{equation}
   {\rm d} + {\rm t} \rightarrow \alpha (\SI{3.5}{\mega\electronvolt}) + {\rm n} (\SI{14}{\mega\electronvolt})
@@ -247,7 +248,7 @@ Ref.~\cite{takahashietal,kondoetal}によりすでに測定されている．
 ${}^{12}{\rm C}({\rm n},{\rm n}'+3\alpha)$反応の全断面積は\SI{209}{\milli\barn}，
 分岐比は表\ref{tab::branchingratio}の通りである．
 %Ex = 7.65, 9.64, および10.3 MeV へ励起する反応が大部分を占めている．
-微分断面積の角度分布は図\ref{fig::sig_angle_dist}のようである．
+微分断面積の角度分布は図\ref{fig::sig_angle_dist}~\cite{kondoetal}のようである．
 これらの測定値と比較することによって測定方法の妥当性を確認することが可能となる．
 
 \begin{table}
@@ -312,7 +313,7 @@ DC 中性子ビームを用いた測定を行うことができる．
 \label{seq::detector_using_experiment}
 本研究では${}^{12}{\rm C}^{\rm Hoyle}$から崩壊して生成した3つの$\alpha$粒子の直接測定を行う．
 ${}^{12}{\rm C}^{\rm Hoyle}$から放出された$\alpha$粒子は図\ref{fig::alpha_E_dist}のような分布を持つ．
-図\ref{fig::alpha_E_dist}の塗りつぶしは全体の8割となる領域を示しており，
+図\ref{fig::alpha_E_dist}の塗りつぶしは最大値を中心に全体の8割となる領域を示しており，
 \SIrange{0}{0.6}{\mega\electronvolt}である．
 このような低エネルギーの$\alpha$粒子を効率よく検出するためには，
 標的中で$\alpha$粒子が停止しないようにしなければならない．
@@ -321,10 +322,10 @@ ${}^{12}{\rm C}^{\rm Hoyle}$から放出された$\alpha$粒子は図\ref{fig::a
 更に低いエネルギーの$\alpha$粒子も検出しようとすると，更に標的を薄くしなければならない．
 このような低エネルギー粒子の測定には，検出器そのものが標的となるアクティブ標的が有効である．
 図\ref{fig::alpha_theta_dist}は$\alpha$粒子の角度分布である．
-図\ref{fig::alpha_theta_dist}の塗りつぶしは全体の8割となる領域を示しており，
+図\ref{fig::alpha_theta_dist}の塗りつぶしは最大値を中心に全体の8割となる領域を示しており，
 \SIrange{0.13}{1.31}{\radian} である．
 %この図からもわかるように広い角度領域に$\alpha$粒子は崩壊する．
-そのため，3つの$\alpha$粒子すべてを効率的に検出するためには大立体角を持つ検出器が必要となる．
+そのため，3つの$\alpha$粒子すべてを効率的に検出するためには大立体角を覆う検出器が必要となる．
 このような要求を満たす検出器としてMAIKo TPC ($\mu$-PIC based active target for inverse kinematics .
 time projection chamber)~\cite{maiko, mupic}がある．
 MAIKo TPC はTPC の検出ガスを散乱標的として用いたTPC であり，
@@ -365,4 +366,10 @@ MAIKo TPC を用いることで効率的に3つの低エネルギー$\alpha$粒�
 MAIKo TPC では使用する検出ガスの種類，圧力，電圧等の多くのパラメータを調整することができる．
 本研究では効率的に$\alpha$粒子を検出することができる検出ガスの種類，混合比，圧力を検討した．
 また，安定したMAIKo TPC をオペレートする条件を検討した．
+
+解析において，3つの$\alpha$粒子のトラックを正しく抽出できなければ，
+${}^{12}{\rm C}({\rm n},{\rm n}'){}^{12}{\rm C}^{\rm Hoyle}$反応の断面積を求めることができない．
+トラックから求めた，$\alpha$粒子の運動エネルギー，角度や
+3つの$\alpha$粒子の4元運動量から求めた${}^{12}\mathrm{C}$の不変質量の分解能などを評価した．
+また，正しく解析を行える割合やこの測定方法で期待される収量の評価を行った．
 \end{document}
