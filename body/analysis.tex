@@ -36,8 +36,8 @@ SRIM は，荷電粒子がが物質中を通過する際の，イオンの飛程
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{range_to_ene.eps}
-  \caption[\Methane (\SI{50}{\hecto\pascal}) 中での荷電粒子の飛行距離と運動エネルギー．]
-          {\Methane (\SI{50}{\hecto\pascal}) 中での荷電粒子の飛行距離と運動エネルギー．
+  \caption[\Methane (\SI{50}{\hecto\pascal}) 中での荷電粒子 (p, $\alpha$, ${}^{12}\rm{C}$) の飛行距離と運動エネルギー．]
+          {\Methane (\SI{50}{\hecto\pascal}) 中での荷電粒子 (p, $\alpha$, ${}^{12}\rm{C}$) の飛行距離と運動エネルギー．
             この相関はSRIM を用いて求めた．
           }
   \label{fig::range_to_ene_alpha}
@@ -72,13 +72,14 @@ eye-scanでは，トラックの本数の識別と散乱点，停止点の抽出
 本研究では${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}')3\alpha$イベントに対して解析を行った．
 検出ガスの決定のために，\ref{sec::triple_alpha_simulation}節のシミュレーションで生成したデータに対して解析を行った．
 
-\subsection{検出効率}
+\subsection{解析効率}
 実際には${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}')3\alpha$イベントであっても，
 各$\alpha$粒子のエネルギーや放出角度，トラックの太さによっては3つのトラックを区別することができず，
 ${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}')3\alpha$イベントとして認識できない場合がある．
-そこで，eye-scanによって正しくトラックが3本と認識できる割合（検出効率）を評価する．
+そこで，eye-scanによって正しくトラックが3本と認識できる割合（解析効率）を評価する．
 eye-scanは各検出ガスについて100 events ずつ行った．
-検出効率を表\ref{tab::gas_summary}に示す．
+eye-scanによって決定したトラックの本数を表\ref{tab::track_number_ratio}に示す．
+表\ref{tab::track_number_ratio}の3本の割合が解析効率となる．
 %\begin{table}
 %  \centering
 %  \caption[シミュレーションデータに対する検出効率．]
@@ -97,7 +98,23 @@ eye-scanは各検出ガスについて100 events ずつ行った．
 %    \bottomrule
 %  \end{tabular}
 %\end{table}
-\Methane 単体と\MethaneHerium 以外は約\SI{90}{\percent}の検出効率となっている．
+\begin{table}
+  \centering
+  \caption{eye-scanによって決定したトラックの本数の割合．}
+  \label{tab::track_number_ratio}
+  \begin{tabular}{cccc}
+    \toprule
+    gas & 3本 (\si{\percent}) & 2本 (\si{\percent}) & 1本 (\si{\percent}) \\
+    \midrule
+    \Methane & 55 & 37 & 8 \\
+    \MethaneHydro & 91 & 9 & 0 \\
+    \MethaneHerium & 78 & 22 & 0 \\
+    \isoButaneHydro & 87 & 11 & 2 \\
+    \isoButaneHerium & 90 & 10 & 0 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\Methane 単体と\MethaneHerium 以外は約\SI{90}{\percent}の解析効率となっている．
 
 %\subsection{検出効率の角度依存性}
 \subsection{エネルギー分解能}
@@ -360,11 +377,11 @@ $3_1^-$の\SI{9.64}{\mega\electronvolt}であるので，
 分解能も隣り合う励起状態と分けるのに十分良いことも分かる．
 
 \begin{table}
-  \caption{各ガスの検出効率と分解能．それぞれ100 eventsずつeye-scanによって解析を行った．}
+  \caption{各ガスの解析効率と分解能．それぞれ100 eventsずつeye-scanによって解析を行った．}
   \label{tab::gas_summary}
   \begin{tabular}{ccccc}
     \toprule
-    gas & 検出効率 (\si{\percent}) & 
+    gas & 解析効率 (\si{\percent}) & 
     $dE\pm\sigma$ (\si{\kilo\electronvolt}) &
     $d\theta\pm\sigma$ (\si{\milli\radian}) &
     Ex$\pm\sigma$ (\si{\mega\electronvolt})\\
@@ -381,7 +398,7 @@ $3_1^-$の\SI{9.64}{\mega\electronvolt}であるので，
 \section{検出ガスの決定}
 ディフュージョンとトラックの幅の観点では\MethaneHydro ,
 \isoButaneHydro  が良い．
-検出効率は\MethaneHydro , \isoButaneHydro ,
+解析効率は\MethaneHydro , \isoButaneHydro ,
 \isoButaneHerium が良い．
 $\alpha$粒子のエネルギー分解能の観点では\MethaneHydro が良い．
 角度分解能の観点では\MethaneHydro ,
