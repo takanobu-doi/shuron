@@ -1,7 +1,7 @@
 \documentclass[../master]{subfiles}
 \begin{document}
 
-\chapter{iso-C$_{\text 4}$H$_{\text{10}}$ (10) + H$_{\text 2}$ (9)のガス特性}
+\chapter{iso-C$_{\text 4}$H$_{\text{10}}$ (10) + H$_{\text 2}$ (9)を用いたとき}
 本章では検出ガスとして用いる\isoButaneHydro の特性について述べる．
 \section{ドリフトスピード}
 ドリフトスピードのドリフト電場依存性を調べた．
@@ -144,7 +144,7 @@ $\mu$-PICのanode 電極の周りにより強い電場が形成されること�
 %GEMによる増幅率と異なり，$\mu$-PICの電圧依存性はほぼ同時に測定したため，
 %図\ref{fig::gain_GEM_V_dep}に見られたような不連続性は見られない．
 
-\section{拡散効果}
+\section{電子のディフュージョン効果}
 ドリフトスピードが一定である場合は，電子の拡散は$\sqrt{L}$に比例する．
 線源は線源導入機によって，チェンバーの気密性を保持したまま電子のドリフト方向に移動可能である．
 線源導入機は2016年度の森本修論~\cite{morimoto_thesis}で開発された．
@@ -175,5 +175,78 @@ $\sqrt{L}$に比例していることが確認された．
 %低圧では露点などの不純物が混ざることによって、ドリフトスピードが変化することが懸念される。
 %そこで、ドリフトスピードの時間安定性の測定を行った。
 %この測定は$\rm CH_{4}$ 50 hPa で行った。
+
+\section{検出効率}
+\subsection{検出器による検出効率}
+測定されたトラックの長さから粒子のエネルギーを決定する．
+しかし，散乱点や粒子の運動エネルギー，角度によってはMAIKo TPC の有感領域から外に出てしまう．
+有感領域の外へ出てしまった粒子のトラックの長さは決定することができないので，
+その粒子の運動エネルギーと運動量を決定できなくなってしまう．
+そこで，有感領域内で停止する割合を考える．
+ここでは，条件は以下のようなである．
+\begin{itemize}
+\item
+  半径\SI{10}{\milli\metre}の\SI{14}{\mega\electronvolt}の中性子ビームが$z$軸正の向きでMAIKo TPC に入射している．
+\item
+  ビーム軸方向に一様に中性子と${}^{12}\mathrm{C}$の散乱が起きる．
+\item
+  散乱の角度分布は図\ref{fig::sig_angle_dist}とする．
+\end{itemize}
+半径\SI{10}{\milli\metre}の幅を持っている中性子ビームを用いると，
+散乱点が$y$軸方向に\SI{20}{\milli\metre}の幅を持つ．
+gridの座標を$y = \SI{0}{\milli\metre}$，plateの座標を$y = \SI{140}{\milli\metre}$とし，
+ビームの中心が$y = \SI{70}{\milli\metre}$の位置にあるとする．
+この時$y = \SI{80}{\milli\metre}$の位置で散乱が起きると，
+見かけ上の有感領域はgrid方向に\SI{80}{\milli\metre}，plate方向に\SI{60}{\milli\metre}となる．
+また，$y = \SI{60}{\milli\metre}$の位置で散乱が起きると，
+見かけ上の有感領域はgrid方向に\SI{60}{\milli\metre}，plate方向に\SI{80}{\milli\metre}となる．
+しかし，MAIKo TPC は$y$座標をトラックの周囲に発生した電子の読み出し面に到達する時間差を用いて検出しているため，
+$y$座標の絶対値を決定することができない．
+すると，$y = \SI{80}{\milli\metre}$と$y = \SI{60}{\milli\metre}$のどちらで散乱が起きたのかを区別できない．
+どちらの場合でも確実に有感領域中で停止したと保証するためには，
+散乱点から$y$軸方向に\SI{\pm60}{\milli\metre}を実質の有感領域としなければならない．
+
+この条件のもとで，散乱点および3つの停止点が有感領域にある時に検出可能とする．
+すると検出効率は\SI{48.2}{\percent}となった．
+検出率の散乱点の$z$座標依存性を図\ref{fig::detection_efficiency_beam_axis}に，
+${}^{12}\mathrm{C}$の重心系での散乱角依存性を図\ref{fig::detection_efficiency_theta_cm}に示す．
+図\ref{fig::detection_efficiency_beam_axis}から分かるように，
+$z$座標が小さいまたは大きい（つまり，MAIKo TPC の奥側）で反応が起きた場合に，
+崩壊してできた$\alpha$粒子が有感領域から出やすくなるため検出効率が低下している．
+また，図\ref{fig::efficiency_theta_cm}から分かるように，
+$\theta_{\text{c.m.}}$が小さいところで検出効率が低下している．
+これは，$\theta_{\text{c.m.}}$が小さいところでは中性子から多くのエネルギーを受け取り，
+崩壊した$\alpha$粒子が全体的に$z$軸正の方向にブーストされることで有感領域から出ていきやすくなるためである．
+
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.8\columnwidth]{detection_efficiency_beam_axis.eps}
+  \caption{検出効率の散乱点の$z$座標依存性．}
+  \label{fig::detection_efficiency_beam_axis}
+  \includegraphics[clip, width=0.8\columnwidth]{detection_efficiency_theta_cm.eps}
+  \caption{検出効率の重心系での散乱角依存性．}
+  \label{fig::detection_efficiency_theta_cm}
+\end{figure}
+
+%\subsection{解析による検出効率}
+\section{期待される収量}
+Ref.~\cite{takahashietal,kondoetal}によると${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}(0_{2}^{+})$の
+断面積 ($\sigma$) は\SI{8.36}{\milli\barn}である．
+OKTAVIAN で現在得られるビーム量 ($N_{\text{b}}$) は最大で$4\pi$に\SI{5e9}{\per\second}である．
+この時，半径\SI{10}{\milli\metre}のコリメータからは\SI{1.95e4}{\per\second}の中性子が得られる．
+検出器の検出効率 ($\varepsilon_{\text{det.}}$) が\SI{48.2}{\percent}，
+解析の検出効率 ($\varepsilon_{\text{ana.}}$) が\SI{87}{\percent}である．
+\isoButaneHydro (\SI{100}{\hecto\pascal}) における${}^{12}\mathrm{C}$の
+面密度 ($N_{\text{t}}$) は\SI{1.01e17}{\per\square\milli\metre}である．
+%\SI{9.904e-3}{\per\cubic\milli\metre}%\rho = 2.3846e-5\gram\per\cubic\cm
+この時，${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}(0_{2}^{+})$反応の収量は
+\begin{align}
+  Y &= N_{\text{t}}\times N_{\text{b}}\times \sigma \times\varepsilon_{\text{det.}}\times\varepsilon_{\text{ana.}} \notag\\
+  &= \SI{1.01e17}{\per\square\milli\metre}\times\SI{5e9}{\per\second}\times\SI{8.36}{\milli\barn}
+  \times\SI{48.2}{\percent}\times\SI{87}{\percent} \notag\\
+  &= \SI{6.82e-4}{\per\second}
+\end{align}
+となる．
+12時間の測定で，収量が\num{29.5} events と期待される．
 
 \end{document}
