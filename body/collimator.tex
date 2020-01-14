@@ -40,6 +40,11 @@ $\pi\times r^2/\left(2.46\times10^3\right)^2$となる．
 $\alpha$粒子の検出効率を求めた．
 \SIrange{5}{50}{\milli\metre}でのコリメータの立体角の割合と検出効率を
 表\ref{tab::solid_angle_percent}に示す．
+検出効率は\SI{10}{\milli\metre}以下ではあまり変化がない．
+\SI{5}{\milli\metre}と\SI{10}{\milli\metre}を比較すると，
+立体角は4倍\SI{10}{\milli\metre}の方が大きい．
+大きな検出効率を持ちつつ立体角が大きい\SI{10}{\milli\metre}のコリメータを用いる．
+%コリメータの立体角と検出効率の積が最も大きくなるところが収量が最も大きくなる．
 \begin{table}
   \centering
   \caption{コリメータの半径とコリメータの立体角，検出効率．}
@@ -58,19 +63,23 @@ $\alpha$粒子の検出効率を求めた．
   \end{tabular}
 \end{table}
 
-検出効率は\SI{10}{\milli\metre}以下ではあまり変化がない．
-\SI{5}{\milli\metre}と\SI{10}{\milli\metre}を比較すると，
-立体角は4倍\SI{10}{\milli\metre}の方が大きい．
-大きな検出効率を持ちつつ立体角が大きい\SI{10}{\milli\metre}のコリメータを用いて中性子ビームを制限する．
-%コリメータの立体角と検出効率の積が最も大きくなるところが収量が最も大きくなる．
-
 \section{コリメータの作成}
-\subsection{材質}
 中性子を遮蔽する材料として，陽子を多く含むポリエチレンや吸収断面積が大きいホウ素が広く用いられている．
 ポリエチレンとホウ素入りポリエチレンでの中性子の遮蔽度合いをPHITS (ver.~3.14)~\cite{phits}を用いて計算した．
 図\ref{collimator_xy_pos}は\SI{14}{\mega\electronvolt}の中性子がコリメータを通過したときの位置分布である．
-2つの中性子の分布に大きな差異は見られないため，
+2つの中性子の分布に大きな差異は見られない．
+図\ref{fig::neutron_energy_dist}，\ref{fig::neutron_energy_dist_w_B}はコリメータを通過した後の中性子のエンルギー分布である．
+青色のヒストグラムは\SIrange{0}{10}{\milli\metre}の範囲の中性子，
+赤色のヒストグラムは\SIrange{10}{55}{\milli\metre}の範囲の中性子のエネルギー分布である．
+コリメータの穴の部分に対してポリエチレンまたはホウ素入りポリエチレンの部分は
+中性子が遮蔽されいることが分かる．
+ポリエチレンとホウ素入りポリエチレンでは同程度にコリメートできているので，
 本実験ではコストの面からポリエチレンを用いたコリメータを作成した．
+実際に作成したコリメータを図\ref{pic::collimator}に示す．
+このコリメータは半径\SI{55}{\milli\metre}，高さ\SI{100}{\milli\metre}の円柱の中心に
+半径\SI{10}{\milli\metre}の穴を開けた構造になっている．
+壁の厚さが\SI{1000}{\milli\metre}であるため，
+このコリメータ10 個を中性子の取り出し穴に挿入する．
 \begin{figure}
   \centering
   \begin{subfigure}{0.45\columnwidth}
@@ -86,20 +95,40 @@ $\alpha$粒子の検出効率を求めた．
   \caption{コリメータ通過後の中性子の位置分布．}
   \label{collimator_xy_pos}
 \end{figure}
-
-\subsection{中性子のエネルギーの汚れ方}
-\SI{14}{\mega\electronvolt}の中性子は単色エネルギーであることが大きな利点である．
-しかし，コリメータとの散乱によってエネルギーが減少した中性子が入射することが懸念される．
-PHITS を用いて計算したコリメータ通過後の中性子のエネルギー分布を図\ref{fig::neutron_energy_dist}に示す．
-中性子のエネルギーが\SI{14}{\mega\electronvolt}からほぼ変化がないことが分かる．
-よって，中性子のエネルギーが汚れないとして測定を行う．
 \begin{figure}
   \centering
-  \includegraphics[clip,width=0.8\columnwidth]{cross_eng_f.eps}
-  \caption{コリメータ通過後の中性子のエネルギー}
+  \includegraphics[clip, width=0.8\columnwidth]{cross_eng_f.eps}
+  \caption{ポリエチレンコリメータの場合のエネルギー分布．}
   \label{fig::neutron_energy_dist}
+  \centering
+  \includegraphics[clip, width=0.8\columnwidth]{cross_eng_f_w_B.eps}
+  \caption{ホウ素入りポリエチレンコリメータの場合のエネルギー分布．}
+  \label{fig::neutron_energy_dist_w_B}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.8\columnwidth]{IMG_2755_clpd.jpg}
+  \caption{ポリエチレンで作成したコリメータ．}
+  \label{pic::collimator}
 \end{figure}
 
+%\SI{14}{\mega\electronvolt}の中性子は単色エネルギーであることが大きな利点である．
+%しかし，コリメータとの散乱によってエネルギーが減少した中性子が入射することが懸念される．
+%図\ref{fig::neutron_energy_dist}において，コリメータの中心から\SI{10}{\milli\metre}以内の
+%中性子のエネルギーが\SI{14}{\mega\electronvolt}からほぼ変化がないことが分かる．
+%よって，中性子のエネルギーが汚れないとして測定を行う．
+%\begin{figure}
+%  \centering
+%  \includegraphics[clip,width=0.8\columnwidth]{cross_eng_f.eps}
+%  \caption{コリメータ通過後の中性子のエネルギー}
+%  \label{fig::neutron_energy_dist}
+%\end{figure}
+
 \section{中性子の収量}
+PHITS による計算では\SIrange{0}{10}{\milli\metre}の範囲の
+\SIrange{13.9}{14.1}{\mega\electronvolt}の中性子は
+\SI{4.07e-5}{\per\mega\electronvolt\per source}となる．
+OKTAVIAN のDCビームラインで生成される中性子が\SI{5e9}{\per\second}であるとすると，
+コリメータを通過してくる中性子の収量は\SI{4.07e4}{\per\second}となる．
 
 \end{document}
