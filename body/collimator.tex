@@ -68,22 +68,22 @@ $\alpha$粒子の検出効率を求めた．
 \subsection{材質}
 中性子を遮蔽する材料として，陽子を多く含むポリエチレンや吸収断面積が大きいホウ素が広く用いられている．
 ポリエチレンとホウ素入りポリエチレンでの中性子の遮蔽度合いをPHITS (ver.~3.14)~\cite{phits}を用いて計算した．
-図\ref{collimator_xy_pos}はコリメータを通過して来た中性子の位置分布である．
+図\ref{collimator_xy_pos}は\SI{14}{\mega\electronvolt}の中性子がコリメータを通過したときの位置分布である．
 2つの中性子の分布に大きな差異は見られないため，
 本実験ではコストの面からポリエチレンを用いたコリメータを作成した．
 \begin{figure}
   \centering
-%  \begin{subfiure}{0.45\columnwidth}
-%    \centering
-%    \includegraphics[clip, width=\columnwidth]{}
-%    \caption{}
-%  \end{subfiure}
-%  \begin{subfiure}{0.45\columnwidth}
-%    \centering
-%    \includegraphics[clip, width=\columnwidth]{}
-%    \caption{}
-%  \end{subfiure}
-  \caption{コリメータ通過後の中性子の位置分布}
+  \begin{subfigure}{0.45\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth]{cross_xy_f.eps}
+    \caption{ポリエチレンの場合．}
+  \end{subfigure}
+  \begin{subfigure}{0.45\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth]{cross_xy_f_w_B.eps}
+    \caption{ホウ素入りポリエチレンの場合．}
+  \end{subfigure}
+  \caption{コリメータ通過後の中性子の位置分布．}
   \label{collimator_xy_pos}
 \end{figure}
 
@@ -95,7 +95,7 @@ PHITS を用いて計算したコリメータ通過後の中性子のエネル�
 よって，中性子のエネルギーが汚れないとして測定を行う．
 \begin{figure}
   \centering
-%  \includegraphics[clip,width=0.8\columnwidth]{}
+  \includegraphics[clip,width=0.8\columnwidth]{cross_eng_f.eps}
   \caption{コリメータ通過後の中性子のエネルギー}
   \label{fig::neutron_energy_dist}
 \end{figure}
