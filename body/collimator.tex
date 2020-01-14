@@ -6,11 +6,100 @@
 
 \chapter{中性子コリメータ}
 \section{ビームサイズを制限する必要性}
-有感領域中で小さく
+中性子ビームは可能な限り細いのもが望ましい．
+例えば，半径\SI{50}{\milli\metre}の幅を持っている中性子ビームを用いると，
+散乱点が$y$軸方向に\SI{100}{\milli\metre}の幅を持つ．
+gridの座標を$y = \SI{0}{\milli\metre}$，plateの座標を$y = \SI{140}{\milli\metre}$とし，
+ビームの中心が$y = \SI{70}{\milli\metre}$の位置にあるとすると，
+中性子ビームは$y = $\SIrange{20}{120}{\milli\metre}の範囲に入射する．
+この時$y = \SI{120}{\milli\metre}$の位置で散乱が起きると，
+見かけ上の有感領域はgrid方向に\SI{120}{\milli\metre}，plate方向に\SI{20}{\milli\metre}となる．
+反対に，$y = \SI{20}{\milli\metre}$の位置で散乱が起きると，
+見かけ上の有感領域はgrid方向に\SI{20}{\milli\metre}，plate方向に\SI{120}{\milli\metre}となる．
+しかし，MAIKo TPC は$y$座標をトラックの周囲に発生した電子の読み出し面に到達する時間差を用いて検出しているため，
+$y$座標の絶対値を決定することができない．
+すると，$y = \SI{120}{\milli\metre}$と$y = \SI{20}{\milli\metre}$のどちらで散乱が起きたのかを区別できない．
+どちらの場合でも確実に有感領域中で停止したと保証するためには，
+散乱点から$y$軸方向に\SI{\pm20}{\milli\metre}を実質の有感領域としなければならない．
+
+有感領域が小さいと領域外に出ていく$\alpha$粒子の数が増えてしまい，
+検出効率が低下する．
+そのため，中性子ビームの$y$軸方向のサイズは可能な限り小さいのもが望ましい．
+その反面，ビームを補足すると標的で生成された中性子を制限することになるので，
+中性子の入射量が低下する．
+この2つの効果を考慮して収量が大きくなるビームサイズを決定する．
+
 \section{シミュレーションによるビームサイズの決定}
-2mm にしたのはどうしてだっけ？
-\section{コリメータの材質}
-ポリエチレン
+重照射室内のトリチウムターゲットから中性子は$4\pi$に等方的に放出していると仮定する．
+すると，中性子の収量はコリメータの立体角で決定される．
+トリチウムターゲットから重照射室の大実験室側の壁までの距離は\SI{1.46e3}{\milli\metre}，
+壁の厚さは\SI{1e3}{\milli\metre}である．
+コリメータの半径を$r$~\si{\milli\metre}とすると，立体角は
+$\pi\times r^2/\left(2.46\times10^3\right)^2$となる．
+図\ref{fig::alpha_E_dist}のエネルギー分布を仮定して，
+$\alpha$粒子の検出効率を求めた．
+\SIrange{5}{50}{\milli\metre}でのコリメータの立体角の割合と検出効率を
+表\ref{tab::solid_angle_percent}に示す．
+\begin{table}
+  \centering
+  \caption{コリメータの半径とコリメータの立体角，検出効率．}
+  \label{tab::solid_angle_percent}
+  \begin{tabular}{ccc}
+    \toprule
+    コリメータの半径 (\si{\milli\metre}) & 立体角 (\si{\steradian}) & 検出効率 (\si{\percent})\\% & 積\\
+    \midrule
+     5 & $1.30\times10^{-5}$ & 48.7 \\%& $6.33\times10^{-6}$ \\
+    10 & $5.19\times10^{-5}$ & 48.2 \\%& $2.50\times10^{-5}$ \\
+    20 & $2.08\times10^{-4}$ & 46.6 \\%& $9.69\times10^{-5}$ \\
+    30 & $4.67\times10^{-4}$ & 39.2 \\%& $1.83\times10^{-4}$ \\
+    40 & $8.31\times10^{-4}$ & 26.3 \\%& $2.19\times10^{-4}$ \\
+    50 & $1.30\times10^{-3}$ & 10.3 \\%& $1.34\times10^{-4}$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+検出効率は\SI{10}{\milli\metre}以下ではあまり変化がない．
+\SI{5}{\milli\metre}と\SI{10}{\milli\metre}を比較すると，
+立体角は4倍\SI{10}{\milli\metre}の方が大きい．
+大きな検出効率を持ちつつ立体角が大きい\SI{10}{\milli\metre}のコリメータを用いて中性子ビームを制限する．
+%コリメータの立体角と検出効率の積が最も大きくなるところが収量が最も大きくなる．
+
+\section{コリメータの作成}
+\subsection{材質}
+中性子を遮蔽する材料として，陽子を多く含むポリエチレンや吸収断面積が大きいホウ素が広く用いられている．
+ポリエチレンとホウ素入りポリエチレンでの中性子の遮蔽度合いをPHITS (ver.~3.14)~\cite{phits}を用いて計算した．
+図\ref{collimator_xy_pos}はコリメータを通過して来た中性子の位置分布である．
+2つの中性子の分布に大きな差異は見られないため，
+本実験ではコストの面からポリエチレンを用いたコリメータを作成した．
+\begin{figure}
+  \centering
+%  \begin{subfiure}{0.45\columnwidth}
+%    \centering
+%    \includegraphics[clip, width=\columnwidth]{}
+%    \caption{}
+%  \end{subfiure}
+%  \begin{subfiure}{0.45\columnwidth}
+%    \centering
+%    \includegraphics[clip, width=\columnwidth]{}
+%    \caption{}
+%  \end{subfiure}
+  \caption{コリメータ通過後の中性子の位置分布}
+  \label{collimator_xy_pos}
+\end{figure}
+
+\subsection{中性子のエネルギーの汚れ方}
+\SI{14}{\mega\electronvolt}の中性子は単色エネルギーであることが大きな利点である．
+しかし，コリメータとの散乱によってエネルギーが減少した中性子が入射することが懸念される．
+PHITS を用いて計算したコリメータ通過後の中性子のエネルギー分布を図\ref{fig::neutron_energy_dist}に示す．
+中性子のエネルギーが\SI{14}{\mega\electronvolt}からほぼ変化がないことが分かる．
+よって，中性子のエネルギーが汚れないとして測定を行う．
+\begin{figure}
+  \centering
+%  \includegraphics[clip,width=0.8\columnwidth]{}
+  \caption{コリメータ通過後の中性子のエネルギー}
+  \label{fig::neutron_energy_dist}
+\end{figure}
+
 \section{中性子の収量}
 
 \end{document}
