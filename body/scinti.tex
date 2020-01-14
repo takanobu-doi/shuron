@@ -1,7 +1,5 @@
 \documentclass[../master]{subfiles}
 
-%\graphicspath{{../eps/}}
-
 \begin{document}
 
 \chapter{中性子検出器}
@@ -57,7 +55,7 @@ CAEN V1742 で取得した波形の1例を図\ref{fig::waveform_V1742}に示す�
 取得周波数は\SI{5}{\giga\hertz}である．
 
 V1742 によって取得した波形のピーク位置に対して
-\SI{-15}{}--\SI{45}{\nano\second} (region 1) と\SI{10}{}--\SI{45}{\nano\second} (region 2) の2つの区間で波形を積分した．
+\SIrange{-15}{45}{\nano\second} (region 1) と\SIrange{10}{45}{\nano\second} (region 2) の2つの区間で波形を積分した．
 AmBe 中性子線源で取得したregion 1 とregion 2 の相関を図\ref{fig::n_gamma_correlation}に示す．
 \begin{figure}
   \centering
@@ -88,7 +86,7 @@ region 2との差分を取ったものが図\ref{fig::n_gamma_projection}であ�
 液体シンチレータの検出効率SCINFUL-CG~\cite{scinful-cg}を用いる．
 SCINFUL-CGは任意形状の中性子用シンチレータに対する応答関数を計算するコードである．
 中性子の検出効率は発光量の閾値により変化する．
-図\ref{fig::neutron_efficiency}に閾値が\SI{0.5}{}，\SI{1.0}{}，\SI{1.5}{\mega\electronvolt ee}のときの検出効率を示す．
+図\ref{fig::neutron_efficiency}に閾値が\SIlist{0.5;1.0;1.5}{\mega\electronvolt ee}のときの検出効率を示す．
 ここでは単色の中性子が入射しているとして計算した．
 \begin{figure}
   \centering

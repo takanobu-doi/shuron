@@ -2,6 +2,9 @@
 \documentclass[titlepage,twoside,openright]{jsreport}
 %\usepackage{thesisj}
 \usepackage[dvipdfmx]{graphicx}
+\usepackage{float}
+\floatplacement{figure}{H}
+\floatplacement{table}{H}
 \usepackage[dvipdfmx, svgnames]{xcolor}
 \graphicspath{{./eps/}{../eps/}{./pic/}{../pic/}}
 \usepackage{subcaption}
@@ -9,27 +12,55 @@
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{url}
-\usepackage[dvipdfmx]{hyperref}
+\usepackage[dvipdfmx, bookmarksnumbered]{hyperref}
 \hypersetup{
   colorlinks=true,
   linkcolor=MediumBlue,
   citecolor=ForestGreen,
-%  linkbordercolor={1 1 1},
+  %  linkbordercolor={1 1 1},
 }
+\usepackage{pxjahyper}
 \usepackage{multirow}
 \usepackage[cc]{titlepic}
 \usepackage{fancyhdr}
 \usepackage{makeidx}
 \usepackage{braket}
+\usepackage{newtxtext, newtxmath}
+\usepackage[scaled]{helvet}
+%\usepackage{tgschola}
+%\usepackage{tgheros}
+\renewcommand{\bfdefault}{bx}
 \usepackage{subfiles}
 \usepackage{tikz}
 \usetikzlibrary{patterns}
 \usetikzlibrary{plotmarks}
 \usepackage{siunitx}
+\sisetup{
+  per-mode=symbol,
+  range-phrase=--,
+  range-units=single,
+  list-separator={，},
+  list-final-separator={，},
+  list-units=single
+}
+%\newcommand{\siu}[1]{\si[per-mode=symbol]{#1}}
+%\newcommand{\SIU}[2]{\SI[per-mode=symbol]{#1}{#2}}
+
 %\bibliographystyle{jplain} % sorted by abc
 %\bibliographystyle{junsrt} % sorted by appearance
 %\bibliographystyle{unsrt} % sorted by appearance
-\bibliographystyle{report} 
+%\bibliographystyle{report}
+%\bibliographystyle{elsarticle-num}
+\bibliographystyle{jpsj}
+%\usepackage[%
+%  backend=bibtex,%
+%  style=phys, %
+%  articletitle=false, %
+%  biblabel=brackets, %
+%  chaptertitle=false, %
+%  pageranges=false]{biblatex}
+%\addbibresource{mybibfile.bib}
+%\bibliography{mybibfile.bib}
 
 \makeatletter
 \renewcommand{\chapter}{%
@@ -59,11 +90,12 @@
 %\fancyfoot[LE,RO]{{\small \thepage}}
 %\cfoot{}
 % modify the width of caption
-\setlength{\captionmargin}{50pt}
+\setlength{\captionmargin}{40pt}
 
 \newcommand{\Methane}{$\mathrm{CH}_{4}$}
 \newcommand{\MethaneHydro}{$\mathrm{CH}_{4}\ (3) + \mathrm{H}_{2}\ (7)$}
 \newcommand{\MethaneHerium}{$\mathrm{CH}_{4}\ (4) + \mathrm{He}\ (6)$}
+\newcommand{\isoButane}{iso-$\mathrm{C}_{4}\mathrm{H}_{10}$}
 \newcommand{\isoButaneHydro}{iso-$\mathrm{C}_{4}\mathrm{H}_{10}\ (1) + \mathrm{H}_{2}\ (9)$}
 \newcommand{\isoButaneHerium}{iso-$\mathrm{C}_{4}\mathrm{H}_{10}\ (1) + \mathrm{He}\ (9)$}
 
@@ -101,7 +133,9 @@
 
 \appendix
 \subfile{body/scinti}
-\subfile{body/collimator}
+%\subfile{body/collimator}
+\subfile{body/drift-speed}
 
+%\printbibliography%[title=参考文献]
 \bibliography{mybibfile}
 \end{document}

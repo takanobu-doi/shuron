@@ -6,48 +6,50 @@
 
 \chapter{シミュレーション}
 \label{chap::simulation}
-\section{各種パラメータの測定}
+\section{$\alpha$線源を用いた測定}
 \ref{sec::detection_gas_candidate}節で考えた各ガスについて，
-ドリフトスピード，ガス増幅率，トラックの幅を測定した．
+シミュレーションの基準となるトラックを測定した．
+また，それらのデータから各ガスにおけるドリフトスピード，ガス増幅率，トラックの幅を測定した．
 測定には${}^{241}{\rm Am}$の$\alpha$線源を用いた．
 図\ref{fig::a_source_track}に$\alpha$線源のトラックの一例を示す．
-図\ref{fig::a_source_track}ではiso-$\rm C_{4}H_{10} (1) + H_{2} (9)$を用いた．
+図\ref{fig::a_source_track}では検出ガスに\isoButaneHydro を用いた．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.9\columnwidth]{0210_7.eps}
-  \caption[$\alpha$線源のトラック．]
-          {$\alpha$線源のトラック．
-          検出ガスはiso-$\rm C_{4}H_{10} (1) + H_{2} (9)$を用いた．}
+  \caption[$\alpha$線源で測定したトラックの一例．]
+          {$\alpha$線源で測定したトラックの一例．
+          検出ガスは\isoButaneHydro を用いた．}
   \label{fig::a_source_track}
 \end{figure}
 \ref{sec::detection_gas_candidate}節では6種類の候補を考えたが，
-ここからは単体のiso-$\rm C_{4}H_{10}$を除いた5種類で考えていく．
-これはディフュージョン係数が大きいことと圧力が低く安定したTPC の動作が難しいと予測されるためである．
+ここからは単体のiso-$\rm C_{4}H_{10}$を除いた5種類について考えていく．
+これはディフュージョン係数が大きくトラックが太くなると予測されることと，
+圧力が\SI{15}{\hecto\pascal}と低く安定したTPC の動作が難しいと予測されるためである．
 
 \subsection{ドリフトスピード}
 電子のドリフトスピードを線源によって得られるトラックから求める．
 測定には図\ref{pic::collimator}のような線源コリメータを用いる．
-このコリメータはアクリルで作られており，1つの0${}^{\circ}$，4つの30${}^{\circ}$の穴が開いている．
+このコリメータはアクリルで作られており，1つの\ang{0}，4つの\ang{30}の穴が開いている．
 \begin{figure}
   \centering
   \begin{subfigure}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=0.8\columnwidth]{image30580-min.png}
-    \caption{側面から．}
+    \caption{側面．}
   \end{subfigure}
   \begin{subfigure}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=0.8\columnwidth]{IMG_20191225_183542_clip.jpg}
-    \caption{正面から．}
+    \caption{正面．}
   \end{subfigure}
   \caption[線源コリメータ．]
-          {線源コリメータ．中央に0${}^{\circ}$，上下左右に30${}^{\circ}$の穴が開いている．
-            $0^{\circ}$の穴と1つの$30^{\circ}$の穴を除いてカプトンテープで塞ぐことで，
+          {線源コリメータ．中央に\ang{0}，上下左右に\ang{30}の穴が開いている．
+            \ang{0}の穴と1つの\ang{30}の穴を除いてカプトンテープで塞ぐことで，
             余計な$\alpha$線が出ないようにしている．
           }
           \label{pic::collimator}
 \end{figure}
-このコリメータを用いることで$\alpha$線を0${}^{\circ}$と30${}^{\circ}$の方向に限定することができる．
+このコリメータを用いることで$\alpha$線を\ang{0}と\ang{30}の方向に限定することができる．
 \begin{figure}
   \centering
   \begin{minipage}{0.45\columnwidth}
@@ -58,24 +60,24 @@
     \centering
     \includegraphics[clip, width=0.9\columnwidth]{drift_v_image.eps}
   \end{minipage}
-  \caption[30${}^{\circ}$に方向を限定した$\alpha$線と取得される画像データのイメージ．]
-          {30${}^{\circ}$に方向を限定した$\alpha$線 (左) と取得される画像データ (右) のイメージ．}
+  \caption[\ang{30}に方向を限定した$\alpha$線と取得される画像データのイメージ．]
+          {\ang{30}に方向を限定した$\alpha$線 (左) と取得される画像データ (右) のイメージ．}
   \label{fig::drift_v_image}
 \end{figure}
 図\ref{fig::drift_v_image}の右のようにドリフト方向に$\Delta y$，それと垂直な方向に$\Delta z$移動するとき，
 \begin{equation}
-  \Delta y = \tan(30^{\circ})\Delta z \label{eq::deltay_deltaz}
+  \Delta y = \tan(\ang{30})\Delta z \label{eq::deltay_deltaz}
 \end{equation}
 となる．
 MAIKo TPC で取得したトラックの横方向の変分を$\Delta strip$，縦方向の変分を$\Delta t$，
 ドリフトスピードを$drift\_v$とすると，
 \begin{align}
-  \frac{\Delta z}{0.4 {\rm mm}} & = \Delta strip \label{eq::deltaz}\\
+  \frac{\Delta z}{\SI{0.4}{\milli\metre}} & = \Delta strip \label{eq::deltaz}\\
   \frac{\Delta y}{drift\_v} & = \Delta t \label{eq::deltay}
 \end{align}
 式 (\ref{eq::deltay_deltaz}, \ref{eq::deltaz}, \ref{eq::deltay}) より
 \begin{equation}
-  drift\_v = \frac{\tan(30^{\circ})~\Delta strip\times0.4~{\rm mm}}{\Delta t}
+  drift\_v = \frac{\tan(\ang{30})~\Delta strip\times\SI{0.4}{\milli\metre}}{\Delta t}
 \end{equation}
 とドリフトスピードが求まる．
 
@@ -87,13 +89,14 @@ $\alpha$線源を用いて測定したドリフトスピードとMagboltz で求
   \label{tab::drift_speed_compare}
   \begin{tabular}{cccc}
     \toprule
-    gas & ドリフト電場 (V/mm) & 実測 (mm/ns) & Magboltz (mm/ns)\\
+    gas & ドリフト電場 (\si{\volt\per\milli\metre}) & 実測 (\si{\milli\metre\per\nano\second})
+    & Magboltz (\si{\milli\metre/\nano\second})\\
     \midrule
-    ${\rm CH_{4}}$ & 0.429 & 0.0126 & 0.0145 \\
-    ${\rm CH_{4}} (3) + {\rm H_{2}} (7)$ & 4.32 & 0.0140 & 0.0140 \\
-    ${\rm CH_{4}} (4) + {\rm He} (6)$ & 1.89 & 0.0135 & 0.0140 \\
-    iso-${\rm C_{4}H_{10}} (1) + {\rm H_{2}} (9)$ & 6.82 & 0.0137 & 0.0140 \\
-    iso-${\rm C_{4}H_{10}} (1) + {\rm He} (9)$ & 3.29 & 0.0139 & 0.0141 \\
+    \Methane & 0.429 & 0.0126 & 0.0145 \\
+    \MethaneHydro & 4.32 & 0.0140 & 0.0140 \\
+    \MethaneHerium & 1.89 & 0.0135 & 0.0140 \\
+    \isoButaneHydro & 6.82 & 0.0137 & 0.0140 \\
+    \isoButaneHerium & 3.29 & 0.0139 & 0.0141 \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -113,15 +116,15 @@ $\alpha$線源を用いて測定したドリフトスピードとMagboltz で求
 %  \includegraphics[clip, width=0.9\columnwidth]{drift_v_iC4H10_H2.eps}
 %  \caption[検出ガスにiso-${\rm C_{4}H_{10}}$を用いたときのドリフトスピードの電場依存性．]
 %          {検出ガスにiso-${\rm C_{4}H_{10}}$を用いたときのドリフトスピードの電場依存性．
-%            図中の点線は0.014 mm/ns を示す．}
+%        p    図中の点線は0.014 mm/ns を示す．}
 %  \label{fig::drift_v_iC4H10_H2}
 %%  \includegraphics[clip, width=0.7\columnwidth]{drift_v_iC4H10_He.eps}
 %  \caption{}
 %  \label{fig::drift_v_iC4H10_He}
 %\end{figure}
 $\alpha$線源を用いて測定したドリフトスピードと Magboltz を用いて計算したドリフトスピードがおおよそ一致していることが分かる．
-$\rm CH_{4}$は実測とMagboltz とがずれているが，ガスに含まれる水分の影響が考えられる．
-$\rm CH_{4}$のみ50 hPa とその他のガスと比較して圧力が半分であるため，不純物の影響が大きく出ていると考えられる．
+\Methane は実測とMagboltz とがずれているが，ガスに含まれる水分の影響が考えられる．
+\Methane のみ\SI{50}{\hecto\pascal} とその他のガスと比較して圧力が半分であるため，不純物の影響が大きく出ていると考えられる．
 
 \subsection{電子増幅率}
 電圧パラメータを変更させたときの増幅率の変化を測定した．
@@ -135,23 +138,24 @@ $N'_{\rm e}$は$\mu$-PICで収集した電荷から求める．
 そのため，荷電粒子のエネルギー損失をW値で割ることで$N_{\rm e}$が求まる．
 各ガスのエネルギー損失とW値~\cite{energy_per_ion_pair,pdg}を表\ref{tab::energy_loss_and_W_val}に示す．
 測定に用いた$\alpha$線源からは平均4.2 MeVの$\alpha$粒子が出ていることが他の測定によりわかっている．
-エネルギー損失は4.2 MeVの$\alpha$粒子が$\mu$-PIC 32 strip分の距離 (12.8 mm) で落とすエネルギーを示している．
+エネルギー損失は\SI{4.2}{\mega\electronvolt}の$\alpha$粒子が$\mu$-PIC 32 strip分の
+距離 (\SI{12.8}{\milli\metre}) で落とすエネルギーを示している．
 \begin{table}
   \centering
   \caption[検出ガスのW値とエネルギー損失と$N_{\rm e}$．]
-          {検出ガスのW値とエネルギー損失と$N_{\rm e}$．
-          エネルギー損失は荷電粒子がガス中を12.8 mm 進んだ時のものである．}
+          {検出ガスのW値~\cite{energy_per_ion_pair,pdg}とエネルギー損失と$N_{\rm e}$．
+          エネルギー損失は荷電粒子がガス中を\SI{12.8}{\milli\metre} 進んだ時のものである．}
   \label{tab::energy_loss_and_W_val}
   \begin{tabular}{cccc}
     \toprule
-    gas & W (eV) & energy loss (MeV) & $N_{\rm e}$\\
+    gas & W値 (\si{\electronvolt}) & energy loss (\si{\kilo\electronvolt}) & $N_{\rm e}$\\
     \midrule
-    ${\rm CH_{4}}$                          & 29.1 & 0.0565 & 1.94$\times 10^{3}$ \\
-    ${\rm CH_{4} (3) + H_{2} (7)}$          & 34.2 & 0.0534 & 1.56$\times 10^{3}$ \\
-    ${\rm CH_{4} (4) + He (7)}$             & 39.2 & 0.0593 & 1.51$\times 10^{3}$ \\
+    \Methane         & 29.1 & 56.5 & 1.94$\times 10^{3}$ \\
+    \MethaneHydro    & 34.2 & 53.4 & 1.56$\times 10^{3}$ \\
+    \MethaneHerium   & 39.2 & 59.3 & 1.51$\times 10^{3}$ \\
 %    iso-${\rm C_{4}H_{10}}$                 & 26.0 & 0.0552 & 2.12$\times 10^{3}$ \\
-    iso-${\rm C_{4}H_{10} (1) + H_{2} (9)}$ & 35.4 & 0.0620 & 1.75$\times 10^{3}$ \\
-    iso-${\rm C_{4}H_{10} (1) + He (9)}$    & 44.0 & 0.0580 & 1.32$\times 10^{3}$ \\
+    \isoButaneHydro  & 35.4 & 62.0 & 1.75$\times 10^{3}$ \\
+    \isoButaneHerium & 44.0 & 58.0 & 1.32$\times 10^{3}$ \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -159,11 +163,11 @@ $N'_{\rm e}$は$\mu$-PICで収集した電荷から求める．
 $\mu$-PICからの信号波形は32 strips まとめて図\ref{fig::FADC_waveform}のようなFADC情報として取得している．
 この信号波形を時間で積分することによって32 strips で収集した電荷量を計算することができる．
 $\mu$-PICで取得した電気信号は読み出し回路内部で800倍に増幅され，
-入力インピーダンス50 $\Omega$ で電流値を電圧値に変換して取得している．
+入力インピーダンス\SI{50}{\ohm}で電流値を電圧値に変換して取得している．
 よって，式 (\ref{eq::N'e})で求めることができる．
-$e$は電荷素量である．
+\si{\elementarycharge}は電荷素量である．
 \begin{equation}
-  N'_{\rm e} = \frac{\int V (t) dt}{ 50 \times 800 \times e}
+  N'_{\rm e} = \frac{\int V (t) dt}{ 50 \times 800 \times \si{\elementarycharge}}
   \label{eq::N'e}
 \end{equation}
 各ガスの増幅率を表\ref{tab::multiplying_rate}に示す．
@@ -176,46 +180,47 @@ $e$は電荷素量である．
     \toprule
     gas & 増幅率 (倍) \\
     \midrule
-    ${\rm CH_{4}}$                          & 700 \\
-    ${\rm CH_{4} (3) + H_{2} (7)}$          & 354 \\
-    ${\rm CH_{4} (4) + He (7)}$             & 322 \\
-    iso-${\rm C_{4}H_{10} (1) + H_{2} (9)}$ & 272 \\
-    iso-${\rm C_{4}H_{10} (1) + He (9)}$    & 392 \\
+    \Methane         & 700 \\
+    \MethaneHydro    & 354 \\
+    \MethaneHerium   & 322 \\
+    \isoButaneHydro  & 272 \\
+    \isoButaneHerium & 392 \\
     \bottomrule
   \end{tabular}
 \end{table}
 
 \subsection{幅}
 本実験の目的である3$\alpha$に崩壊するイベントではトラックが太いと複数のトラックを区別できなくなり，
-背景事象と識別できなくなる．
-0${}^{\circ}$の$\alpha$粒子によるトラックで幅を測定した．
+トラックの抽出を正しくできなくなる．
+\ang{0}の$\alpha$粒子によるトラックで幅を測定した．
 図\ref{fig::track_width}に示すように，
 トラックの幅にはanode strip 128~chのclock方向の幅を用いる．
-\begin{figure}
+\begin{figure}[h]
   \centering
   \includegraphics[clip, width=0.5\columnwidth]{track_width.eps}
-  \caption{トラックの幅．トラックの幅は有感領域の中央であるanode strip 128~chのclock方向の幅を用いる．}
+  \caption{トラックの幅の決定方法のイメージ．
+    トラックの幅は有感領域の中央であるanode strip 128~chのclock方向の幅を用いる．}
   \label{fig::track_width}
 \end{figure}
 このようにして決定したトラックの幅を表\ref{tab::track_width}，図\ref{fig::diffusion_compare}に示す．
-\begin{table}
+\begin{table}[h]
   \centering
   \caption{各ガスのトラックの幅．}
   \label{tab::track_width}
   \begin{tabular}{cc}
     \toprule
-    gas & トラックの幅 ($\times 10~{\rm ns}$)\\
+    gas & トラックの幅 ($\times \SI{10}{\nano\second}$)\\
     \midrule
-    ${\rm CH_{4}}$                          & 91.1 \\
-    ${\rm CH_{4} (3) + H_{2} (7)}$          & 42.3 \\
-    ${\rm CH_{4} (4) + He (7)}$             & 62.5 \\
-    iso-${\rm C_{4}H_{10} (1) + H_{2} (9)}$ & 35.4 \\
-    iso-${\rm C_{4}H_{10} (1) + He (9)}$    & 54.9 \\
+    \Methane         & 91.1 \\
+    \MethaneHydro    & 42.3 \\
+    \MethaneHerium   & 62.5 \\
+    \isoButaneHydro  & 35.4 \\
+    \isoButaneHerium & 54.9 \\
     \bottomrule
   \end{tabular}
 \end{table}
-図\ref{fig::diffusion_compare}から分かるようにトラックの幅とディフュージョンには相関がある．
-ディフュージョン係数，トラックの幅ともにiso-$\rm C_{4}H_{10} (1) + H_{2} (9)$ が最も小さいことが分かる．
+図\ref{fig::diffusion_compare}から分かるようにトラックの幅とディフュージョン係数には相関がある．
+ディフュージョン係数，トラックの幅ともに\isoButaneHydro が最も小さいことが分かる．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.9\columnwidth]{diffusion_compare.eps}
@@ -226,7 +231,7 @@ $e$は電荷素量である．
 \section{シミュレーションによる線源データの再現}
 MAIKo TPC から得られるトラックをGarfield++~\cite{garfield++}と
 Magboltz~\cite{magboltz}を用いたシミュレーションにより再現した．
-シミュレーションでは，ドリフト電場，W値，電子増幅率，密度をfixed parameters，
+シミュレーションでは，ドリフト電場，W値，電子増幅率，検出ガスの密度をfixed parameters，
 TOTの閾値をfree parameterとした．
 シミュレーションは以下のような手順%(図\ref{fig::simulation_flow})
 で行った．
@@ -242,7 +247,7 @@ TOTの閾値をfree parameterとした．
   読み出し領域に到達した電子1つにつき図\ref{fig::mu-pic_readout}にあるような電気信号を
   各strip の信号波形に追加する．
 \item
-  設定した閾値により，信号波形をTOTに変換する．
+  設定した閾値により，信号波形をTOTに変換しanode image とcathode image を作る．
 \end{enumerate}
 \begin{figure}
   \centering
@@ -250,12 +255,13 @@ TOTの閾値をfree parameterとした．
   \caption{1電子が$\mu$-PICに到達した時に読み出される電気信号．}
   \label{fig::mu-pic_readout}
 \end{figure}
-TOTの閾値は0.1 mV ととした．
+TOTの閾値は\SI{0.1}{\milli\volt}とした．
 $\alpha$線源を用いた場合のシミュレーションと測定の比較を図\ref{fig::track_comp_ch4},
 \ref{fig::track_comp_ch4_h2}, \ref{fig::track_comp_ch4_he}, 
 \ref{fig::track_comp_ic4h10_h2}, \ref{fig::track_comp_ic4h10_he}に示す．
-$\alpha$線源によるトラックをシミュレーションで再現できていることが分かる．
-\begin{figure}
+それぞれの検出ガスで$\alpha$線源によるトラックを，
+シミュレーションで再現できていることが分かる．
+\begin{figure}[h]
   \centering
   \begin{subfigure}{0.48\columnwidth}
     \centering
@@ -267,10 +273,10 @@ $\alpha$線源によるトラックをシミュレーションで再現できて
     \includegraphics[width=\columnwidth, trim=0 0 50 0]{0160_5.eps}
     \caption{$\alpha$線源によるトラック．}
   \end{subfigure}
-  \caption{$\rm CH_{4}$の場合．}
+  \caption{\Methane の場合．}
   \label{fig::track_comp_ch4}
 \end{figure}
-\begin{figure}
+\begin{figure}[h]
   \centering
   \begin{subfigure}{0.48\columnwidth}
     \centering
@@ -282,10 +288,10 @@ $\alpha$線源によるトラックをシミュレーションで再現できて
     \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{0207_7.eps}
     \caption{$\alpha$線源によるトラック．}
   \end{subfigure}
-  \caption{$\rm CH_{4} (3) + H_{2} (7)$の場合．}
+  \caption{\MethaneHydro の場合．}
   \label{fig::track_comp_ch4_h2}
 \end{figure}
-\begin{figure}
+\begin{figure}[h]
   \centering
   \begin{subfigure}{0.48\columnwidth}
     \centering
@@ -297,10 +303,10 @@ $\alpha$線源によるトラックをシミュレーションで再現できて
     \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{0163_3.eps}
     \caption{$\alpha$線源によるトラック．}
   \end{subfigure}
-  \caption{$\rm CH_{4} (4) + He (6)$の場合．}
+  \caption{\MethaneHerium の場合．}
   \label{fig::track_comp_ch4_he}
 \end{figure}
-\begin{figure}
+\begin{figure}[h]
   \centering
   \begin{subfigure}{0.48\columnwidth}
     \centering
@@ -312,10 +318,10 @@ $\alpha$線源によるトラックをシミュレーションで再現できて
     \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{0210_14.eps}
     \caption{$\alpha$線源によるトラック．}
   \end{subfigure}
-  \caption{iso-$\rm C_{4}H_{10} (1) + H_{2} (9)$の場合．}
+  \caption{\isoButaneHydro の場合．}
   \label{fig::track_comp_ic4h10_h2}
 \end{figure}
-\begin{figure}
+\begin{figure}[h]
   \centering
   \begin{subfigure}{0.48\columnwidth}
     \centering
@@ -327,7 +333,7 @@ $\alpha$線源によるトラックをシミュレーションで再現できて
     \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{0176_1.eps}
     \caption{$\alpha$線源によるトラック．}
   \end{subfigure}
-  \caption{iso-$\rm C_{4}H_{10} (1) + He (9)$の場合．}
+  \caption{\isoButaneHerium の場合．}
   \label{fig::track_comp_ic4h10_he}
 \end{figure}
 
@@ -338,44 +344,47 @@ $\alpha$線源のトラックを再現することができたので，
 このシミュレーションでは以下のように3つの$\alpha$粒子を生成した．
 \begin{enumerate}
 \item
-  ${}^{12}{\rm C}$が14 MeV の中性子との散乱によりHoyle状態に励起させる．
+  ${}^{12}{\rm C}$が\SI{14}{\mega\electronvolt}の中性子との散乱によりHoyle状態に励起させる．
   この際，重心系で一様な散乱角で散乱させる．
 \item
   Hoyle状態の${}^{12}{\rm C}$を$\alpha$粒子と${}^{8}{\rm Be}$に位相空間で一様に崩壊させる．
 \item
-  ${}^{8}{\rm Be}$を2つの$\alpha$粒子に位相空間で一様に崩壊させる．
+  崩壊してできた${}^{8}{\rm Be}$を2つの$\alpha$粒子に位相空間で一様に崩壊させる．
 \end{enumerate}
 このようにして生成した3つの$\alpha$粒子を元にトラックを生成する．
+トラックの生成方法は前節で述べた通りである．
 生成したトラックを図\ref{fig::three_alpha_ch4}, \ref{fig::three_alpha_ch4_h2}, \ref{fig::three_alpha_ch4_he},
 \ref{fig::three_alpha_ic4h10_h2}, \ref{fig::three_alpha_ic4h10_he}に示す．
-\begin{figure}
+ここでは，3つのトラックを確認できたイベントを選んで示した．
+
+\begin{figure}[h]
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{10020_7.eps}
-  \caption{$\rm CH_{4}$の場合．}
+  \caption{\Methane の場合．}
   \label{fig::three_alpha_ch4}
 \end{figure}
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{10022_15.eps}
-  \caption{$\rm CH_{4} (3) + H_{2} (7)$の場合．}
+  \caption{\MethaneHydro の場合．}
   \label{fig::three_alpha_ch4_h2}
 \end{figure}
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{10021_5.eps}
-  \caption{$\rm CH_{4} (4) + He (6)$の場合．}
+  \caption{\MethaneHerium の場合．}
   \label{fig::three_alpha_ch4_he}
 \end{figure}
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{10024_9.eps}
-  \caption{iso-$\rm C_{4}H_{10} (1) + H_{2} (9)$の場合．}
+  \caption{\isoButaneHydro の場合．}
   \label{fig::three_alpha_ic4h10_h2}
 \end{figure}
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{10023_0.eps}
-  \caption{iso-$\rm C_{4}H_{10} (1) + He$の場合．}
+  \caption{\isoButaneHerium の場合．}
   \label{fig::three_alpha_ic4h10_he}
 \end{figure}
 
