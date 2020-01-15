@@ -14,6 +14,11 @@ Time Projection Chamber (TPC) は荷電粒子のトラックを検出するた�
 そのため，散乱で放出される低エネルギーの荷電粒子を大立体角で検出することができる．
 これを実現する方法として，検出器そのものを標的として用いるアクティブ標的がある．
 アクティブ標的を用いたTPC としてMAIKo TPC が開発された．
+MAIKo TPC は検出ガスを封入するチェンバー (MAIKo チェンバー) と
+ドリフト電場を形成するケージ (ドリフトケージ) とからなる．
+ドリフトケージを図\ref{pic::MAIKo_cage}に示す．
+MAIKo チェンバーの外側を図\ref{pic::MAIKo_chamber_out}に，
+チェンバーの内側を図\ref{pic::MAIKo_chamber_in}に示す．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.7\columnwidth]{MAIKo2.eps}
@@ -32,11 +37,6 @@ Time Projection Chamber (TPC) は荷電粒子のトラックを検出するた�
           図\ref{fig::MAIKo_view}の模式図とはドリフト方向が上下が反転している．}
   \label{pic::MAIKo_cage}
 \end{figure}
-MAIKo TPC は検出ガスを封入するチェンバー (MAIKo チェンバー) と
-ドリフト電場を形成するケージ (ドリフトケージ) とからなる．
-ドリフトケージを図\ref{pic::MAIKo_cage}に示す．
-MAIKo チェンバーの外側を図\ref{pic::MAIKo_chamber_out}に，
-チェンバーの内側を図\ref{pic::MAIKo_chamber_in}に示す．
 \begin{figure}
   \centering
   \begin{subfigure}{0.45\columnwidth}
@@ -55,12 +55,6 @@ MAIKo チェンバーの外側を図\ref{pic::MAIKo_chamber_out}に，
 \end{figure}
 
 図\ref{fig::MAIKo_cage}にドリフトケージの構造を示す．
-\begin{figure}
-  \centering
-  \includegraphics[clip, width=\columnwidth]{MAIKo_cage.eps}
-  \caption{ドリフトケージの構造．}
-  \label{fig::MAIKo_cage}
-\end{figure}
 ドリフトケージはplate，wire，grid，GEM (gas electron multiplier)，$\mu$-PICからなる．
 plate，grid，GEM，$\mu$-PICにHV が接続されている．
 plate，wire，girdの間は\SI{10}{\mega\ohm}の抵抗で繋がれている．
@@ -68,6 +62,12 @@ GEM とHV は\SI{1}{\mega\ohm}と\SI{20}{\mega\ohm}の抵抗で繋がれてい�
 plateからgridの間の領域をドリフト領域，
 gridから$\mu$-PICの間の領域を増幅領域，
 $\mu$-PICの周囲を読み出し領域と呼ぶ．
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=\columnwidth]{MAIKo_cage.eps}
+  \caption{ドリフトケージの構造．}
+  \label{fig::MAIKo_cage}
+\end{figure}
 
 %plate とgrid に電圧をかけることでドリフト領域にドリフト電場を形成する．
 %ドリフト領域を荷電粒子が通過する際に生成された電子がドリフト電場によって増幅領域へ移動する．
@@ -127,6 +127,10 @@ cathode strip に垂直な面 ($x-y$平面) に射影されたcathode image の2
 anode strip とcathode strip はそれぞれ256~chで構成され，
 読み出される信号波高の時間変化は\SI{100}{\mega\hertz}で1,024~samples測定されるため，
 出力される画像の解像度は$256\times1,014$~pixels となる．
+また，anode strip，cathode strip ともに32~chごとにまとめて信号を波形としてFADC で取得している．
+32~chごとにまとめられるため，anode strip，cathode strip ともに8~chずつFADC でデータを取得している．
+FADC で取得した信号の一例を図\ref{fig::FADC_waveform}に示す．
+FADC は\SI{25}{\mega\hertz}で波形を取得する．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.9\columnwidth]{10024_4.eps}
@@ -135,10 +139,6 @@ anode strip とcathode strip はそれぞれ256~chで構成され，
           このイベントは\ref{chap::simulation}章で述べるシミュレーションによって生成したデータである．}
   \label{fig::track_demo}
 \end{figure}
-また，anode strip，cathode strip ともに32~chごとにまとめて信号を波形としてFADC で取得している．
-32~chごとにまとめられるため，anode strip，cathode strip ともに8~chずつFADC でデータを取得している．
-FADC で取得した信号の一例を図\ref{fig::FADC_waveform}に示す．
-FADC は\SI{25}{\mega\hertz}で波形を取得する．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.7\columnwidth]{0210_waveform_2.eps}
@@ -188,6 +188,11 @@ ${}^{12}{\rm C}$以外の原子核が含まれるガスを用いると背景事�
 検出できた割合の圧力依存性を図\ref{fig::efficiency_P_dist}に示す．
 このとき，散乱点がビーム軸上に一様に分布していると仮定した．
 図\ref{fig::efficiency_P_dist}から分かるように，\SI{50}{\hecto\pascal} で最大となっている．
+\SI{50}{\hecto\pascal}のときの\Methane の$dE/dx$と同程度となる，他の検出ガスを考える．
+表\ref{tab::mixture}に示した6つを候補とした．
+%混合ガスでは圧力を\SI{100}{\hecto\pascal} に固定し混合比をパラメータとして$dE/dx$を合わせる．
+括弧内はガスの混合の割合を示す．
+これらの6種類の候補から検出ガスを選ぶ．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{efficiency_P_dist.eps}
@@ -212,10 +217,6 @@ ${}^{12}{\rm C}$以外の原子核が含まれるガスを用いると背景事�
     \bottomrule
   \end{tabular}
 \end{table}
-\SI{50}{\hecto\pascal}のときの\Methane の$dE/dx$と同程度となる，他の検出ガスを考える．
-表\ref{tab::mixture}に示した6つを候補とした．
-%混合ガスでは圧力を\SI{100}{\hecto\pascal} に固定し混合比をパラメータとして$dE/dx$を合わせる．
-括弧内はガスの混合の割合を示す．
 \begin{table}
   \centering
   \caption[ガスの混合パターン，圧力，$dE/dx$．]
@@ -252,7 +253,6 @@ ${}^{12}{\rm C}$以外の原子核が含まれるガスを用いると背景事�
     \bottomrule
   \end{tabular}
 \end{table}
-これらの6種類の候補から検出ガスを選ぶ．
 
 \subsection{ドリフトスピード}
 MAIKo TPC では\SI{100}{\mega\hertz}で1,024 samples データを取得するため，
@@ -277,6 +277,12 @@ Magboltz ドリフトスピードが\SI{0.014}{\milli\metre\per\nano\second}と�
 \subsection{電子のディフュージョンの効果}
 ドリフト電場によって電子が移動する間に検出ガスとの散乱と電子の熱運動により，
 図\ref{fig::diffusion-image}のように広がりながらドリフトする．
+電子が広がることをディフュージョンと呼ぶ．
+この効果が大きくなると，
+荷電粒子によって同じ場所に生成された電子が$\mu$-PICに到達するまでに広がるため，
+トラックが太く検出される．
+トラックが太くなると，複数のトラックを分離することが難しくなる．
+そのため，ディフュージョンの効果が小さいことが望まれる．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.4\columnwidth]{diffusion_image.eps}
@@ -285,12 +291,6 @@ Magboltz ドリフトスピードが\SI{0.014}{\milli\metre\per\nano\second}と�
           同じ位置で生成された電子でもドリフトする間に位置が拡散する．}
   \label{fig::diffusion-image}
 \end{figure}
-電子が広がることをディフュージョンと呼ぶ．
-この効果が大きくなると，
-荷電粒子によって同じ場所に生成された電子が$\mu$-PICに到達するまでに広がるため，
-トラックが太く検出される．
-トラックが太くなると，複数のトラックを分離することが難しくなる．
-そのため，ディフュージョンの効果が小さいことが望まれる．
 
 ドリフト電場がない場合のディフュージョンは以下のように理解できる．
 電子は熱運動により発生点から拡散する．
@@ -345,6 +345,8 @@ Magboltz ドリフトスピードが\SI{0.014}{\milli\metre\per\nano\second}と�
 Magboltz によってディフュージョン係数$D_{\rm Magboltz}$が得られる．
 Magboltz によって計算したディフュージョン係数を表\ref{tab::diffusion}に示す．
 表\ref{tab::diffusion}中の$D_{t}$はドリフト方向に対して垂直な方向への拡散，$D_{l}$は電子の運動方向への拡散の係数を表す．
+\Methane および\isoButane の単体ではディフージョン係数が大きく，
+同じドリフトスピードのとき，ドリフト電場が大きいほどディフュージョン係数が小さいことが分かる．
 \begin{table}
   \centering
   \caption[Magboltz で計算したディフュージョンの係数．]
@@ -366,12 +368,10 @@ Magboltz によって計算したディフュージョン係数を表\ref{tab::d
     \bottomrule
   \end{tabular}
 \end{table}
-\Methane および\isoButane の単体ではディフージョン係数が大きく，
-同じドリフトスピードのとき，ドリフト電場が大きいほどディフュージョン係数が小さいことが分かる．
 
 \isoButaneHydro が最もディフュージョン係数が小さく，
 検出ガスの最有力候補である．
-シミュレーションにより生成した${}^{12}{\rm C}({\rm n},{\rm n}'){}^{12}{\rm C}^{\rm Hoyle}$イベントを解析し，
+シミュレーションにより生成した${}^{12}{\rm C}({\rm n},{\rm n}'){}^{12}{\rm C} (0_2^+)$イベントを解析し，
 その解析効率により検出ガスを決定する．
 
 %\section{$\alpha$線源を用いた測定}
