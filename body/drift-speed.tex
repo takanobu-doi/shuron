@@ -10,6 +10,12 @@
 水分は露点計で測定した．
 露点温度と水分濃度と蒸気密度の対応を表\ref{tab::dew_point_humidity}に示す．
 露点温度は水が凝結を始める温度であるので，高いほど含まれる水分が多いことを示す．
+測定には本文で検討した5種類の検出ガスのうち\Methane を用いた．
+これは，候補とした検出ガスのうち最も圧力が低く，堆積あたりの分子数が少ないので，
+不純物による影響が現れやすいと考えたためである．
+この測定での各部の電圧は表\ref{tab::configuration_for_drift_dep}の通りである．
+測定時は，検出ガスにを入れる前に可能な限り検出器中の水分を取るために，
+半日ほど真空ポンプで真空引きを行った．
 \begin{table}
   \centering
   \caption{露点温度と水分濃度と蒸気密度の対応．ppmはparts par millionの略であり, 10,000 ppm = \SI{1}{\percent} となる．}
@@ -30,10 +36,6 @@
     \bottomrule
   \end{tabular}
 \end{table}
-測定には本文で検討した5種類の検出ガスのうち\Methane を用いた．
-これは，候補とした検出ガスのうち最も圧力が低く，堆積あたりの分子数が少ないので，
-不純物による影響が現れやすいと考えたためである．
-この測定での各部の電圧は表\ref{tab::configuration_for_drift_dep}の通りである．
 \begin{table}
   \centering
   \caption{測定で用いた電圧の構成．}
@@ -50,8 +52,6 @@
     \bottomrule
   \end{tabular}
 \end{table}
-測定時は，検出ガスにを入れる前に可能な限り検出器中の水分を取るために，
-半日ほど真空ポンプで真空引きを行った．
 
 時間経過によって，MAIKo TPC を入れているチェンバー表面に吸着されていた水分が検出ガス中に放出される．
 それによって，検出ガスの露点温度が上昇する．
@@ -59,6 +59,7 @@
 露点温度とドリフトスピードの時間経過を図\ref{fig::drift_time_dep}に示す．
 表\ref{tab::configuration_for_drift_dep}に示したドリフト電場のとき，
 Magboltz によるドリフトスピードは\SI{0.0208}{\milli\metre\per\nano\second}である．
+また，露点温度とドリフトスピードの相関を図\ref{fig::drift_dew_dep}に示す．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{drift_time_dep.eps}
@@ -67,7 +68,6 @@ Magboltz によるドリフトスピードは\SI{0.0208}{\milli\metre\per\nano\s
           横軸は日時を表す．}
   \label{fig::drift_time_dep}
 \end{figure}
-また，露点温度とドリフトスピードの相関を図\ref{fig::drift_dew_dep}に示す．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{drift_dew_dep.eps}
@@ -99,15 +99,15 @@ Magboltz によるドリフトスピードは\SI{0.0208}{\milli\metre\per\nano\s
 マスフローコントローラ，ピエゾバルブ，メータリングバルブ，フローメータ，スクロールポンプを表す．
 ピエゾバルブとメータリングバルブで検出ガスの流量を調整してスクロールポンプで引くことで，
 チェンバー内の圧力を一定に保ったまま検出ガスを循環させた．
+図\ref{fig::drift_time_cont}にドリフトスピードと露点温度の時間経過を示す．
+点線より右側では検出ガスを循環させて，左側では循環させずに測定した．
+検出ガスを循環させることで露点温度，ドリフトスピードともに変化が小さいことが分かる．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.9\columnwidth]{FlowDuct_ver2.eps}
   \caption{ガス配管の概観図．}
   \label{fig::gas_duct}
 \end{figure}
-図\ref{fig::drift_time_cont}にドリフトスピードと露点温度の時間経過を示す．
-点線より右側では検出ガスを循環させて，左側では循環させずに測定した．
-検出ガスを循環させることで露点温度，ドリフトスピードともに変化が小さいことが分かる．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{drift_time_cont.eps}
