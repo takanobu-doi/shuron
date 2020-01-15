@@ -196,37 +196,39 @@ Magboltz で係数を求めた際には，一様な電場を仮定している�
 %そこで、ドリフトスピードの時間安定性の測定を行った。
 %この測定は$\rm CH_{4}$ 50 hPa で行った。
 
-\section{検出効率}
+\section{検出効率の散乱位置，散乱角依存性}
 測定されたトラックの長さから粒子のエネルギーを決定する．
 しかし，散乱点や粒子の運動エネルギー，角度によってはMAIKo TPC の有感領域から外に出てしまう．
 有感領域の外へ出てしまった粒子のトラックの長さは決定することができないので，
 その粒子の運動エネルギーと運動量を決定できなくなってしまう．
-そこで，有感領域内で停止する割合（検出効率）を考える．
+第\ref{chap::collimator}章で有感領域内で停止する割合（検出効率）を考えた．
 
-ここでは，以下のようなで状況を考える．
-\begin{itemize}
-\item
-  半径\SI{10}{\milli\metre}の\SI{14}{\mega\electronvolt}の中性子ビームが$z$軸正の向きでMAIKo TPC に入射している．
-\item
-  ビーム軸方向に一様に中性子と${}^{12}\mathrm{C}$の散乱が起きる．
-\item
-  散乱の角度分布は図\ref{fig::sig_angle_dist}とする．
-\end{itemize}
-半径\SI{10}{\milli\metre}の幅を持っている中性子ビームを用いると，
-散乱点が$y$軸方向に\SI{20}{\milli\metre}の幅を持つ．
-gridの座標を$y = \SI{0}{\milli\metre}$，plateの座標を$y = \SI{140}{\milli\metre}$とし，
-ビームの中心が$y = \SI{70}{\milli\metre}$の位置にあるとする．
-この時$y = \SI{80}{\milli\metre}$の位置で散乱が起きると，
-見かけ上の有感領域はgrid方向に\SI{80}{\milli\metre}，plate方向に\SI{60}{\milli\metre}となる．
-また，$y = \SI{60}{\milli\metre}$の位置で散乱が起きると，
-見かけ上の有感領域はgrid方向に\SI{60}{\milli\metre}，plate方向に\SI{80}{\milli\metre}となる．
-しかし，MAIKo TPC は$y$座標をトラックの周囲に発生した電子の読み出し面に到達する時間差を用いて検出しているため，
-$y$座標の絶対値を決定することができない．
-すると，$y = \SI{80}{\milli\metre}$と$y = \SI{60}{\milli\metre}$のどちらで散乱が起きたのかを区別できない．
-どちらの場合でも確実に有感領域中で停止したと保証するためには，
-散乱点から$y$軸方向に\SI{\pm60}{\milli\metre}を実質の有感領域としなければならない．
-
-この条件のもとで，散乱点および3つの停止点が有感領域にある時に検出可能とすると，検出効率は\SI{48.2}{\percent}となった．
+%ここでは，以下のようなで状況を考える．
+%\begin{itemize}
+%\item
+%  半径\SI{10}{\milli\metre}の\SI{14}{\mega\electronvolt}の中性子ビームが$z$軸正の向きでMAIKo TPC に入射している．
+%\item
+%  ビーム軸方向に一様に中性子と${}^{12}\mathrm{C}$の散乱が起きる．
+%\item
+%  散乱の角度分布は図\ref{fig::sig_angle_dist}とする．
+%\end{itemize}
+%半径\SI{10}{\milli\metre}の幅を持っている中性子ビームを用いると，
+%散乱点が$y$軸方向に\SI{20}{\milli\metre}の幅を持つ．
+%gridの座標を$y = \SI{0}{\milli\metre}$，plateの座標を$y = \SI{140}{\milli\metre}$とし，
+%ビームの中心が$y = \SI{70}{\milli\metre}$の位置にあるとする．
+%この時$y = \SI{80}{\milli\metre}$の位置で散乱が起きると，
+%見かけ上の有感領域はgrid方向に\SI{80}{\milli\metre}，plate方向に\SI{60}{\milli\metre}となる．
+%また，$y = \SI{60}{\milli\metre}$の位置で散乱が起きると，
+%見かけ上の有感領域はgrid方向に\SI{60}{\milli\metre}，plate方向に\SI{80}{\milli\metre}となる．
+%しかし，MAIKo TPC は$y$座標をトラックの周囲に発生した電子の読み出し面に到達する時間差を用いて検出しているため，
+%$y$座標の絶対値を決定することができない．
+%すると，$y = \SI{80}{\milli\metre}$と$y = \SI{60}{\milli\metre}$のどちらで散乱が起きたのかを区別できない．
+%どちらの場合でも確実に有感領域中で停止したと保証するためには，
+%散乱点から$y$軸方向に\SI{\pm60}{\milli\metre}を実質の有感領域としなければならない．
+%第\ref{chap::collimator}章で述べたように有限の大きさを持つ中性子ビームが入射した場合，
+%実質の有感領域をMAIKo ケージよりも小さくしなければならない．
+%
+散乱点および3つの停止点が有感領域にある時に検出可能とすると，検出効率は\SI{48.2}{\percent}であった．
 検出効率の散乱点の$z$座標依存性を図\ref{fig::detection_efficiency_beam_axis}に，
 ${}^{12}\mathrm{C}$の重心系での散乱角依存性を図\ref{fig::detection_efficiency_theta_cm}に示す．
 図\ref{fig::detection_efficiency_beam_axis}から分かるように，
@@ -248,6 +250,18 @@ $\theta_{\text{c.m.}}$が小さいところで検出効率が低下している�
   \caption{検出効率の重心系での散乱角依存性．}
   \label{fig::detection_efficiency_theta_cm}
 \end{figure}
+%\begin{figure}
+%  \centering
+%  \includegraphics[clip, width=0.8\columnwidth]{10024_12.eps}
+%  \caption{$\theta$が小さいときのイベント．}
+%  \label{fig::back_sca_event}
+%\end{figure}
+%\begin{figure}
+%  \centering
+%  \includegraphics[clip, width=0.8\columnwidth]{10024_74.eps}
+%  \caption{$\theta$が大きいときのイベント．}
+%  \label{fig::forward_sca_event}
+%\end{figure}
 
 \section{期待される収量}
 Ref.~\cite{takahashietal,kondoetal}によると${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}(0_{2}^{+})$の
