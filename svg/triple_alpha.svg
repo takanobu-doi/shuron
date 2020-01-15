@@ -26,9 +26,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.9023443"
-     inkscape:cx="1760.2245"
-     inkscape:cy="1716.3415"
+     inkscape:zoom="1.4511722"
+     inkscape:cx="1889.724"
+     inkscape:cy="1823.1545"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -3405,9 +3405,11 @@
          y="-180.50937"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05555534px;font-family:'TeX Gyre Termes';-inkscape-font-specification:'TeX Gyre Termes';stroke-width:0.26458332"><tspan
    style="font-size:4.58611059px;baseline-shift:super;stroke-width:0.26458332"
-   id="tspan9934-5">12</tspan>C<tspan
-   style="font-size:4.58611059px;baseline-shift:super;stroke-width:0.26458332"
-   id="tspan10828">Hoyle</tspan></tspan></text>
+   id="tspan9934-5">12</tspan>C(0<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan31746">2</tspan><tspan
+   style="font-size:65%;baseline-shift:super"
+   id="tspan31748">+</tspan>)</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.26499999;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker7161)"
        d="m 447.14583,-192.47915 v 5.29166"
@@ -4467,9 +4469,11 @@
          id="tspan9930-9-1"
          sodipodi:role="line"><tspan
    id="tspan9934-5-1"
-   style="font-size:4.58611059px;baseline-shift:super;stroke-width:0.26458332">12</tspan>C<tspan
-   id="tspan10828-5"
-   style="font-size:4.58611059px;baseline-shift:super;stroke-width:0.26458332">Hoyle</tspan></tspan></text>
+   style="font-size:4.58611059px;baseline-shift:super;stroke-width:0.26458332">12</tspan>C(0<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan31752">2</tspan><tspan
+   style="font-size:65%;baseline-shift:super"
+   id="tspan31750">+</tspan>)</tspan></text>
     <path
        inkscape:connector-curvature="0"
        id="path10830"
