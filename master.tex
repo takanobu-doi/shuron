@@ -82,7 +82,7 @@
 \renewcommand{\headrulewidth}{1pt}
 \renewcommand{\footrulewidth}{0pt}
 %\fancyhead{}
-%\renewcommand{\chaptermark}[1]{\markboth{第\ \thechapter\ 章\,\, #1}{}}
+\renewcommand{\chaptermark}[1]{\markboth{第\ \thechapter\ 章\,\, #1}{}}
 %\fancyhead[RO]{{\small \rightmark}}
 %\fancyhead[LE]{{\small \leftmark}}
 %\renewcommand{\headrulewidth}{0pt}
@@ -101,7 +101,8 @@
 
 \makeindex
 \title {{2019年度 修士論文}\\%
-  \Huge{MAIKo TPC を用いた${}^{12}\rm{C}(n,n'){}^{12}\rm{C}(0_{2}^{+})$の}\\\Huge{散乱断面積の測定}}
+  \Huge{MAIKo TPC を用いた${}^{12}\rm{C}(n,n'){}^{12}\rm{C}(0_{2}^{+})$反応の}\\
+  \Huge{断面積測定に向けた実験条件の検討}}
 \author{\includegraphics[width=0.5\columnwidth]{eps/E-C.eps}\\\\\\
   \Large{京都大学大学院 理学研究科}\\
   \Large{物理学・宇宙物理学専攻 物理学第二教室}\\
@@ -127,14 +128,15 @@
 %\subfile{body/oktavian}
 \subfile{body/simulation}
 \subfile{body/analysis}
+\subfile{body/collimator}
 \subfile{body/iso-butane}
 \subfile{body/conclusion}
 \subfile{body/acknowledge}
 
 \appendix
 \subfile{body/scinti}
-%\subfile{body/collimator}
 \subfile{body/drift-speed}
+\subfile{body/phits-input}
 
 %\printbibliography%[title=参考文献]
 \bibliography{mybibfile}
