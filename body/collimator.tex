@@ -39,7 +39,7 @@ $y = \SI{120}{\milli\metre}$と$y = \SI{20}{\milli\metre}$のどちらで散乱�
 中性子の入射量が低下する．
 %この2つの効果を考慮して収量が大きくなるビームサイズを決定する．
 
-\section{シミュレーションによるビームサイズの決定}
+\section{ビームサイズの決定}
 重照射室内のトリチウムターゲットから中性子は$4\pi$に等方的に放出していると仮定する．
 すると，中性子の収量はコリメータの立体角で決定される．
 トリチウムターゲットから重照射室の大実験室側の壁までの距離は\SI{1.46e3}{\milli\metre}，
@@ -78,6 +78,7 @@ $\alpha$粒子の検出効率を求めた．
 ポリエチレンとホウ素入りポリエチレンでの中性子の遮蔽度合いをPHITS (Particle and Heavy Ion Transport code System)
 ver.~3.14~\cite{phits}を用いて計算した．
 PHITS は原子力機構が中心となって開発を行っている物質中での放射線の挙動をシミュレートするモンテカルロ計算コードである．
+PHITS の入力ファイルを付録\ref{chap::phits-input}に示す．
 図\ref{collimator_xy_pos}は\SI{14}{\mega\electronvolt}の中性子がコリメータを通過したときの位置分布である．
 2つの中性子の分布に大きな差異は見られない．
 図\ref{fig::neutron_energy_dist}，\ref{fig::neutron_energy_dist_w_B}はコリメータを通過した後の中性子のエンルギー分布である．
