@@ -18,9 +18,18 @@ gridの座標を$y = \SI{0}{\milli\metre}$，plateの座標を$y = \SI{140}{\mil
 見かけ上の有感領域はgrid方向に\SI{20}{\milli\metre}，plate方向に\SI{120}{\milli\metre}となる．
 しかし，MAIKo TPC は$y$座標をトラックの周囲に発生した電子の読み出し面に到達する時間差を用いて検出しているため，
 $y$座標の絶対値を決定することができない．
-すると，$y = \SI{120}{\milli\metre}$と$y = \SI{20}{\milli\metre}$のどちらで散乱が起きたのかを区別できない．
+すると，図\ref{fig::sensitive_area}のように，
+$y = \SI{120}{\milli\metre}$と$y = \SI{20}{\milli\metre}$のどちらで散乱が起きたのかを区別できない．
 どちらの場合でも確実に有感領域中で停止したと保証するためには，
 散乱点から$y$軸方向に\SI{\pm20}{\milli\metre}を実質の有感領域としなければならない．
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.6\columnwidth]{sensitive_area.eps}
+  \caption[ビームサイズが大きいときの散乱事象．]
+          {ビームサイズが大きいときの散乱事象．
+            右上のように領域外にトラックが出ているのか，左下のように領域内で停止したのか区別ができない．}
+  \label{fig::sensitive_area}
+\end{figure}
 
 有感領域が小さいと領域外に出ていく$\alpha$粒子の数が増えてしまい，
 検出効率が低下する．
@@ -65,7 +74,9 @@ $\alpha$粒子の検出効率を求めた．
 
 \section{コリメータの作成}
 中性子を遮蔽する材料として，陽子を多く含むポリエチレンや吸収断面積が大きいホウ素が広く用いられている．
-ポリエチレンとホウ素入りポリエチレンでの中性子の遮蔽度合いをPHITS (ver.~3.14)~\cite{phits}を用いて計算した．
+ポリエチレンとホウ素入りポリエチレンでの中性子の遮蔽度合いをPHITS (Particle and Heavy Ion Transport code System)
+ver.~3.14~\cite{phits}を用いて計算した．
+PHITS は原子力機構が中心となって開発を行っている物質中での放射線の挙動をシミュレートするモンテカルロ計算コードである．
 図\ref{collimator_xy_pos}は\SI{14}{\mega\electronvolt}の中性子がコリメータを通過したときの位置分布である．
 2つの中性子の分布に大きな差異は見られない．
 図\ref{fig::neutron_energy_dist}，\ref{fig::neutron_energy_dist_w_B}はコリメータを通過した後の中性子のエンルギー分布である．
@@ -82,47 +93,45 @@ $\alpha$粒子の検出効率を求めた．
 このコリメータ10 個を中性子の取り出し穴に挿入する．
 \begin{figure}
   \centering
-  \begin{subfigure}{0.45\columnwidth}
+  \begin{subfigure}{\columnwidth}
     \centering
-    \includegraphics[clip, width=\columnwidth]{cross_xy_f.eps}
+    \includegraphics[clip, width=0.7\columnwidth]{cross_xy_f_w_l.eps}
     \caption{ポリエチレンの場合．}
   \end{subfigure}
-  \begin{subfigure}{0.45\columnwidth}
+  \begin{subfigure}{\columnwidth}
     \centering
-    \includegraphics[clip, width=\columnwidth]{cross_xy_f_w_B.eps}
+    \includegraphics[clip, width=0.7\columnwidth]{cross_xy_f_w_B_w_l.eps}
     \caption{ホウ素入りポリエチレンの場合．}
   \end{subfigure}
-  \caption{コリメータ通過後の中性子の位置分布．}
+  \caption[コリメータ通過後の中性子の位置分布．]
+          {コリメータ通過後の中性子の位置分布．2つの円はコリメータの穴と外縁を表す．}
   \label{collimator_xy_pos}
 \end{figure}
 \begin{figure}
-  \centering
-  \includegraphics[clip, width=0.8\columnwidth]{cross_eng_f.eps}
-  \caption{ポリエチレンコリメータの場合のエネルギー分布．}
-  \label{fig::neutron_energy_dist}
-  \centering
-  \includegraphics[clip, width=0.8\columnwidth]{cross_eng_f_w_B.eps}
-  \caption{ホウ素入りポリエチレンコリメータの場合のエネルギー分布．}
-  \label{fig::neutron_energy_dist_w_B}
+  \begin{subfigure}{\columnwidth}
+    \centering
+    \includegraphics[clip, width=0.8\columnwidth]{cross_eng_f.eps}
+    \caption{ポリエチレンコリメータの場合．}
+    \label{fig::neutron_energy_dist}
+  \end{subfigure}
+  \begin{subfigure}{\columnwidth}
+    \centering
+    \includegraphics[clip, width=0.8\columnwidth]{cross_eng_f_w_B.eps}
+    \caption{ホウ素入りポリエチレンコリメータの場合．}
+    \label{fig::neutron_energy_dist_w_B}
+  \end{subfigure}
+  \caption[中性子のエネルギー分布．]
+          {中性子のエネルギー分布．\SIrange{0}{10}{\milli\metre}はコリメータの穴の部分，
+          \SIrange{10}{55}{\milli\metre}はコリメータの部分である．}
+  \label{fig::neutron_energy}
 \end{figure}
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{IMG_2755_clpd.jpg}
-  \caption{ポリエチレンで作成したコリメータ．}
+  \caption[ポリエチレンで作成したコリメータ．]
+          {ポリエチレンで作成したコリメータ．}
   \label{pic::collimator}
 \end{figure}
-
-%\SI{14}{\mega\electronvolt}の中性子は単色エネルギーであることが大きな利点である．
-%しかし，コリメータとの散乱によってエネルギーが減少した中性子が入射することが懸念される．
-%図\ref{fig::neutron_energy_dist}において，コリメータの中心から\SI{10}{\milli\metre}以内の
-%中性子のエネルギーが\SI{14}{\mega\electronvolt}からほぼ変化がないことが分かる．
-%よって，中性子のエネルギーが汚れないとして測定を行う．
-%\begin{figure}
-%  \centering
-%  \includegraphics[clip,width=0.8\columnwidth]{cross_eng_f.eps}
-%  \caption{コリメータ通過後の中性子のエネルギー}
-%  \label{fig::neutron_energy_dist}
-%\end{figure}
 
 \section{中性子の収量}
 PHITS による計算では\SIrange{0}{10}{\milli\metre}の範囲の
