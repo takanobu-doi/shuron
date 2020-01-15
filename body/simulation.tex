@@ -13,6 +13,10 @@
 測定には${}^{241}{\rm Am}$の$\alpha$線源を用いた．
 図\ref{fig::a_source_track}に$\alpha$線源のトラックの一例を示す．
 図\ref{fig::a_source_track}では検出ガスに\isoButaneHydro を用いた．
+\ref{sec::detection_gas_candidate}節では6種類の候補を考えたが，
+ここからは単体のiso-$\rm C_{4}H_{10}$を除いた5種類について考えていく．
+これはディフュージョン係数が大きくトラックが太くなると予測されることと，
+圧力が\SI{15}{\hecto\pascal}と低く安定したTPC の動作が難しいと予測されるためである．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.9\columnwidth]{0210_7.eps}
@@ -21,15 +25,28 @@
           検出ガスは\isoButaneHydro を用いた．}
   \label{fig::a_source_track}
 \end{figure}
-\ref{sec::detection_gas_candidate}節では6種類の候補を考えたが，
-ここからは単体のiso-$\rm C_{4}H_{10}$を除いた5種類について考えていく．
-これはディフュージョン係数が大きくトラックが太くなると予測されることと，
-圧力が\SI{15}{\hecto\pascal}と低く安定したTPC の動作が難しいと予測されるためである．
 
 \subsection{ドリフトスピード}
 電子のドリフトスピードを線源によって得られるトラックから求める．
 測定には図\ref{pic::alpha_collimator}のような線源コリメータを用いる．
 このコリメータはアクリルで作られており，1つの\ang{0}，4つの\ang{30}の穴が開いている．
+このコリメータを用いることで$\alpha$線を\ang{0}と\ang{30}の方向に限定することができる．
+図\ref{fig::drift_v_image}の右のようにドリフト方向に$\Delta y$，それと垂直な方向に$\Delta z$移動するとき，
+\begin{equation}
+  \Delta y = \tan(\ang{30})\Delta z \label{eq::deltay_deltaz}
+\end{equation}
+となる．
+MAIKo TPC で取得したトラックの横方向の変分を$\Delta strip$，縦方向の変分を$\Delta t$，
+ドリフトスピードを$drift\_v$とすると，
+\begin{align}
+  \frac{\Delta z}{\SI{0.4}{\milli\metre}} & = \Delta strip \label{eq::deltaz}\\
+  \frac{\Delta y}{drift\_v} & = \Delta t \label{eq::deltay}
+\end{align}
+式 (\ref{eq::deltay_deltaz}, \ref{eq::deltaz}, \ref{eq::deltay}) より
+\begin{equation}
+  drift\_v = \frac{\tan(\ang{30})~\Delta strip\times\SI{0.4}{\milli\metre}}{\Delta t}
+\end{equation}
+とドリフトスピードが求まる．
 \begin{figure}
   \centering
   \begin{subfigure}{0.45\columnwidth}
@@ -49,7 +66,6 @@
           }
           \label{pic::alpha_collimator}
 \end{figure}
-このコリメータを用いることで$\alpha$線を\ang{0}と\ang{30}の方向に限定することができる．
 \begin{figure}
   \centering
   \begin{minipage}{0.45\columnwidth}
@@ -64,25 +80,12 @@
           {\ang{30}に方向を限定した$\alpha$線 (左) と取得される画像データ (右) のイメージ．}
   \label{fig::drift_v_image}
 \end{figure}
-図\ref{fig::drift_v_image}の右のようにドリフト方向に$\Delta y$，それと垂直な方向に$\Delta z$移動するとき，
-\begin{equation}
-  \Delta y = \tan(\ang{30})\Delta z \label{eq::deltay_deltaz}
-\end{equation}
-となる．
-MAIKo TPC で取得したトラックの横方向の変分を$\Delta strip$，縦方向の変分を$\Delta t$，
-ドリフトスピードを$drift\_v$とすると，
-\begin{align}
-  \frac{\Delta z}{\SI{0.4}{\milli\metre}} & = \Delta strip \label{eq::deltaz}\\
-  \frac{\Delta y}{drift\_v} & = \Delta t \label{eq::deltay}
-\end{align}
-式 (\ref{eq::deltay_deltaz}, \ref{eq::deltaz}, \ref{eq::deltay}) より
-\begin{equation}
-  drift\_v = \frac{\tan(\ang{30})~\Delta strip\times\SI{0.4}{\milli\metre}}{\Delta t}
-\end{equation}
-とドリフトスピードが求まる．
 
 $\alpha$線源を用いて測定したドリフトスピードとMagboltz で求めた値を
 表\ref{tab::drift_speed_compare}に示す．
+$\alpha$線源を用いて測定したドリフトスピードと Magboltz を用いて計算したドリフトスピードがおおよそ一致していることが分かる．
+\Methane は実測とMagboltz とがずれているが，ガスに含まれる水分の影響が考えられる．
+\Methane のみ\SI{50}{\hecto\pascal} とその他のガスと比較して圧力が半分であるため，不純物の影響が大きく出ていると考えられる．
 \begin{table}
   \centering
   \caption{実測したドリフトスピードとMagboltzで求めたドリフトスピードの比較．}
@@ -122,9 +125,6 @@ $\alpha$線源を用いて測定したドリフトスピードとMagboltz で求
 %  \caption{}
 %  \label{fig::drift_v_iC4H10_He}
 %\end{figure}
-$\alpha$線源を用いて測定したドリフトスピードと Magboltz を用いて計算したドリフトスピードがおおよそ一致していることが分かる．
-\Methane は実測とMagboltz とがずれているが，ガスに含まれる水分の影響が考えられる．
-\Methane のみ\SI{50}{\hecto\pascal} とその他のガスと比較して圧力が半分であるため，不純物の影響が大きく出ていると考えられる．
 
 \subsection{電子増幅率}
 電圧パラメータを変更させたときの増幅率の変化を測定した．
@@ -160,7 +160,7 @@ $N'_{\rm e}$は$\mu$-PICで収集した電荷から求める．
   \end{tabular}
 \end{table}
 
-$\mu$-PICからの信号波形は32 strips まとめて図\ref{fig::FADC_waveform}のようなFADC情報として取得している．
+$\mu$-PICからの信号波形は32 strips まとめて図\ref{fig::FADC_waveform}のようなFADC 情報として取得している．
 この信号波形を時間で積分することによって32 strips で収集した電荷量を計算することができる．
 $\mu$-PICで取得した電気信号は読み出し回路内部で800倍に増幅され，
 入力インピーダンス\SI{50}{\ohm}で電流値を電圧値に変換して取得している．
@@ -195,15 +195,18 @@ $\mu$-PICで取得した電気信号は読み出し回路内部で800倍に増�
 \ang{0}の$\alpha$粒子によるトラックで幅を測定した．
 図\ref{fig::track_width}に示すように，
 トラックの幅にはanode strip 128~chのclock方向の幅を用いる．
-\begin{figure}[h]
+このようにして決定したトラックの幅を表\ref{tab::track_width}，図\ref{fig::diffusion_compare}に示す．
+図\ref{fig::diffusion_compare}から分かるようにトラックの幅とディフュージョン係数には相関がある．
+ディフュージョン係数，トラックの幅ともに\isoButaneHydro が最も小さいことが分かる．
+\begin{figure}
   \centering
   \includegraphics[clip, width=0.5\columnwidth]{track_width.eps}
   \caption{トラックの幅の決定方法のイメージ．
     トラックの幅は有感領域の中央であるanode strip 128~chのclock方向の幅を用いる．}
   \label{fig::track_width}
 \end{figure}
-このようにして決定したトラックの幅を表\ref{tab::track_width}，図\ref{fig::diffusion_compare}に示す．
-\begin{table}[h]
+
+\begin{table}
   \centering
   \caption{各ガスのトラックの幅．}
   \label{tab::track_width}
@@ -219,8 +222,7 @@ $\mu$-PICで取得した電気信号は読み出し回路内部で800倍に増�
     \bottomrule
   \end{tabular}
 \end{table}
-図\ref{fig::diffusion_compare}から分かるようにトラックの幅とディフュージョン係数には相関がある．
-ディフュージョン係数，トラックの幅ともに\isoButaneHydro が最も小さいことが分かる．
+
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.9\columnwidth]{diffusion_compare.eps}
@@ -249,19 +251,20 @@ TOTの閾値をfree parameterとした．
 \item
   設定した閾値により，信号波形をTOTに変換しanode image とcathode image を作る．
 \end{enumerate}
-\begin{figure}
-  \centering
-  \includegraphics[clip, width=0.9\columnwidth]{waveform.eps}
-  \caption{1電子が$\mu$-PICに到達した時に読み出される電気信号．}
-  \label{fig::mu-pic_readout}
-\end{figure}
 TOTの閾値は\SI{0.1}{\milli\volt}とした．
 $\alpha$線源を用いた場合のシミュレーションと測定の比較を図\ref{fig::track_comp_ch4},
 \ref{fig::track_comp_ch4_h2}, \ref{fig::track_comp_ch4_he}, 
 \ref{fig::track_comp_ic4h10_h2}, \ref{fig::track_comp_ic4h10_he}に示す．
 それぞれの検出ガスで$\alpha$線源によるトラックを，
 シミュレーションで再現できていることが分かる．
-\begin{figure}[h]
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.9\columnwidth]{waveform.eps}
+  \caption{1電子が$\mu$-PICに到達した時に読み出される電気信号．}
+  \label{fig::mu-pic_readout}
+\end{figure}
+
+\begin{figure}
   \centering
   \begin{subfigure}{0.48\columnwidth}
     \centering
@@ -276,7 +279,8 @@ $\alpha$線源を用いた場合のシミュレーションと測定の比較を
   \caption{\Methane の場合．}
   \label{fig::track_comp_ch4}
 \end{figure}
-\begin{figure}[h]
+
+\begin{figure}
   \centering
   \begin{subfigure}{0.48\columnwidth}
     \centering
@@ -291,7 +295,8 @@ $\alpha$線源を用いた場合のシミュレーションと測定の比較を
   \caption{\MethaneHydro の場合．}
   \label{fig::track_comp_ch4_h2}
 \end{figure}
-\begin{figure}[h]
+
+\begin{figure}
   \centering
   \begin{subfigure}{0.48\columnwidth}
     \centering
@@ -306,7 +311,8 @@ $\alpha$線源を用いた場合のシミュレーションと測定の比較を
   \caption{\MethaneHerium の場合．}
   \label{fig::track_comp_ch4_he}
 \end{figure}
-\begin{figure}[h]
+
+\begin{figure}
   \centering
   \begin{subfigure}{0.48\columnwidth}
     \centering
@@ -321,7 +327,8 @@ $\alpha$線源を用いた場合のシミュレーションと測定の比較を
   \caption{\isoButaneHydro の場合．}
   \label{fig::track_comp_ic4h10_h2}
 \end{figure}
-\begin{figure}[h]
+
+\begin{figure}
   \centering
   \begin{subfigure}{0.48\columnwidth}
     \centering
@@ -356,31 +363,34 @@ $\alpha$線源のトラックを再現することができたので，
 生成したトラックを図\ref{fig::three_alpha_ch4}, \ref{fig::three_alpha_ch4_h2}, \ref{fig::three_alpha_ch4_he},
 \ref{fig::three_alpha_ic4h10_h2}, \ref{fig::three_alpha_ic4h10_he}に示す．
 ここでは，3つのトラックを確認できたイベントを選んで示した．
-
-\begin{figure}[h]
+\begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{10020_7.eps}
   \caption{\Methane の場合．}
   \label{fig::three_alpha_ch4}
 \end{figure}
+
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{10022_15.eps}
   \caption{\MethaneHydro の場合．}
   \label{fig::three_alpha_ch4_h2}
 \end{figure}
+
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{10021_5.eps}
   \caption{\MethaneHerium の場合．}
   \label{fig::three_alpha_ch4_he}
 \end{figure}
+
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{10024_9.eps}
   \caption{\isoButaneHydro の場合．}
   \label{fig::three_alpha_ic4h10_h2}
 \end{figure}
+
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{10023_0.eps}
