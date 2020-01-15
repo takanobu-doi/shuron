@@ -302,7 +302,8 @@ DC 中性子ビームを用いた測定を行うことができる．
 中性子の入射領域を制限できることから，DC ビームラインを用いて測定を行う予定である．
 また，取り出し穴に任意の形状のコリメータを入れることで，
 ビームの形状を制御することができる．
-本実験では図\ref{pic::neutron_collimator}のような半径\SI{10}{\milli\metre}の穴が開いたコリメータを用いる．
+本実験では半径\SI{10}{\milli\metre}の穴が開いたコリメータを用いる．
+コリメータについては\ref{chap::collimator}章で詳しく述べる．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.9\columnwidth]{oktavian-sketch.png}
@@ -325,12 +326,12 @@ DC 中性子ビームを用いた測定を行うことができる．
           写真右手前から加速されたデューテリウムが照射される．}
   \label{pic::pulse_beam_line}
 \end{figure}
-\begin{figure}
-  \centering
-  \includegraphics[clip, width=0.8\columnwidth, angle=270]{IMG_2755.jpg}
-  \caption{コリメータ．外半径\SI{53}{\milli\metre}，内半径\SI{10}{\milli\metre}の円柱型のポリエチレンを用いる．}
-  \label{pic::neutron_collimator}
-\end{figure}
+%\begin{figure}
+%  \centering
+%  \includegraphics[clip, width=0.8\columnwidth, angle=270]{IMG_2755.jpg}
+%  \caption{コリメータ．外半径\SI{53}{\milli\metre}，内半径\SI{10}{\milli\metre}の円柱型のポリエチレンを用いる．}
+%  \label{pic::neutron_collimator}
+%\end{figure}
 
 \section{測定に用いる実験装置}
 \label{seq::detector_using_experiment}
@@ -423,12 +424,11 @@ MAIKo TPC を用いることで効率的に3つの低エネルギー$\alpha$粒�
 それぞれの$\alpha$粒子が持つ運動エネルギーが数十倍違うこともある．
 そのため，より効率的に全ての粒子を測定するための条件を検討する必要がある．
 MAIKo TPC では使用する検出ガスの種類，圧力，電圧等の多くのパラメータを調整することができる．
-本研究では効率的に$\alpha$粒子を検出することができる検出ガスの種類，混合比，圧力を検討した．
-また，安定したMAIKo TPC をオペレートする条件を検討した．
-
-解析において，3つの$\alpha$粒子のトラックを正しく抽出できなければ，
-${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}^{\text{Hoyle}}$反応の断面積を求めることができない．
-トラックから求めた，$\alpha$粒子の運動エネルギー，角度や
-3つの$\alpha$粒子の4元運動量から求めた${}^{12}\mathrm{C}$の不変質量の分解能などを評価した．
-また，正しく解析を行える割合やこの測定方法で期待される収量の評価を行った．
+本研究では効率的に$\alpha$粒子を検出することができる検出ガスの候補を複数選出し，
+$\alpha$線源を用いて性能試験を行う．
+それらのガスについて中性子との散乱で${}^{12}\mathrm{C}$原子核が3つの$\alpha$粒子に崩壊するイベントをシミュレートし，
+MAIKo TPC から得られるであろう画像を生成する．
+シミュレーションで生成した画像に対して解析を行い，検出効率，エネルギー分解能，角度分解能を評価する．
+評価結果から実験で用いる検出ガスを決定する．
+また，正しく解析を行える割合やこの測定方法で期待される収量の評価を行い，実験の実現可能性を検討する．
 \end{document}
