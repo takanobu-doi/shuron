@@ -344,6 +344,91 @@ $\alpha$線源を用いた場合のシミュレーションと測定の比較を
   \label{fig::track_comp_ic4h10_he}
 \end{figure}
 
+$\alpha$線源から放出される$\alpha$粒子のエネルギーは\SI{4.2}{\mega\electronvolt}であるが，
+実際に測定する$\alpha$粒子のエネルギーは数百\si{\kilo\electronvolt}である．
+そこで，$\alpha$線源の前に\SI{15}{\micro\metre}のカプトンを挟むことで$\alpha$粒子のエネルギーを落として測定を行った．
+カプトンと有感領域と線源の間にある検出ガスによってエネルギーを落とし約\SI{1}{\mega\electronvolt}となる．
+図\ref{fig::track_ch4_loss}，\ref{fig::track_ch4_h2_loss}，\ref{fig::track_ch4_he_loss}，
+\ref{fig::track_ic4h10_h2_loss}，\ref{fig::track_ic4h10_he_loss}に示す．
+コリメータの\ang{30}の穴を用いたため，斜めのトラックとなっている．
+シミュレーションでは有感領域の横から\SI{500}{\kilo\electronvolt}の$\alpha$粒子を飛ばした．
+エネルギーを完全に合わせていないが，トラックの太さを再現できている．
+\begin{figure}
+  \centering
+  \begin{subfigure}{0.48\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{a_source_CH4_50_nostr_3.eps}
+    \caption{シミュレーションによるトラック．}
+  \end{subfigure}
+  \begin{subfigure}{0.48\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{0146_16.eps}
+    \caption{$\alpha$線源によるトラック．}
+  \end{subfigure}
+  \caption{\Methane の場合．}
+  \label{fig::track_ch4_loss}
+\end{figure}
+\begin{figure}
+  \centering
+  \begin{subfigure}{0.48\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{a_source_CH4_3_H2_7_100_nostr_0.eps}
+    \caption{シミュレーションによるトラック．}
+  \end{subfigure}
+  \begin{subfigure}{0.48\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{0209_22.eps}
+    \caption{$\alpha$線源によるトラック．}
+  \end{subfigure}
+  \caption{\MethaneHydro の場合．}
+  \label{fig::track_ch4_h2_loss}
+\end{figure}
+\begin{figure}
+  \centering
+  \begin{subfigure}{0.48\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{a_source_CH4_4_He_6_100_nostr_0.eps}
+    \caption{シミュレーションによるトラック．}
+  \end{subfigure}
+  \begin{subfigure}{0.48\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{0204_24.eps}
+    \caption{$\alpha$線源によるトラック．}
+  \end{subfigure}
+  \caption{\MethaneHerium の場合．}
+  \label{fig::track_ch4_he_loss}
+\end{figure}
+\begin{figure}
+  \centering
+  \begin{subfigure}{0.48\columnwidth}
+    \centering
+    \includegraphics[clip ,width=\columnwidth, trim=0 0 50 0]{a_source_iC4H10_1_H2_9_100_nostr_1.eps}
+    \caption{シミュレーションによるトラック．}
+  \end{subfigure}
+  \begin{subfigure}{0.48\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{0211_4.eps}
+    \caption{$\alpha$線源によるトラック．}
+  \end{subfigure}
+  \caption{\isoButaneHydro の場合．}
+  \label{fig::track_ic4h10_h2_loss}
+\end{figure}
+\begin{figure}
+  \centering
+  \begin{subfigure}{0.48\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{a_source_iC4H10_1_He_9_100_nostr_0.eps}
+    \caption{シミュレーションによるトラック．}
+  \end{subfigure}
+  \begin{subfigure}{0.48\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{0203_10.eps}
+    \caption{$\alpha$線源によるトラック．}
+  \end{subfigure}
+  \caption{\isoButaneHerium の場合．}
+  \label{fig::track_ic4h10_he_loss}
+\end{figure}
+
 \section{トリプルアルファ反応のシミュレーション}
 \label{sec::triple_alpha_simulation}
 $\alpha$線源のトラックを再現することができたので，
