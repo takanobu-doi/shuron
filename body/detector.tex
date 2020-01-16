@@ -4,26 +4,32 @@
 
 \chapter{MAIKo TPC}
 \section{MAIKo TPC とは}
-Time Projection Chamber (TPC) は荷電粒子のトラックを検出するために広く用いられているガス検出器である．
+TPC は荷電粒子のトラックを検出するために広く用いられているガス検出器である．
 図\ref{fig::MAIKo_view}にTPC の模式図を示す．
 荷電粒子がTPC の検出ガス中を通過するとき，トラックの周囲の粒子をイオン化させる．
 イオン化で発生した電子をドリフト電場 (図\ref{fig::MAIKo_view}中$y$軸方向) により
 読み出し面にドリフトさせることでトラックを検出する．
-図\ref{fig::MAIKo_view}のようにTPC の有感領域中で入射粒子と標的粒子が反応することで，
-散乱点の周りを有感領域で覆うことができる．
-そのため，散乱で放出される低エネルギーの荷電粒子を大立体角で検出することができる．
+電子が読み出し面に到達する時間差によって，$y$軸方向の位置を決定することができる．
+読み出し面によって$x, z$座標を決定することで，3次元的にトラックを決定できる．
+
+TPC の有感領域中で入射粒子と標的粒子が反応することで，
+散乱点の周りを有感領域で覆うことができるため，
+散乱で放出される低エネルギーの荷電粒子を大立体角で検出することが可能となる．
+図\ref{fig::MAIKo_view}は検出器中で中性子と${}^{12}\mathrm{C}$との散乱によって，
+3つの$\alpha$粒子が放出されたイベント表す．
 これを実現する方法として，検出器そのものを標的として用いるアクティブ標的がある．
 アクティブ標的を用いたTPC としてMAIKo TPC が開発された．
 MAIKo TPC は検出ガスを封入するチェンバー (MAIKo チェンバー) と
 ドリフト電場を形成するケージ (ドリフトケージ) とからなる．
 ドリフトケージを図\ref{pic::MAIKo_cage}に示す．
-MAIKo チェンバーの外側を図\ref{pic::MAIKo_chamber_out}に，
-チェンバーの内側を図\ref{pic::MAIKo_chamber_in}に示す．
+MAIKo チェンバーを図\ref{pic::MAIKo_chamber}に示す．
+ドリフトケージをMAIKo チェンバー内に設置して用いる．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.7\columnwidth]{MAIKo2.eps}
   \caption[MAIKo TPC の概観図．]{MAIKo TPC の概観図．
-    図では紙面手前から入射した中性子 (青) がTPCの中の${}^{12}{\rm C}$と散乱して3つの$\alpha$粒子 (赤) に崩壊した事象を表す．
+    図では紙面手前から入射した中性子 (青) がTPC の中の${}^{12}{\rm C}$と
+    散乱して3つの$\alpha$粒子 (赤) に崩壊した事象を表す．
     anode image ($zy$平面) と cathode image ($zy$平面) の2平面に荷電粒子のトラックが射影される．
     中性子は電荷を持たないためanode \& cathode image にトラックとして検出されない．
   }
@@ -52,9 +58,10 @@ MAIKo チェンバーの外側を図\ref{pic::MAIKo_chamber_out}に，
     \label{pic::MAIKo_chamber_in}
   \end{subfigure}
   \caption{MAIKo チェンバー．}
+  \label{pic::MAIKo_chamber}
 \end{figure}
 
-図\ref{fig::MAIKo_cage}にドリフトケージの構造を示す．
+図\ref{fig::MAIKo_cage}にドリフトケージの模式図を示す．
 ドリフトケージはplate，wire，grid，GEM (gas electron multiplier)，$\mu$-PICからなる．
 plate，grid，GEM，$\mu$-PICにHV が接続されている．
 plate，wire，girdの間は\SI{10}{\mega\ohm}の抵抗で繋がれている．
@@ -85,7 +92,7 @@ plateとgridにそれぞれ高電圧を印加することでドリフト電場�
 ドリフト電場を一様に形成するために\SI{10}{\mega\ohm}の抵抗で接続されたwire が
 \SI{5}{\milli\metre}間隔で巻かれている~\cite{furuno}．
 ドリフト領域はドリフト電場の方向に\SI{140}{\milli\metre}である．
-このplate，grid，wireで囲まれた領域がMAIKo TPC の有感領域となる．
+ドリフト領域がMAIKo TPC の有感領域となる．
 
 \subsection{増幅領域}
 MAIKo TPC ではGEM と$\mu$-PICを用いて電子の増幅を行う．
@@ -117,16 +124,18 @@ $\mu$-PICによって信号が読み出される直前に電子が増幅され�
 \subsection{読み出し領域}
 \label{sec::mu-pic}
 図\ref{fig::MAIKo_view}中でanode strip は$x$軸，cathode strip は$z$軸と平行になるように$\mu$-PICが配置されている．
-GEMと$\mu$-PICにより増幅された電子をanode strip，cathode strip により読み出し，
+GEMと$\mu$-PICにより増幅された電子をanode strip とcathode strip により読み出し，
 それぞれ$z$座標，$x$座標を検出することができる．
-また，anode strip，cathode strip で検出される信号の時間分布により$y$軸座標を決定することができる．
+また，anode strip とcathode strip で検出される信号の時間分布により$y$軸座標を決定することができる．
 
-MAIKo TPC からは図\ref{fig::track_demo}のようにトラックが
+MAIKo TPC からは図\ref{fig::MAIKo_view}のようにトラックが
 anode strip に垂直な面 ($z-y$平面) に射影されたanode image と
 cathode strip に垂直な面 ($x-y$平面) に射影されたcathode image の2つの画像が出力される．
+MAIKo TPC から得られる画像の1例を図\ref{fig::track_demo}に示す．
 anode strip とcathode strip はそれぞれ256~chで構成され，
-読み出される信号波高の時間変化は\SI{100}{\mega\hertz}で1,024~samples測定されるため，
-出力される画像の解像度は$256\times1,014$~pixels となる．
+読み出される信号は\SI{100}{\mega\hertz}で1,024~samples測定し，
+閾値以上を1，以下を0としてデータを取得する．
+出力されるデータは解像度が$256\times1,014$~pixels の白黒画像となる．
 また，anode strip，cathode strip ともに32~chごとにまとめて信号を波形としてFADC で取得している．
 32~chごとにまとめられるため，anode strip，cathode strip ともに8~chずつFADC でデータを取得している．
 FADC で取得した信号の一例を図\ref{fig::FADC_waveform}に示す．
@@ -151,12 +160,12 @@ FADC は\SI{25}{\mega\hertz}で波形を取得する．
 \section{検出ガスの候補}
 \label{sec::detection_gas_candidate}
 標的に${}^{12}{\rm C}$を用いるため，分子中に炭素を含むガスを検出ガスに用いる必要がある．
-${}^{12}{\rm C}$以外の原子核が含まれるガスを用いると背景事象となる．
+${}^{12}{\rm C}$以外の原子核が含まれると背景事象となる．
 陽子，${}^{4}{\rm He}$と14 MeV の中性子の散乱は複数の荷電粒子に崩壊しないため，
 トラックの本数から背景事象を取り除くことができる．
 そこで，水素と炭素以外の原子が含まれない炭化水素を検出ガスに用いる．
-代表的な炭化水素は，メタン (\Methane) やエタン (${\rm C_{2}H_{6}}$)，
-イソブタン (\isoButane) である．
+代表的な炭化水素に，メタン (\Methane) やエタン (${\rm C_{2}H_{6}}$)，
+イソブタン (\isoButane) がある．
 また，水素ガスやヘリウムガスとの混合ガスも用いることができる．
 検出ガスとして求められる性能には以下のようなものがある．
 \begin{itemize}
@@ -173,9 +182,9 @@ ${}^{12}{\rm C}$以外の原子核が含まれるガスを用いると背景事�
 \end{itemize}
 これらの項目を基準に検出ガスの種類と圧力の決定を行う．
 
-\subsection{エネルギー損失}
-本実験では荷電粒子のエネルギー，運動量をトラックの長さから決定するため，
-トラックの長さ，方向を正しく識別することが必要となる．
+\subsection{$\alpha$粒子のエネルギー損失}
+MAIKo TPC では荷電粒子のエネルギーと運動量をトラックの長さと方向から決定するため，
+トラックを正しく抽出することが必要となる．
 荷電粒子のエネルギー損失 ($dE/dx$) が大きくなりすぎると検出ガス中での飛行距離が短くなり，
 トラックとして識別することが難しくなる．
 また，$dE/dx$ が小さくなりすぎるとトラックが有感領域で止まらず，
@@ -184,11 +193,12 @@ ${}^{12}{\rm C}$以外の原子核が含まれるガスを用いると背景事�
 
 まず，代表的な炭化水素である\Methane を考える．
 ガス中で\SI{10}{\milli\metre} 以上飛行し，MAIKo TPC の有感領域中で停止する$\alpha$粒子を検出可能な$\alpha$粒子とする．
+全ての$\alpha$粒子を検出できたイベントの割合を検出率とする．
 図\ref{fig::alpha_E_dist}に示したエネルギー分布の$\alpha$粒子のうち，
-検出できた割合の圧力依存性を図\ref{fig::efficiency_P_dist}に示す．
+検出率の圧力依存性を図\ref{fig::efficiency_P_dist}に示す．
 このとき，散乱点がビーム軸上に一様に分布していると仮定した．
 図\ref{fig::efficiency_P_dist}から分かるように，\SI{50}{\hecto\pascal} で最大となっている．
-\SI{50}{\hecto\pascal}のときの\Methane の$dE/dx$と同程度となる，他の検出ガスを考える．
+\SI{50}{\hecto\pascal}のときの\Methane の$dE/dx$と同程度となる，他の検出ガスを考え，
 表\ref{tab::mixture}に示した6つを候補とした．
 %混合ガスでは圧力を\SI{100}{\hecto\pascal} に固定し混合比をパラメータとして$dE/dx$を合わせる．
 括弧内はガスの混合の割合を示す．
@@ -214,6 +224,7 @@ ${}^{12}{\rm C}$以外の原子核が含まれるガスを用いると背景事�
     密度 & \SI{3.29e-5}{\gram\per\cubic\centi\metre} \\
     $dE/dx$ ($E_{\alpha} = \SI{0.5}{\mega\electronvolt}$, \SI{10}{\milli\metre}) & \SI{0.107}{\mega\electronvolt}\\
     飛距離 ($E_{\alpha} = \SI{0.5}{\mega\electronvolt}$) & \SI{65.6}{\milli\metre} \\
+    検出率 & \SI{48.2}{\percent} \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -261,7 +272,7 @@ MAIKo TPC では\SI{100}{\mega\hertz}で1,024 samples データを取得する�
 ドリフトスピードを$\SI{140}{\milli\metre}/\SI{10.24}{\micro\second} \sim \SI{0.014}{\milli\metre\per\nano\second}$
 に調整する必要がある．
 Magboltz~\cite{magboltz} によって計算したドリフト電場とドリフトスピードの関係を図\ref{fig::drift_v_magboltz}に示す．
-Magboltz ドリフトスピードが\SI{0.014}{\milli\metre\per\nano\second}となるドリフト電場の値を表\ref{tab::mixture}に示す．
+ドリフトスピードが\SI{0.014}{\milli\metre\per\nano\second}となるドリフト電場の値を表\ref{tab::mixture}に示す．
 図\ref{fig::drift_v_magboltz}の横方向の点線は\SI{0.014}{\milli\metre\per\nano\second}を表す．
 以降，これらのドリフト電場で評価を行う．
 \begin{figure}
@@ -294,13 +305,13 @@ Magboltz ドリフトスピードが\SI{0.014}{\milli\metre\per\nano\second}と�
 
 ドリフト電場がない場合のディフュージョンは以下のように理解できる．
 電子は熱運動により発生点から拡散する．
-熱運動の平均速度$v$はMaxwell 分布により
+熱運動の平均速度$v$はMaxwell 分布より
 \begin{equation}
-  v = \sqrt{\frac{8k_{B}T}{\pi m}}
+  v = \sqrt{\frac{8k_{B}T}{\pi \si{\electronmass}}}
   \label{eq::maxwell_velocity}
 \end{equation}
 と表せる．
-ここで$k_{B}$はボルツマン定数，$T$は温度，$m$は粒子の質量である．
+ここで$k_{B}$はボルツマン定数，$T$は温度，\si{\electronmass}は電子の質量である．
 電子が発生した時刻から$\Delta t$後では，
 \begin{equation}
   \frac{N_0}{\sqrt{4\pi D t}}\exp\left(-\frac{x^{2}}{4 D t}\right)
@@ -322,7 +333,7 @@ Magboltz ドリフトスピードが\SI{0.014}{\milli\metre\per\nano\second}と�
 と表される．
 式\ref{eq::maxwell_velocity}, \ref{eq::diffusion_coef}, \ref{eq::lambda}により，
 \begin{equation}
-  D = \frac{2}{3\sqrt{\pi}}\frac{1}{p\sigma_{0}}\sqrt{\frac{\left(k_{B}T\right)^{3}}{m}}
+  D = \frac{2}{3\sqrt{\pi}}\frac{1}{p\sigma_{0}}\sqrt{\frac{\left(k_{B}T\right)^{3}}{\si{\electronmass}}}
   \label{eq::diffusion_coef_2}
 \end{equation}
 となる．
@@ -347,17 +358,22 @@ Magboltz によって計算したディフュージョン係数を表\ref{tab::d
 表\ref{tab::diffusion}中の$D_{t}$はドリフト方向に対して垂直な方向への拡散，$D_{l}$は電子の運動方向への拡散の係数を表す．
 \Methane および\isoButane の単体ではディフージョン係数が大きく，
 同じドリフトスピードのとき，ドリフト電場が大きいほどディフュージョン係数が小さいことが分かる．
+\isoButaneHydro が最もディフュージョン係数が小さく，
+検出ガスの最有力候補である．
+シミュレーションにより生成した${}^{12}{\rm C}({\rm n},{\rm n}'){}^{12}{\rm C} (0_2^+)$イベントを解析し，
+その解析効率により検出ガスを決定する．
 \begin{table}
   \centering
   \caption[Magboltz で計算したディフュージョンの係数．]
           {Magboltz で計算したディフュージョンの係数．
             ディフージョンの大きさはドリフト電場に依存するため，
-            ここではドリフトスピードが0.014 mm/ns になるドリフト電場での値を示す．
+            ここではドリフトスピードが\SI{0.014}{\milli\metre\per\nano\second}になるドリフト電場での値を示す．
           $D_{t}$，$D_{l}$はそれぞれ運動方向に垂直，平行方向のディフュージョン．}
   \label{tab::diffusion}
   \begin{tabular}{cccc}
     \toprule
-    gas & $D_{t}~(\sqrt{\si{mm}})$ & $D_{l}~(\sqrt{\si{mm}})$ & ドリフト電場 (\si{\volt\per\milli\metre}) \\
+    gas & $D_{t}$(\si{\sqrt{\milli\metre}}) & $D_{l}$(\si{\sqrt{\milli\metre}}) &
+    ドリフト電場 (\si{\volt\per\milli\metre}) \\
     \midrule
     \Methane & 0.433 & 0.547 & 0.418\\
     \MethaneHydro & 0.214 & 0.171 & 4.31\\
@@ -368,11 +384,6 @@ Magboltz によって計算したディフュージョン係数を表\ref{tab::d
     \bottomrule
   \end{tabular}
 \end{table}
-
-\isoButaneHydro が最もディフュージョン係数が小さく，
-検出ガスの最有力候補である．
-シミュレーションにより生成した${}^{12}{\rm C}({\rm n},{\rm n}'){}^{12}{\rm C} (0_2^+)$イベントを解析し，
-その解析効率により検出ガスを決定する．
 
 %\section{$\alpha$線源を用いた測定}
 %$\alpha$線源を用いてMAIKo TPC の動作確認を行う．
