@@ -6,7 +6,7 @@
 
 \chapter{シミュレーション}
 \label{chap::simulation}
-\section{$\alpha$線源を用いた測定}
+\section{\textorpdfstring{$\alpha$}{alpha}線源を用いた測定}
 \ref{sec::detection_gas_candidate}節で考えた各ガスについて，
 シミュレーションの基準となるトラックを測定した．
 また，それらのデータから各ガスにおけるドリフトスピード，ガス増幅率，トラックの幅を測定した．
@@ -37,14 +37,14 @@
 \end{equation}
 となる．
 MAIKo TPC で取得したトラックの横方向の変分を$\Delta strip$，縦方向の変分を$\Delta t$，
-ドリフトスピードを$drift\_v$とすると，
+ドリフトスピードを$v_{\text{drift}}$とすると，
 \begin{align}
   \frac{\Delta z}{\SI{0.4}{\milli\metre}} & = \Delta strip \label{eq::deltaz}\\
-  \frac{\Delta y}{drift\_v} & = \Delta t \label{eq::deltay}
+  \frac{\Delta y}{v_{\text{drift}}} & = \Delta t \label{eq::deltay}
 \end{align}
 式 (\ref{eq::deltay_deltaz}, \ref{eq::deltaz}, \ref{eq::deltay}) より
 \begin{equation}
-  drift\_v = \frac{\tan(\ang{30})~\Delta strip\times\SI{0.4}{\milli\metre}}{\Delta t}
+  v_{\text{drift}} = \frac{\tan(\ang{30})~\Delta strip\times\SI{0.4}{\milli\metre}}{\Delta t}
 \end{equation}
 とドリフトスピードが求まる．
 \begin{figure}
@@ -128,8 +128,8 @@ $\alpha$線源を用いて測定したドリフトスピードと Magboltz を�
 
 \subsection{電子増幅率}
 電圧パラメータを変更させたときの増幅率の変化を測定した．
-増幅率を計算するためには荷電粒子が検出ガス中を通過した際に発生する電子数 ($N_{\rm e}$) と
-増幅後に$\mu$-PICによって収集された電子数 ($N'_{\rm e}$) の比を取る．
+増幅率は荷電粒子が検出ガス中を通過した際に発生する電子数 ($N_{\rm e}$) と
+増幅後に$\mu$-PICによって収集された電子数 ($N'_{\rm e}$) から求めることができる．
 $N_{\rm e}$はガス中での荷電粒子のエネルギー損失とガスのW値から求める．
 $N'_{\rm e}$は$\mu$-PICで収集した電荷から求める．
 詳しい計算方法について以下で述べる．
@@ -138,6 +138,7 @@ $N'_{\rm e}$は$\mu$-PICで収集した電荷から求める．
 そのため，荷電粒子のエネルギー損失をW値で割ることで$N_{\rm e}$が求まる．
 各ガスのエネルギー損失とW値~\cite{energy_per_ion_pair,pdg}を表\ref{tab::energy_loss_and_W_val}に示す．
 測定に用いた$\alpha$線源からは平均4.2 MeVの$\alpha$粒子が出ていることが他の測定によりわかっている．
+本測定では\ang{0}方向の$\alpha$線を用いて測定した．
 エネルギー損失は\SI{4.2}{\mega\electronvolt}の$\alpha$粒子が$\mu$-PIC 32 strip分の
 距離 (\SI{12.8}{\milli\metre}) で落とすエネルギーを示している．
 \begin{table}
@@ -160,7 +161,7 @@ $N'_{\rm e}$は$\mu$-PICで収集した電荷から求める．
   \end{tabular}
 \end{table}
 
-$\mu$-PICからの信号波形は32 strips まとめて図\ref{fig::FADC_waveform}のようなFADC 情報として取得している．
+32 strips まとめた$\mu$-PICからの信号波形は図\ref{fig::FADC_waveform}のようなFADC 情報として取得している．
 この信号波形を時間で積分することによって32 strips で収集した電荷量を計算することができる．
 $\mu$-PICで取得した電気信号は読み出し回路内部で800倍に増幅され，
 入力インピーダンス\SI{50}{\ohm}で電流値を電圧値に変換して取得している．
@@ -194,7 +195,7 @@ $\mu$-PICで取得した電気信号は読み出し回路内部で800倍に増�
 トラックの抽出を正しくできなくなる．
 \ang{0}の$\alpha$粒子によるトラックで幅を測定した．
 図\ref{fig::track_width}に示すように，
-トラックの幅にはanode strip 128~chのclock方向の幅を用いる．
+トラックの幅にはanode strip 128~ch目のclock方向の幅を用いる．
 このようにして決定したトラックの幅を表\ref{tab::track_width}，図\ref{fig::diffusion_compare}に示す．
 図\ref{fig::diffusion_compare}から分かるようにトラックの幅とディフュージョン係数には相関がある．
 ディフュージョン係数，トラックの幅ともに\isoButaneHydro が最も小さいことが分かる．
@@ -226,13 +227,13 @@ $\mu$-PICで取得した電気信号は読み出し回路内部で800倍に増�
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.9\columnwidth]{diffusion_compare.eps}
-  \caption{Magboltz で求めたディフージョン係数とトラックの幅．}
+  \caption{Magboltz で求めたディフージョン係数と実測によるトラックの幅．}
   \label{fig::diffusion_compare}
 \end{figure}
 
 \section{シミュレーションによる線源データの再現}
 MAIKo TPC から得られるトラックをGarfield++~\cite{garfield++}と
-Magboltz~\cite{magboltz}を用いたシミュレーションにより再現した．
+Magboltz~\cite{magboltz}，SRIM~\cite{SRIM}を用いたシミュレーションにより再現した．
 シミュレーションでは，ドリフト電場，W値，電子増幅率，検出ガスの密度をfixed parameters，
 TOTの閾値をfree parameterとした．
 シミュレーションは以下のような手順%(図\ref{fig::simulation_flow})
@@ -247,7 +248,7 @@ TOTの閾値をfree parameterとした．
   電子をMagboltz で求めたドリフトスピードで読み出し領域へドリフトさせる．
 \item
   読み出し領域に到達した電子1つにつき図\ref{fig::mu-pic_readout}にあるような電気信号を
-  各strip の信号波形に追加する．
+  各strip の信号波形に加算する．
 \item
   設定した閾値により，信号波形をTOTに変換しanode image とcathode image を作る．
 \end{enumerate}
@@ -344,6 +345,91 @@ $\alpha$線源を用いた場合のシミュレーションと測定の比較を
   \label{fig::track_comp_ic4h10_he}
 \end{figure}
 
+$\alpha$線源から放出される$\alpha$粒子のエネルギーは\SI{4.2}{\mega\electronvolt}であるが，
+実際に測定する$\alpha$粒子のエネルギーは数百\si{\kilo\electronvolt}である．
+そこで，$\alpha$線源の前に\SI{15}{\micro\metre}のカプトンを挟むことで$\alpha$粒子のエネルギーを落として測定を行った．
+カプトンと有感領域と線源の間にある検出ガスによってエネルギーを落とし約\SI{1}{\mega\electronvolt}となる．
+図\ref{fig::track_ch4_loss}，\ref{fig::track_ch4_h2_loss}，\ref{fig::track_ch4_he_loss}，
+\ref{fig::track_ic4h10_h2_loss}，\ref{fig::track_ic4h10_he_loss}に示す．
+コリメータの\ang{30}の穴を用いたため，斜めのトラックとなっている．
+シミュレーションでは有感領域の横から\SI{500}{\kilo\electronvolt}の$\alpha$粒子を飛ばした．
+エネルギーを完全に合わせていないが，トラックの太さを再現できている．
+\begin{figure}
+  \centering
+  \begin{subfigure}{0.48\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{a_source_CH4_50_nostr_3.eps}
+    \caption{シミュレーションによるトラック．}
+  \end{subfigure}
+  \begin{subfigure}{0.48\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{0146_16.eps}
+    \caption{$\alpha$線源によるトラック．}
+  \end{subfigure}
+  \caption{\Methane の場合．}
+  \label{fig::track_ch4_loss}
+\end{figure}
+\begin{figure}
+  \centering
+  \begin{subfigure}{0.48\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{a_source_CH4_3_H2_7_100_nostr_0.eps}
+    \caption{シミュレーションによるトラック．}
+  \end{subfigure}
+  \begin{subfigure}{0.48\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{0209_22.eps}
+    \caption{$\alpha$線源によるトラック．}
+  \end{subfigure}
+  \caption{\MethaneHydro の場合．}
+  \label{fig::track_ch4_h2_loss}
+\end{figure}
+\begin{figure}
+  \centering
+  \begin{subfigure}{0.48\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{a_source_CH4_4_He_6_100_nostr_0.eps}
+    \caption{シミュレーションによるトラック．}
+  \end{subfigure}
+  \begin{subfigure}{0.48\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{0204_24.eps}
+    \caption{$\alpha$線源によるトラック．}
+  \end{subfigure}
+  \caption{\MethaneHerium の場合．}
+  \label{fig::track_ch4_he_loss}
+\end{figure}
+\begin{figure}
+  \centering
+  \begin{subfigure}{0.48\columnwidth}
+    \centering
+    \includegraphics[clip ,width=\columnwidth, trim=0 0 50 0]{a_source_iC4H10_1_H2_9_100_nostr_1.eps}
+    \caption{シミュレーションによるトラック．}
+  \end{subfigure}
+  \begin{subfigure}{0.48\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{0211_4.eps}
+    \caption{$\alpha$線源によるトラック．}
+  \end{subfigure}
+  \caption{\isoButaneHydro の場合．}
+  \label{fig::track_ic4h10_h2_loss}
+\end{figure}
+\begin{figure}
+  \centering
+  \begin{subfigure}{0.48\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{a_source_iC4H10_1_He_9_100_nostr_0.eps}
+    \caption{シミュレーションによるトラック．}
+  \end{subfigure}
+  \begin{subfigure}{0.48\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{0203_10.eps}
+    \caption{$\alpha$線源によるトラック．}
+  \end{subfigure}
+  \caption{\isoButaneHerium の場合．}
+  \label{fig::track_ic4h10_he_loss}
+\end{figure}
+
 \section{トリプルアルファ反応のシミュレーション}
 \label{sec::triple_alpha_simulation}
 $\alpha$線源のトラックを再現することができたので，
@@ -358,7 +444,7 @@ $\alpha$線源のトラックを再現することができたので，
 \item
   崩壊してできた${}^{8}{\rm Be}$を2つの$\alpha$粒子に位相空間で一様に崩壊させる．
 \end{enumerate}
-このようにして生成した3つの$\alpha$粒子を元にトラックを生成する．
+このようにして生成した$\alpha$粒子のトラックを生成する．
 トラックの生成方法は前節で述べた通りである．
 生成したトラックを図\ref{fig::three_alpha_ch4}, \ref{fig::three_alpha_ch4_h2}, \ref{fig::three_alpha_ch4_he},
 \ref{fig::three_alpha_ic4h10_h2}, \ref{fig::three_alpha_ic4h10_he}に示す．
@@ -366,36 +452,70 @@ $\alpha$線源のトラックを再現することができたので，
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{10020_7.eps}
-  \caption{\Methane の場合．}
+  \caption{3$\alpha$のシミュレーション画像 (\Methane の場合)．}
   \label{fig::three_alpha_ch4}
 \end{figure}
 
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{10022_15.eps}
-  \caption{\MethaneHydro の場合．}
+  \caption{3$\alpha$のシミュレーション画像 (\MethaneHydro の場合)．}
   \label{fig::three_alpha_ch4_h2}
 \end{figure}
 
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{10021_5.eps}
-  \caption{\MethaneHerium の場合．}
+  \caption{3$\alpha$のシミュレーション画像 (\MethaneHerium の場合)．}
   \label{fig::three_alpha_ch4_he}
 \end{figure}
 
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{10024_9.eps}
-  \caption{\isoButaneHydro の場合．}
+  \caption{3$\alpha$のシミュレーション画像 (\isoButaneHydro の場合)．}
   \label{fig::three_alpha_ic4h10_h2}
 \end{figure}
 
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{10023_0.eps}
-  \caption{\isoButaneHerium の場合．}
+  \caption{3$\alpha$のシミュレーション画像 (\isoButaneHerium の場合)．}
   \label{fig::three_alpha_ic4h10_he}
+\end{figure}
+
+生成されたイベントの中には3本のトラックを確認できないイベントも含まれている．
+図\ref{fig::not_three_alpha_ch4}，\ref{fig::not_three_alpha_ch4_h2}，\ref{fig::not_three_alpha_ch4_he}，
+\ref{fig::not_three_alpha_ic4h10_h2}，\ref{fig::not_three_alpha_ic4h10_he}に示す．
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.8\columnwidth]{10020_5.eps}
+  \caption{2本しかトラックを確認できないイベント (\Methane の場合)．}
+  \label{fig::not_three_aalpha_ch4}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.8\columnwidth]{10022_49.eps}
+  \caption{2本しかトラックを確認できないイベント (\MethaneHydro の場合)．}
+  \label{fig::not_three_alpha_ch4_h2}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.8\columnwidth]{10021_24.eps}
+  \caption{2本しかトラックを確認できないイベント (\MethaneHerium の場合)．}
+  \label{fig::not_three_alpha_ch4_he}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.8\columnwidth]{10024_25.eps}
+  \caption{2本しかトラックを確認できないイベント (\isoButaneHydro の場合)．}
+  \label{fig::not_three_alpha_ic4h10_h2}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.8\columnwidth]{10023_32.eps}
+  \caption{2本しかトラックを確認できないイベント (\isoButaneHerium の場合)．}
+  \label{fig::not_three_alpha_ic4h10_he}
 \end{figure}
 
 \end{document}
