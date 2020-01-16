@@ -134,7 +134,8 @@ cathode strip に垂直な面 ($x-y$平面) に射影されたcathode image の2
 MAIKo TPC から得られる画像の1例を図\ref{fig::track_demo}に示す．
 anode strip とcathode strip はそれぞれ256~chで構成され，
 読み出される信号は\SI{100}{\mega\hertz}で1,024~samples測定し，
-閾値以上を1，以下を0としてデータを取得する．
+閾値に対するtime over threshold (TOT) を取得する．
+TOT は閾値以上を1，以下を0としたものである．
 出力されるデータは解像度が$256\times1,014$~pixels の白黒画像となる．
 また，anode strip，cathode strip ともに32~chごとにまとめて信号を波形としてFADC で取得している．
 32~chごとにまとめられるため，anode strip，cathode strip ともに8~chずつFADC でデータを取得している．
