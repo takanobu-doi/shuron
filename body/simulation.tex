@@ -37,14 +37,14 @@
 \end{equation}
 となる．
 MAIKo TPC で取得したトラックの横方向の変分を$\Delta strip$，縦方向の変分を$\Delta t$，
-ドリフトスピードを$drift\_v$とすると，
+ドリフトスピードを$v_{\text{drift}}$とすると，
 \begin{align}
   \frac{\Delta z}{\SI{0.4}{\milli\metre}} & = \Delta strip \label{eq::deltaz}\\
-  \frac{\Delta y}{drift\_v} & = \Delta t \label{eq::deltay}
+  \frac{\Delta y}{v_{\text{drift}}} & = \Delta t \label{eq::deltay}
 \end{align}
 式 (\ref{eq::deltay_deltaz}, \ref{eq::deltaz}, \ref{eq::deltay}) より
 \begin{equation}
-  drift\_v = \frac{\tan(\ang{30})~\Delta strip\times\SI{0.4}{\milli\metre}}{\Delta t}
+  v_{\text{drift}} = \frac{\tan(\ang{30})~\Delta strip\times\SI{0.4}{\milli\metre}}{\Delta t}
 \end{equation}
 とドリフトスピードが求まる．
 \begin{figure}
@@ -128,8 +128,8 @@ $\alpha$線源を用いて測定したドリフトスピードと Magboltz を�
 
 \subsection{電子増幅率}
 電圧パラメータを変更させたときの増幅率の変化を測定した．
-増幅率を計算するためには荷電粒子が検出ガス中を通過した際に発生する電子数 ($N_{\rm e}$) と
-増幅後に$\mu$-PICによって収集された電子数 ($N'_{\rm e}$) の比を取る．
+増幅率は荷電粒子が検出ガス中を通過した際に発生する電子数 ($N_{\rm e}$) と
+増幅後に$\mu$-PICによって収集された電子数 ($N'_{\rm e}$) から求めることができる．
 $N_{\rm e}$はガス中での荷電粒子のエネルギー損失とガスのW値から求める．
 $N'_{\rm e}$は$\mu$-PICで収集した電荷から求める．
 詳しい計算方法について以下で述べる．
@@ -138,6 +138,7 @@ $N'_{\rm e}$は$\mu$-PICで収集した電荷から求める．
 そのため，荷電粒子のエネルギー損失をW値で割ることで$N_{\rm e}$が求まる．
 各ガスのエネルギー損失とW値~\cite{energy_per_ion_pair,pdg}を表\ref{tab::energy_loss_and_W_val}に示す．
 測定に用いた$\alpha$線源からは平均4.2 MeVの$\alpha$粒子が出ていることが他の測定によりわかっている．
+本測定では\ang{0}方向の$\alpha$線を用いて測定した．
 エネルギー損失は\SI{4.2}{\mega\electronvolt}の$\alpha$粒子が$\mu$-PIC 32 strip分の
 距離 (\SI{12.8}{\milli\metre}) で落とすエネルギーを示している．
 \begin{table}
@@ -160,7 +161,7 @@ $N'_{\rm e}$は$\mu$-PICで収集した電荷から求める．
   \end{tabular}
 \end{table}
 
-$\mu$-PICからの信号波形は32 strips まとめて図\ref{fig::FADC_waveform}のようなFADC 情報として取得している．
+32 strips まとめた$\mu$-PICからの信号波形は図\ref{fig::FADC_waveform}のようなFADC 情報として取得している．
 この信号波形を時間で積分することによって32 strips で収集した電荷量を計算することができる．
 $\mu$-PICで取得した電気信号は読み出し回路内部で800倍に増幅され，
 入力インピーダンス\SI{50}{\ohm}で電流値を電圧値に変換して取得している．
@@ -194,7 +195,7 @@ $\mu$-PICで取得した電気信号は読み出し回路内部で800倍に増�
 トラックの抽出を正しくできなくなる．
 \ang{0}の$\alpha$粒子によるトラックで幅を測定した．
 図\ref{fig::track_width}に示すように，
-トラックの幅にはanode strip 128~chのclock方向の幅を用いる．
+トラックの幅にはanode strip 128~ch目のclock方向の幅を用いる．
 このようにして決定したトラックの幅を表\ref{tab::track_width}，図\ref{fig::diffusion_compare}に示す．
 図\ref{fig::diffusion_compare}から分かるようにトラックの幅とディフュージョン係数には相関がある．
 ディフュージョン係数，トラックの幅ともに\isoButaneHydro が最も小さいことが分かる．
@@ -226,13 +227,13 @@ $\mu$-PICで取得した電気信号は読み出し回路内部で800倍に増�
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.9\columnwidth]{diffusion_compare.eps}
-  \caption{Magboltz で求めたディフージョン係数とトラックの幅．}
+  \caption{Magboltz で求めたディフージョン係数と実測によるトラックの幅．}
   \label{fig::diffusion_compare}
 \end{figure}
 
 \section{シミュレーションによる線源データの再現}
 MAIKo TPC から得られるトラックをGarfield++~\cite{garfield++}と
-Magboltz~\cite{magboltz}を用いたシミュレーションにより再現した．
+Magboltz~\cite{magboltz}，SRIM~\cite{SRIM}を用いたシミュレーションにより再現した．
 シミュレーションでは，ドリフト電場，W値，電子増幅率，検出ガスの密度をfixed parameters，
 TOTの閾値をfree parameterとした．
 シミュレーションは以下のような手順%(図\ref{fig::simulation_flow})
@@ -247,7 +248,7 @@ TOTの閾値をfree parameterとした．
   電子をMagboltz で求めたドリフトスピードで読み出し領域へドリフトさせる．
 \item
   読み出し領域に到達した電子1つにつき図\ref{fig::mu-pic_readout}にあるような電気信号を
-  各strip の信号波形に追加する．
+  各strip の信号波形に加算する．
 \item
   設定した閾値により，信号波形をTOTに変換しanode image とcathode image を作る．
 \end{enumerate}
