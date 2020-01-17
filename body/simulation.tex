@@ -7,7 +7,7 @@
 \chapter{シミュレーション}
 \label{chap::simulation}
 \section{\texorpdfstring{$\alpha$}{alpha}線源を用いた測定}
-\ref{sec::detection_gas_candidate}節で考えた各ガスについて，
+\ref{sec::detection_gas_candidate}節で考えた各検出ガスについて，
 シミュレーションの基準となるトラックを測定した．
 また，それらのデータから各ガスにおけるドリフトスピード，ガス増幅率，トラックの幅を測定した．
 測定には${}^{241}{\rm Am}$の$\alpha$線源を用いた．
@@ -84,7 +84,7 @@ MAIKo TPC で取得したトラックの横方向の変分を$\Delta strip$，�
 $\alpha$線源を用いて測定したドリフトスピードとMagboltz で求めた値を
 表\ref{tab::drift_speed_compare}に示す．
 $\alpha$線源を用いて測定したドリフトスピードと Magboltz を用いて計算したドリフトスピードがおおよそ一致していることが分かる．
-\Methane は実測とMagboltz とがずれているが，ガスに含まれる水分の影響が考えられる．
+\Methane は実測とMagboltz による計算値とがずれているが，検出ガスに含まれる水分の影響が考えられる．
 \Methane のみ\SI{50}{\hecto\pascal} とその他のガスと比較して圧力が半分であるため，不純物の影響が大きく出ていると考えられる．
 \begin{table}
   \centering
@@ -128,16 +128,16 @@ $\alpha$線源を用いて測定したドリフトスピードと Magboltz を�
 
 \subsection{電子増幅率}
 電圧パラメータを変更させたときの増幅率の変化を測定した．
-増幅率は荷電粒子が検出ガス中を通過した際に発生する電子数 ($N_{\rm e}$) と
-増幅後に$\mu$-PICによって収集された電子数 ($N'_{\rm e}$) から求めることができる．
-$N_{\rm e}$はガス中での荷電粒子のエネルギー損失とガスのW値から求める．
-$N'_{\rm e}$は$\mu$-PICで収集した電荷から求める．
+増幅率は荷電粒子が検出ガス中を通過した際に発生する電子数 ($N_{\mathrm{e}}$) と
+増幅後に$\mu$-PICによって収集された電子数 ($N'_{\mathrm{e}}$) から求めることができる．
+$N_{\mathrm{e}}$は検出ガス中での荷電粒子のエネルギー損失と検出ガスのW値から求める．
+$N'_{\mathrm{e}}$は$\mu$-PICで収集した電荷から求める．
 詳しい計算方法について以下で述べる．
 
-ガス中で荷電粒子がエネルギーを落とすと，W値あたり平均1個の電子を電離する．
-そのため，荷電粒子のエネルギー損失をW値で割ることで$N_{\rm e}$が求まる．
+検出ガス中で荷電粒子がエネルギーを落とすと，W値あたり平均1個の電子を電離する．
+そのため，荷電粒子のエネルギー損失をW値で割ることで$N_{\mathrm{e}}$が求まる．
 各ガスのエネルギー損失とW値~\cite{energy_per_ion_pair,pdg}を表\ref{tab::energy_loss_and_W_val}に示す．
-測定に用いた$\alpha$線源からは平均4.2 MeVの$\alpha$粒子が出ていることが他の測定によりわかっている．
+測定に用いた$\alpha$線源からは平均\SI{4.2}{\mega\electronvolt}の$\alpha$粒子が出ていることが他の測定によりわかっている．
 本測定では\ang{0}方向の$\alpha$線を用いて測定した．
 エネルギー損失は\SI{4.2}{\mega\electronvolt}の$\alpha$粒子が$\mu$-PIC 32 strip分の
 距離 (\SI{12.8}{\milli\metre}) で落とすエネルギーを示している．
@@ -168,14 +168,14 @@ $\mu$-PICで取得した電気信号は読み出し回路内部で800倍に増�
 よって，式 (\ref{eq::N'e})で求めることができる．
 \si{\elementarycharge}は電荷素量である．
 \begin{equation}
-  N'_{\rm e} = \frac{\int V (t) dt}{ 50 \times 800 \times \si{\elementarycharge}}
+  N'_{\mathrm{e}} = \frac{\int V (t) dt}{ 50 \times 800 \times \si{\elementarycharge}}
   \label{eq::N'e}
 \end{equation}
 各ガスの増幅率を表\ref{tab::multiplying_rate}に示す．
 ここでは，GEMと$\mu$-PIC の両方による増幅率となっている．
 \begin{table}
   \centering
-  \caption{各ガスの電子増幅率．}
+  \caption{各検出ガスの電子増幅率．}
   \label{tab::multiplying_rate}
   \begin{tabular}{cc}
     \toprule
@@ -209,7 +209,7 @@ $\mu$-PICで取得した電気信号は読み出し回路内部で800倍に増�
 
 \begin{table}
   \centering
-  \caption{各ガスのトラックの幅．}
+  \caption{各検出ガスでのトラックの幅．}
   \label{tab::track_width}
   \begin{tabular}{cc}
     \toprule
@@ -256,7 +256,7 @@ TOTの閾値は\SI{0.1}{\milli\volt}とした．
 $\alpha$線源を用いた場合のシミュレーションと測定の比較を図\ref{fig::track_comp_ch4},
 \ref{fig::track_comp_ch4_h2}, \ref{fig::track_comp_ch4_he}, 
 \ref{fig::track_comp_ic4h10_h2}, \ref{fig::track_comp_ic4h10_he}に示す．
-それぞれの検出ガスで$\alpha$線源によるトラックを，
+それぞれの検出ガスでの$\alpha$線源によるトラックを，
 シミュレーションで再現できていることが分かる．
 \begin{figure}
   \centering
@@ -433,16 +433,16 @@ $\alpha$線源から放出される$\alpha$粒子のエネルギーは\SI{4.2}{\
 \section{トリプルアルファ反応のシミュレーション}
 \label{sec::triple_alpha_simulation}
 $\alpha$線源のトラックを再現することができたので，
-同じ設定で${}^{12}{\rm C}({\rm n},{\rm n}')3\alpha$のシミュレーションを行う．
+同じ設定で${}^{12}{\mathrm{C}}({\mathrm{n}},{\mathrm{n}}')3\alpha$のシミュレーションを行う．
 このシミュレーションでは以下のように3つの$\alpha$粒子を生成した．
 \begin{enumerate}
 \item
-  ${}^{12}{\rm C}$が\SI{14}{\mega\electronvolt}の中性子との散乱により$0_2^+$状態に励起させる．
+  ${}^{12}\mathrm{C}$が\SI{14}{\mega\electronvolt}の中性子との散乱により$0_2^+$状態に励起させる．
   この際，重心系で一様な散乱角で散乱させる．
 \item
-  ${}^{12}{\rm C} (0_2^+)$を$\alpha$粒子と${}^{8}{\rm Be}$に位相空間で一様に崩壊させる．
+  ${}^{12}\mathrm{C} (0_2^+)$を$\alpha$粒子と${}^{8}\mathrm{Be}$に位相空間で一様に崩壊させる．
 \item
-  崩壊してできた${}^{8}{\rm Be}$を2つの$\alpha$粒子に位相空間で一様に崩壊させる．
+  崩壊してできた${}^{8}\mathrm{Be}$を2つの$\alpha$粒子に位相空間で一様に崩壊させる．
 \end{enumerate}
 このようにして生成した$\alpha$粒子のトラックを生成する．
 トラックの生成方法は前節で述べた通りである．
