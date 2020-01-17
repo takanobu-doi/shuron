@@ -70,7 +70,8 @@ ${}^{12}\mathrm{C}$の運動エネルギー，散乱角度，励起エネルギ�
 eye-scanでは，トラックの本数の識別と散乱点，停止点の抽出を行った．
 ここではトラックの本数が3本であるイベントを${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}')3\alpha$イベントとした．
 本研究では${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}')3\alpha$イベントに対して解析を行った．
-検出ガスの決定のために，\ref{sec::triple_alpha_simulation}節のシミュレーションで生成したデータに対して解析を行った．
+検出ガスの決定のために，\ref{sec::triple_alpha_simulation}節のシミュレーションで生成したデータのうち，
+有感領域中で3つの$\alpha$粒子が停止したイベントに対して解析を行った．
 
 \subsection{解析効率}
 実際には${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}')3\alpha$イベントであっても，
@@ -397,6 +398,7 @@ $3_1^-$の\SI{9.64}{\mega\electronvolt}であるので，
 \end{table}
 
 \section{検出ガスの決定}
+表\ref{tab::result_summary}に各検出ガスでの優劣をまとめた．
 ディフュージョンとトラックの幅の観点では\MethaneHydro ,
 \isoButaneHydro  が良い．
 解析効率は\MethaneHydro , \isoButaneHydro ,
@@ -410,5 +412,21 @@ $\alpha$粒子のエネルギー分解能の観点では\MethaneHydro が良い�
 含まれる${}^{12}\mathrm{C}$の量を比較すると，
 \isoButaneHydro の方が4/3倍多い．
 よって，検出ガスには\isoButaneHydro (\SI{100}{\hecto\pascal}) を用いる．
+\begin{table}
+  \centering
+  \caption{各検討項目に対する検出ガスの優劣．標的の量は\Methane に含まれる量を1とした．}
+  \label{tab::result_summary}
+  \begin{tabular}{ccccc}
+    \toprule
+    gas & 解析効率 & ディフュージョン & 励起エネルギー分解能 & 標的の量 \\
+    \midrule
+    \Methane & $\times$ & $\times$ & $\bigcirc$ & 1 \\
+    \MethaneHydro & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & 0.6 \\
+    \MethaneHerium & $\triangle$ & $\triangle$ & $\bigcirc$ & 0.8 \\
+    \isoButaneHydro & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & 0.8 \\
+    \isoButaneHerium & $\bigcirc$ & $\triangle$ & $\bigcirc$ & 0.8 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 \end{document}
