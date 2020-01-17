@@ -18,32 +18,24 @@
 MAIKo TCP の解析では背景事象の除去とトラック情報の抽出の2つが必要となる．
 検出ガスには${}^{12}\mathrm{C}$だけでなく，陽子や${}^{4}\mathrm{He}$が含まれる．
 そのため，中性子と陽子，${}^{4}\mathrm{He}$との散乱事象を取り除く必要がある．
-中性子と${}^{12}\mathrm{C}$との散乱に対してトラックの情報を抽出する．
+その後，中性子と${}^{12}\mathrm{C}$との散乱事象に対してトラックの情報を抽出する．
 トラックの情報は中性子と${}^{12}\mathrm{C}$とが散乱した座標，
-$\alpha$粒子が停止した点である．
-anode image から$y, z$座標を，cathode image から$x, y$座標を決定することができる．
-$x, z$座標は$\mu$-PIC のstrip 数に400 $\mu$mをかけることで決定できる．
-$y$座標はTPC では荷電粒子が通過した位置から読み出し面に到達するまでの時間として測定される．
-そのため，anode image, cathode image のclock にドリフトスピードをかけることで$y$座標を決定できる．
+$\alpha$粒子が停止した座標である．
+anode image から$z, y$座標を，cathode image から$x, y$座標を決定することができる．
+$x, z$座標は$\mu$-PIC の信号を検出したstrip のチャンネル番号に\SI{400}{\micro\metre}をかけることで求めることができる．
+TPC では，$y$座標を荷電粒子が通過した位置から読み出し面に到達するまでの時間として測定する．
+そのため，anode image, cathode image のclock にドリフトスピードをかけることで$y$座標を求めることができる．
 このようにして決定したanode image, cathode image の座標を合わせることで，
-3次元の座標を決定することができる．
+3次元の座標を求めることができる．
 
 散乱点と停止点の座標から粒子が飛行した方向ベクトルと距離が決定される．
-同じ粒子であれば，飛行距離から運動エネルギーが一意に決まる．
-図\ref{fig::range_to_ene_alpha}に\Methane 50 hPa 中での荷電粒子の飛行距離と運動エネルギーの対応を示す．
-飛行距離と運動エネルギーの相関はSRIM~\cite{srim}を用いて求めた．
-\begin{figure}
-  \centering
-  \includegraphics[clip, width=0.8\columnwidth]{range_to_ene.eps}
-  \caption[\Methane 50 hPa 中での荷電粒子の飛行距離と運動エネルギー．]
-          {\Methane 50 hPa 中での荷電粒子の飛行距離と運動エネルギー．
-            この相関はSRIM を用いて求めた．
-          }
-  \label{fig::range_to_ene_alpha}
-\end{figure}
+粒子が分かれば，飛行距離から運動エネルギーが決まる．
+図\ref{fig::range_to_ene_alpha}に\Methane (\SI{50}{\hecto\pascal}) 中での荷電粒子の飛行距離と運動エネルギーの対応を示す．
+飛行距離と運動エネルギーの相関はSRIM~\cite{SRIM}を用いて求めた．
+SRIM は，荷電粒子がが物質中を通過する際の，イオンの飛程，エネルギーロス等を算出するシミュレーションソフトウェアである．
 この対応関係から粒子の運動エネルギーを決定する．
-粒子の運動エネルギーを$T$，単位方向ベクトルを$(dx, dy, dz)$とすると，
-4元運動量は
+粒子の運動エネルギーを$T$，質量を$m$，単位方向ベクトルを$(dx, dy, dz)$とすると，
+粒子の4元運動量は
 \begin{equation}
   p =
   \begin{pmatrix}
@@ -56,26 +48,39 @@ $y$座標はTPC では荷電粒子が通過した位置から読み出し面に�
   \label{eq::momentum_vector}
 \end{equation}
 となる．
-決定した3つの$\alpha$粒子の4元運動量から${}^{12}\mathrm{C}$の4元運動量を再構成できる．
-このようにして求めた4元運動量から${}^{12}\mathrm{C}$のエネルギー，散乱角度，励起エネルギーを求めることができる．
+決定した3つの$\alpha$粒子の4元運動量を足し合わせることで，${}^{12}\mathrm{C}$の4元運動量を再構成できる．
+このようにして求めた4元運動量から，
+${}^{12}\mathrm{C}$の運動エネルギー，散乱角度，励起エネルギーを求めることができる．
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.8\columnwidth]{range_to_ene.eps}
+  \caption[\Methane (\SI{50}{\hecto\pascal}) 中での荷電粒子 (p, $\alpha$, ${}^{12}\rm{C}$) の飛行距離と運動エネルギー．]
+          {\Methane (\SI{50}{\hecto\pascal}) 中での荷電粒子 (p, $\alpha$, ${}^{12}\rm{C}$) の飛行距離と運動エネルギー．
+            この相関はSRIM を用いて求めた．
+          }
+  \label{fig::range_to_ene_alpha}
+\end{figure}
 
 %\subsection{機械学習}
 %これまではHough 変換を使って解析を行ってきたが，
 %高速に処理をするためにニューラルネットワークを用いた解析方法を開発した．
 
 \section{eye-scan}
-本研究ではTPC の解析を人間の目 (eye-scan) で行った．
-eye-scanでは，トラックの本数の識別と散乱点，停止点の抽出を行う．
+本研究ではMAIKo TPC から得られたトラックの解析を人間の目 (eye-scan) で行った．
+eye-scanでは，トラックの本数の識別と散乱点，停止点の抽出を行った．
 ここではトラックの本数が3本であるイベントを${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}')3\alpha$イベントとした．
-本研究では${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}')3\alpha$イベントに対して解析を行う．
+本研究では${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}')3\alpha$イベントに対して解析を行った．
 検出ガスの決定のために，\ref{sec::triple_alpha_simulation}節のシミュレーションで生成したデータに対して解析を行った．
 
-\subsection{検出効率}
-${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}')3\alpha$イベントであっても，
-各$\alpha$粒子のエネルギーや放出角度，トラックの太さによっては3つのトラックを区別することができない場合がある．
-そこで，正しくトラックが3本と認識できる割合 (検出効率) を評価する．
-評価は各ガスについて100 events ずつ行った．
-検出効率を表\ref{tab::gas_summary}に示す．
+\subsection{解析効率}
+実際には${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}')3\alpha$イベントであっても，
+各$\alpha$粒子のエネルギーや放出角度，トラックの太さによっては3つのトラックを区別することができず，
+${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}')3\alpha$イベントとして認識できない場合がある．
+そこで，eye-scanによって正しくトラックが3本と認識できる割合（解析効率）を評価する．
+eye-scanは各検出ガスについて100 events ずつ行った．
+eye-scanによって決定したトラックの本数を表\ref{tab::track_number_ratio}に示す．
+表\ref{tab::track_number_ratio}の3本の割合が解析効率となる．
+\Methane 単体と\MethaneHerium 以外は約\SI{90}{\percent}の解析効率となっている．
 %\begin{table}
 %  \centering
 %  \caption[シミュレーションデータに対する検出効率．]
@@ -94,17 +99,35 @@ ${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}')3\alpha$イベントであっても，
 %    \bottomrule
 %  \end{tabular}
 %\end{table}
-\Methane 単体と\MethaneHerium 以外は約90\%の検出効率となっている．
+\begin{table}
+  \centering
+  \caption{eye-scanによって決定したトラックの本数の割合．}
+  \label{tab::track_number_ratio}
+  \begin{tabular}{cccc}
+    \toprule
+    gas & 3本 (\si{\percent}) & 2本 (\si{\percent}) & 1本 (\si{\percent}) \\
+    \midrule
+    \Methane & 55 & 37 & 8 \\
+    \MethaneHydro & 91 & 9 & 0 \\
+    \MethaneHerium & 78 & 22 & 0 \\
+    \isoButaneHydro & 87 & 11 & 2 \\
+    \isoButaneHerium & 90 & 10 & 0 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 %\subsection{検出効率の角度依存性}
 \subsection{エネルギー分解能}
 $\alpha$粒子の飛行距離の分解能により，エネルギー分解能が決まる．
 そこで，eye-scanによる$\alpha$粒子のエネルギー分解能を評価する．
-シミュレーションで粒子を生成した時に決定した$\alpha$粒子のエネルギー ($E_{\text{ideal}}$) と
-eye-scanによって決定した$\alpha$粒子のエネルギー ($E_{\text{eye-scan}}$) の相関を
+シミュレーションで粒子を生成した時に決定した$\alpha$粒子の運動エネルギー ($E_{\text{ideal}}$) と
+eye-scanによって決定した$\alpha$粒子の運動エネルギー ($E_{\text{eye-scan}}$) の相関を
 図\ref{fig::E_corr_ch4}, \ref{fig::E_corr_ch4_h2}, \ref{fig::E_corr_ch4_he},
 \ref{fig::E_corr_ic4h10_h2}, \ref{fig::E_corr_ic4h10_he}に示す．
-縦軸がシミュレーションで決定したエネルギー，横軸がeye-scanで決定したエネルギーである．
+縦軸がシミュレーションで決定した運動エネルギー，横軸がeye-scanで決定した運動エネルギーである．
+この相関に対して1次関数 ($E_{\text{ideal}} = p_0\times E_{\text{eye-scan}}+p_1$) でフィットした結果を
+表\ref{tab::E_corr_params}にまとめる．
+どの検出ガスについても，ほぼ$E_{\text{ideal}} = E_{\text{eye-scan}}$となっている．
 \begin{figure}
   \centering
   \begin{minipage}{0.45\columnwidth}
@@ -134,18 +157,16 @@ eye-scanによって決定した$\alpha$粒子のエネルギー ($E_{\text{eye-
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{E_corr_10024.eps}
-    \caption{iso-$\mathrm{C}_{4}\mathrm{H}_{1}\ (1) + \mathrm{H}_{2}\ (9)$の場合の$E_{\text{eye-scan}}$と$E_{\text{ideal}}$の相関．}
+    \caption{\isoButaneHydro の場合の$E_{\text{eye-scan}}$と$E_{\text{ideal}}$の相関．}
     \label{fig::E_corr_ic4h10_h2}
   \end{minipage}
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{E_corr_10023.eps}
-    \caption{iso-$\mathrm{C}_{4}\mathrm{H}_{1}\ (1) + \mathrm{He}\ (9)$の場合の$E_{\text{eye-scan}}$と$E_{\text{ideal}}$の相関．}
+    \caption{\isoButaneHerium の場合の$E_{\text{eye-scan}}$と$E_{\text{ideal}}$の相関．}
     \label{fig::E_corr_ic4h10_he}
   \end{minipage}
 \end{figure}
-この相関に対して1次関数 ($E_{\text{ideal}} = p_0\times E_{\text{eye-scan}}+p_1$) でフィットした結果を
-表\ref{tab::E_corr_params}にまとめる．
 \begin{table}
   \centering
   \caption{}
@@ -162,9 +183,13 @@ eye-scanによって決定した$\alpha$粒子のエネルギー ($E_{\text{eye-
     \bottomrule
   \end{tabular}
 \end{table}
-$E_{\text{eye-scan}}$をフィットした1次関数で補正したエネルギーと$E_{\text{ideal}}$と差分を$dE$とする．
-各ガスでの$dE$の分布を図\ref{fig::dE_ch4}, \ref{fig::dE_ch4_h2}, \ref{fig::dE_ch4_he},
-\ref{fig::dE_ic4h10_h2}, \ref{fig::dE_ic4h10_he}に，分布の中心値と分散を表\ref{tab::gas_summary}に示す．
+
+$E_{\text{eye-scan}}$をフィットした1次関数 ($f(x)$) で補正したエネルギーと$E_{\text{ideal}}$と
+差分を$dE\ (=E_{\text{ideal}}-f(E_{\text{eye-scan}}))$とする．
+各検出ガスでの$dE$の分布を図\ref{fig::dE_ch4}, \ref{fig::dE_ch4_h2}, \ref{fig::dE_ch4_he},
+\ref{fig::dE_ic4h10_h2}, \ref{fig::dE_ic4h10_he}に，ガウス分布でフィットした中心値と分散を表\ref{tab::gas_summary}に示す．
+エネルギー分解能は，\MethaneHydro の場合に最も小さいことが分かる．
+%混合ガスの場合，分散は約20 keV となっている．
 \begin{figure}
   \centering
   \begin{minipage}{0.45\columnwidth}
@@ -220,14 +245,13 @@ $E_{\text{eye-scan}}$をフィットした1次関数で補正したエネルギ�
 %    \bottomrule
 %  \end{tabular}
 %\end{table}
-エネルギー分解能は，他と比較して\MethaneHydro の場合に最も小さいことが分かる．
-%混合ガスの場合，分散は約20 keV となっている．
 
 \subsection{角度分解能}
-シミュレーションでの$\alpha$粒子の角度とeye-scanでの角度の差分を$d\theta$とする．
-各ガスでの$d\theta$の分布を図\ref{fig::dtheta_ch4}, \ref{fig::dtheta_ch4_h2}, \ref{fig::dtheta_ch4_he},
+シミュレーションで決定した$\alpha$粒子の角度とeye-scanでの角度の差分を$d\theta$とする．
+各検出ガスでの$d\theta$の分布を図\ref{fig::dtheta_ch4}, \ref{fig::dtheta_ch4_h2}, \ref{fig::dtheta_ch4_he},
 \ref{fig::dtheta_ic4h10_h2}, \ref{fig::dtheta_ic4h10_he}に，
-分布の中心値と分散を表\ref{tab::gas_summary}に示す．
+ガウス分布でフィットした中心値と分散を表\ref{tab::gas_summary}に示す．
+角度分解能は，\Methane 単体の場合に大きいことが分かる．
 \begin{figure}
   \centering
   \begin{minipage}{0.45\columnwidth}
@@ -283,17 +307,20 @@ $E_{\text{eye-scan}}$をフィットした1次関数で補正したエネルギ�
 %    \midrule
 %  \end{tabular}
 %\end{table}
-角度分解能は，他と比較して\Methane 単体の場合に大きいことが分かる．
 
 \subsection{励起エネルギー分解能}
-測定で${}^{12}\mathrm{C}$の励起状態を特定する際に，
-励起エネルギーの分解能が悪ければ各状態を分離することができない．
-シミュレーションではHoyle状態経由での崩壊を考えているので，
-${}^{12}\mathrm{C}$の励起エネルギーは7.65 MeV となっている．
-eye-scanで決定した不変質量から基底状態の${}^{12}\mathrm{C}$の質量を引くことで励起エネルギーを求め，
-7.65 MeV を再構築できるか評価する．
-各ガスで再構成した励起エネルギーを図\ref{fig::Ex_ch4}, \ref{fig::Ex_ch4_h2}, \ref{fig::Ex_ch4_he},
+測定で${}^{12}\mathrm{C}$，
+励起エネルギーの分解能が悪ければ各励起状態を特定することができない．
+シミュレーションでは$0_2^+$状態経由での崩壊を考えているので，
+${}^{12}\mathrm{C}$の励起エネルギーは\SI{7.65}{\mega\electronvolt} となっている．
+eye-scanで決定した${}^{12}\mathrm{C}$の不変質量から基底状態の${}^{12}\mathrm{C}$の質量を引くことで励起エネルギーを求め，
+\SI{7.65}{\mega\electronvolt} を再構築できるか評価する．
+各検出ガスで再構成した励起エネルギーを図\ref{fig::Ex_ch4}, \ref{fig::Ex_ch4_h2}, \ref{fig::Ex_ch4_he},
 \ref{fig::Ex_ic4h10_h2}, \ref{fig::Ex_ic4h10_he}, 表\ref{tab::gas_summary}に示す．
+どの検出ガスにおいても$0_2^+$状態を再構成できていることが分かる．
+$0_2^+$状態と隣り合う${}^{12}\mathrm{C}$の励起状態は$2_1^+$の\SI{4.44}{\mega\electronvolt}と
+$3_1^-$の\SI{9.64}{\mega\electronvolt}であるので，
+分解能も隣り合う励起状態と分けるのに十分良いことも分かる．
 \begin{figure}
   \centering
   \begin{minipage}{0.45\columnwidth}
@@ -349,15 +376,13 @@ eye-scanで決定した不変質量から基底状態の${}^{12}\mathrm{C}$の�
 %    \bottomrule
 %  \end{tabular}
 %\end{table}
-Hoyle状態を再構成できていることが分かる．
-また，分解能も他の状態と分けるのに十分良いことも分かる．
 
 \begin{table}
-  \caption{各ガスの検出効率と分解能．それぞれ100 eventsずつeye-scanによって解析を行った．}
+  \caption{各ガスの解析効率と分解能．それぞれ100 eventsずつeye-scanによって解析を行った．}
   \label{tab::gas_summary}
   \begin{tabular}{ccccc}
     \toprule
-    gas & 検出効率 (\%) & 
+    gas & 解析効率 (\si{\percent}) & 
     $dE\pm\sigma$ (\si{\kilo\electronvolt}) &
     $d\theta\pm\sigma$ (\si{\milli\radian}) &
     Ex$\pm\sigma$ (\si{\mega\electronvolt})\\
@@ -374,7 +399,7 @@ Hoyle状態を再構成できていることが分かる．
 \section{検出ガスの決定}
 ディフュージョンとトラックの幅の観点では\MethaneHydro ,
 \isoButaneHydro  が良い．
-検出効率は\MethaneHydro , \isoButaneHydro ,
+解析効率は\MethaneHydro , \isoButaneHydro ,
 \isoButaneHerium が良い．
 $\alpha$粒子のエネルギー分解能の観点では\MethaneHydro が良い．
 角度分解能の観点では\MethaneHydro ,
@@ -384,6 +409,6 @@ $\alpha$粒子のエネルギー分解能の観点では\MethaneHydro が良い�
 \MethaneHydro と \isoButaneHydro とで
 含まれる${}^{12}\mathrm{C}$の量を比較すると，
 \isoButaneHydro の方が4/3倍多い．
-よって，検出ガスには\isoButaneHydro を用いる．
+よって，検出ガスには\isoButaneHydro (\SI{100}{\hecto\pascal}) を用いる．
 
 \end{document}

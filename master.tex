@@ -1,7 +1,10 @@
 %\documentclass[titlepage,twoside,openright,report]{jsbook}
-\documentclass[titlepage,twoside,openright]{jsreport}
+\documentclass[titlepage,twoside,openright,12pt]{jsreport}
 %\usepackage{thesisj}
 \usepackage[dvipdfmx]{graphicx}
+\usepackage{float}
+\floatplacement{figure}{H}
+\floatplacement{table}{H}
 \usepackage[dvipdfmx, svgnames]{xcolor}
 \graphicspath{{./eps/}{../eps/}{./pic/}{../pic/}}
 \usepackage{subcaption}
@@ -14,7 +17,7 @@
   colorlinks=true,
   linkcolor=MediumBlue,
   citecolor=ForestGreen,
-%  linkbordercolor={1 1 1},
+  %  linkbordercolor={1 1 1},
 }
 \usepackage{pxjahyper}
 \usepackage{multirow}
@@ -22,18 +25,42 @@
 \usepackage{fancyhdr}
 \usepackage{makeidx}
 \usepackage{braket}
+\usepackage{newtxtext, newtxmath}
+\usepackage[scaled]{helvet}
+%\usepackage{tgschola}
+%\usepackage{tgheros}
+\renewcommand{\bfdefault}{bx}
 \usepackage{subfiles}
 \usepackage{tikz}
 \usetikzlibrary{patterns}
 \usetikzlibrary{plotmarks}
 \usepackage{siunitx}
-\newcommand{\siu}[1]{\si[per-mode=symbol]{#1}}
-\newcommand{\SIU}[2]{\SI[per-mode=symbol]{#1}{#2}}
+\sisetup{
+  per-mode=symbol,
+  range-phrase=--,
+  range-units=single,
+  list-separator={，},
+  list-final-separator={，},
+  list-units=single
+}
+%\newcommand{\siu}[1]{\si[per-mode=symbol]{#1}}
+%\newcommand{\SIU}[2]{\SI[per-mode=symbol]{#1}{#2}}
 
 %\bibliographystyle{jplain} % sorted by abc
 %\bibliographystyle{junsrt} % sorted by appearance
 %\bibliographystyle{unsrt} % sorted by appearance
-\bibliographystyle{report} 
+%\bibliographystyle{report}
+%\bibliographystyle{elsarticle-num}
+\bibliographystyle{jpsj}
+%\usepackage[%
+%  backend=bibtex,%
+%  style=phys, %
+%  articletitle=false, %
+%  biblabel=brackets, %
+%  chaptertitle=false, %
+%  pageranges=false]{biblatex}
+%\addbibresource{mybibfile.bib}
+%\bibliography{mybibfile.bib}
 
 \makeatletter
 \renewcommand{\chapter}{%
@@ -55,7 +82,7 @@
 \renewcommand{\headrulewidth}{1pt}
 \renewcommand{\footrulewidth}{0pt}
 %\fancyhead{}
-%\renewcommand{\chaptermark}[1]{\markboth{第\ \thechapter\ 章\,\, #1}{}}
+\renewcommand{\chaptermark}[1]{\markboth{第\ \thechapter\ 章\,\, #1}{}}
 %\fancyhead[RO]{{\small \rightmark}}
 %\fancyhead[LE]{{\small \leftmark}}
 %\renewcommand{\headrulewidth}{0pt}
@@ -63,7 +90,7 @@
 %\fancyfoot[LE,RO]{{\small \thepage}}
 %\cfoot{}
 % modify the width of caption
-\setlength{\captionmargin}{50pt}
+\setlength{\captionmargin}{40pt}
 
 \newcommand{\Methane}{$\mathrm{CH}_{4}$}
 \newcommand{\MethaneHydro}{$\mathrm{CH}_{4}\ (3) + \mathrm{H}_{2}\ (7)$}
@@ -74,7 +101,8 @@
 
 \makeindex
 \title {{2019年度 修士論文}\\%
-  \Huge{MAIKo TPC を用いた${}^{12}\rm{C}(n,n'){}^{12}\rm{C}(0_{2}^{+})$の}\\\Huge{散乱断面積の測定}}
+  \Huge{MAIKo TPC を用いた${}^{12}\rm{C}(n,n'){}^{12}\rm{C}(0_{2}^{+})$反応の}\\
+  \Huge{断面積測定に向けた実験条件の検討}}
 \author{\includegraphics[width=0.5\columnwidth]{eps/E-C.eps}\\\\\\
   \Large{京都大学大学院 理学研究科}\\
   \Large{物理学・宇宙物理学専攻 物理学第二教室}\\
@@ -85,14 +113,17 @@
 
 \begin{document}
 \maketitle
+\cleardoublepage
 %\frontmatter
-\input{abstract}
+\pagenumbering{roman}
+\subfile{abstract}
+\cleardoublepage
 \pagenumbering{Roman}
 \tableofcontents
 %\pagenumbering{roman}
 %\listoffigures
 %\listoftables
-\newpage
+\cleardoublepage
 %\mainmatter
 \pagenumbering{arabic}
 \subfile{body/intro}
@@ -100,14 +131,16 @@
 %\subfile{body/oktavian}
 \subfile{body/simulation}
 \subfile{body/analysis}
+\subfile{body/collimator}
 \subfile{body/iso-butane}
 \subfile{body/conclusion}
 \subfile{body/acknowledge}
 
 \appendix
 \subfile{body/scinti}
-%\subfile{body/collimator}
 \subfile{body/drift-speed}
+\subfile{body/phits-input}
 
+%\printbibliography%[title=参考文献]
 \bibliography{mybibfile}
 \end{document}
