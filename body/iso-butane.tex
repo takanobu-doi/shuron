@@ -1,7 +1,8 @@
 \documentclass[../master]{subfiles}
 \begin{document}
 
-\chapter{iso-C$_{\text 4}$H$_{\text{10}}$ (10) + H$_{\text 2}$ (9)を用いたとき}
+%\chapter{iso-C$_{\text 4}$H$_{\text{10}}$ (10) + H$_{\text 2}$ (9)を用いたとき}
+\chapter{iso-C$_{\text 4}$H$_{\text{10}}$ (10) + H$_{\text 2}$ (9) の検出ガス特性}
 本章では検出ガスとして用いる\isoButaneHydro の特性について述べる．
 \section{ドリフトスピード}
 ドリフトスピードのドリフト電場依存性を調べた．
@@ -156,7 +157,9 @@ $\mu$-PICのanode 電極の周りにより強い電場が形成されること�
 図\ref{fig::diff_x}の$L$は線源コリメータの\ang{0}穴とgridとのドリフト方向の距離である．
 $\text{track width} = 1.27\times\sqrt{L-19.2}+23.1$となり，
 $\sqrt{L}$に比例していることが確認された．
-トラックの幅の $\sqrt{L}$に対する係数$D_{\text{width}}$は\SI{12.7\pm0.273}{\nano\second\per\sqrt{\milli\metre}}
+トラックの幅の $\sqrt{L}$に対する係数$D_{\text{width}}$は
+%\SI[separate-uncertainty=true]{12.7\pm0.273}{\nano\second\per\sqrt{\milli\metre}}
+\SI{12.7\pm0.3}{\nano\second\per\sqrt{\milli\metre}}である．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{IMG_2923_drawed.jpg}
@@ -180,7 +183,8 @@ $y_{\text{clk}}$を\si{\milli\metre}単位 ($y_{\text{length}}$) へ変換する
 \end{equation}
 同様に測定より得られた係数 ($D_{\text{width}}$) にドリフトスピードを掛けることで，長さに変換できる．
 ドリフトスピード $v_{\text{drift}}$は\SI{1.37e-2}{\milli\metre\per\nano\second}なので，
-$D_{\text{length}} = \SI{0.174\pm0.00375}{\sqrt{\milli\metre}}$
+$D_{\text{length}} = $%\SI{0.174\pm0.00375}{\sqrt{\milli\metre}}
+\SI{0.174\pm0.004}{\sqrt{\milli\metre}}
 %\begin{align}
 %  D_{\text{width}}\times 10\times v_{\text{drift}} & = 1.27\times10\times1.37\times10^{-2} \notag\\
 %  & = 0.174\ (\si{\sqrt{\milli\metre}})\label{eq::diffusion_coefficiency}
@@ -201,7 +205,7 @@ Magboltz で係数を求めた際には，一様な電場を仮定している�
 しかし，散乱点や粒子の運動エネルギー，角度によってはMAIKo TPC の有感領域から外に出てしまう．
 有感領域の外へ出てしまった粒子のトラックの長さは決定することができないので，
 その粒子の運動エネルギーと運動量を決定できなくなってしまう．
-第\ref{chap::collimator}章で有感領域内で停止する割合（検出効率）を考えた．
+\ref{chap::collimator}章で有感領域内で停止する割合（検出効率）を考えた．
 
 %ここでは，以下のようなで状況を考える．
 %\begin{itemize}
