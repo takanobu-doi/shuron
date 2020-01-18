@@ -14,10 +14,10 @@ gridの座標を$y = \SI{0}{\milli\metre}$，plateの座標を$y = \SI{140}{\mil
 ビームの中心が$y = \SI{70}{\milli\metre}$の位置にあるとすると，
 中性子ビームは$y = $\SIrange{20}{120}{\milli\metre}の範囲に入射する．
 この時$y = \SI{120}{\milli\metre}$の位置で散乱が起きると，
-見かけ上の有感領域はgrid方向に\SI{120}{\milli\metre}，plate方向に\SI{20}{\milli\metre}となる．
+有感領域はgrid方向に\SI{120}{\milli\metre}，plate方向に\SI{20}{\milli\metre}となる．
 反対に，$y = \SI{20}{\milli\metre}$の位置で散乱が起きると，
-見かけ上の有感領域はgrid方向に\SI{20}{\milli\metre}，plate方向に\SI{120}{\milli\metre}となる．
-しかし，MAIKo TPC は$y$座標をトラックの周囲に発生した電子の読み出し面に到達する時間差を用いて検出しているため，
+有感領域はgrid方向に\SI{20}{\milli\metre}，plate方向に\SI{120}{\milli\metre}となる．
+しかし，MAIKo TPC は$y$座標をトラックの周囲に発生した電子が読み出し面に到達する時間差を用いて検出しているため，
 $y$座標の絶対値を決定することができない．
 すると，図\ref{fig::sensitive_area}のように，
 $y = \SI{120}{\milli\metre}$と$y = \SI{20}{\milli\metre}$のどちらで散乱が起きたのかを区別できない．
@@ -53,13 +53,12 @@ MAIKo TPC ではトラックの長さと方向からエネルギーと運動量�
 検出効率が大きくなるような実験条件が望ましい．
 図\ref{fig::alpha_E_dist}のエネルギー分布，ビームの通る円柱内で一様な散乱点を仮定して，
 $\alpha$粒子の検出効率を求めた．
-
 \SIrange{5}{50}{\milli\metre}でのコリメータの立体角の割合と検出効率を
 表\ref{tab::solid_angle_percent}に示す．
 検出効率は\SI{10}{\milli\metre}以下ではあまり変化がない．
 \SI{5}{\milli\metre}と\SI{10}{\milli\metre}を比較すると，
-立体角は4倍\SI{10}{\milli\metre}の方が大きい．
-大きな検出効率を持ちつつ立体角が大きい\SI{10}{\milli\metre}のコリメータを用いる．
+立体角は\SI{10}{\milli\metre}の方が4倍大きい．
+大きな検出効率を持ちつつ，中性子の収量が大きい\SI{10}{\milli\metre}のコリメータを用いる．
 %コリメータの立体角と検出効率の積が最も大きくなるところが収量が最も大きくなる．
 \begin{table}
   \centering
@@ -86,19 +85,16 @@ ver.~3.14~\cite{phits}を用いて計算した．
 PHITS は原子力機構が中心となって開発を行っている物質中での放射線の挙動をシミュレートするモンテカルロ計算コードである．
 PHITS の入力ファイルを付録\ref{chap::phits-input}に示す．
 図\ref{collimator_xy_pos}は\SI{14}{\mega\electronvolt}の中性子がコリメータを通過したときの位置分布である．
-2つの中性子の分布に大きな差異は見られない．
-図\ref{fig::neutron_energy_dist}，\ref{fig::neutron_energy_dist_w_B}はコリメータを通過した後の中性子のエンルギー分布である．
+%ポリエチレンとホウ素入りポリエチレンの両方共，半径\SI{10}{\milli\metre}のみ多くの中性子が通過していることが分かる．
+%また，遮蔽されている部分は中心と比較して1桁以上中性子の量が少ないことが分かる．
+%2つの中性子の分布に大きな差異は見られない．
+図\ref{fig::neutron_energy}はコリメータを通過した後の中性子のエネルギー分布である．
 青色のヒストグラムは\SIrange{0}{10}{\milli\metre}の範囲の中性子，
 赤色のヒストグラムは\SIrange{10}{55}{\milli\metre}の範囲の中性子のエネルギー分布である．
-コリメータの穴の部分に対してポリエチレンまたはホウ素入りポリエチレンの部分は
-中性子が遮蔽されいることが分かる．
-ポリエチレンとホウ素入りポリエチレンでは同程度にコリメートできているので，
-本実験ではコストの面からポリエチレンを用いたコリメータを作成した．
-実際に作成したコリメータを図\ref{pic::collimator}に示す．
-このコリメータは半径\SI{55}{\milli\metre}，高さ\SI{100}{\milli\metre}の円柱の中心に
-半径\SI{10}{\milli\metre}の穴を開けた構造になっている．
-壁の厚さが\SI{1000}{\milli\metre}であるため，
-このコリメータ10 個を中性子の取り出し穴に挿入する．
+ポリエチレン，ホウ素入りポリエチレンともにコリメータの穴の部分に対して遮蔽されている部分は
+中性子の量が2桁近く少ないことが分かる．
+また，通過してきた中性子のエネルギーはほとんど\SI{14}{\mega\electronvolt}であり，
+単色エネルギーが汚れていないことが分かる．
 \begin{figure}
   \centering
   \begin{subfigure}{\columnwidth}
@@ -133,11 +129,21 @@ PHITS の入力ファイルを付録\ref{chap::phits-input}に示す．
           \SIrange{10}{55}{\milli\metre}はコリメータの部分である．}
   \label{fig::neutron_energy}
 \end{figure}
+
+ポリエチレンとホウ素入りポリエチレンでは同程度にコリメートできているので，
+本実験ではコストの面からポリエチレンを用いたコリメータを作成した．
+実際に作成したコリメータを図\ref{pic::collimator}に示す．
+このコリメータは半径\SI{53}{\milli\metre}，高さ\SI{100}{\milli\metre}の円柱の中心に
+半径\SI{10}{\milli\metre}の穴を開けた構造になっている．
+壁の厚さが\SI{1000}{\milli\metre}であるため，
+このコリメータ10 個を中性子の取り出し穴に挿入する．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{IMG_2755_clpd.jpg}
   \caption[ポリエチレンで作成したコリメータ．]
-          {ポリエチレンで作成したコリメータ．}
+          {ポリエチレンで作成したコリメータ．
+            半径\SI{53}{\milli\metre}，長さ\SI{100}{\milli\metre}の円柱の中央に，
+          半径\SI{1}{\milli\metre}の穴が開いている．}
   \label{pic::collimator}
 \end{figure}
 
