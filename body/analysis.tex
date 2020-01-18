@@ -188,7 +188,8 @@ eye-scanによって決定した$\alpha$粒子の運動エネルギー ($E_{\tex
 $E_{\text{eye-scan}}$をフィットした1次関数 ($f(x)$) で補正したエネルギーと$E_{\text{ideal}}$と
 差分を$dE\ (=E_{\text{ideal}}-f(E_{\text{eye-scan}}))$とする．
 各検出ガスでの$dE$の分布を図\ref{fig::dE_ch4}, \ref{fig::dE_ch4_h2}, \ref{fig::dE_ch4_he},
-\ref{fig::dE_ic4h10_h2}, \ref{fig::dE_ic4h10_he}に，ガウス分布でフィットした中心値と分散を表\ref{tab::gas_summary}に示す．
+\ref{fig::dE_ic4h10_h2}, \ref{fig::dE_ic4h10_he}に，
+ガウス分布でフィットした中心値と分散を表\ref{tab::energy_resolution}に示す．
 エネルギー分解能は，\MethaneHydro の場合に最も小さいことが分かる．
 %混合ガスの場合，分散は約20 keV となっている．
 \begin{figure}
@@ -230,28 +231,28 @@ $E_{\text{eye-scan}}$をフィットした1次関数 ($f(x)$) で補正したエ
     \label{fig::dE_ic4h10_he}
   \end{minipage}
 \end{figure}
-%\begin{table}
-%  \centering
-%  \caption{エネルギーの差分．}
-%  \label{tab::energy_resolution}
-%  \begin{tabular}{ccc}
-%    \toprule
-%    gas & $dE$ (keV) & $\sigma$ (keV) \\
-%    \midrule
-%    \Methane  & 11.0 & 33.0  \\
-%    \MethaneHydro & 1.25 & 20.0 \\
-%    \MethaneHerium  & 9.30 & 23.7 \\
-%    \isoButaneHydro  & 4.56 & 23.6 \\
-%    \isoButaneHerium  & 5.00 & 22.3 \\
-%    \bottomrule
-%  \end{tabular}
-%\end{table}
+\begin{table}
+  \centering
+  \caption{エネルギーの差分．}
+  \label{tab::energy_resolution}
+  \begin{tabular}{ccc}
+    \toprule
+    gas & $dE$ (keV) & $\sigma_{dE}$ (keV) \\
+    \midrule
+    \Methane  & 11.0 & 33.0  \\
+    \MethaneHydro & 1.25 & 20.0 \\
+    \MethaneHerium  & 9.30 & 23.7 \\
+    \isoButaneHydro  & 4.56 & 23.6 \\
+    \isoButaneHerium  & 5.00 & 22.3 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 \subsection{角度分解能}
 シミュレーションで決定した$\alpha$粒子の角度とeye-scanでの角度の差分を$d\theta$とする．
 各検出ガスでの$d\theta$の分布を図\ref{fig::dtheta_ch4}, \ref{fig::dtheta_ch4_h2}, \ref{fig::dtheta_ch4_he},
 \ref{fig::dtheta_ic4h10_h2}, \ref{fig::dtheta_ic4h10_he}に，
-ガウス分布でフィットした中心値と分散を表\ref{tab::gas_summary}に示す．
+ガウス分布でフィットした中心値と分散を表\ref{tab::theta_resolution}に示す．
 角度分解能は，\Methane 単体の場合に大きいことが分かる．
 \begin{figure}
   \centering
@@ -292,22 +293,22 @@ $E_{\text{eye-scan}}$をフィットした1次関数 ($f(x)$) で補正したエ
     \label{fig::dtheta_ic4h10_he}
   \end{minipage}
 \end{figure}
-%\begin{table}
-%  \centering
-%  \caption{角度の差分．}
-%  \label{tab::theta_resolution}
-%  \begin{tabular}{ccc}
-%    \toprule
-%    gas & $d\theta$ (mrad.) & $\sigma$ (mrad.) \\
-%    \midrule
-%    \Methane  & 46.4 & 77.9 \\
-%    \MethaneHydro & 2.10 & 24.6 \\
-%    \MethaneHerium  & 3.34 & 28.2 \\
-%    \isoButaneHydro  & -1.27 & 29.8 \\
-%    iso-$\mathrm{C}_{4}\mathrm{H}_{10}\ (1) + \mathrm{He}\ (9) $ & 3.05 & 31.4 \\
-%    \midrule
-%  \end{tabular}
-%\end{table}
+\begin{table}
+  \centering
+  \caption{角度の差分．}
+  \label{tab::theta_resolution}
+  \begin{tabular}{ccc}
+    \toprule
+    gas & $d\theta$ (mrad.) & $\sigma_{\theta}$ (mrad.) \\
+    \midrule
+    \Methane  & 46.4 & 77.9 \\
+    \MethaneHydro & 2.10 & 24.6 \\
+    \MethaneHerium  & 3.34 & 28.2 \\
+    \isoButaneHydro  & -1.27 & 29.8 \\
+    iso-$\mathrm{C}_{4}\mathrm{H}_{10}\ (1) + \mathrm{He}\ (9) $ & 3.05 & 31.4 \\
+    \midrule
+  \end{tabular}
+\end{table}
 
 \subsection{励起エネルギー分解能}
 測定で${}^{12}\mathrm{C}$，
@@ -317,7 +318,7 @@ ${}^{12}\mathrm{C}$の励起エネルギーは\SI{7.65}{\mega\electronvolt} と�
 eye-scanで決定した${}^{12}\mathrm{C}$の不変質量から基底状態の${}^{12}\mathrm{C}$の質量を引くことで励起エネルギーを求め，
 \SI{7.65}{\mega\electronvolt} を再構築できるか評価する．
 各検出ガスで再構成した励起エネルギーを図\ref{fig::Ex_ch4}, \ref{fig::Ex_ch4_h2}, \ref{fig::Ex_ch4_he},
-\ref{fig::Ex_ic4h10_h2}, \ref{fig::Ex_ic4h10_he}, 表\ref{tab::gas_summary}に示す．
+\ref{fig::Ex_ic4h10_h2}, \ref{fig::Ex_ic4h10_he}, 表\ref{tab::Ex_resolution}に示す．
 どの検出ガスにおいても$0_2^+$状態を再構成できていることが分かる．
 $0_2^+$状態と隣り合う${}^{12}\mathrm{C}$の励起状態は$2_1^+$の\SI{4.44}{\mega\electronvolt}と
 $3_1^-$の\SI{9.64}{\mega\electronvolt}であるので，
@@ -361,65 +362,43 @@ $3_1^-$の\SI{9.64}{\mega\electronvolt}であるので，
     \label{fig::Ex_ic4h10_he}
   \end{minipage}
 \end{figure}
-%\begin{table}
-%  \centering
-%  \caption{各ガスで求めた励起エネルギー．}
-%  \label{tab::Ex_resolution}
-%  \begin{tabular}{ccc}
-%    \toprule
-%    gas & Ex (MeV) & $\sigma$ (MeV) \\
-%    \midrule
-%    \Methane  & 7.63 & $4.91\times 10^{-2}$ \\
-%    \MethaneHydro & 7.67 & $1.66\times 10^{-2}$ \\
-%    \MethaneHerium  & 7.67 & $2.05\times 10^{-2}$ \\
-%    \isoButaneHydro  & 7.67 & $1.75\times 10^{-2}$ \\
-%    \isoButaneHerium  & 7.67 & $1.90\times 10^{-2}$ \\
-%    \bottomrule
-%  \end{tabular}
-%\end{table}
-
 \begin{table}
-  \caption{各ガスの解析効率と分解能．それぞれ100 eventsずつeye-scanによって解析を行った．}
-  \label{tab::gas_summary}
-  \begin{tabular}{ccccc}
+  \centering
+  \caption{各ガスで求めた励起エネルギー．}
+  \label{tab::Ex_resolution}
+  \begin{tabular}{ccc}
     \toprule
-    gas & 解析効率 (\si{\percent}) & 
-    \begin{tabular}{c}
-      $dE$ \\
-      ($\sigma_{dE}$)
-    \end{tabular} (\si{\kilo\electronvolt}) &
-    \begin{tabular}{c}
-      $d\theta$ \\
-      ($\sigma_{d\theta}$)
-    \end{tabular} (\si{\milli\radian}) &
-    \begin{tabular}{c}
-      Ex \\
-      ($\sigma_{\text{Ex}}$)
-    \end{tabular} (\si{\mega\electronvolt})\\
+    gas & Ex (MeV) & $\sigma_{\text{Ex}}$ (MeV) \\
     \midrule
-    \Methane  & 55 &
-    \begin{tabular}{c}$-4.21\times10^{-3}$\\($3.13\times10^{-2}$)\end{tabular} &
-    \begin{tabular}{c}$46.4$\\($77.9$)\end{tabular} &
-    \begin{tabular}{c}$7.63$\\($4.91\times10^{-2}$)\end{tabular} \\
-    \MethaneHydro & 91 &
-    \begin{tabular}{c}$1.36\times10^{-3}$\\($1.97\times10^{-2}$)\end{tabular} &
-    \begin{tabular}{c}$2.10$\\($24.6$)\end{tabular} &
-    \begin{tabular}{c}$7.67$\\($1.66\times10^{-2}$)\end{tabular} \\
-    \MethaneHerium & 78 &
-    \begin{tabular}{c}$3.75\times10^{-3}$\\($2.34\times10^{-2}$)\end{tabular} &
-    \begin{tabular}{c}$3.34$\\($28.2$)\end{tabular} &
-    \begin{tabular}{c}$7.67$\\($2.05\times10^{-2}$)\end{tabular} \\
-    \isoButaneHydro  & 87 &
-    \begin{tabular}{c}$3.75\times10^{-4}$\\($2.80\times10^{-2}$)\end{tabular} &
-    \begin{tabular}{c}$-1.27$\\($29.8$)\end{tabular} &
-    \begin{tabular}{c}$7.67$\\($1.75\times10^{-2}$)\end{tabular} \\
-    \isoButaneHerium  & 90 &
-    \begin{tabular}{c}$2.14\times10^{-3}$\\($2.20\times10^{-2}$)\end{tabular} &
-    \begin{tabular}{c}$3.05$\\($31.4$)\end{tabular} &
-    \begin{tabular}{c}$7.67$\\($1.90\times10^{-2}$)\end{tabular} \\
+    \Methane  & 7.63 & $4.91\times 10^{-2}$ \\
+    \MethaneHydro & 7.67 & $1.66\times 10^{-2}$ \\
+    \MethaneHerium  & 7.67 & $2.05\times 10^{-2}$ \\
+    \isoButaneHydro  & 7.67 & $1.75\times 10^{-2}$ \\
+    \isoButaneHerium  & 7.67 & $1.90\times 10^{-2}$ \\
     \bottomrule
   \end{tabular}
 \end{table}
+
+%\begin{table}
+%  \caption{各ガスの解析効率と分解能．それぞれ100 eventsずつeye-scanによって解析を行った．}
+%  \label{tab::gas_summary}
+%  \begin{tabular}{ccccc}
+%    \toprule
+%    gas & 解析効率 (\si{\percent}) &
+%    $dE\pm\sigma_{dE}$ (\si{\kilo\electronvolt}) &
+%    $d\theta\pm\sigma_{d\theta}$ (\si{\milli\radian}) &
+%    Ex $\pm\sigma_{\text{Ex}}$ (\si{\mega\electronvolt})\\
+%    \midrule
+%    \Methane  & 55 &
+%    $-4.21\times10^{-3}\pm3.13\times10^{-2}$ & $46.4\pm77.9$ & $7.63\pm4.91\times10^{-2}$ \\
+%    \MethaneHydro & 91 & $1.36\times10^{-3}\pm1.97\times10^{-2}$ & $2.10\pm24.6$ & $7.67\pm1.66\times10^{-2}$ \\
+%    \MethaneHerium & 78 &
+%    $3.75\times10^{-3}\pm2.34\times10^{-2}$ & $3.34\pm28.2$ & $7.67\pm2.05\times10^{-2}$ \\
+%    \isoButaneHydro  & 87 & $3.75\times10^{-4}\pm2.80\times10^{-2}$ & $-1.27\pm29.8$ & $7.67\pm1.75\times10^{-2}$ \\
+%    \isoButaneHerium  & 90 & $2.14\times10^{-3}\pm2.20\times10^{-2}$ & $3.05\pm31.4$ & $7.67\pm1.90\times10^{-2}$ \\
+%    \bottomrule
+%  \end{tabular}
+%\end{table}
 
 \section{検出ガスの決定}
 表\ref{tab::result_summary}に各検出ガスでの優劣をまとめた．
