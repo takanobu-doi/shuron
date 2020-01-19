@@ -31,20 +31,21 @@
 測定には図\ref{pic::alpha_collimator}のような線源コリメータを用いる．
 このコリメータはアクリルで作られており，1つの\ang{0}，4つの\ang{30}の穴が開いている．
 このコリメータを用いることで$\alpha$線を\ang{0}と\ang{30}の方向に限定することができる．
-図\ref{fig::drift_v_image}の右のようにドリフト方向に$\Delta y$，それと垂直な方向に$\Delta z$移動するとき，
+図\ref{fig::drift_v_image}の右のようにドリフト方向に$\Delta y$~\si{\milli\metre}，
+それと垂直な方向に$\Delta z$~\si{\milli\metre}移動するとき，
 \begin{equation}
-  \Delta y = \tan(\ang{30})\Delta z \label{eq::deltay_deltaz}
+  \Delta y = \tan(\ang{30})\times\Delta z \label{eq::deltay_deltaz}
 \end{equation}
 となる．
-MAIKo TPC で取得したトラックの横方向の変分を$\Delta strip$，縦方向の変分を$\Delta t$，
-ドリフトスピードを$v_{\text{drift}}$とすると，
+MAIKo TPC で取得したトラックの横方向の変分を$\Delta strip$，縦方向の変分を$\Delta t$~\si{\nano\second}，
+ドリフトスピードを$v_{\text{drift}}$~\si{\milli\metre\per\nano\second}とすると，
 \begin{align}
   \frac{\Delta z}{\SI{0.4}{\milli\metre}} & = \Delta strip \label{eq::deltaz}\\
   \frac{\Delta y}{v_{\text{drift}}} & = \Delta t \label{eq::deltay}
 \end{align}
 式 (\ref{eq::deltay_deltaz}, \ref{eq::deltaz}, \ref{eq::deltay}) より
 \begin{equation}
-  v_{\text{drift}} = \frac{\tan(\ang{30})~\Delta strip\times\SI{0.4}{\milli\metre}}{\Delta t}
+  v_{\text{drift}} = \frac{\tan(\ang{30})\times\Delta strip\times\SI{0.4}{\milli\metre}}{\Delta t}
 \end{equation}
 とドリフトスピードが求まる．
 \begin{figure}
@@ -137,10 +138,14 @@ $N'_{\mathrm{e}}$は$\mu$-PICで収集した電荷から求める．
 検出ガス中で荷電粒子がエネルギーを落とすと，W値あたり平均1個の電子を電離する．
 そのため，荷電粒子のエネルギー損失をW値で割ることで$N_{\mathrm{e}}$が求まる．
 各ガスのエネルギー損失とW値~\cite{energy_per_ion_pair,pdg}を表\ref{tab::energy_loss_and_W_val}に示す．
-測定に用いた$\alpha$線源からは平均\SI{4.2}{\mega\electronvolt}の$\alpha$粒子が出ていることが他の測定によりわかっている．
+${}^{241}\mathrm{Am}$からは\SI{5.4}{\mega\electronvolt}の$\alpha$線が放出される．
+測定に用いた$\alpha$線源はactivity を大きくするために，多くの${}^{241}\mathrm{Am}$が線源に含まれている．
+そのため，物質厚が大きくなっており，線源中でエネルギーを落としてしまう．
+この線源から出ている$\alpha$粒子の持つエネルギーが平均\SI{4.2}{\mega\electronvolt}であることが他の測定によりわかっている．
 本測定では\ang{0}方向の$\alpha$線を用いて測定した．
 エネルギー損失は\SI{4.2}{\mega\electronvolt}の$\alpha$粒子が$\mu$-PIC 32 strip分の
 距離 (\SI{12.8}{\milli\metre}) で落とすエネルギーを示している．
+この距離で発生した電子が$\mu$-PIC の32 stripsで収集される．
 \begin{table}
   \centering
   \caption[検出ガスのW値とエネルギー損失と$N_{\rm e}$．]
@@ -277,7 +282,7 @@ $\alpha$線源を用いた場合のシミュレーションと測定の比較を
     \includegraphics[width=\columnwidth, trim=0 0 50 0]{0160_5.eps}
     \caption{$\alpha$線源によるトラック．}
   \end{subfigure}
-  \caption{\Methane の場合．}
+  \caption{$\alpha$粒子のトラック（\Methane の場合）．}
   \label{fig::track_comp_ch4}
 \end{figure}
 
@@ -293,7 +298,7 @@ $\alpha$線源を用いた場合のシミュレーションと測定の比較を
     \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{0207_7.eps}
     \caption{$\alpha$線源によるトラック．}
   \end{subfigure}
-  \caption{\MethaneHydro の場合．}
+  \caption{$\alpha$粒子のトラック（\MethaneHydro の場合）．}
   \label{fig::track_comp_ch4_h2}
 \end{figure}
 
@@ -309,7 +314,7 @@ $\alpha$線源を用いた場合のシミュレーションと測定の比較を
     \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{0163_3.eps}
     \caption{$\alpha$線源によるトラック．}
   \end{subfigure}
-  \caption{\MethaneHerium の場合．}
+  \caption{$\alpha$粒子のトラック（\MethaneHerium の場合）．}
   \label{fig::track_comp_ch4_he}
 \end{figure}
 
@@ -325,7 +330,7 @@ $\alpha$線源を用いた場合のシミュレーションと測定の比較を
     \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{0210_14.eps}
     \caption{$\alpha$線源によるトラック．}
   \end{subfigure}
-  \caption{\isoButaneHydro の場合．}
+  \caption{$\alpha$粒子のトラック（\isoButaneHydro の場合）．}
   \label{fig::track_comp_ic4h10_h2}
 \end{figure}
 
@@ -341,7 +346,7 @@ $\alpha$線源を用いた場合のシミュレーションと測定の比較を
     \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{0176_1.eps}
     \caption{$\alpha$線源によるトラック．}
   \end{subfigure}
-  \caption{\isoButaneHerium の場合．}
+  \caption{$\alpha$粒子のトラック（\isoButaneHerium の場合）．}
   \label{fig::track_comp_ic4h10_he}
 \end{figure}
 
@@ -366,7 +371,7 @@ $\alpha$線源から放出される$\alpha$粒子のエネルギーは\SI{4.2}{\
     \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{0146_16.eps}
     \caption{$\alpha$線源によるトラック．}
   \end{subfigure}
-  \caption{\Methane の場合．}
+  \caption{低エネルギー$\alpha$粒子のトラック（\Methane の場合）．}
   \label{fig::track_ch4_loss}
 \end{figure}
 \begin{figure}
@@ -381,7 +386,7 @@ $\alpha$線源から放出される$\alpha$粒子のエネルギーは\SI{4.2}{\
     \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{0209_22.eps}
     \caption{$\alpha$線源によるトラック．}
   \end{subfigure}
-  \caption{\MethaneHydro の場合．}
+  \caption{低エネルギー$\alpha$粒子のトラック（\MethaneHydro の場合）．}
   \label{fig::track_ch4_h2_loss}
 \end{figure}
 \begin{figure}
@@ -396,7 +401,7 @@ $\alpha$線源から放出される$\alpha$粒子のエネルギーは\SI{4.2}{\
     \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{0204_24.eps}
     \caption{$\alpha$線源によるトラック．}
   \end{subfigure}
-  \caption{\MethaneHerium の場合．}
+  \caption{低エネルギー$\alpha$粒子のトラック（\MethaneHerium の場合）．}
   \label{fig::track_ch4_he_loss}
 \end{figure}
 \begin{figure}
@@ -411,7 +416,7 @@ $\alpha$線源から放出される$\alpha$粒子のエネルギーは\SI{4.2}{\
     \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{0211_4.eps}
     \caption{$\alpha$線源によるトラック．}
   \end{subfigure}
-  \caption{\isoButaneHydro の場合．}
+  \caption{低エネルギー$\alpha$粒子のトラック（\isoButaneHydro の場合）．}
   \label{fig::track_ic4h10_h2_loss}
 \end{figure}
 \begin{figure}
@@ -426,7 +431,7 @@ $\alpha$線源から放出される$\alpha$粒子のエネルギーは\SI{4.2}{\
     \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{0203_10.eps}
     \caption{$\alpha$線源によるトラック．}
   \end{subfigure}
-  \caption{\isoButaneHerium の場合．}
+  \caption{低エネルギー$\alpha$粒子のトラック（\isoButaneHerium の場合）．}
   \label{fig::track_ic4h10_he_loss}
 \end{figure}
 
@@ -490,31 +495,31 @@ $\alpha$線源のトラックを再現することができたので，
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{10020_5.eps}
-  \caption{2本しかトラックを確認できないイベント (\Methane の場合)．}
+  \caption{2本しかトラックを確認できないイベントの画像 (\Methane の場合)．}
   \label{fig::not_three_alpha_ch4}
 \end{figure}
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{10022_49.eps}
-  \caption{2本しかトラックを確認できないイベント (\MethaneHydro の場合)．}
+  \caption{2本しかトラックを確認できないイベントの画像 (\MethaneHydro の場合)．}
   \label{fig::not_three_alpha_ch4_h2}
 \end{figure}
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{10021_24.eps}
-  \caption{2本しかトラックを確認できないイベント (\MethaneHerium の場合)．}
+  \caption{2本しかトラックを確認できないイベントの画像 (\MethaneHerium の場合)．}
   \label{fig::not_three_alpha_ch4_he}
 \end{figure}
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{10024_25.eps}
-  \caption{2本しかトラックを確認できないイベント (\isoButaneHydro の場合)．}
+  \caption{2本しかトラックを確認できないイベントの画像 (\isoButaneHydro の場合)．}
   \label{fig::not_three_alpha_ic4h10_h2}
 \end{figure}
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{10023_32.eps}
-  \caption{2本しかトラックを確認できないイベント (\isoButaneHerium の場合)．}
+  \caption{2本しかトラックを確認できないイベントの画像 (\isoButaneHerium の場合)．}
   \label{fig::not_three_alpha_ic4h10_he}
 \end{figure}
 
