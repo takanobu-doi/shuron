@@ -21,31 +21,40 @@ gridの座標を$y = \SI{0}{\milli\metre}$，plateの座標を$y = \SI{140}{\mil
 $y$座標の絶対値を決定することができない．
 すると，図\ref{fig::sensitive_area}のように，
 $y = \SI{120}{\milli\metre}$と$y = \SI{20}{\milli\metre}$のどちらで散乱が起きたのかを区別できない．
+この例では，取得されたデータが同じであっても上の場合はトラックが有感領域から出てしまっている．
 どちらの場合でも確実に有感領域中で停止したと保証するためには，
 散乱点から$y$軸方向に\SI{\pm20}{\milli\metre}を実質の有感領域としなければならない．
+実質の有感領域が小さいと領域外に出ていく$\alpha$粒子の数が増えてしまい，
+検出効率が低下する．
+そのため，中性子ビームの$y$軸方向のサイズは可能な限り小さいのもが望ましい．
+その反面，ビームを細くすると
+%標的で生成された中性子を制限することになるので，
+中性子の入射量が低下してしまう．
+%この2つの効果を考慮して収量が大きくなるビームサイズを決定する．
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.6\columnwidth]{sensitive_area.eps}
+  \includegraphics[clip, width=0.7\columnwidth]{sensitive_area.eps}
   \caption[ビームサイズが大きいときの散乱事象．]
           {ビームサイズが大きいときの散乱事象．
             右上のように領域外にトラックが出ているのか，左下のように領域内で停止したのか区別ができない．}
   \label{fig::sensitive_area}
 \end{figure}
 
-有感領域が小さいと領域外に出ていく$\alpha$粒子の数が増えてしまい，
-検出効率が低下する．
-そのため，中性子ビームの$y$軸方向のサイズは可能な限り小さいのもが望ましい．
-その反面，ビームを細くすると標的で生成された中性子を制限することになるので，
-中性子の入射量が低下する．
-%この2つの効果を考慮して収量が大きくなるビームサイズを決定する．
-
 \section{立体角と検出効率によるビームサイズの決定}
 重照射室内のトリチウムターゲットから中性子は$4\pi$に等方的に放出していると仮定する．
 すると，中性子の収量はコリメータの立体角で決定される．
+重照射室の模式図を図\ref{fig::jushosha_room}に示す．
 トリチウムターゲットから重照射室の大実験室側の壁までの距離は\SI{1.46e3}{\milli\metre}，
 壁の厚さは\SI{1e3}{\milli\metre}である．
-コリメータの半径を$r$~\si{\milli\metre}とすると，立体角は
-$\pi\times r^2/\left(2.46\times10^3\right)^2$となる．
+この壁に半径\SI{55}{\milli\metre}の穴が開いており，そこから大実験室側へ中性子を取り出す．
+この壁の穴にコリメータを設置することで任意の形に中性子ビームの形状を設定できる．
+コリメータの穴の半径を$r$~\si{\milli\metre}とすると，立体角は$\pi\times r^2/\left(2.46\times10^3\right)^2$となる．
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.65\columnwidth]{jushosha_room.eps}
+  \caption{重照射室の模式図．トリチウムターゲットから大実験室まで\SI{2.46}{\metre}である．}
+  \label{fig::jushosha_room}
+\end{figure}
 
 MAIKo TPC ではトラックの長さと方向からエネルギーと運動量を決定するため，
 トラック全体を正しく抽出することが必要となり，MAIKo TPC の有感領域内で停止しない$\alpha$粒子は解析に用いることができない．
@@ -53,11 +62,11 @@ MAIKo TPC ではトラックの長さと方向からエネルギーと運動量�
 検出効率が大きくなるような実験条件が望ましい．
 図\ref{fig::alpha_E_dist}のエネルギー分布，ビームの通る円柱内で一様な散乱点を仮定して，
 $\alpha$粒子の検出効率を求めた．
-\SIrange{5}{50}{\milli\metre}でのコリメータの立体角の割合と検出効率を
+半径\SIrange{1}{50}{\milli\metre}でのコリメータの立体角の割合と検出効率を
 表\ref{tab::solid_angle_percent}に示す．
-検出効率は\SI{10}{\milli\metre}以下ではあまり変化がない．
-\SI{5}{\milli\metre}と\SI{10}{\milli\metre}を比較すると，
-立体角は\SI{10}{\milli\metre}の方が4倍大きい．
+検出効率は\SI{10}{\milli\metre}以下ではほとんど変化がない．
+\SIlist{1;5;10}{\milli\metre}を比較すると，
+立体角は\SI{10}{\milli\metre}が最も大きい．
 大きな検出効率を持ちつつ，中性子の収量が大きい\SI{10}{\milli\metre}のコリメータを用いる．
 %コリメータの立体角と検出効率の積が最も大きくなるところが収量が最も大きくなる．
 \begin{table}
@@ -68,6 +77,7 @@ $\alpha$粒子の検出効率を求めた．
     \toprule
     コリメータの半径 (\si{\milli\metre}) & 立体角 (\si{\steradian}) & 検出効率 (\si{\percent})\\% & 積\\
     \midrule
+     1 & $5.19\times10^{-7}$ & 48.9 \\
      5 & $1.30\times10^{-5}$ & 48.7 \\%& $6.33\times10^{-6}$ \\
     10 & $5.19\times10^{-5}$ & 48.2 \\%& $2.50\times10^{-5}$ \\
     20 & $2.08\times10^{-4}$ & 46.6 \\%& $9.69\times10^{-5}$ \\
@@ -152,6 +162,5 @@ PHITS による計算では\SIrange{0}{10}{\milli\metre}の範囲の
 \SIrange{13.9}{14.1}{\mega\electronvolt}の中性子は
 \SI{4.07e-5}{\per\mega\electronvolt\per source}となる．
 OKTAVIAN のDCビームラインで生成される中性子が\SI{5e9}{\per\second}であるとすると，
-コリメータを通過してくる中性子の収量は\SI{4.07e4}{\per\second}となる．
-
+コリメータを通過してくる\SI{14}{\mega\electronvolt}中性子の量は\SI{4.07e4}{\per\second}となる．
 \end{document}
