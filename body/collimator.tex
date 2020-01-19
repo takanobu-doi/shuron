@@ -21,23 +21,24 @@ gridの座標を$y = \SI{0}{\milli\metre}$，plateの座標を$y = \SI{140}{\mil
 $y$座標の絶対値を決定することができない．
 すると，図\ref{fig::sensitive_area}のように，
 $y = \SI{120}{\milli\metre}$と$y = \SI{20}{\milli\metre}$のどちらで散乱が起きたのかを区別できない．
+この例では，取得されたデータが同じであっても上の場合はトラックが有感領域から出てしまっている．
 どちらの場合でも確実に有感領域中で停止したと保証するためには，
 散乱点から$y$軸方向に\SI{\pm20}{\milli\metre}を実質の有感領域としなければならない．
+実質の有感領域が小さいと領域外に出ていく$\alpha$粒子の数が増えてしまい，
+検出効率が低下する．
+そのため，中性子ビームの$y$軸方向のサイズは可能な限り小さいのもが望ましい．
+その反面，ビームを細くすると
+%標的で生成された中性子を制限することになるので，
+中性子の入射量が低下してしまう．
+%この2つの効果を考慮して収量が大きくなるビームサイズを決定する．
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.6\columnwidth]{sensitive_area.eps}
+  \includegraphics[clip, width=0.7\columnwidth]{sensitive_area.eps}
   \caption[ビームサイズが大きいときの散乱事象．]
           {ビームサイズが大きいときの散乱事象．
             右上のように領域外にトラックが出ているのか，左下のように領域内で停止したのか区別ができない．}
   \label{fig::sensitive_area}
 \end{figure}
-
-有感領域が小さいと領域外に出ていく$\alpha$粒子の数が増えてしまい，
-検出効率が低下する．
-そのため，中性子ビームの$y$軸方向のサイズは可能な限り小さいのもが望ましい．
-その反面，ビームを細くすると標的で生成された中性子を制限することになるので，
-中性子の入射量が低下する．
-%この2つの効果を考慮して収量が大きくなるビームサイズを決定する．
 
 \section{立体角と検出効率によるビームサイズの決定}
 重照射室内のトリチウムターゲットから中性子は$4\pi$に等方的に放出していると仮定する．
@@ -49,7 +50,7 @@ $y = \SI{120}{\milli\metre}$と$y = \SI{20}{\milli\metre}$のどちらで散乱�
 $\pi\times r^2/\left(2.46\times10^3\right)^2$となる．
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.7\columnwidth]{jushosha_room.eps}
+  \includegraphics[clip, width=0.65\columnwidth]{jushosha_room.eps}
   \caption{重照射室の模式図．トリチウムターゲットから大実験室まで\SI{2.46}{\metre}である．}
   \label{fig::jushosha_room}
 \end{figure}
