@@ -170,7 +170,7 @@ eye-scanによって決定した$\alpha$粒子の運動エネルギー ($E_{\tex
 \end{figure}
 \begin{table}
   \centering
-  \caption{}
+  \caption{シミュレーションで決定したエネルギーとeye-scan で決定したエネルギーの相関係数．}
   \label{tab::E_corr_params}
   \begin{tabular}{ccc}
     \toprule
@@ -237,13 +237,13 @@ $E_{\text{eye-scan}}$をフィットした1次関数 ($f(x)$) で補正したエ
   \label{tab::energy_resolution}
   \begin{tabular}{ccc}
     \toprule
-    gas & $dE$ (keV) & $\sigma_{dE}$ (keV) \\
+    gas & $dE$ (\si{\mega\electronvolt}) & $\sigma_{dE}$ (\si{\mega\electronvolt}) \\
     \midrule
-    \Methane  & 11.0 & 33.0  \\
-    \MethaneHydro & 1.25 & 20.0 \\
-    \MethaneHerium  & 9.30 & 23.7 \\
-    \isoButaneHydro  & 4.56 & 23.6 \\
-    \isoButaneHerium  & 5.00 & 22.3 \\
+    \Methane  & $1.10\times10^{-2}$ & $3.30\times10^{-2}$  \\
+    \MethaneHydro & $1.25\times10^{-3}$ & $2.00\times10^{-2}$ \\
+    \MethaneHerium  & $9.30\times10^{-3}$ & $2.37\times10^{-2}$ \\
+    \isoButaneHydro  & $4.56\times10^{-3}$ & $2.36\times10^{-2}$ \\
+    \isoButaneHerium  & $5.00\times10^{-3}$ & $2.23\times10^{-2}$ \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -299,13 +299,13 @@ $E_{\text{eye-scan}}$をフィットした1次関数 ($f(x)$) で補正したエ
   \label{tab::theta_resolution}
   \begin{tabular}{ccc}
     \toprule
-    gas & $d\theta$ (mrad.) & $\sigma_{\theta}$ (mrad.) \\
+    gas & $d\theta$ (\si{\radian}) & $\sigma_{\theta}$ (\si{\radian}) \\
     \midrule
-    \Methane  & 46.4 & 77.9 \\
-    \MethaneHydro & 2.10 & 24.6 \\
-    \MethaneHerium  & 3.34 & 28.2 \\
-    \isoButaneHydro  & -1.27 & 29.8 \\
-    iso-$\mathrm{C}_{4}\mathrm{H}_{10}\ (1) + \mathrm{He}\ (9) $ & 3.05 & 31.4 \\
+    \Methane  & $4.64\times10^{-2}$ & $7.79\times10^{-2}$ \\
+    \MethaneHydro & $2.10\times10^{-3}$ & $2.46\times10^{-2}$ \\
+    \MethaneHerium  & $3.34\times10^{-3}$ & $2.82\times10^{-2}$ \\
+    \isoButaneHydro  & $-1.27\times10^{-3}$ & $2.98\times10^{-2}$ \\
+    \isoButaneHerium & $3.05\times10^{-3}$ & $3.14\times10^{-2}$ \\
     \midrule
   \end{tabular}
 \end{table}
@@ -423,7 +423,7 @@ $\alpha$粒子のエネルギー分解能の観点では\MethaneHydro が良い�
     \toprule
     gas & 解析効率 & ディフュージョン & 励起エネルギー分解能 & 標的の量 \\
     \midrule
-    \Methane & $\times$ & $\times$ & $\bigcirc$ & 1 \\
+    \Methane & $\times$ & $\times$ & $\triangle$ & 1 \\
     \MethaneHydro & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & 0.6 \\
     \MethaneHerium & $\triangle$ & $\triangle$ & $\bigcirc$ & 0.8 \\
     \isoButaneHydro & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & 0.8 \\
