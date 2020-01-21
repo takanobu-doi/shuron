@@ -2,22 +2,13 @@
 
 \begin{document}
 
-\chapter{解析}
-%\section{液体シンチレータの解析}
-%\subsection{FADCの生データ}
-%光電子増倍管から取得した波形データの一例を示す．
-%
-%\subsection{波形弁別 (n-$\gamma$ discrimination)}
-%液体シンチレータのデータの中には中性子による信号とガンマ線による信号とが含まれている．
-%この2つの波形には違いがあるので，その波形の違いから識別することができる．
-%
-%\subsection{中性子のレート}
-%中性子線源から放出される中性子の量は時間とともに変化する．
-%
-\section{解析の概要}
+\chapter{MAIKo TPC で取得したトラックの解析}
+\section{トラック情報の解析の概要}
 MAIKo TCP の解析では背景事象の除去とトラック情報の抽出の2つが必要となる．
 検出ガスには${}^{12}\mathrm{C}$だけでなく，陽子や${}^{4}\mathrm{He}$が含まれる．
 そのため，中性子と陽子，${}^{4}\mathrm{He}$との散乱事象を取り除く必要がある．
+陽子や${}^{4}\mathrm{He}$との散乱では複数の荷電粒子が生成されないので，
+トラックの本数から識別することができる．
 その後，中性子と${}^{12}\mathrm{C}$との散乱事象に対してトラックの情報を抽出する．
 トラックの情報は中性子と${}^{12}\mathrm{C}$とが散乱した座標，
 $\alpha$粒子が停止した座標である．
@@ -65,8 +56,8 @@ ${}^{12}\mathrm{C}$の運動エネルギー，散乱角度，励起エネルギ�
 %これまではHough 変換を使って解析を行ってきたが，
 %高速に処理をするためにニューラルネットワークを用いた解析方法を開発した．
 
-\section{eye-scan}
-本研究ではMAIKo TPC から得られたトラックの解析を人間の目 (eye-scan) で行った．
+\section{eye-scanによるトラックの解析}
+本研究ではMAIKo TPC から得られたトラック情報の抽出を人間の目 (eye-scan) で行った．
 eye-scanでは，トラックの本数の識別と散乱点，停止点の抽出を行った．
 ここではトラックの本数が3本であるイベントを${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}')3\alpha$イベントとした．
 本研究では${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}')3\alpha$イベントに対して解析を行った．
@@ -79,7 +70,7 @@ eye-scanでは，トラックの本数の識別と散乱点，停止点の抽出
 ${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}')3\alpha$イベントとして認識できない場合がある．
 そこで，eye-scanによって正しくトラックが3本と認識できる割合（解析効率）を評価する．
 eye-scanは各検出ガスについて100 events ずつ行った．
-eye-scanによって決定したトラックの本数を表\ref{tab::track_number_ratio}に示す．
+eye-scanによって決定したトラックの本数の割合を表\ref{tab::track_number_ratio}に示す．
 表\ref{tab::track_number_ratio}の3本の割合が解析効率となる．
 \Methane 単体と\MethaneHerium 以外は約\SI{90}{\percent}の解析効率となっている．
 %\begin{table}
@@ -119,8 +110,7 @@ eye-scanによって決定したトラックの本数を表\ref{tab::track_numbe
 
 %\subsection{検出効率の角度依存性}
 \subsection{エネルギー分解能}
-$\alpha$粒子の飛行距離の分解能により，エネルギー分解能が決まる．
-そこで，eye-scanによる$\alpha$粒子のエネルギー分解能を評価する．
+eye-scanにより決定した$\alpha$粒子の飛行距離の分解能により，エネルギー分解能が決まる．
 シミュレーションで粒子を生成した時に決定した$\alpha$粒子の運動エネルギー ($E_{\text{ideal}}$) と
 eye-scanによって決定した$\alpha$粒子の運動エネルギー ($E_{\text{eye-scan}}$) の相関を
 図\ref{fig::E_corr_ch4}, \ref{fig::E_corr_ch4_h2}, \ref{fig::E_corr_ch4_he},
@@ -249,17 +239,18 @@ $E_{\text{eye-scan}}$をフィットした1次関数 ($f(x)$) で補正したエ
 \end{table}
 
 \subsection{角度分解能}
-シミュレーションで決定した$\alpha$粒子の角度とeye-scanでの角度の差分を$d\theta$とする．
+\subsubsection{極角分解能}
+シミュレーションで決定した$\alpha$粒子の極角とeye-scanでの極角の差分を$d\theta$とする．
 各検出ガスでの$d\theta$の分布を図\ref{fig::dtheta_ch4}, \ref{fig::dtheta_ch4_h2}, \ref{fig::dtheta_ch4_he},
 \ref{fig::dtheta_ic4h10_h2}, \ref{fig::dtheta_ic4h10_he}に，
 ガウス分布でフィットした中心値と分散を表\ref{tab::theta_resolution}に示す．
-角度分解能は，\Methane 単体の場合に大きいことが分かる．
+極角分解能は，\Methane 単体の場合に大きいことが分かる．
 \begin{figure}
   \centering
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{dtheta_10020_fit.eps}
-    \caption{\Methane の場合の角度差．}
+    \caption{\Methane を用いた場合の極角の差分．}
     \label{fig::dtheta_ch4}
   \end{minipage}  
 \end{figure}
@@ -268,13 +259,13 @@ $E_{\text{eye-scan}}$をフィットした1次関数 ($f(x)$) で補正したエ
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{dtheta_10022_fit.eps}
-    \caption{\MethaneHydro の場合の角度差．}
+    \caption{\MethaneHydro を用いた場合の極角の差分．}
     \label{fig::dtheta_ch4_h2}
   \end{minipage}
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{dtheta_10021_fit.eps}
-    \caption{\MethaneHerium の場合の角度差．}
+    \caption{\MethaneHerium を用いた場合の極角の差分．}
     \label{fig::dtheta_ch4_he}
   \end{minipage}
 \end{figure}
@@ -283,38 +274,85 @@ $E_{\text{eye-scan}}$をフィットした1次関数 ($f(x)$) で補正したエ
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{dtheta_10024_fit.eps}
-    \caption{\isoButaneHydro の場合の角度差．}
+    \caption{\isoButaneHydro を用いた場合の極角の差分．}
     \label{fig::dtheta_ic4h10_h2}
   \end{minipage}
   \begin{minipage}{0.45\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{dtheta_10023_fit.eps}
-    \caption{\isoButaneHerium の場合の角度差．}
+    \caption{\isoButaneHerium を用いた場合の極角の差分．}
     \label{fig::dtheta_ic4h10_he}
   \end{minipage}
 \end{figure}
+
+\subsubsection{方位角分解能}
+シミュレーションで決定した$\alpha$粒子の方位角とeye-scanでの方位角の差分を$d\varphi$とする．
+各検出ガスでの$d\varphi$の分布を図\ref{fig::dphi_ch4}，\ref{fig::dphi_ch4_h2}，\ref{fig::dphi_ch4_he}，
+\ref{fig::dphi_ic4h10_h2}，\ref{fig::dphi_ic4h10_he}に，
+ガウス分布でフィットした中心値と分散を表\ref{tab::theta_resolution}に示す．
+検出ガスに\Methane 単体を用いた時に悪いことが分かる．
+\begin{figure}
+  \centering
+  \begin{minipage}{0.45\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth]{dphi_10020_fit.eps}
+    \caption{\Methane を用いた場合の方位角の差分．}
+    \label{fig::dphi_ch4}
+  \end{minipage}
+\end{figure}
+\begin{figure}
+  \centering
+  \begin{minipage}{0.45\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth]{dphi_10022_fit.eps}
+    \caption{\MethaneHydro を用いた場合の方位角の差分．}
+    \label{fig::dphi_ch4_h2}
+  \end{minipage}
+  \begin{minipage}{0.45\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth]{dphi_10021_fit.eps}
+    \caption{\MethaneHerium を用いた場合の方位角の差分．}
+    \label{fig::dphi_ch4_he}
+  \end{minipage}
+\end{figure}
+\begin{figure}
+  \centering
+  \begin{minipage}{0.45\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth]{dphi_10024_fit.eps}
+    \caption{\isoButaneHydro を用いた場合の方位角の差分．}
+    \label{fig::dphi_ic4h10_h2}
+  \end{minipage}
+  \begin{minipage}{0.45\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth]{dphi_10023_fit.eps}
+    \caption{\isoButaneHerium を用いた場合の方位角の差分．}
+    \label{fig::dphi_ic4h10_he}
+  \end{minipage}
+\end{figure}
+
 \begin{table}
   \centering
   \caption{角度の差分．}
   \label{tab::theta_resolution}
-  \begin{tabular}{ccc}
+  \begin{tabular}{ccccc}
     \toprule
-    gas & $d\theta$ (\si{\radian}) & $\sigma_{\theta}$ (\si{\radian}) \\
+    gas & $d\theta$ (\si{\radian}) & $\sigma_{d\theta}$ (\si{\radian}) & 
+    $d\varphi$ (\si{\radian}) & $\sigma_{d\varphi}$ (\si{\radian})\\
     \midrule
-    \Methane  & $4.64\times10^{-2}$ & $7.79\times10^{-2}$ \\
-    \MethaneHydro & $2.10\times10^{-3}$ & $2.46\times10^{-2}$ \\
-    \MethaneHerium  & $3.34\times10^{-3}$ & $2.82\times10^{-2}$ \\
-    \isoButaneHydro  & $-1.27\times10^{-3}$ & $2.98\times10^{-2}$ \\
-    \isoButaneHerium & $3.05\times10^{-3}$ & $3.14\times10^{-2}$ \\
+    \Methane  & $4.64\times10^{-2}$ & $7.79\times10^{-2}$ & $-2.08\times10^{-2}$ & $1.03\times10^{-1}$ \\
+    \MethaneHydro & $2.10\times10^{-3}$ & $2.46\times10^{-2}$ & $-8.28\times10^{-4}$ & $2.47\times10^{-2}$ \\
+    \MethaneHerium  & $3.34\times10^{-3}$ & $2.82\times10^{-2}$ & $-4.46\times10^{-3}$ & $3.40\times10^{-2}$ \\
+    \isoButaneHydro  & $-1.27\times10^{-3}$ & $2.98\times10^{-2}$ & $-3.83\times10^{-3}$ & $2.97\times10^{-2}$ \\
+    \isoButaneHerium & $3.05\times10^{-3}$ & $3.14\times10^{-2}$ & $-3.41\times10^{-3}$ & $2.89\times10^{-2}$ \\
     \midrule
   \end{tabular}
 \end{table}
 
 \subsection{励起エネルギー分解能}
-測定で${}^{12}\mathrm{C}$，
-励起エネルギーの分解能が悪ければ各励起状態を特定することができない．
+${}^{12}\mathrm{C}$の励起エネルギーの分解能が悪ければ各励起状態を特定することができない．
 シミュレーションでは$0_2^+$状態経由での崩壊を考えているので，
-${}^{12}\mathrm{C}$の励起エネルギーは\SI{7.65}{\mega\electronvolt} となっている．
+${}^{12}\mathrm{C}$の励起エネルギーは\SI{7.65}{\mega\electronvolt} となる．
 eye-scanで決定した${}^{12}\mathrm{C}$の不変質量から基底状態の${}^{12}\mathrm{C}$の質量を引くことで励起エネルギーを求め，
 \SI{7.65}{\mega\electronvolt} を再構築できるか評価する．
 各検出ガスで再構成した励起エネルギーを図\ref{fig::Ex_ch4}, \ref{fig::Ex_ch4_h2}, \ref{fig::Ex_ch4_he},
@@ -402,14 +440,8 @@ $3_1^-$の\SI{9.64}{\mega\electronvolt}であるので，
 
 \section{検出ガスの決定}
 表\ref{tab::result_summary}に各検出ガスでの優劣をまとめた．
-ディフュージョンとトラックの幅の観点では\MethaneHydro ,
-\isoButaneHydro  が良い．
-解析効率は\MethaneHydro , \isoButaneHydro ,
-\isoButaneHerium が良い．
-$\alpha$粒子のエネルギー分解能の観点では\MethaneHydro が良い．
-角度分解能の観点では\MethaneHydro ,
-\isoButaneHydro が良い．
-これらから考えると，\MethaneHydro または
+$\bigcirc$が優，$\triangle$が可，$\times$が不可を表す．
+表の各項目から考えると，\MethaneHydro または
 \isoButaneHydro が適すると判断できる．
 \MethaneHydro と \isoButaneHydro とで
 含まれる${}^{12}\mathrm{C}$の量を比較すると，
