@@ -4,9 +4,10 @@
 %\chapter{iso-C$_{\text 4}$H$_{\text{10}}$ (10) + H$_{\text 2}$ (9)を用いたとき}
 \chapter{iso-C$_{\text 4}$H$_{\text{10}}$ (10) + H$_{\text 2}$ (9) の検出ガス特性}
 本章では検出ガスとして用いる\isoButaneHydro の特性について述べる．
+
 \section{ドリフトスピード}
 ドリフトスピードのドリフト電場依存性を調べた．
-Magboltz でドリフトスピードが\SI{0.014}{\milli\metre\per\nano\second}となる
+Magboltz で求めたドリフトスピードが\SI{0.014}{\milli\metre\per\nano\second}となる
 ドリフト電場は\SI{6.80}{\volt\per\milli\metre}である．
 ドリフト領域の長さは\SI{140}{\milli\metre}であるので，plateとgridの電位差は\SI{952}{\volt}となる．
 調整の行いやすさを考え\SI{955}{\volt}を中心に\SI{100}{\volt}間隔で
@@ -95,7 +96,7 @@ $\Delta V_{\text{grid-GEM}} = $\SI{700}{\volt}のとき，\SI{140}{\volt\per\mil
 
 \subsection{GEMによる電子増幅率}
 GEM は絶縁体のフィルムの両面を銅で被覆し，微細な穴を開けたものである．
-GEM の各面に電圧をかけることで高電場を形成し，電子のアバランシェ増幅を起こす．
+GEM の各面に電圧をかけることで高電場を形成し，電子が穴を通過する際にアバランシェ増幅を起こす．
 %$\Delta V_{\text{GEM}}$を変化させることで電子の増幅率が変化する．
 $\Delta V_{\text{GEM}}$を\SI{10}{\volt}間隔で\SIrange{300}{390}{\volt}の範囲で変化させて計10点測定した．
 電子の増幅率の$\Delta V_{\text{GEM}}$による変化を図\ref{fig::gain_GEM_V_dep}に示す．
@@ -155,6 +156,24 @@ $\mu$-PICのanode 電極の周りにより強い電場が形成されること�
 拡散効果とトラックの太さが比例していると仮定すると，track width $\sim\sqrt{L}$にとなる．
 トラックの太さと線源の位置との依存性を図\ref{fig::diff_x}に示す．
 図\ref{fig::diff_x}の$L$は線源コリメータの\ang{0}穴とgridとのドリフト方向の距離である．
+この測定では表\ref{tab::config_diffusion_meas}の電圧で測定を行った．
+\begin{table}
+  \centering
+  \caption{ディフージョン効果の距離依存性を測定したときの電圧設定．}
+  \label{tab::config_diffusion_meas}
+  \begin{tabular}{cc}
+    \toprule
+    & 電位差 (\si{\volt}) \\
+    \midrule
+    $V_{\text{drift}}$ & 955 \\
+    $V_{\text{grid-GEM}}$ & 700 \\
+    $V_{\text{GEM}}$ & 350 \\
+    $V_{\text{GEM-$\mu$-PIC}}$ & 650 \\
+    $V_{\mu\text{-PIC}}$ & 400 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
 $\text{track width} = 1.27\times\sqrt{L-19.2}+23.1$となり，
 $\sqrt{L}$に比例していることが確認された．
 トラックの幅の $\sqrt{L}$に対する係数$D_{\text{width}}$は
@@ -201,11 +220,11 @@ Magboltz で係数を求めた際には，一様な電場を仮定している�
 %この測定は$\rm CH_{4}$ 50 hPa で行った。
 
 \section{検出効率の散乱位置，散乱角依存性}
-測定されたトラックの長さから粒子のエネルギーを決定する．
-しかし，散乱点や粒子の運動エネルギー，角度によってはMAIKo TPC の有感領域から外に出てしまう．
-有感領域の外へ出てしまった粒子のトラックの長さは決定することができないので，
-その粒子の運動エネルギーと運動量を決定できなくなってしまう．
-\ref{chap::collimator}章で有感領域内で停止する割合（検出効率）を考えた．
+%測定されたトラックの長さから粒子のエネルギーを決定する．
+%しかし，散乱点や粒子の運動エネルギー，角度によってはMAIKo TPC の有感領域から外に出てしまう．
+%有感領域の外へ出てしまった粒子のトラックの長さは決定することができないので，
+%その粒子の運動エネルギーと運動量を決定できなくなってしまう．
+%\ref{chap::collimator}章で有感領域内で停止する割合（検出効率）を考えた．
 
 %ここでは，以下のようなで状況を考える．
 %\begin{itemize}
@@ -232,9 +251,12 @@ Magboltz で係数を求めた際には，一様な電場を仮定している�
 %第\ref{chap::collimator}章で述べたように有限の大きさを持つ中性子ビームが入射した場合，
 %実質の有感領域をMAIKo ケージよりも小さくしなければならない．
 %
-散乱点および3つの停止点が有感領域にある時に検出可能とすると，検出効率は\SI{48.2}{\percent}であった．
+%散乱点および3つの停止点が有感領域にある時に検出可能とすると，
+\ref{chap::collimator}章で考えた\SI{10}{\milli\metre}のコリメータを用いたときの検出効率は\SI{48.2}{\percent}であった．
+検出効率は散乱点，散乱角度に依存していると予想される．
 検出効率の散乱点の$z$座標依存性を図\ref{fig::detection_efficiency_beam_axis}に，
 ${}^{12}\mathrm{C}$の重心系での散乱角依存性を図\ref{fig::detection_efficiency_theta_cm}に示す．
+$\theta_{\text{c.m.}}$は入射中性子の運動方向に対する${}^{12}\mathrm{C}$の極角である．
 図\ref{fig::detection_efficiency_beam_axis}から分かるように，
 $z$座標が小さいまたは大きい場所で反応が起きた場合に，
 崩壊してできた$\alpha$粒子が有感領域から出やすくなるため検出効率が低下している．
@@ -274,7 +296,7 @@ OKTAVIAN で現在得られるビーム量 ($N_{\text{b}}$) は最大で$4\pi$�
 この時，半径\SI{10}{\milli\metre}のコリメータからは\SI{1.95e4}{\per\second}の中性子が得られる．
 検出効率 ($\varepsilon_{\text{det.}}$) が\SI{48.2}{\percent}，
 解析効率 ($\varepsilon_{\text{ana.}}$) が\SI{87}{\percent}である．
-\isoButaneHydro (\SI{100}{\hecto\pascal}) における${}^{12}\mathrm{C}$の
+\SI{100}{\hecto\pascal}の\isoButaneHydro における${}^{12}\mathrm{C}$の
 面密度 ($N_{\text{t}}$) は\SI{1.01e17}{\per\square\milli\metre}である．
 %\SI{9.904e-3}{\per\cubic\milli\metre}%\rho = 2.3846e-5\gram\per\cubic\cm
 この時，${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}(0_{2}^{+})$反応の収量は
