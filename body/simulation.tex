@@ -9,7 +9,7 @@
 \section{\texorpdfstring{$\alpha$}{alpha}線源を用いた測定}
 \ref{sec::detection_gas_candidate}節で考えた各検出ガスについて，
 シミュレーションの基準となるトラックを測定した．
-また，それらのデータから各ガスにおけるドリフトスピード，ガス増幅率，トラックの幅を測定した．
+また，それらのデータから各ガスにおけるドリフトスピード，ガスの電子増幅率，トラックの幅を測定した．
 測定には${}^{241}{\rm Am}$の$\alpha$線源を用いた．
 図\ref{fig::a_source_track}に$\alpha$線源のトラックの一例を示す．
 図\ref{fig::a_source_track}では検出ガスに\isoButaneHydro を用いた．
@@ -29,9 +29,9 @@
 \subsection{ドリフトスピード}
 電子のドリフトスピードを線源によって得られるトラックから求める．
 測定には図\ref{pic::alpha_collimator}のような線源コリメータを用いる．
-このコリメータはアクリルで作られており，1つの\ang{0}，4つの\ang{30}の穴が開いている．
+このコリメータはアクリルで作られており，1つの\ang{0}と4つの\ang{30}の穴が開いている．
 このコリメータを用いることで$\alpha$線を\ang{0}と\ang{30}の方向に限定することができる．
-図\ref{fig::drift_v_image}の右のようにドリフト方向に$\Delta y$~\si{\milli\metre}，
+\ang{30}方向の$\alpha$線は図\ref{fig::drift_v_image}の右のようにドリフト方向に$\Delta y$~\si{\milli\metre}，
 それと垂直な方向に$\Delta z$~\si{\milli\metre}移動するとき，
 \begin{equation}
   \Delta y = \tan(\ang{30})\times\Delta z \label{eq::deltay_deltaz}
@@ -43,7 +43,8 @@ MAIKo TPC で取得したトラックの横方向の変分を$\Delta strip$，�
   \frac{\Delta z}{\SI{0.4}{\milli\metre}} & = \Delta strip \label{eq::deltaz}\\
   \frac{\Delta y}{v_{\text{drift}}} & = \Delta t \label{eq::deltay}
 \end{align}
-式 (\ref{eq::deltay_deltaz}, \ref{eq::deltaz}, \ref{eq::deltay}) より
+という関係にある．
+式\eqref{eq::deltay_deltaz}, \eqref{eq::deltaz}, \eqref{eq::deltay} より
 \begin{equation}
   v_{\text{drift}} = \frac{\tan(\ang{30})\times\Delta strip\times\SI{0.4}{\milli\metre}}{\Delta t}
 \end{equation}
@@ -85,8 +86,11 @@ MAIKo TPC で取得したトラックの横方向の変分を$\Delta strip$，�
 $\alpha$線源を用いて測定したドリフトスピードとMagboltz で求めた値を
 表\ref{tab::drift_speed_compare}に示す．
 $\alpha$線源を用いて測定したドリフトスピードと Magboltz を用いて計算したドリフトスピードがおおよそ一致していることが分かる．
+ここで，Magboltz の計算値が\SI{0.014}{\milli\metre\per\nano\second}となっていないのは，
+MAIKo TPC のオペレートを簡単にするために設定電圧を切りの良い値にしたためである．
 \Methane は実測とMagboltz による計算値とがずれているが，検出ガスに含まれる水分の影響が考えられる．
 \Methane のみ\SI{50}{\hecto\pascal} とその他のガスと比較して圧力が半分であるため，不純物の影響が大きく出ていると考えられる．
+不純物のドリフトスピードへの影響は付録\ref{app::drift_speed_humid_dep}で述べる．
 \begin{table}
   \centering
   \caption{実測したドリフトスピードとMagboltzで求めたドリフトスピードの比較．}
@@ -128,8 +132,8 @@ $\alpha$線源を用いて測定したドリフトスピードと Magboltz を�
 %\end{figure}
 
 \subsection{電子増幅率}
-電圧パラメータを変更させたときの増幅率の変化を測定した．
-増幅率は荷電粒子が検出ガス中を通過した際に発生する電子数 ($N_{\mathrm{e}}$) と
+各部の電圧に対する電子増幅率の依存性を測定した．
+増幅率は荷電粒子が検出ガス中を通過した際に発生させた電子数 ($N_{\mathrm{e}}$) と
 増幅後に$\mu$-PICによって収集された電子数 ($N'_{\mathrm{e}}$) から求めることができる．
 $N_{\mathrm{e}}$は検出ガス中での荷電粒子のエネルギー損失と検出ガスのW値から求める．
 $N'_{\mathrm{e}}$は$\mu$-PICで収集した電荷から求める．
@@ -137,9 +141,9 @@ $N'_{\mathrm{e}}$は$\mu$-PICで収集した電荷から求める．
 
 検出ガス中で荷電粒子がエネルギーを落とすと，W値あたり平均1個の電子を電離する．
 そのため，荷電粒子のエネルギー損失をW値で割ることで$N_{\mathrm{e}}$が求まる．
-各ガスのエネルギー損失とW値~\cite{energy_per_ion_pair,pdg}を表\ref{tab::energy_loss_and_W_val}に示す．
+各検出ガスのエネルギー損失とW値~\cite{energy_per_ion_pair,pdg}を表\ref{tab::energy_loss_and_W_val}に示す．
 ${}^{241}\mathrm{Am}$からは\SI{5.4}{\mega\electronvolt}の$\alpha$線が放出される．
-測定に用いた$\alpha$線源はactivity を大きくするために，多くの${}^{241}\mathrm{Am}$が線源に含まれている．
+測定に用いた$\alpha$線源は線量を大きくするために，多くの${}^{241}\mathrm{Am}$が線源に含まれている．
 そのため，物質厚が大きくなっており，線源中でエネルギーを落としてしまう．
 この線源から出ている$\alpha$粒子の持つエネルギーが平均\SI{4.2}{\mega\electronvolt}であることが他の測定によりわかっている．
 本測定では\ang{0}方向の$\alpha$線を用いて測定した．
@@ -170,13 +174,13 @@ ${}^{241}\mathrm{Am}$からは\SI{5.4}{\mega\electronvolt}の$\alpha$線が放�
 この信号波形を時間で積分することによって32 strips で収集した電荷量を計算することができる．
 $\mu$-PICで取得した電気信号は読み出し回路内部で800倍に増幅され，
 入力インピーダンス\SI{50}{\ohm}で電流値を電圧値に変換して取得している．
-よって，式 (\ref{eq::N'e})で求めることができる．
-\si{\elementarycharge}は電荷素量である．
+よって，式\eqref{eq::N'e}で$\mu$-PICで収集した電荷量を求めることができる．
+\si{\elementarycharge}は電気素量である．
 \begin{equation}
   N'_{\mathrm{e}} = \frac{\int V (t) dt}{ 50 \times 800 \times \si{\elementarycharge}}
   \label{eq::N'e}
 \end{equation}
-各ガスの増幅率を表\ref{tab::multiplying_rate}に示す．
+各検出ガスの増幅率と電子の収集効率を畳み込んだ値を表\ref{tab::multiplying_rate}に示す．
 ここでは，GEMと$\mu$-PIC の両方による増幅率となっている．
 \begin{table}
   \centering
@@ -196,9 +200,9 @@ $\mu$-PICで取得した電気信号は読み出し回路内部で800倍に増�
 \end{table}
 
 \subsection{幅}
-本実験の目的である3$\alpha$に崩壊するイベントではトラックが太いと複数のトラックを区別できなくなり，
+本実験の目的である3$\alpha$に崩壊するイベントではトラックが太いと複数のトラックの区別が難しくなり，
 トラックの抽出を正しくできなくなる．
-\ang{0}の$\alpha$粒子によるトラックで幅を測定した．
+そこで，\ang{0}の$\alpha$粒子によるトラックで幅を測定した．
 図\ref{fig::track_width}に示すように，
 トラックの幅にはanode strip 128~ch目のclock方向の幅を用いる．
 このようにして決定したトラックの幅を表\ref{tab::track_width}，図\ref{fig::diffusion_compare}に示す．
@@ -212,22 +216,22 @@ $\mu$-PICで取得した電気信号は読み出し回路内部で800倍に増�
   \label{fig::track_width}
 \end{figure}
 
-\begin{table}
-  \centering
-  \caption{各検出ガスでのトラックの幅．}
-  \label{tab::track_width}
-  \begin{tabular}{cc}
-    \toprule
-    gas & トラックの幅 ($\times \SI{10}{\nano\second}$)\\
-    \midrule
-    \Methane         & 91.1 \\
-    \MethaneHydro    & 42.3 \\
-    \MethaneHerium   & 62.5 \\
-    \isoButaneHydro  & 35.4 \\
-    \isoButaneHerium & 54.9 \\
-    \bottomrule
-  \end{tabular}
-\end{table}
+%\begin{table}
+%  \centering
+%  \caption{各検出ガスでのトラックの幅．}
+%  \label{tab::track_width}
+%  \begin{tabular}{cc}
+%    \toprule
+%    gas & トラックの幅 ($\times \SI{10}{\nano\second}$)\\
+%    \midrule
+%    \Methane         & 91.1 \\
+%    \MethaneHydro    & 42.3 \\
+%    \MethaneHerium   & 62.5 \\
+%    \isoButaneHydro  & 35.4 \\
+%    \isoButaneHerium & 54.9 \\
+%    \bottomrule
+%  \end{tabular}
+%\end{table}
 
 \begin{figure}
   \centering
@@ -255,14 +259,13 @@ TOTの閾値をfree parameterとした．
   読み出し領域に到達した電子1つにつき図\ref{fig::mu-pic_readout}にあるような電気信号を
   各strip の信号波形に加算する．
 \item
-  設定した閾値により，信号波形をTOTに変換しanode image とcathode image を作る．
+  設定した閾値により，信号波形をTOTに変換しanode image とcathode image を生成する．
 \end{enumerate}
-TOTの閾値は\SI{0.1}{\milli\volt}とした．
 $\alpha$線源を用いた場合のシミュレーションと測定の比較を図\ref{fig::track_comp_ch4},
 \ref{fig::track_comp_ch4_h2}, \ref{fig::track_comp_ch4_he}, 
 \ref{fig::track_comp_ic4h10_h2}, \ref{fig::track_comp_ic4h10_he}に示す．
-それぞれの検出ガスでの$\alpha$線源によるトラックを，
-シミュレーションで再現できていることが分かる．
+TOTの閾値を\SI{0.1}{\milli\volt}とすると，それぞれの検出ガスでの$\alpha$線源によるトラックを，
+シミュレーションで再現できる．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.9\columnwidth]{waveform.eps}
@@ -353,12 +356,13 @@ $\alpha$線源を用いた場合のシミュレーションと測定の比較を
 $\alpha$線源から放出される$\alpha$粒子のエネルギーは\SI{4.2}{\mega\electronvolt}であるが，
 実際に測定する$\alpha$粒子のエネルギーは数百\si{\kilo\electronvolt}である．
 そこで，$\alpha$線源の前に\SI{15}{\micro\metre}のカプトンを挟むことで$\alpha$粒子のエネルギーを落として測定を行った．
-カプトンと有感領域と線源の間にある検出ガスによってエネルギーを落とし約\SI{1}{\mega\electronvolt}となる．
+有感領域と線源の間にある検出ガスによってエネルギーを落とし約\SI{1}{\mega\electronvolt}となる．
 図\ref{fig::track_ch4_loss}，\ref{fig::track_ch4_h2_loss}，\ref{fig::track_ch4_he_loss}，
 \ref{fig::track_ic4h10_h2_loss}，\ref{fig::track_ic4h10_he_loss}に示す．
 コリメータの\ang{30}の穴を用いたため，斜めのトラックとなっている．
 シミュレーションでは有感領域の横から\SI{500}{\kilo\electronvolt}の$\alpha$粒子を飛ばした．
-エネルギーを完全に合わせていないが，トラックの太さを再現できている．
+$\alpha$線源から放出されるエネルギーに広がりがあるため，
+エネルギーを完全に合わせていないが，トラックの傾向は再現できている．
 \begin{figure}
   \centering
   \begin{subfigure}{0.48\columnwidth}
@@ -491,7 +495,7 @@ $\alpha$線源のトラックを再現することができたので，
 
 生成されたイベントの中には3本のトラックを確認できないイベントも含まれている．
 図\ref{fig::not_three_alpha_ch4}，\ref{fig::not_three_alpha_ch4_h2}，\ref{fig::not_three_alpha_ch4_he}，
-\ref{fig::not_three_alpha_ic4h10_h2}，\ref{fig::not_three_alpha_ic4h10_he}に示す．
+\ref{fig::not_three_alpha_ic4h10_h2}，\ref{fig::not_three_alpha_ic4h10_he}にそのような例を示す．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{10020_5.eps}
