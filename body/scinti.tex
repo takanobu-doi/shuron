@@ -6,14 +6,14 @@
 \section{液体シンチレータ}
 ${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C} (0_2^+)$反応の断面積の測定には
 MAIKo TPC に入射した中性子の数を測定する必要がある．
-中性子は電荷をもっておらず検出器中でエネルギーを落とさないため，
+中性子は電荷を持たず検出器中で電磁気相互作用によってエネルギーを落とさないため，
 直接検出することができない．
 そのため，中性子と散乱した検出器中の陽子を検出することによって間接的に中性子を検出する．
 より効率的に中性子と陽子が散乱するように，中性子検出器には水素が多く含まれる有機シンチレータが用いられる．
 OKTAVIAN での測定ではNE213/BC501 液体シンチレータを用いる．
 図\ref{fig::neutron_detector}に中性子検出器の模式図を示す．
 液体シンチレータの有感体積は，直径\SI{200}{\milli\metre}，厚さ\SI{50}{\milli\metre}の円柱である．
-容器はアルミニウム製であり，シンチレーション光の反射率を高めるために酸化マグネシウムで容器の内側はコーティングされている．
+容器はアルミニウム製で，シンチレーション光の収集効率を高めるために酸化マグネシウムで容器の内側はコーティングされている．
 シンチレーション光は光電子増倍管で電気信号に変換されて読み出される．
 \begin{figure}
   \centering
@@ -26,8 +26,8 @@ OKTAVIAN での測定ではNE213/BC501 液体シンチレータを用いる．
 液体シンチレータを用いた測定では中性子だけでなく背景$\gamma$線も検出される．
 そのため，中性子と$\gamma$線の識別が必要となる．
 中性子と$\gamma$線では液体シンチレータの発光の波形が異なることが知られている．
-図\ref{fig::pulse_shape_n_gamma}に中性子と$\gamma$線の波形の違いの模式図を示す．
-中性子の方がテールが長く引いた波形となる．
+図\ref{fig::pulse_shape_n_gamma}に中性子と$\gamma$線の波形の違いを模式的に示す．
+中性子の方がテールを長く引いた波形となる．
 図\ref{fig::pulse_shape_n_gamma}に示すように，
 波形全体を覆う区間 (region 1) とテール部分を覆う区間 (region 2) の2つの積分区間を用いて波形を積分することで，
 中性子と$\gamma$線とを区別する．
@@ -36,7 +36,8 @@ OKTAVIAN での測定ではNE213/BC501 液体シンチレータを用いる．
   \includegraphics[clip, width=0.8\columnwidth]{integration_region.eps}
   \caption[液体シンチレータから得られる中性子および$\gamma$線の波形の違いと2つの積分区間．]
           {液体シンチレータから得られる中性子および$\gamma$線の波形の違いと2つの積分区間．
-            全体を覆う区間 (region 1) とテール部分を覆う区間 (region 2) とにより波形を識別する．
+            全体を覆う区間 (region 1) とテール部分を覆う区間 (region 2) の
+            2つの区間で積分することで波形を識別する．
           }
   \label{fig::pulse_shape_n_gamma} 
 \end{figure}
@@ -45,7 +46,7 @@ OKTAVIAN での測定ではNE213/BC501 液体シンチレータを用いる．
 CAEN V1742 は入力信号の波形をそのまま取得することができるモジュールである．
 信号の取得周波数は\SI{5}{\giga\hertz} から \SI{750}{\mega\hertz} である．
 CAEN V1742 で取得した波形の1例を図\ref{fig::waveform_V1742}に示す．
-図\ref{fig::waveform_V1742}はAmBe 中性子線源を用いて測定をした．
+図\ref{fig::waveform_V1742}はAmBe 中性子線源を用いて測定をしたときのものである．
 取得周波数は\SI{5}{\giga\hertz}である．
 \begin{figure}
   \centering
@@ -57,7 +58,7 @@ CAEN V1742 で取得した波形の1例を図\ref{fig::waveform_V1742}に示す�
 V1742 によって取得した波形のピーク位置に対して
 \SIrange{-15}{45}{\nano\second} (region 1) と\SIrange{10}{45}{\nano\second} (region 2) の2つの区間で波形を積分した．
 AmBe 中性子線源で取得したregion 1 とregion 2 の相関を図\ref{fig::n_gamma_correlation}に示す．
-図\ref{fig::n_gamma_correlation}中，上が中性子，下が$\gamma$線である．
+図\ref{fig::n_gamma_correlation}中の2つの島のうち，上が中性子，下が$\gamma$線である．
 中性子の中心となる位置を直線近似し (図\ref{fig::n_gamma_correlation}中の赤線)，
 region 2との差分を取ったものが図\ref{fig::n_gamma_projection}である．
 図\ref{fig::n_gamma_projection}において，中性子側のピーク (0付近のピーク)
@@ -68,8 +69,7 @@ region 2との差分を取ったものが図\ref{fig::n_gamma_projection}であ�
   \caption[region 1 とregion 2 と2つの区間での積分値の相関．]
           {region 1 とregion 2 と2つの区間での積分値の相関．
             AmBe 中性子線源を用いて測定した．
-            \SI{1}{\mega\electronvolt ee}以下は取り除いた．
-            また，信号がV1742 のダイナミックレンジを超えたものは取り除いた．}
+            \SI{1}{\mega\electronvolt ee}以下は取り除いた．}
   \label{fig::n_gamma_correlation}
 \end{figure}
 \begin{figure}
@@ -82,12 +82,13 @@ region 2との差分を取ったものが図\ref{fig::n_gamma_projection}であ�
 %\section{キャリブレーション}
 \section{SCINFUL-CG による中性子の検出効率}
 検出器中に入射した中性子が陽子と反応しない場合は検出されない．
+また，検出器中で落とすエネルギーは散乱角度によって連続的に分布する．
 そのため、検出器に入射した中性子の絶対数を求めるためには検出効率が必要である．
-液体シンチレータの検出効率SCINFUL-CG~\cite{scinful-cg}を用いる．
+液体シンチレータの検出効率はSCINFUL-CG~\cite{scinful-cg}を用いて求める．
 SCINFUL-CGは任意形状の中性子用シンチレータに対する応答関数を計算するコードである．
 中性子の検出効率は発光量の閾値により変化する．
 図\ref{fig::neutron_efficiency}に閾値が\SIlist{0.5;1.0;1.5}{\mega\electronvolt ee}のときの検出効率を示す．
-ここでは単色の中性子が入射しているとして計算した．
+ここでは単色中性子が入射しているとして計算した．
 図\ref{fig::neutron_efficiency}から分かるように閾値を高くすると検出効率が低下する．
 また，高エネルギーの中性子ほど検出効率が低下する．
 \begin{figure}
@@ -100,7 +101,7 @@ SCINFUL-CGは任意形状の中性子用シンチレータに対する応答関�
 \end{figure}
 
 中性子検出器で測定した中性子数 ($N_{\text{detect}}$) をSCINFUL-CGで求めた検出効率 ($\varepsilon$) で
-式\ref{eq::neutron_collection}のように補正することで，
+式\eqref{eq::neutron_collection}のように補正することで，
 実際に入射した中性子数 ($N_{\text{in}}$) を求めることができる．
 \begin{equation}
   N_{\text{in}} = \frac{N_{\text{detect}}}{\varepsilon}
@@ -114,12 +115,12 @@ SCINFUL-CGは任意形状の中性子用シンチレータに対する応答関�
   \label{tab::neutron_efficiency}
   \begin{tabular}{cc}
     \toprule
-    閾値 (\si{\mega\electronvolt}) & 検出効率 \\
+    閾値 (\si{\mega\electronvolt}) & 検出効率 (\si{\percent}) \\
     \midrule
-    0.25 & 0.171 \\
-    0.50 & 0.144 \\
-    1.00 & 0.122 \\
-    1.50 & 0.108 \\
+    0.25 & 17.1 \\
+    0.50 & 14.4 \\
+    1.00 & 12.2 \\
+    1.50 & 10.8 \\
     \bottomrule
   \end{tabular}
 \end{table}
