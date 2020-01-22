@@ -943,7 +943,8 @@ FUNCTION {mastersthesis}
   add.colon
 %  format.btitle "title" output.check
 %  new.block
-  "Master's Thesis" format.thesis.type output.nonnull
+%  "Master's Thesis" format.thesis.type output.nonnull % change this line by doi 2020/1/22
+  "修士論文" format.thesis.type output.nonnull
   school "school" output.check
   address output
   add.blank
