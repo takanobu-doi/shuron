@@ -4,8 +4,8 @@
 \chapter{はじめに}
 \section{宇宙での元素合成}
 \label{seq::nucleaosynthesis}
-身の回りには多種多様な物質が存在している．
-これらの物質は原子が組み合わさることで形成される．
+身の回りには多種多様な物質が存在しており，
+これらの物質は全て原子から構成されている．
 現在の地球には水素（原子番号1）からウラン（原子番号92）までの元素が天然で存在してる．
 原子は更に小さい原子核と電子から構成されており，原子核は陽子と中性子で構成されることが知られている．
 現在までに天然と人工を合わせて118種類の元素が確認されている．
@@ -95,7 +95,7 @@ $\gamma$線を放出することによって脱励起し，${}^{12}\mathrm{C}$�
 近年，高密度環境下では$\gamma$線による脱励起以外に，
 図\ref{fig::triple_alpha}~(右) のように粒子（陽子，中性子，$\alpha$粒子など）との
 非弾性散乱による脱励起の反応率が増加することが指摘されている~\cite{hotdensemedium}．
-これにより%g.s.や$2_{1}^{+} ({\rm Ex} = \SI{4.44}{\mega\electronvolt})$ への脱励起が増加し，
+これによりg.s.や$2_{1}^{+}\ ({\rm Ex} = \SI{4.44}{\mega\electronvolt})$ への脱励起が増加し，
 トリプルアルファ反応が劇的に促進されると考えられている．
 粒子の中でも中性子は電荷を持っておらず，クーロン斥力を受けずに反応することができるため，
 特に反応を促進する効果が大きいと考えられる．
@@ -206,7 +206,7 @@ $\rho\sim\SI{e6}{\gram\per\cubic\centi\metre}$のような高密度環境は宇�
 
 \section{測定を行うべき中性子のエネルギー}
 式\eqref{eq::R}から分かるように寿命の比$R$を計算するためには，
-中性子と${}^{12}\mathrm{C}$の非弾性散乱断面積 ($\sigma_\mathrm{nn'} (E)$) のエネルギー分布が必要となる．
+中性子と${}^{12}\mathrm{C}$の非弾性散乱断面積 [$\sigma_\mathrm{nn'} (E)$] のエネルギー分布が必要となる．
 特に，$0_2^+$状態へ励起させることができる中性子エネルギーの閾値付近における断面積が重要となる．
 重心系の円ルギーでは，$E=\SI{7.65}{\mega\electronvolt}$，
 ${}^{12}\mathrm{C}$の静止系では$E_{\text{lab}} = \SI{8.35}{\mega\electronvolt}$である．
@@ -237,7 +237,7 @@ ${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C} (0_2^+)$反応の断
 \SI{14}{\mega\electronvolt}は式\eqref{eq::dt}に示すDT 反応を用いて生成可能なエネルギーである．
 この反応は2体反応であるため，単色エネルギーの中性子となる．
 \begin{equation}
-  \mathrm{d} + \mathrm{t} \rightarrow \alpha (\SI{3.5}{\mega\electronvolt}) + \mathrm{n} (\SI{14}{\mega\electronvolt})
+  \mathrm{d} + \mathrm{t} \rightarrow \alpha\ (\SI{3.5}{\mega\electronvolt}) + \mathrm{n}\ (\SI{14}{\mega\electronvolt})
   \label{eq::dt}
 \end{equation}
 単色エネルギーの中性子を用いることで，中性子のエネルギー測定を行う必要が無くなる．
@@ -245,19 +245,19 @@ ${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C} (0_2^+)$反応の断
 %このDT 反応で生成される$14~{\rm MeV}$の中性子と炭素との反応は核融合炉の開発で重要である．
 ITER~\cite{iter}などの核融合炉ではこのDT 反応を用いて質量エネルギーを取り出す．
 核融合炉の中で生成される\SI{14}{\mega\electronvolt}の中性子は構造材の原子核と反応し損傷させるため，
-構造材の中に多く含まれる炭素との反応が詳しく調べられている．
+構造材の中に多く含まれる炭素との反応が詳しく調べられている~\cite{takahashietal,kondoetal}．
 ${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'+3\alpha)$反応の全断面積は\SI{209}{\milli\barn}，
 分岐比は表\ref{tab::branchingratio}の通りである．
-微分断面積の角度分布は図\ref{fig::sig_angle_dist}の通りである．
-これらのデータと，本研究での測定結果を比較することが可能となる．
+また，微分断面積の角度分布を図\ref{fig::sig_angle_dist}に示す．
+これらの測定値と本研究での測定値を比較することによって測定方法の妥当性を確認することが可能となる．
 単色エネルギーの中性子を生成可能であること，他データと測定結果の比較が可能であることの2点より，
 測定方法の検証として\SI{14}{\mega\electronvolt}の中性子で断面積の測定を行う．
 
 \begin{table}
   \centering
   \caption[${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'+3\alpha)$反応のチャンネルとその分岐比．]
-          {${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'+3\alpha)$反応のチャンネルとその分岐比．
-  ${}^{12}\mathrm{C}$の励起状態から$3\alpha$に，${}^{9}\mathrm{Be}$の励起状態から$2\alpha$に崩壊する．}
+          {${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'+3\alpha)$反応のチャンネルとその分岐比~\cite{kondoetal}．
+            ${}^{12}\mathrm{C}$の励起状態から$3\alpha$に，${}^{9}\mathrm{Be}$の励起状態から$2\alpha$に崩壊する．}
   \label{tab::branchingratio}
   \begin{tabular}{lc}
     \toprule
@@ -293,11 +293,11 @@ OKTAVIAN にはパルスビームラインとDCビームラインの2つのビ�
 DC ビームラインは重照射室に設置されたトリチウムターゲットを用いて中性子を生成する．
 
 DC ビームラインで生成された中性子はトリチウムターゲットを中心に放射状に重照射室へ放出される．
-この中性子を大実験室側へ取り出すための半径約\SI{55}{\milli\metre}の取り出し穴が図\ref{pic::hole}のように重照射室と
-大実験室を隔てる壁に開いている．
+図\ref{pic::hole}に示すように，この中性子を大実験室側へ取り出すための半径約\SI{55}{\milli\metre}の取り出し穴が
+重照射室と大実験室を隔てる壁に設けられている．
 図\ref{pic::hole}は重照射室と大実験室を隔てる壁を大実験室から撮影した写真である．
 この取り出し穴から中性子を取り出すことで，
-半径が約\SI{55}{\milli\metre}にコリメートされたDC 中性子ビームを用いた測定を行うことができる．
+半径約\SI{55}{\milli\metre}にコリメートされたDC 中性子ビームを得ることができる．
 ただし，DC ビームであるため中性子が入射した時間情報を得ることはできない．
 一方で，パルスビームラインでは図\ref{pic::pulse_beam_line}のように大実験室中にトリチウム標的が設置されているため，
 中性子をコリメートすることができない．
@@ -343,16 +343,17 @@ DC ビームラインで生成された中性子はトリチウムターゲッ�
 \label{seq::detector_using_experiment}
 ${}^{12}{\rm C} (0_2^+)$から崩壊して生成した3つの$\alpha$粒子を測定することで，断面積を決定する．
 図\ref{fig::sig_angle_dist}の微分断面積を仮定すると，${}^{12}\mathrm{C} (0_2^+)$から放出された$\alpha$粒子は
-図\ref{fig::alpha_E_En_dep_w_l}のようなエネルギーの分布を持つ．
+図\ref{fig::alpha_E_En_dep_w_l}に示すエネルギーの分布を持つ．
 横軸は入射中性子のエネルギー，縦軸は崩壊後の$\alpha$粒子のエネルギーである．
 図\ref{fig::alpha_E_En_dep_w_l}から中性子のエネルギーに関わらず
-$\alpha$粒子のエネルギーは約\SI{0.1}{\mega\electronvolt}がピークとなっていることが分かる．
+$\alpha$粒子のエネルギーは約\SI{0.1}{\mega\electronvolt}が最頻値となっていることが分かる．
 \SI{1}{\mega\electronvolt}より大きい領域は重心運動と同じ方向に放出された$\alpha$粒子が
-ブーストされエネルギーが大きくなっている．
-それに対し，重心運動と異なる方向に放出された$\alpha$粒子は，
+ブーストされエネルギーが大きくなったものと考えられる．
+一方，重心運動と異なる方向に放出された$\alpha$粒子は，
 あまりブーストされずに典型的には励起エネルギーと3$\alpha$崩壊閾値の差分を3等分したエネルギー
 ($\SI{0.38}{\mega\electronvolt}\div 3 \sim \SI{0.1}{\mega\electronvolt}$) を持つ.
-図\ref{fig::sig_angle_dist}から分かるように前方散乱の断面積が大きく，
+図\ref{fig::sig_angle_dist}から分かるように
+${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}(0_2^+)$反応では前方散乱の断面積が大きく，
 ${}^{12}\mathrm{C} (0_2^+)$が重心運動方向と異なる方向に散乱される確率が高い．
 そのため，$\alpha$粒子はあまり重心運動によってブーストされる効果を受けずに，
 中性子のエネルギーに関わらず\SI{0.1}{\mega\electronvolt}付近で最大となる．
@@ -375,12 +376,13 @@ $\alpha$粒子のエネルギー分布と同様に入射中性子のエネルギ
 %この図からもわかるように広い角度領域に$\alpha$粒子は崩壊する．
 このような広い角度に放出される3つの$\alpha$粒子すべてを効率的に検出するためには大立体角を覆う検出器が必要となる．
 
-このような要求を満たす検出器としてアクティブ標的を用いたtime projection chamber (TPC) が有効である．
+このような要求を満たす検出器として検出ガスを散乱標的として用いるtime projection chamber (TPC) が有効である．
 TPC は荷電粒子のトラックを検出することができるガス検出器であり，
 ALICE 実験~\cite{alice-tpc}やLEPS2~\cite{kobayakawa_thesis}などで広く用いられている．
-TPC の検出ガスをアクティブ標的とすることで，低エネルギー荷電粒子を大立体角で検出することが可能となる．
+アクティブ標的TPC を用いることで，低エネルギー荷電粒子を大立体角で検出することが可能となる．
 近年，CAT~\cite{cat-tpc}やAT-TPC~\cite{at-tpc}などアクティブ標的を用いたTPC が開発されている．
-その1つとしてMAIKo TPC ($\mu$-PIC based active target for inverse kinematics .)~\cite{maiko, mupic}がある．
+その1つとして我々が開発したMAIKo ($\mu$-PIC based active target for inverse kinematics $_{\circ}$)
+ TPC~\cite{maiko, mupic}がある．
 近年，RCNP でMAIKo TPC を用いて低エネルギー$\alpha$粒子を測定する実験~\cite{Furuno2019}が行われた．
 MAIKo TPC を用いることで低エネルギーの$\alpha$粒子を大立体角で検出することができる．
 そこで，本研究ではMAIKo TPC を用いて${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C} (0_2^+)$反応を測定する．
@@ -427,10 +429,10 @@ MAIKo TPC を用いることで低エネルギーの$\alpha$粒子を大立体�
 %散乱事象を効率的に検出することができる．
 
 \section{本研究の目的}
-${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C} (0_2^+)$反応の断面積測定のためには，
+${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C} (0_2^+)$反応の断面積測定は，
 低エネルギーの$\alpha$粒子を検出する必要がある．
 \ref{seq::detector_using_experiment}節で述べたように，
-MAIKo TPC を用いることで効率的に3つの低エネルギー$\alpha$粒子を検出することが可能となる．
+MAIKo TPC を用いれば効率的に3つの低エネルギー$\alpha$粒子を検出することが可能となる．
 しかし，崩壊してできた$\alpha$粒子が持つ運動エネルギーは広がりを持ち，数十倍違うこともある．
 そのため，より効率的に全ての粒子を測定するための条件を検討する必要がある．
 MAIKo TPC では使用する検出ガスの種類，圧力，電圧等の多くのパラメータを調整することができる．
