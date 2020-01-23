@@ -26,12 +26,12 @@
 \usepackage{makeidx}
 \usepackage{braket}
 %set text fonts
-\usepackage{newtxtext, newtxmath}
-\usepackage[scaled]{helvet}
 %\usepackage[expert,deluxe]{otf}
 %\usepackage{atbegshi}
 \usepackage[noalphabet,unicode,sourcehan]{pxchfon} % gennokaku
 %\usepackage[noalphabet,unicode,noto]{pxchfon} % noto
+\usepackage{newtxtext, newtxmath}
+\usepackage[scaled]{helvet}
 
 %\usepackage{tgschola}
 %\usepackage{tgheros}
@@ -69,25 +69,25 @@
 %\addbibresource{mybibfile.bib}
 %\bibliography{mybibfile.bib}
 
-% set section format
-\usepackage{picture}
-\usepackage{titlesec}
-\definecolor{red}{RGB}{128, 0, 0}
-\titleformat{\section}[block]
-            {}{}{0pt}
-            {
-              \colorbox{Crimson}{\begin{picture}(0, 20)\end{picture}}
-              \hspace{0pt}
-              \gtfamily\Huge \thesection
-              \hspace{-4pt}
-            }
-            [
-              \begin{picture}(100, 0)
-                \put(3,31){\color{Crimson}\line(1, 0){350}}
-              \end{picture}
-              \\
-              \vspace{-50pt}
-              ]
+%% set section format
+%\usepackage{picture}
+%\usepackage{titlesec}
+%\definecolor{red}{RGB}{128, 0, 0}
+%\titleformat{\section}[block]
+%            {}{}{0pt}
+%            {
+%              \colorbox{Crimson}{\begin{picture}(0, 20)\end{picture}}
+%              \hspace{0pt}
+%              \gtfamily\Huge \thesection
+%              \hspace{-4pt}
+%            }
+%            [
+%              \begin{picture}(100, 0)
+%                \put(3,31){\color{Crimson}\line(1, 0){350}}
+%              \end{picture}
+%              \\
+%              \vspace{-50pt}
+%              ]
 
 \makeatletter
 \renewcommand{\chapter}{%
@@ -155,19 +155,19 @@
 %\mainmatter
 \pagenumbering{arabic}
 \subfile{body/intro}
-%\subfile{body/detector}
-%%\subfile{body/oktavian}
-%\subfile{body/simulation}
-%\subfile{body/analysis}
-%\subfile{body/collimator}
-%\subfile{body/iso-butane}
-%\subfile{body/conclusion}
-%\subfile{body/acknowledge}
-%
-%\appendix
-%\subfile{body/scinti}
-%\subfile{body/drift-speed}
-%\subfile{body/phits-input}
+\subfile{body/detector}
+%\subfile{body/oktavian}
+\subfile{body/simulation}
+\subfile{body/analysis}
+\subfile{body/collimator}
+\subfile{body/iso-butane}
+\subfile{body/conclusion}
+\subfile{body/acknowledge}
+
+\appendix
+\subfile{body/scinti}
+\subfile{body/drift-speed}
+\subfile{body/phits-input}
 
 %\printbibliography%[title=参考文献]
 \bibliography{mybibfile}
