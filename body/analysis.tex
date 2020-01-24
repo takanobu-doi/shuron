@@ -21,8 +21,8 @@ TPC では，$y$座標を荷電粒子が通過した位置から読み出し面�
 
 散乱点と停止点の座標から粒子が飛行した方向ベクトルと距離が決定される．
 粒子が分かれば，飛行距離から運動エネルギーが決まる．
-図\ref{fig::range_to_ene_alpha}に\Methane (\SI{50}{\hecto\pascal}) 中での荷電粒子の飛行距離と運動エネルギーの対応を示す．
-飛行距離と運動エネルギーの相関はSRIM~\cite{SRIM}を用いて求めた．
+図\ref{fig::range_to_ene_alpha}に\SI{50}{\hecto\pascal}の\Methane 中での荷電粒子の飛行距離と運動エネルギーの対応を示す．
+飛行距離と運動エネルギーの関係はSRIM~\cite{SRIM}を用いて求めた．
 SRIM は，荷電粒子がが物質中を通過する際の，イオンの飛程，エネルギーロス等を算出するシミュレーションソフトウェアである．
 この対応関係から粒子の運動エネルギーを決定する．
 粒子の運動エネルギーを$T$，質量を$m$，単位方向ベクトルを$(dx, dy, dz)$とすると，
@@ -40,8 +40,8 @@ SRIM は，荷電粒子がが物質中を通過する際の，イオンの飛程
 \end{equation}
 となる．
 決定した3つの$\alpha$粒子の4元運動量を足し合わせることで，${}^{12}\mathrm{C}$の4元運動量を再構成できる．
-このようにして求めた4元運動量から，
-${}^{12}\mathrm{C}$の運動エネルギー，散乱角度，励起エネルギーを求めることができる．
+このようにして求めた${}^{12}\mathrm{C}$の4元運動量から，
+運動エネルギー，散乱角度，励起エネルギーを求めることができる．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{range_to_ene.eps}
@@ -57,9 +57,8 @@ ${}^{12}\mathrm{C}$の運動エネルギー，散乱角度，励起エネルギ�
 %高速に処理をするためにニューラルネットワークを用いた解析方法を開発した．
 
 \section{eye-scanによるトラックの解析}
-本研究ではMAIKo TPC から得られたトラック情報の抽出を人間の目 (eye-scan) で行った．
-eye-scanでは，トラックの本数の識別と散乱点，停止点の抽出を行った．
-ここではトラックの本数が3本であるイベントを${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}')3\alpha$イベントとした．
+本研究ではトラックの本数の識別と散乱点，停止点の抽出を人間の目 (eye-scan) で行った．
+ここではトラックが3本確認できるイベントを${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}')3\alpha$イベントとした．
 本研究では${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}')3\alpha$イベントに対して解析を行った．
 検出ガスの決定のために，\ref{sec::triple_alpha_simulation}節のシミュレーションで生成したデータのうち，
 有感領域中で3つの$\alpha$粒子が停止したイベントに対して解析を行った．
@@ -166,11 +165,11 @@ eye-scanによって決定した$\alpha$粒子の運動エネルギー ($E_{\tex
     \toprule
     gas & $p_0$ & $p_1$ \\
     \midrule
-    \Methane  & 0.985 & 0.0179 \\
-    \MethaneHydro & 0.991 & 0.00260 \\
-    \MethaneHerium  & 0.972 & 0.0157 \\
-    \isoButaneHydro & 0.929 & 0.0309 \\
-    \isoButaneHerium  & 0.962 & 0.0166 \\
+    \Methane  & 0.985 & \num{1.79e-2} \\
+    \MethaneHydro & 0.991 & \num{2.60e-3} \\
+    \MethaneHerium  & 0.972 & \num{1.57e-2} \\
+    \isoButaneHydro & 0.929 & \num{3.09e-2} \\
+    \isoButaneHerium  & 0.962 & \num{1.66e-2} \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -179,8 +178,8 @@ $E_{\text{eye-scan}}$をフィットした1次関数 ($f(x)$) で補正したエ
 差分を$dE\ (=E_{\text{ideal}}-f(E_{\text{eye-scan}}))$とする．
 各検出ガスでの$dE$の分布を図\ref{fig::dE_ch4}, \ref{fig::dE_ch4_h2}, \ref{fig::dE_ch4_he},
 \ref{fig::dE_ic4h10_h2}, \ref{fig::dE_ic4h10_he}に，
-ガウス分布でフィットした中心値と分散を表\ref{tab::energy_resolution}に示す．
-エネルギー分解能は，\MethaneHydro の場合に最も小さいことが分かる．
+ガウス分布でフィットした平均と標準偏差を表\ref{tab::energy_resolution}に示す．
+エネルギー分解能は，\MethaneHydro の場合に最も良いことが分かる．
 %混合ガスの場合，分散は約20 keV となっている．
 \begin{figure}
   \centering
@@ -223,7 +222,7 @@ $E_{\text{eye-scan}}$をフィットした1次関数 ($f(x)$) で補正したエ
 \end{figure}
 \begin{table}
   \centering
-  \caption{エネルギーの差分．}
+  \caption{エネルギーの差分の平均と標準偏差．}
   \label{tab::energy_resolution}
   \begin{tabular}{ccc}
     \toprule
@@ -243,8 +242,8 @@ $E_{\text{eye-scan}}$をフィットした1次関数 ($f(x)$) で補正したエ
 シミュレーションで決定した$\alpha$粒子の極角とeye-scanでの極角の差分を$d\theta$とする．
 各検出ガスでの$d\theta$の分布を図\ref{fig::dtheta_ch4}, \ref{fig::dtheta_ch4_h2}, \ref{fig::dtheta_ch4_he},
 \ref{fig::dtheta_ic4h10_h2}, \ref{fig::dtheta_ic4h10_he}に，
-ガウス分布でフィットした中心値と分散を表\ref{tab::theta_resolution}に示す．
-極角分解能は，\Methane 単体の場合に大きいことが分かる．
+ガウス分布でフィットした平均とと標準偏差を表\ref{tab::theta_resolution}に示す．
+極角分解能は，\Methane 単体の場合に悪いことが分かる．
 \begin{figure}
   \centering
   \begin{minipage}{0.45\columnwidth}
@@ -289,7 +288,7 @@ $E_{\text{eye-scan}}$をフィットした1次関数 ($f(x)$) で補正したエ
 シミュレーションで決定した$\alpha$粒子の方位角とeye-scanでの方位角の差分を$d\varphi$とする．
 各検出ガスでの$d\varphi$の分布を図\ref{fig::dphi_ch4}，\ref{fig::dphi_ch4_h2}，\ref{fig::dphi_ch4_he}，
 \ref{fig::dphi_ic4h10_h2}，\ref{fig::dphi_ic4h10_he}に，
-ガウス分布でフィットした中心値と分散を表\ref{tab::theta_resolution}に示す．
+ガウス分布でフィットした平均と標準偏差を表\ref{tab::theta_resolution}に示す．
 検出ガスに\Methane 単体を用いた時に悪いことが分かる．
 \begin{figure}
   \centering
@@ -333,7 +332,7 @@ $E_{\text{eye-scan}}$をフィットした1次関数 ($f(x)$) で補正したエ
 
 \begin{table}
   \centering
-  \caption{角度の差分．}
+  \caption{角度の差分の平均と標準偏差．}
   \label{tab::theta_resolution}
   \begin{tabular}{ccccc}
     \toprule
@@ -345,15 +344,15 @@ $E_{\text{eye-scan}}$をフィットした1次関数 ($f(x)$) で補正したエ
     \MethaneHerium  & $3.34\times10^{-3}$ & $2.82\times10^{-2}$ & $-4.46\times10^{-3}$ & $3.40\times10^{-2}$ \\
     \isoButaneHydro  & $-1.27\times10^{-3}$ & $2.98\times10^{-2}$ & $-3.83\times10^{-3}$ & $2.97\times10^{-2}$ \\
     \isoButaneHerium & $3.05\times10^{-3}$ & $3.14\times10^{-2}$ & $-3.41\times10^{-3}$ & $2.89\times10^{-2}$ \\
-    \midrule
+    \bottomrule
   \end{tabular}
 \end{table}
 
 \subsection{励起エネルギー分解能}
 ${}^{12}\mathrm{C}$の励起エネルギーの分解能が悪ければ各励起状態を特定することができない．
 シミュレーションでは$0_2^+$状態経由での崩壊を考えているので，
-${}^{12}\mathrm{C}$の励起エネルギーは\SI{7.65}{\mega\electronvolt} となる．
-eye-scanで決定した${}^{12}\mathrm{C}$の不変質量から基底状態の${}^{12}\mathrm{C}$の質量を引くことで励起エネルギーを求め，
+${}^{12}\mathrm{C}(0_2^+)$の励起エネルギーは\SI{7.65}{\mega\electronvolt} となる．
+eye-scanで決定した${}^{12}\mathrm{C}^{*}$の不変質量から基底状態の${}^{12}\mathrm{C}$の質量を引くことで励起エネルギーを求め，
 \SI{7.65}{\mega\electronvolt} を再構築できるか評価する．
 各検出ガスで再構成した励起エネルギーを図\ref{fig::Ex_ch4}, \ref{fig::Ex_ch4_h2}, \ref{fig::Ex_ch4_he},
 \ref{fig::Ex_ic4h10_h2}, \ref{fig::Ex_ic4h10_he}, 表\ref{tab::Ex_resolution}に示す．
@@ -402,7 +401,7 @@ $3_1^-$の\SI{9.64}{\mega\electronvolt}であるので，
 \end{figure}
 \begin{table}
   \centering
-  \caption{各ガスで求めた励起エネルギー．}
+  \caption{各ガスで求めた励起エネルギーの平均と標準偏差．}
   \label{tab::Ex_resolution}
   \begin{tabular}{ccc}
     \toprule
@@ -439,14 +438,14 @@ $3_1^-$の\SI{9.64}{\mega\electronvolt}であるので，
 %\end{table}
 
 \section{検出ガスの決定}
-表\ref{tab::result_summary}に各検出ガスでの優劣をまとめた．
+表\ref{tab::result_summary}に各検出ガスの優劣をまとめた．
 $\bigcirc$が優，$\triangle$が可，$\times$が不可を表す．
 表の各項目から考えると，\MethaneHydro または
 \isoButaneHydro が適すると判断できる．
 \MethaneHydro と \isoButaneHydro とで
 含まれる${}^{12}\mathrm{C}$の量を比較すると，
 \isoButaneHydro の方が4/3倍多い．
-よって，検出ガスには\isoButaneHydro (\SI{100}{\hecto\pascal}) を用いる．
+よって，検出ガスには\isoButaneHydro~(\SI{100}{\hecto\pascal}) を用いる．
 \begin{table}
   \centering
   \caption{各検討項目に対する検出ガスの優劣．標的の量は\Methane に含まれる量を1とした．}
