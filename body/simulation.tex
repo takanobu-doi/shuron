@@ -15,14 +15,15 @@
 図\ref{fig::a_source_track}では検出ガスに\isoButaneHydro を用いた．
 \ref{sec::detection_gas_candidate}節では6種類の候補を考えたが，
 ここからは単体のiso-$\rm C_{4}H_{10}$を除いた5種類について考えていく．
-これはディフュージョン係数が大きくトラックが太くなると予測されることと，
+これは単体の\isoButane を検出ガスに用いた場合に，
+ディフュージョン係数が大きくトラックが太くなると予測されることと，
 圧力が\SI{15}{\hecto\pascal}と低く安定したTPC の動作が難しいと予測されるためである．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.9\columnwidth]{0210_7.eps}
   \caption[$\alpha$線源で測定したトラックの一例．]
           {$\alpha$線源で測定したトラックの一例．
-          検出ガスは\isoButaneHydro を用いた．}
+          検出ガスには\isoButaneHydro を用いた．}
   \label{fig::a_source_track}
 \end{figure}
 
@@ -135,14 +136,14 @@ MAIKo TPC のオペレートを簡単にするために設定電圧を切りの�
 各部の電圧に対する電子増幅率の依存性を測定した．
 増幅率は荷電粒子が検出ガス中を通過した際に発生させた電子数 ($N_{\mathrm{e}}$) と
 増幅後に$\mu$-PICによって収集された電子数 ($N'_{\mathrm{e}}$) から求めることができる．
-$N_{\mathrm{e}}$は検出ガス中での荷電粒子のエネルギー損失と検出ガスのW値から求める．
+$N_{\mathrm{e}}$は検出ガス中での荷電粒子のエネルギー損失と検出ガスのW値（1つの電子対の生成に必要なエネルギー）から求める．
 $N'_{\mathrm{e}}$は$\mu$-PICで収集した電荷から求める．
-詳しい計算方法について以下で述べる．
-
+%詳しい計算方法について以下で述べる．
+%
 検出ガス中で荷電粒子がエネルギーを落とすと，W値あたり平均1個の電子を電離する．
 そのため，荷電粒子のエネルギー損失をW値で割ることで$N_{\mathrm{e}}$が求まる．
 各検出ガスのエネルギー損失とW値~\cite{energy_per_ion_pair,pdg}を表\ref{tab::energy_loss_and_W_val}に示す．
-${}^{241}\mathrm{Am}$からは\SI{5.4}{\mega\electronvolt}の$\alpha$線が放出される．
+${}^{241}\mathrm{Am}$からは\SI{5.48}{\mega\electronvolt}の$\alpha$線が放出される．
 測定に用いた$\alpha$線源は線量を大きくするために，多くの${}^{241}\mathrm{Am}$が線源に含まれている．
 そのため，物質厚が大きくなっており，線源中でエネルギーを落としてしまう．
 この線源から出ている$\alpha$粒子の持つエネルギーが平均\SI{4.2}{\mega\electronvolt}であることが他の測定によりわかっている．
@@ -154,7 +155,8 @@ ${}^{241}\mathrm{Am}$からは\SI{5.4}{\mega\electronvolt}の$\alpha$線が放�
   \centering
   \caption[検出ガスのW値とエネルギー損失と$N_{\rm e}$．]
           {検出ガスのW値~\cite{energy_per_ion_pair,pdg}とエネルギー損失と$N_{\rm e}$．
-          エネルギー損失は荷電粒子がガス中を\SI{12.8}{\milli\metre} 進んだ時のものである．}
+          エネルギー損失は\SI{4.2}{\mega\electronvolt}の$\alpha$粒子が
+          ガス中を\SI{12.8}{\milli\metre} 進んだ時のものである．}
   \label{tab::energy_loss_and_W_val}
   \begin{tabular}{cccc}
     \toprule
@@ -246,6 +248,7 @@ MAIKo TPC から得られるトラックをGarfield++~\cite{garfield++}と
 Magboltz~\cite{magboltz}，SRIM~\cite{SRIM}を用いたシミュレーションにより再現した．
 シミュレーションでは，ドリフト電場，W値，電子増幅率，検出ガスの密度をfixed parameters，
 TOTの閾値をfree parameterとした．
+電子増幅率は$\alpha$線源を用いた測定値を用いた．
 シミュレーションは以下のような手順%(図\ref{fig::simulation_flow})
 で行った．
 \begin{enumerate}
@@ -354,9 +357,10 @@ TOTの閾値を\SI{0.1}{\milli\volt}とすると，それぞれの検出ガス�
   \label{fig::track_comp_ic4h10_he}
 \end{figure}
 
-$\alpha$線源から放出される$\alpha$粒子のエネルギーは\SI{4.2}{\mega\electronvolt}であるが，
+$\alpha$線源から放出される$\alpha$粒子のエネルギーは平均\SI{4.2}{\mega\electronvolt}であるが，
 実際に測定する$\alpha$粒子のエネルギーは数百\si{\kilo\electronvolt}である．
-そこで，$\alpha$線源の前に\SI{15}{\micro\metre}のカプトンを挟むことで$\alpha$粒子のエネルギーを落として測定を行った．
+そこで，$\alpha$線源の前に\SI{15}{\micro\metre}のカプトンを通過させて有感領域に入射することで
+低エネルギー$\alpha$粒子の測定を行った．
 有感領域と線源の間にある検出ガスによってエネルギーを落とし約\SI{1}{\mega\electronvolt}となる．
 図\ref{fig::track_ch4_loss}，\ref{fig::track_ch4_h2_loss}，\ref{fig::track_ch4_he_loss}，
 \ref{fig::track_ic4h10_h2_loss}，\ref{fig::track_ic4h10_he_loss}に示す．
