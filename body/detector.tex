@@ -16,17 +16,20 @@ TPC の有感領域中で入射粒子と標的粒子が散乱することで，
 散乱で放出される低エネルギーの荷電粒子を大立体角で検出することが可能となる．
 図\ref{fig::MAIKo_view}は検出器中で入射中性子と${}^{12}\mathrm{C}$との散乱によって，
 3つの$\alpha$粒子が放出されたイベント表す．
+有感領域中で散乱することで，3つの$\alpha$粒子を全て検出できる．
 これを実現する方法として，検出器そのものを標的として用いるアクティブ標的がある．
-アクティブ標的を用いたTPC としてMAIKo TPC が開発された．
-MAIKo TPC は検出ガスを封入するチェンバー (MAIKo チェンバー) と
+アクティブ標的を用いたTPC として我々はMAIKo TPC を開発した．
+MAIKo TPC，は検出ガスを封入するチェンバー (MAIKo チェンバー) と
 ドリフト電場を形成するケージ (ドリフトケージ) とからなる．
-ドリフトケージを図\ref{pic::MAIKo_cage}に示す．
+ドリフトケージを図\ref{pic::MAIKo_cage}に，
 MAIKo チェンバーを図\ref{pic::MAIKo_chamber}に示す．
-ドリフトケージをMAIKo チェンバー内に設置して用いる．
+ドリフトケージはMAIKo チェンバー内に設置して用いる．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{drift_electrons.eps}
-  \caption{TPC によりトラックを検出するときのイメージ．}
+  \caption{TPC でトラックを検出するときのイメージ．
+    赤い実線は荷電粒子のトラック，青い点はイオン化で生成された電子，
+  黒く太い実線は検出されたトラックを表す．}
   \label{fig::drift_electrons}
 \end{figure}
 \begin{figure}
@@ -66,7 +69,7 @@ MAIKo チェンバーを図\ref{pic::MAIKo_chamber}に示す．
   \label{pic::MAIKo_chamber}
 \end{figure}
 
-図\ref{fig::MAIKo_cage}にドリフトケージの模式図を示す．
+図\ref{fig::MAIKo_cage}にドリフトケージの構造を示す．
 ドリフトケージはplate，wire，grid，GEM (gas electron multiplier)，$\mu$-PICからなる．
 plate，grid，GEM，$\mu$-PICにHV が接続されている．
 plate，wire，girdの間は\SI{10}{\mega\ohm}の抵抗で繋がれている．
@@ -74,6 +77,9 @@ GEM とHV は\SI{1}{\mega\ohm}と\SI{20}{\mega\ohm}の抵抗で繋がれてい�
 plateからgridの間の領域をドリフト領域，
 gridから$\mu$-PICの間の領域を増幅領域，
 $\mu$-PICの周囲を読み出し領域と呼ぶ．
+ドリフト領域は$y$軸方向に\SI{140}{\milli\metre}であり，
+読み出し面の大きさが\SI{102.4x102.4}{\milli\metre}であるので，
+有感領域の大きさは\SI{102.4x102.4x140}{\milli\metre}となる．
 \begin{figure}
   \centering
   \includegraphics[clip, width=\columnwidth]{MAIKo_cage.eps}
@@ -91,13 +97,12 @@ $\mu$-PICの周囲を読み出し領域と呼ぶ．
 
 \subsection{ドリフト領域}
 grid からplate の方向 (図\ref{fig::MAIKo_cage}では上向き) にドリフト電場を作ることで
-トラックの周りに発生した電子を増幅領域へドリフトさせる．
+トラックの周囲に発生した電子を増幅領域へドリフトさせる．
 plateとgridにそれぞれ高電圧を印加することでドリフト電場を形成する．
 ドリフト電場の一様性が高いほど，電子を均等にドリフトすることができる．
+均等にドリフトしない場合，正しくトラックを検出することができなくなってしまう．
 ドリフト電場を一様に形成するために\SI{10}{\mega\ohm}の抵抗で接続されたwire が
 \SI{5}{\milli\metre}間隔で巻かれている~\cite{furuno}．
-ドリフト領域はドリフト電場の方向に\SI{140}{\milli\metre}である．
-ドリフト領域がMAIKo TPC の有感領域となる．
 
 \subsection{増幅領域}
 MAIKo TPC ではGEM と$\mu$-PICを用いて電子の増幅を行う．
@@ -130,21 +135,20 @@ $\mu$-PICによって信号が読み出される直前に電子が増幅され�
 \subsection{読み出し領域}
 \label{sec::mu-pic}
 図\ref{fig::MAIKo_view}中でanode strip が$x$軸，cathode strip が$z$軸と平行になるように$\mu$-PICが配置されている．
-GEMと$\mu$-PICにより増幅された電子をanode strip とcathode strip により読み出すことで，
+GEMと$\mu$-PICにより増幅された電子とイオンをanode strip とcathode strip により読み出すことで，
 $z$座標，$x$座標を検出することができる．
-また，anode strip とcathode strip で検出される信号の時間分布により$y$軸座標を決定することができる．
+また，anode strip とcathode strip で検出される信号の時間分布により$y$座標を決定することができる．
 
 MAIKo TPC からは図\ref{fig::MAIKo_view}のようにトラックが
 anode strip に垂直な面 ($zy$平面) に射影されたanode image と
 cathode strip に垂直な面 ($xy$平面) に射影されたcathode image の2つの画像が出力される．
 MAIKo TPC から得られる画像の1例を図\ref{fig::track_demo}に示す．
 anode strip とcathode strip はそれぞれ256~chで構成され，
-読み出される信号は\SI{100}{\mega\hertz}で1,024~samples測定し，
-閾値に対するtime over threshold (TOT) を取得する．
+各ストリップの信号は\SI{100}{\mega\hertz}で1,024~samples測定し，
+設定した閾値に対するtime over threshold (TOT) を取得する．
 TOT は閾値以上を1，以下を0としたものである．
 よって，出力されるデータは解像度が$256\times1,014$~pixels の白黒画像となる．
-また，anode strip，cathode strip ともに32~chごとにまとめて信号を波形として\SI{25}{\mega\hertz}でFADC で取得している．
-32~chごとにまとめられるため，anode strip，cathode strip ともに8~chずつFADC でデータを取得している．
+また，anode strip，cathode strip ともに32~chごとにまとめて信号波形を\SI{25}{\mega\hertz}でFADC で取得している．
 FADC で取得した信号の一例を図\ref{fig::FADC_waveform}に示す．
 \begin{figure}
   \centering
@@ -159,15 +163,15 @@ FADC で取得した信号の一例を図\ref{fig::FADC_waveform}に示す．
   \includegraphics[clip, width=0.7\columnwidth]{0210_waveform_2.eps}
   \caption[FADCで取得された$\mu$-PICの波形の一例．]
           {FADCで取得された$\mu$-PICの波形の一例．
-          この波形は\isoButaneHydro を検出ガスとして用いた際のものである．}
+          この波形は\isoButaneHydro を検出ガスに用いて，$\alpha$線源でテストした際のものである．}
   \label{fig::FADC_waveform}
 \end{figure}
 
-\section{検出ガスの候補}
+\section{検出ガスの選出}
 \label{sec::detection_gas_candidate}
 標的に${}^{12}{\rm C}$を用いるため，分子中に炭素を含むガスを検出ガスに用いる必要がある．
 ${}^{12}{\rm C}$以外の原子核が含まれると背景事象となるが，
-陽子，${}^{4}{\rm He}$と14 MeV の中性子の散乱は複数の荷電粒子に崩壊しないため，
+陽子または${}^{4}{\rm He}$と\SI{14}{\mega\electronvolt}の中性子の散乱では複数の荷電粒子に崩壊しないため，
 トラックの本数から背景事象を取り除くことができる．
 そこで，水素と炭素以外の原子が含まれない炭化水素を検出ガスに用いる．
 代表的な炭化水素に，メタン (\Methane) やエタン (${\rm C_{2}H_{6}}$)，
@@ -182,31 +186,32 @@ ${}^{12}{\rm C}$以外の原子核が含まれると背景事象となるが，
 \item
   適切なドリフト速度を達成できる．（有感領域を効率的に使用）
 \item
-  適切なドリフト電場のもとでディフュージョンが小さい．（複数のトラックを正しく抽出）
+  ディフュージョンの効果が小さい．（複数のトラックを正しく抽出）
 \item
   ${}^{12}{\rm C}$の量が少なくない．（散乱標的の量）
 \end{itemize}
-これらの項目を基準に検出ガスの種類と圧力の決定を行う．
+これらの項目を基準に検出ガスの種類と圧力を決定する．
 
 \subsection{$\alpha$粒子のエネルギー損失}
-MAIKo TPC では荷電粒子のエネルギーと運動量をトラックの長さと方向から決定するため，
+MAIKo TPC では荷電粒子のトラックの長さと方向からエネルギーと運動量を決定するため，
 トラックを正しく抽出することが必要となる．
 荷電粒子のエネルギー損失 ($dE/dx$) が大きくなりすぎると検出ガス中での飛行距離が短くなり，
 トラックとして識別することが難しくなる．
 また，$dE/dx$ が小さくなりすぎるとトラックが有感領域で止まらず，
 トラックの長さを決定することができなくなる．
-検出する対象である$\alpha$粒子の $dE/dx$ が適切な大きさとなるガスの種類と圧力の候補を選出する．
+そこで，検出する対象である$\alpha$粒子の $dE/dx$ が適切な大きさとなるガスの種類と圧力の候補を選出する．
 
 まず，代表的な炭化水素である\Methane を考える．
 ガス中で\SI{10}{\milli\metre} 以上飛行し，MAIKo TPC の有感領域中で停止する$\alpha$粒子を検出可能な$\alpha$粒子とする．
 3つの$\alpha$粒子を検出できたイベントの割合を検出率とする．
-図\ref{fig::alpha_E_dist}に示したエネルギー分布の$\alpha$粒子に対する，
+%図\ref{fig::alpha_E_dist}に示したエネルギー分布の$\alpha$粒子に対する，
+図\ref{fig::sig_angle_dist}に示した微分断面積の角度分布を仮定したときの
 検出率の圧力依存性を図\ref{fig::efficiency_P_dist}に示す．
-このとき，散乱点がビーム軸上に一様に分布していると仮定した．
+ここでは，ビーム軸が有感領域の中央を通り，散乱点がビーム軸上に一様に分布していると仮定した．
 図\ref{fig::efficiency_P_dist}から分かるように，\SI{50}{\hecto\pascal} で検出効率が最大となっている．
-\SI{50}{\hecto\pascal}のときの\Methane の各種の値は表\ref{tab::CH4_50_params}のとおりである．
+%\SI{50}{\hecto\pascal}のときの\Methane の各種の値は表\ref{tab::CH4_50_params}のとおりである．
 \SI{50}{\hecto\pascal}のときの\Methane の$dE/dx$と同程度となる，他の検出ガスを考え，
-表\ref{tab::mixture}に示した6つを候補とした．
+表\ref{tab::mixture}に示した6つを検出ガスの候補とした．
 %混合ガスでは圧力を\SI{100}{\hecto\pascal} に固定し混合比をパラメータとして$dE/dx$を合わせる．
 括弧内はガスの混合の割合を示す．
 これらの6種類の候補から検出ガスを選ぶ．
@@ -215,25 +220,25 @@ MAIKo TPC では荷電粒子のエネルギーと運動量をトラックの長�
   \includegraphics[clip, width=0.8\columnwidth]{efficiency_P_dist.eps}
   \caption[\Methane の圧力による検出効率の分布．]
           {\Methane の圧力による検出効率の分布．
-            $\alpha$粒子は図\ref{fig::alpha_E_dist}に示したエネルギー分布を仮定した．
+            $\alpha$粒子は図\ref{fig::sig_angle_dist}に示した微分断面積の角度分布を仮定した．
            }
   \label{fig::efficiency_P_dist}
 \end{figure}
-\begin{table}
-  \centering
-  \caption{\SI{50}{\hecto\pascal}のときの\Methane のパラメータ．}
-  \label{tab::CH4_50_params}
-  \begin{tabular}{cc}
-    \toprule
-    項目 & 値\\
-    \midrule
-    密度 & \SI{3.29e-5}{\gram\per\cubic\centi\metre} \\
-    $dE/dx$ ($E_{\alpha} = \SI{0.5}{\mega\electronvolt}$, \SI{10}{\milli\metre}) & \SI{0.107}{\mega\electronvolt}\\
-    飛距離 ($E_{\alpha} = \SI{0.5}{\mega\electronvolt}$) & \SI{65.6}{\milli\metre} \\
-    検出率 & \SI{48.2}{\percent} \\
-    \bottomrule
-  \end{tabular}
-\end{table}
+%\begin{table}
+%  \centering
+%  \caption{\SI{50}{\hecto\pascal}のときの\Methane のパラメータ．}
+%  \label{tab::CH4_50_params}
+%  \begin{tabular}{cc}
+%    \toprule
+%    項目 & 値\\
+%    \midrule
+%    密度 & \SI{3.29e-5}{\gram\per\cubic\centi\metre} \\
+%    $dE/dx$ ($E_{\alpha} = \SI{0.5}{\mega\electronvolt}$, \SI{10}{\milli\metre}) & \SI{0.107}{\mega\electronvolt}\\
+%    飛距離 ($E_{\alpha} = \SI{0.5}{\mega\electronvolt}$) & \SI{65.6}{\milli\metre} \\
+%    検出率 & \SI{48.2}{\percent} \\
+%    \bottomrule
+%  \end{tabular}
+%\end{table}
 \begin{table}
   \centering
   \caption[ガスの混合パターン，圧力，$dE/dx$．]
@@ -293,14 +298,14 @@ Magboltz~\cite{magboltz} によって求めたドリフト電場とドリフト�
   \caption[ドリフト電場とドリフトスピードの関係．]
           {ドリフト電場とドリフトスピードの関係．
             \Methane は\SI{50}{\hecto\pascal}，\isoButane は\SI{15}{\hecto\pascal}，その他は\SI{100}{\hecto\pascal}である．
-            横方向の点線は\SI{0.014}{\milli\metre\per\nano\second}を示す．}
+            横方向の破線は\SI{0.014}{\milli\metre\per\nano\second}を示す．}
           \label{fig::drift_v_magboltz}
 \end{figure}
 
 \subsection{電子のディフュージョンの効果}
 ドリフト電場によって電子が移動する間に検出ガスとの散乱と電子の熱運動により，
 図\ref{fig::diffusion-image}のように広がりながらドリフトする．
-電子が広がることをディフュージョンと呼ぶ．
+%電子が広がることをディフュージョンと呼ぶ．
 この効果が大きくなると，図\ref{fig::diffusion-image}の左のように
 荷電粒子によって同じ場所に生成された電子が$\mu$-PICに到達するまでに広がるため，
 トラックが太く検出される．
@@ -309,8 +314,8 @@ Magboltz~\cite{magboltz} によって求めたドリフト電場とドリフト�
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.4\columnwidth]{diffusion_image.eps}
-  \caption[ディフュージョンによって電子が拡散するイメージ．]
-          {ディフュージョンによって電子が拡散するイメージ．
+  \caption[電子が拡散するイメージ．]
+          {電子が拡散するイメージ．
           同じ位置で生成された電子でもドリフトする間に位置が拡散する．}
   \label{fig::diffusion-image}
 \end{figure}
@@ -338,7 +343,7 @@ Ref~\cite{leo}によるとドリフト電場がない場合のディフュージ
 \end{equation}
 と表せる．
 これは電子の速度が遅いほど，ガスとの散乱が少ないほど遠くまで移動できるため，
-拡散の効果が大きくなることを表す．
+ディフュージョンの効果が大きくなることを表す．
 理想気体において平均自由工程$\lambda$は，ガスとの散乱の全断面積$\sigma_{0}$，圧力$p$のもとで
 \begin{equation}
   \lambda = \frac{1}{\sqrt{2}}\frac{k_{B}T}{\sigma_{0}p}
