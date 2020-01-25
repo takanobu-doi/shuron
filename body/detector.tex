@@ -4,26 +4,58 @@
 
 \chapter{MAIKo TPC}
 \section{MAIKo TPC とは}
+我々は低エネルギー荷電粒子を大立体角で検出するために，
+アクティブ標的TPC であるMAIKo TPC を開発した．
+MAIKo TPC は検出ガスを封入する密封容器 (MAIKo チェンバー) と
+ドリフト電場を形成するケージ（ドリフトケージ）とからなる．
+図\ref{pic::MAIKo_cage}に示すドリフトケージをMAIKo チェンバー内に設置して用いる．
+図\ref{fig::MAIKo_view}はMAIKo TPC 中で入射中性子と${}^{12}\mathrm{C}$との散乱によって，
+${}^{12}\mathrm{C} (0_2^+)$から3つの$\alpha$粒子が放出されたイベントを表す．
+MAIKo TPC は検出ガスを標的ガスとして用いるアクティブ標的であるため，
+$\alpha$粒子を全て検出することができる．
+MAIKo TPC では荷電粒子のトラックを2つの2次元平面に射影した画像として得られる．
+また，中性子は電荷を持たないため，中性子のトラックは検出されない．
+
 TPC は荷電粒子のトラックを検出するために広く用いられているガス検出器である．
 図\ref{fig::drift_electrons}にTPC でトラックを検出するイメージを示す．
 荷電粒子がTPC の検出ガス中を通過するとき，トラックの周囲の粒子をイオン化させる．
 イオン化で発生した電子をドリフト電場 (図\ref{fig::drift_electrons}中上向き) により読み出し面にドリフトさせる．
 読み出し面に電子が到達した時間を記録し，記録された時間差からドリフト方向の距離を測定する．
 さらに，2次元平面でドリフトしてきた電子の位置を測定することで，3次元的にトラックを検出できる．
-
-TPC の有感領域中で入射粒子と標的粒子が散乱することで，
-散乱点の周りを有感領域で覆うことができるため，
-散乱で放出される低エネルギーの荷電粒子を大立体角で検出することが可能となる．
-図\ref{fig::MAIKo_view}は検出器中で入射中性子と${}^{12}\mathrm{C}$との散乱によって，
-3つの$\alpha$粒子が放出されたイベント表す．
-有感領域中で散乱することで，3つの$\alpha$粒子を全て検出できる．
-これを実現する方法として，検出器そのものを標的として用いるアクティブ標的がある．
-アクティブ標的を用いたTPC として我々はMAIKo TPC を開発した．
-MAIKo TPC，は検出ガスを封入する密封容器 (MAIKo チェンバー) と
-ドリフト電場を形成するケージ (ドリフトケージ) とからなる．
-ドリフトケージを図\ref{pic::MAIKo_cage}に，
-MAIKo チェンバーを図\ref{pic::MAIKo_chamber}に示す．
-ドリフトケージはMAIKo チェンバー内に設置して用いる．
+MAIKo TPC では読み出し平面を2つの軸で独立して測定するため，2つの2次元画像として得られる．
+%
+%TPC の有感領域中で入射粒子と標的粒子が散乱することで，
+%散乱点の周りを有感領域で覆うことができるため，
+%散乱で放出される低エネルギーの荷電粒子を大立体角で検出することが可能となる．
+%図\ref{fig::MAIKo_view}は検出器中で入射中性子と${}^{12}\mathrm{C}$との散乱によって，
+%3つの$\alpha$粒子が放出されたイベント表す．
+%有感領域中で散乱することで，3つの$\alpha$粒子を全て検出できる．
+%これを実現する方法として，検出器そのものを標的として用いるアクティブ標的がある．
+%アクティブ標的を用いたTPC として我々はMAIKo TPC を開発した．
+%MAIKo TPC，は検出ガスを封入する密封容器 (MAIKo チェンバー) と
+%ドリフト電場を形成するケージ (ドリフトケージ) とからなる．
+%ドリフトケージを図\ref{pic::MAIKo_cage}に，
+%%MAIKo チェンバーを図\ref{pic::MAIKo_chamber}に示す．
+%%ドリフトケージはMAIKo チェンバー内に設置して用いる．
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.8\columnwidth]{IMG_20190731_110230_clpd.jpg}
+  \caption[ドリフトケージの概観．]
+          {ドリフトケージの概観．
+          図\ref{fig::MAIKo_view}の模式図とはドリフト方向が上下が反転している．}
+  \label{pic::MAIKo_cage}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.8\columnwidth]{MAIKo.eps}
+  \caption[MAIKo TPC の概観図．]{MAIKo TPC の概観図．
+    図ではTPC の中の${}^{12}\mathrm{C}$が右から入射した中性子 (青) と散乱し，
+    3つの$\alpha$粒子 (赤) に崩壊した事象を表す．
+    anode image ($zy$平面) と cathode image ($xy$平面) の2平面に荷電粒子のトラックが射影される．
+    中性子は電荷を持たないためanode，cathode image にトラックとして検出されない．
+  }
+  \label{fig::MAIKo_view}
+\end{figure}
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{drift_electrons.eps}
@@ -32,46 +64,27 @@ MAIKo チェンバーを図\ref{pic::MAIKo_chamber}に示す．
   黒く太い実線は検出されたトラックを表す．}
   \label{fig::drift_electrons}
 \end{figure}
-\begin{figure}
-  \centering
-  \includegraphics[clip, width=0.8\columnwidth]{MAIKo2.eps}
-  \caption[MAIKo TPC の概観図．]{MAIKo TPC の概観図．
-    図では紙面手前から入射した中性子 (青) がTPC の中の${}^{12}{\rm C}$と
-    散乱して3つの$\alpha$粒子 (赤) に崩壊した事象を表す．
-    anode image ($zy$平面) と cathode image ($zy$平面) の2平面に荷電粒子のトラックが射影される．
-    中性子は電荷を持たないためanode，cathode image にトラックとして検出されない．
-  }
-  \label{fig::MAIKo_view}
-\end{figure}
-\begin{figure}
-  \centering
-  \includegraphics[clip, width=0.7\columnwidth]{IMG_20190731_110230_clpd.jpg}
-  \caption[ドリフトケージの概観．]
-          {ドリフトケージの概観．
-          図\ref{fig::MAIKo_view}の模式図とはドリフト方向が上下が反転している．}
-  \label{pic::MAIKo_cage}
-\end{figure}
-\begin{figure}
-  \centering
-  \begin{subfigure}{0.45\columnwidth}
-    \centering
-    \includegraphics[clip, width=\columnwidth]{IMG_2925_clpd.jpg}
-    \caption{外側．}
-    \label{pic::MAIKo_chamber_out}
-  \end{subfigure}
-  \begin{subfigure}{0.45\columnwidth}
-    \centering
-    \includegraphics[clip, width=\columnwidth]{IMG_20190801_160046_clpd.jpg}
-    \caption{内側．}
-    \label{pic::MAIKo_chamber_in}
-  \end{subfigure}
-  \caption{MAIKo チェンバー．}
-  \label{pic::MAIKo_chamber}
-\end{figure}
+%\begin{figure}
+%  \centering
+%  \begin{subfigure}{0.45\columnwidth}
+%    \centering
+%    \includegraphics[clip, width=\columnwidth]{IMG_2925_clpd.jpg}
+%    \caption{外側．}
+%    \label{pic::MAIKo_chamber_out}
+%  \end{subfigure}
+%  \begin{subfigure}{0.45\columnwidth}
+%    \centering
+%    \includegraphics[clip, width=\columnwidth]{IMG_20190801_160046_clpd.jpg}
+%    \caption{内側．}
+%    \label{pic::MAIKo_chamber_in}
+%  \end{subfigure}
+%  \caption{MAIKo チェンバー．}
+%  \label{pic::MAIKo_chamber}
+%\end{figure}
 
 図\ref{fig::MAIKo_cage}にドリフトケージの構造を示す．
 ドリフトケージはplate，wire，grid，GEM (gas electron multiplier)，$\mu$-PICからなる．
-plate，grid，GEM，$\mu$-PICにHV が接続されている．
+plate，grid，GEM，$\mu$-PICに高圧電源 (HV) が接続されている．
 plate，wire，girdの間は\SI{10}{\mega\ohm}の抵抗で繋がれている．
 GEM とHV は\SI{1}{\mega\ohm}と\SI{20}{\mega\ohm}の抵抗で繋がれている．
 plateからgridの間の領域をドリフト領域，
@@ -103,7 +116,7 @@ grid からplate の方向 (図\ref{fig::MAIKo_cage}では上向き) にドリ�
 電子をドリフトさせることができる．
 均等にドリフトしない場合，正しくトラックを検出することができなくなってしまう．
 ドリフト電場を一様に形成するために\SI{10}{\mega\ohm}の抵抗で接続されたwire が
-\SI{5}{\milli\metre}間隔で巻かれている~\cite{furuno}．
+\SI{5}{\milli\metre}間隔で二重で巻かれている~\cite{furuno}．
 
 \subsection{増幅領域}
 MAIKo TPC ではGEM と$\mu$-PICを用いて電子の増幅を行う．
@@ -119,6 +132,7 @@ GEM は，図\ref{pic::GEM}のようにポリマーのフィルムの表面を�
   \label{pic::GEM}  
 \end{figure}
 
+$\mu$-PIC は京都大学宇宙線研究室で開発されたMicro Pattern Gas Detector の一種である．
 $\mu$-PIC は図\ref{fig::mupic}のようにanode strip とcathode strip が直交するように配置されている．
 anode strip，cathode strip ともに\SI{400}{\micro\metre}間隔でそれぞれ256~ch分割されている．
 直径\SI{50}{\micro\metre}の円柱状のanode 電極に高電圧を印加し，
@@ -172,12 +186,12 @@ FADC で取得した信号の一例を図\ref{fig::FADC_waveform}に示す．
 
 \section{検出ガスの選出}
 \label{sec::detection_gas_candidate}
-標的に${}^{12}{\rm C}$を用いるため，分子中に炭素を含むガスを検出ガスに用いる必要がある．
-${}^{12}{\rm C}$以外の原子核が含まれると背景事象となるが，
-陽子または${}^{4}{\rm He}$と\SI{14}{\mega\electronvolt}の中性子の散乱では複数の荷電粒子に崩壊しないため，
+標的に${}^{12}\mathrm{C}$を用いるため，分子中に炭素を含むガスを検出ガスに用いる必要がある．
+${}^{12}\mathrm{C}$以外の原子核が含まれると背景事象となるが，
+陽子または${}^{4}\mathrm{He}$と\SI{14}{\mega\electronvolt}の中性子の散乱では複数の荷電粒子に崩壊しないため，
 トラックの本数から背景事象を取り除くことができる．
 そこで，水素と炭素以外の原子が含まれない炭化水素を検出ガスに用いる．
-代表的な炭化水素に，メタン (\Methane) やエタン (${\rm C_{2}H_{6}}$)，
+代表的な炭化水素に，メタン (\Methane) やエタン ($\mathrm{C_{2}H_{6}}$)，
 イソブタン (\isoButane) がある．
 また，水素ガスやヘリウムガスと炭化水素の混合ガスも用いることができる．
 検出ガスとして求められる性能には以下のようなものがある．
@@ -191,7 +205,7 @@ ${}^{12}{\rm C}$以外の原子核が含まれると背景事象となるが，
 \item
   電子の拡散効果が小さい．（複数のトラックを正しく抽出）
 \item
-  測定を行うのに十分な量の${}^{12}{\rm C}$を含む．（散乱標的の量）
+  測定を行うのに十分な量の${}^{12}\mathrm{C}$を含む．（散乱標的の量）
 \end{itemize}
 これらの項目を基準に検出ガスの種類と圧力を決定する．
 
@@ -372,7 +386,7 @@ Ref~\cite{leo}によるとドリフト電場がない場合の電子の拡散は
 \begin{align}
   \sigma(L) & = \sqrt{2 D \Delta t}\\
   & = \sqrt{\frac{2 D}{v_{\text{drift}}}}\times\sqrt{L}\\
-  & = D_{\rm Magboltz}\times\sqrt{L}
+  & = D_{\mathrm{Magboltz}}\times\sqrt{L}
 \end{align}
 となる．
 計算コードMagboltz によって得られた拡散係数を表\ref{tab::diffusion}に示す．
@@ -381,7 +395,7 @@ Ref~\cite{leo}によるとドリフト電場がない場合の電子の拡散は
 同じドリフト速度のとき，ドリフト電場が大きいほど拡散係数が小さいことが分かる．
 \isoButaneHydro の拡散係数が最も小さく，
 検出ガスの最有力候補である．
-シミュレーションにより生成した${}^{12}{\rm C}({\rm n},{\rm n}'){}^{12}{\rm C} (0_2^+)$イベントを解析し，
+シミュレーションにより生成した${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C} (0_2^+)$イベントを解析し，
 その解析効率により検出ガスを決定する．
 \begin{table}
   \centering
@@ -391,17 +405,17 @@ Ref~\cite{leo}によるとドリフト電場がない場合の電子の拡散は
             ここではドリフト速度が\SI{0.014}{\milli\metre\per\nano\second}になるドリフト電場での値を示す．
           $D_{t}$，$D_{l}$はそれぞれ運動方向に垂直，平行方向の拡散係数．}
   \label{tab::diffusion}
-  \begin{tabular}{cccc}
+  \begin{tabular}{ccccc}
     \toprule
-    gas & $D_{t}$(\si{\sqrt{\milli\metre}}) & $D_{l}$(\si{\sqrt{\milli\metre}}) &
+    gas & pressure (\si{\hecto\pascal}) & $D_{t}$ (\si{\sqrt{\milli\metre}}) & $D_{l}$ (\si{\sqrt{\milli\metre}}) &
     ドリフト電場 (\si{\volt\per\milli\metre}) \\
     \midrule
-    \Methane & 0.433 & 0.547 & 0.418\\
-    \MethaneHydro & 0.214 & 0.171 & 4.31\\
-    \MethaneHerium & 0.270  & 0.248 & 1.89\\
-    \isoButane & 0.357 & 0.414 & 0.644\\
-    \isoButaneHydro & 0.196 & 0.145 & 6.80\\
-    \isoButaneHerium & 0.246 & 0.197 & 3.26\\
+    \Methane & 50 & 0.433 & 0.547 & 0.418\\
+    \MethaneHydro & 100 & 0.214 & 0.171 & 4.31\\
+    \MethaneHerium & 100 & 0.270  & 0.248 & 1.89\\
+    \isoButane & 15 & 0.357 & 0.414 & 0.644\\
+    \isoButaneHydro & 100 & 0.196 & 0.145 & 6.80\\
+    \isoButaneHerium & 100 & 0.246 & 0.197 & 3.26\\
     \bottomrule
   \end{tabular}
 \end{table}
