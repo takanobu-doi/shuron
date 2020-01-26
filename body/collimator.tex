@@ -4,20 +4,20 @@
 \chapter{中性子ビーム}
 \label{chap::collimator}
 \section{ビームサイズを制限する必要性}
-中性子ビームは可能な限り細いのもが望ましい．
-例えば，半径\SI{50}{\milli\metre}の幅を持っている中性子ビームを用いると，
-散乱点が$y$軸方向に\SI{100}{\milli\metre}の幅を持つ．
-gridの座標を$y = \SI{0}{\milli\metre}$，plateの座標を$y = \SI{140}{\milli\metre}$とし，
-ビームの中心が$y = \SI{70}{\milli\metre}$の位置にあるとすると，
-中性子ビームは$y = $\SIrange{20}{120}{\milli\metre}の範囲に入射する．
-$y = \SI{120}{\milli\metre}$の位置で散乱が起きると，
-有感領域はgrid方向に\SI{120}{\milli\metre}，plate方向に\SI{20}{\milli\metre}となる．
-反対に，$y = \SI{20}{\milli\metre}$の位置で散乱が起きると，
-有感領域はgrid方向に\SI{20}{\milli\metre}，plate方向に\SI{120}{\milli\metre}となる．
+中性子ビームは可能な限り空間的な広がりが小さいことが望ましい．
+例えば，半径\SI{50}{\milli\metre}の広がりを持つ中性子ビームを用いると，
+散乱点が$y$軸方向に\SI{100}{\milli\metre}の広がりを持つ．
+%gridの座標を$y = \SI{0}{\milli\metre}$，plateの座標を$y = \SI{140}{\milli\metre}$とし，
+%ビームの中心が$y = \SI{70}{\milli\metre}$の位置にあるとすると，
+%中性子ビームは$y = $\SIrange{20}{120}{\milli\metre}の範囲に入射する．
+%$y = \SI{120}{\milli\metre}$の位置で散乱が起きると，
+%有感領域はgrid方向に\SI{120}{\milli\metre}，plate方向に\SI{20}{\milli\metre}となる．
+%反対に，$y = \SI{20}{\milli\metre}$の位置で散乱が起きると，
+%有感領域はgrid方向に\SI{20}{\milli\metre}，plate方向に\SI{120}{\milli\metre}となる．
 しかし，MAIKo TPC はトラックの周囲に発生した電子が読み出し面に到達する時間差を用いて$y$座標を検出しているため，
 絶対値を決定できない．
-すると，図\ref{fig::sensitive_area}のように，
-$y = \SI{120}{\milli\metre}$と$y = \SI{20}{\milli\metre}$のどちらで散乱が起きたのかを区別できない．
+すると，図\ref{fig::sensitive_area}のように，ビーム入射範囲のどこで散乱が起きたのか判別できない．
+%$y = \SI{120}{\milli\metre}$と$y = \SI{20}{\milli\metre}$のどちらで散乱が起きたのかを区別できない．
 図\ref{fig::sensitive_area}の例では，取得されたデータが同じであっても上の場合はトラックが有感領域から出てしまっている．
 トラックの長さと方向から$\alpha$粒子のエネルギーと運動量を決定するには，，
 トラックが有感領域中で停止しなければならない．
@@ -45,7 +45,7 @@ $y = \SI{120}{\milli\metre}$と$y = \SI{20}{\milli\metre}$のどちらで散乱�
 重照射室の模式図を図\ref{fig::jushosha_room}に示す．
 トリチウムターゲットから重照射室の大実験室側の壁までの距離は\SI{1.46e3}{\milli\metre}，
 壁の厚さは\SI{1.00e3}{\milli\metre}である．
-この壁に半径\SI{55}{\milli\metre}の穴が開いており，そこから大実験室側へ中性子を取り出す．
+この壁に半径\SI{55}{\milli\metre}の穴が設けられており，そこから大実験室側へ中性子を取り出す．
 この壁の穴にコリメータを設置することで任意の形に中性子ビームの形状を設定できる．
 ここでは，円柱の中央に半径$r$~\si{\milli\metre}の穴が開いたコリメータを考える．
 すると，立体角は$\pi\times r^2/\left(2.46\times10^3\right)^2$となる．
@@ -104,7 +104,7 @@ PHITS の入力ファイルを付録\ref{chap::phits-input}に示す．
 ポリエチレン，ホウ素入りポリエチレンともにコリメータの穴の部分に対して遮蔽されている部分は
 中性子の量が2桁以上少なく，十分に遮蔽できていることが分かる．
 また，通過してきた中性子のエネルギーはほとんど\SI{14}{\mega\electronvolt}であり，
-単色エネルギーが汚れていないことが分かる．
+単色エネルギーが損なわれていないことが分かる．
 \begin{figure}
   \centering
   \begin{subfigure}{\columnwidth}
