@@ -105,6 +105,13 @@ ${BODYDIR}/drift-speed.pdf: ${BODYDIR}/drift-speed.tex
 	$(TEX) drift-speed.tex;\
 	$(DVIPDF) drift-speed.dvi
 
+acknowledge: ${BODYDIR}/acknowledge.pdf
+
+${BODYDIR}/acknowledge.pdf: ${BODYDIR}/acknowledge.tex
+	cd ${BODYDIR}/;\
+	$(TEX) acknowledge.tex;\
+	$(DVIPDF) acknowledge.dvi
+
 clean:
 	rm *.dvi *.log *.pdf *.aux *.bbl \
         ${BODYDIR}/*.dvi ${BODYDIR}/*.log ${BODYDIR}/*.pdf ${BODYDIR}/*.aux ${BODYDIR}/*.bbl
