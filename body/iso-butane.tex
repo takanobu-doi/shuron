@@ -3,7 +3,7 @@
 
 %\chapter{iso-C$_{\text 4}$H$_{\text{10}}$ (10) + H$_{\text 2}$ (9)を用いたとき}
 \chapter{iso-C$_{\text 4}$H$_{\text{10}}$ (10) + H$_{\text 2}$ (9) の検出ガス特性}
-本章では検出ガスとして用いる\isoButaneHydro の特性について述べる．
+%本章では検出ガスとして用いる\isoButaneHydro の特性について述べる．
 
 \section{ドリフトスピード}
 ドリフトスピードのドリフト電場依存性を調べた．
@@ -96,7 +96,7 @@ $\Delta V_{\text{grid-GEM}} = $\SI{700}{\volt}のとき，\SI{140}{\volt\per\mil
 
 \subsection{GEMによる電子増幅率}
 GEM は絶縁体のフィルムの両面を銅で被覆し，微細な穴を開けたものである．
-GEM の各面に電圧をかけることで高電場を形成し，電子が穴を通過する際にアバランシェ増幅を起こす．
+GEM の各面に電圧を印加することで高電場を形成し，電子が穴を通過する際にアバランシェ増幅を起こす．
 %$\Delta V_{\text{GEM}}$を変化させることで電子の増幅率が変化する．
 $\Delta V_{\text{GEM}}$を\SI{10}{\volt}間隔で\SIrange{300}{390}{\volt}の範囲で変化させて計10点測定した．
 電子の増幅率の$\Delta V_{\text{GEM}}$による変化を図\ref{fig::gain_GEM_V_dep}に示す．
@@ -117,7 +117,7 @@ $\Delta V_{\text{GEM}}$を大きくして，GEMの穴の中に生成される電
 
 \subsection{GEMと$\mu$-PICとの電位差による電子の増幅率}
 $\Delta V_{\text{GEM-}\mu\text{-PIC}}$によってGEM で増幅された電子の$\mu$-PICによる収集率が変化する．
-$\Delta V_{\text{GEM-}\mu\text{-PIC}}$を\SI{50}{\volt}間隔で\SIrange{550}{750}{\volt}の範囲で変化させて計10点測定した．
+$\Delta V_{\text{GEM-}\mu\text{-PIC}}$を\SI{50}{\volt}間隔で\SIrange{550}{750}{\volt}の範囲で変化させて計5点測定した．
 電子の増幅率の$\Delta V_{\text{GEM-}\mu\text{-PIC}}$による変化を図\ref{fig::gain_GEM_uPIC_V_dep}に示す．
 増幅率の変化は$\mathit{gain} = 0.767\times{\Delta V_{\text{GEM-}\mu\text{-PIC}}}$と
 表すことができる．
@@ -148,12 +148,12 @@ $\mu$-PICのanode 電極の周りにより強い電場が形成されること�
 
 \section{電子のディフュージョン効果}
 ドリフトスピードが一定である場合は，電子の拡散は$\sqrt{L}$に比例する．
-線源は線源導入機によって，チェンバーの気密性を保持したまま電子のドリフト方向に移動可能である．
+線源は線源導入機によって，MAIKo チェンバーの気密性を保持したまま電子のドリフト方向に移動可能である．
 線源導入機は2016年度の森本修論~\cite{morimoto_thesis}で開発された．
-図\ref{pic::source_insirtion}に線源導入機の先に線源を取り付けた様子を示す．
+図\ref{pic::source_insirtion}は線源導入機の先に線源を取り付けたときの様子である．
 図\ref{pic::source_insirtion}中の矢印の方向に線源を移動させることができる．
 線源導入機によって線源の位置を変化させることで，拡散効果の$L$依存性を調べることができる．
-拡散効果とトラックの太さが比例していると仮定すると，track width $\sim\sqrt{L}$にとなる．
+拡散効果とトラックの太さが比例していると仮定すると，track width $\sim\sqrt{L}$となる．
 トラックの太さと線源の位置との依存性を図\ref{fig::diff_x}に示す．
 図\ref{fig::diff_x}の$L$は線源コリメータの\ang{0}穴とgridとのドリフト方向の距離である．
 この測定では表\ref{tab::config_diffusion_meas}の電圧で測定を行った．
@@ -200,9 +200,10 @@ $y_{\text{clk}}$を\si{\milli\metre}単位 ($y_{\text{length}}$) へ変換する
 \begin{equation}
   y_{\text{length}} = y_{\text{clk}}\times 10\times v_{\text{drift}} \label{eq::unit_convert}
 \end{equation}
-同様に測定より得られた係数 ($D_{\text{width}}$) にドリフトスピードを掛けることで，長さに変換できる．
+同様に測定より得られた係数 ($D_{\text{width}}$) にドリフトスピードを掛けることで，
+Magboltz で得られるディフュージョン係数の次元 ($D_{\text{exp}$) に変換できる．
 ドリフトスピード $v_{\text{drift}}$は\SI{1.37e-2}{\milli\metre\per\nano\second}なので，
-$D_{\text{length}} = $%\SI{0.174\pm0.00375}{\sqrt{\milli\metre}}
+$D_{\text{exp}} = $%\SI{0.174\pm0.00375}{\sqrt{\milli\metre}}
 \SI{0.174\pm0.004}{\sqrt{\milli\metre}}
 %\begin{align}
 %  D_{\text{width}}\times 10\times v_{\text{drift}} & = 1.27\times10\times1.37\times10^{-2} \notag\\
@@ -219,7 +220,7 @@ Magboltz で係数を求めた際には，一様な電場を仮定している�
 %そこで、ドリフトスピードの時間安定性の測定を行った。
 %この測定は$\rm CH_{4}$ 50 hPa で行った。
 
-\section{検出効率の散乱位置，散乱角依存性}
+\section{検出効率の散乱位置依存性と散乱角依存性}
 %測定されたトラックの長さから粒子のエネルギーを決定する．
 %しかし，散乱点や粒子の運動エネルギー，角度によってはMAIKo TPC の有感領域から外に出てしまう．
 %有感領域の外へ出てしまった粒子のトラックの長さは決定することができないので，
@@ -292,19 +293,19 @@ $\theta_{\text{c.m.}}$が小さいところで検出効率が低下している�
 \section{期待される収量}
 Ref.~\cite{takahashietal,kondoetal}によると${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}(0_{2}^{+})$の
 断面積 ($\sigma$) は\SI{8.36}{\milli\barn}である．
-OKTAVIAN で現在得られるビーム量 ($N_{\text{b}}$) は最大で$4\pi$に\SI{5e9}{\per\second}である．
-この時，半径\SI{10}{\milli\metre}のコリメータからは\SI{1.95e4}{\per\second}の中性子が得られる．
+OKTAVIAN で現在得られるビーム量は最大で$4\pi$に\SI{5e9}{\per\second}である．
+この時，半径\SI{10}{\milli\metre}のコリメータからは，$N_{\text{b}}=$\SI{1.95e4}{\per\second}の中性子が得られる．
 検出効率 ($\varepsilon_{\text{det.}}$) が\SI{48.2}{\percent}，
 解析効率 ($\varepsilon_{\text{ana.}}$) が\SI{87}{\percent}である．
-\SI{100}{\hecto\pascal}の\isoButaneHydro における${}^{12}\mathrm{C}$の
+\SI{100}{\hecto\pascal}の\isoButaneHydro における有感領域中の${}^{12}\mathrm{C}$の
 面密度 ($N_{\text{t}}$) は\SI{1.01e17}{\per\square\milli\metre}である．
 %\SI{9.904e-3}{\per\cubic\milli\metre}%\rho = 2.3846e-5\gram\per\cubic\cm
 この時，${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}(0_{2}^{+})$反応の収量は
 \begin{align}
   Y &= N_{\text{t}}\times N_{\text{b}}\times \sigma \times\varepsilon_{\text{det.}}\times\varepsilon_{\text{ana.}} \notag\\
-  &= \SI{1.01e17}{\per\square\milli\metre}\times\SI{5e9}{\per\second}\times\SI{8.36}{\milli\barn}
+  &= \SI{1.01e17}{\per\square\milli\metre}\times\SI{1.95e4}{\per\second}\times\SI{8.36}{\milli\barn}
   \times\SI{48.2}{\percent}\times\SI{87}{\percent} \notag\\
-  &= \SI{6.82e-4}{\per\second}
+  &= \SI{6.90e-4}{\per\second}
 \end{align}
 となる．
 24時間の測定で，収量が58.9~events と期待される．
