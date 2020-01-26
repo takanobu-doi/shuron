@@ -11,8 +11,8 @@ MAIKo TCP の解析では背景事象の除去とトラック情報の抽出の2
 陽子や${}^{4}\mathrm{He}$との散乱では複数の荷電粒子が生成されないので，
 トラックの本数から識別することができる．
 その後，中性子と${}^{12}\mathrm{C}$との散乱事象に対してトラックの情報を抽出する．
-トラックの情報は中性子と${}^{12}\mathrm{C}$とが散乱した座標，
-$\alpha$粒子が停止した座標である．
+トラックの情報は中性子と${}^{12}\mathrm{C}$とが散乱した位置の座標，
+$\alpha$粒子が停止した位置の座標である．
 anode image から$z, y$座標を，cathode image から$x, y$座標を決定することができる．
 $x, z$座標は$\mu$-PIC の信号を検出したstrip のチャンネル番号に\SI{400}{\micro\metre}をかけることで求めることができる．
 TPC では，$y$座標を荷電粒子が通過した位置から読み出し面に到達するまでの時間として測定する．
@@ -21,11 +21,10 @@ TPC では，$y$座標を荷電粒子が通過した位置から読み出し面�
 3次元の座標を求めることができる．
 
 散乱点と停止点の座標から粒子が飛行した方向ベクトルと距離が決定される．
-粒子が分かれば，飛行距離から運動エネルギーが決まる．
+粒子の種類が分かれば，飛行距離から運動エネルギーが決まる．
 図\ref{fig::range_to_ene_alpha}に\SI{50}{\hecto\pascal}の\Methane 中での荷電粒子の飛行距離と運動エネルギーの対応を示す．
 飛行距離と運動エネルギーの関係はSRIM~\cite{SRIM}を用いて求めた．
 SRIM は，荷電粒子がが物質中を通過する際の，イオンの飛程，エネルギーロス等を算出するシミュレーションソフトウェアである．
-この対応関係から粒子の運動エネルギーを決定する．
 粒子の運動エネルギーを$T$，質量を$m$，単位方向ベクトルを$(dx, dy, dz)$とすると，
 粒子の4元運動量は
 \begin{equation}
@@ -46,8 +45,8 @@ SRIM は，荷電粒子がが物質中を通過する際の，イオンの飛程
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{range_to_ene.eps}
-  \caption[\Methane (\SI{50}{\hecto\pascal}) 中での荷電粒子 (p, $\alpha$, ${}^{12}\mathrm{C}$) の飛行距離と運動エネルギー．]
-          {\Methane (\SI{50}{\hecto\pascal}) 中での荷電粒子 (p, $\alpha$, ${}^{12}\mathrm{C}$) の飛行距離と運動エネルギー．
+  \caption[\Methane\ (\SI{50}{\hecto\pascal}) 中での荷電粒子 (p, $\alpha$, ${}^{12}\mathrm{C}$) の飛行距離と運動エネルギー．]
+          {\Methane\ (\SI{50}{\hecto\pascal}) 中での荷電粒子 (p, $\alpha$, ${}^{12}\mathrm{C}$) の飛行距離と運動エネルギー．
             この相関はSRIM を用いて求めた．
           }
   \label{fig::range_to_ene_alpha}
@@ -176,7 +175,7 @@ eye-scanによって決定した$\alpha$粒子の運動エネルギー ($E_{\tex
 \end{table}
 
 $E_{\text{eye-scan}}$をフィットした1次関数 ($f(x)$) で補正したエネルギーと$E_{\text{ideal}}$と
-差分を$dE\ (=E_{\text{ideal}}-f(E_{\text{eye-scan}}))$とする．
+差分を$dE\ [=E_{\text{ideal}}-f(E_{\text{eye-scan}})]$とする．
 各検出ガスでの$dE$の分布を図\ref{fig::dE_ch4}, \ref{fig::dE_ch4_h2}, \ref{fig::dE_ch4_he},
 \ref{fig::dE_ic4h10_h2}, \ref{fig::dE_ic4h10_he}に，
 ガウス分布でフィットした平均と標準偏差を表\ref{tab::energy_resolution}に示す．
@@ -225,15 +224,26 @@ $E_{\text{eye-scan}}$をフィットした1次関数 ($f(x)$) で補正したエ
   \centering
   \caption{エネルギーの差分の平均と標準偏差．}
   \label{tab::energy_resolution}
+%  \begin{tabular}{ccc}
+%    \toprule
+%    gas & $dE$ (\si{\mega\electronvolt}) & $\sigma_{dE}$ (\si{\mega\electronvolt}) \\
+%    \midrule
+%    \Methane  & $1.10\times10^{-2}$ & $3.30\times10^{-2}$  \\
+%    \MethaneHydro & $1.25\times10^{-3}$ & $2.00\times10^{-2}$ \\
+%    \MethaneHerium  & $9.30\times10^{-3}$ & $2.37\times10^{-2}$ \\
+%    \isoButaneHydro  & $4.56\times10^{-3}$ & $2.36\times10^{-2}$ \\
+%    \isoButaneHerium  & $5.00\times10^{-3}$ & $2.23\times10^{-2}$ \\
+%    \bottomrule
+%  \end{tabular}
   \begin{tabular}{ccc}
     \toprule
-    gas & $dE$ (\si{\mega\electronvolt}) & $\sigma_{dE}$ (\si{\mega\electronvolt}) \\
+    gas & $dE$ (\si{\kilo\electronvolt}) & $\sigma_{dE}$ (\si{\kilo\electronvolt}) \\
     \midrule
-    \Methane  & $1.10\times10^{-2}$ & $3.30\times10^{-2}$  \\
-    \MethaneHydro & $1.25\times10^{-3}$ & $2.00\times10^{-2}$ \\
-    \MethaneHerium  & $9.30\times10^{-3}$ & $2.37\times10^{-2}$ \\
-    \isoButaneHydro  & $4.56\times10^{-3}$ & $2.36\times10^{-2}$ \\
-    \isoButaneHerium  & $5.00\times10^{-3}$ & $2.23\times10^{-2}$ \\
+    \Methane  & $11.0$ & $33.0$  \\
+    \MethaneHydro & $1.25$ & $20.0$ \\
+    \MethaneHerium  & $9.30$ & $23.7$ \\
+    \isoButaneHydro  & $4.56$ & $23.6$ \\
+    \isoButaneHerium  & $5.00$ & $22.3$ \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -337,14 +347,14 @@ $E_{\text{eye-scan}}$をフィットした1次関数 ($f(x)$) で補正したエ
   \label{tab::theta_resolution}
 %  \begin{tabular}{ccccc}
 %    \toprule
-%    gas & $d\theta$ (\si{\radian}) & $\sigma_{d\theta}$ (\si{\radian}) & 
-%    $d\varphi$ (\si{\radian}) & $\sigma_{d\varphi}$ (\si{\radian})\\
+%    gas & $d\theta$ (\si{\milli\radian}) & $\sigma_{d\theta}$ (\si{\milli\radian}) & 
+%    $d\varphi$ (\si{\milli\radian}) & $\sigma_{d\varphi}$ (\si{\milli\radian})\\
 %    \midrule
-%    \Methane  & $4.64\times10^{-2}$ & $7.79\times10^{-2}$ & $-2.08\times10^{-2}$ & $1.03\times10^{-1}$ \\
-%    \MethaneHydro & $2.10\times10^{-3}$ & $2.46\times10^{-2}$ & $-8.28\times10^{-4}$ & $2.47\times10^{-2}$ \\
-%    \MethaneHerium  & $3.34\times10^{-3}$ & $2.82\times10^{-2}$ & $-4.46\times10^{-3}$ & $3.40\times10^{-2}$ \\
-%    \isoButaneHydro  & $-1.27\times10^{-3}$ & $2.98\times10^{-2}$ & $-3.83\times10^{-3}$ & $2.97\times10^{-2}$ \\
-%    \isoButaneHerium & $3.05\times10^{-3}$ & $3.14\times10^{-2}$ & $-3.41\times10^{-3}$ & $2.89\times10^{-2}$ \\
+%    \Methane  & $46.4$ & $77.9$ & $-20.8$ & $103n$ \\
+%    \MethaneHydro & $2.10$ & $24.6$ & $-0.828$ & $24.7$ \\
+%    \MethaneHerium  & $3.34$ & $28.2$ & $-4.46$ & $34.0$ \\
+%    \isoButaneHydro  & $-1.27$ & $29.8$ & $-3.83$ & $29.7$ \\
+%    \isoButaneHerium & $3.05$ & $31.4$ & $-3.41$ & $28.9$ \\
 %    \bottomrule
 %  \end{tabular}
   \begin{tabular}{ccccc}
@@ -353,10 +363,10 @@ $E_{\text{eye-scan}}$をフィットした1次関数 ($f(x)$) で補正したエ
     $d\varphi$ (degree) & $\sigma_{d\varphi}$ (degree) \\
     \midrule
     \Methane & $2.66$ & $4.47$ & $-1.19$ & $5.92$ \\
-    \MethaneHydro & $1.21\times10^{-1}$ & $1.41$ & $-4.75\times10^{-2}$ & $1.41$ \\
-    \MethaneHerium & $1.91\times10^{-1}$ & $1.62$ & $-2.55\times10^{-1}$ & $1.95$ \\
-    \isoButaneHydro & $-7.29\times10^{-2}$ & $1.71$ & $-2.20\times10^{-1}$ & $1.70$ \\
-    \isoButaneHerium & $1.75\times10^{^1}$ & $1.80$ & $-1.95\times10^{-1}$ & $1.65$ \\
+    \MethaneHydro & $0.121$ & $1.41$ & $-0.0475$ & $1.41$ \\
+    \MethaneHerium & $0.191$ & $1.62$ & $-0.255$ & $1.95$ \\
+    \isoButaneHydro & $-0.0729$ & $1.71$ & $-0.220$ & $1.70$ \\
+    \isoButaneHerium & $0.175$ & $1.80$ & $-0.195$ & $1.65$ \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -418,13 +428,13 @@ $3_1^-$の\SI{9.64}{\mega\electronvolt}であるので，
   \label{tab::Ex_resolution}
   \begin{tabular}{ccc}
     \toprule
-    gas & Ex (MeV) & $\sigma_{\text{Ex}}$ (MeV) \\
+    gas & Ex (\si{\mega\electronvolt}) & $\sigma_{\text{Ex}}$ (\si{\kilo\electronvolt}) \\
     \midrule
-    \Methane  & 7.63 & $4.91\times 10^{-2}$ \\
-    \MethaneHydro & 7.67 & $1.66\times 10^{-2}$ \\
-    \MethaneHerium  & 7.67 & $2.05\times 10^{-2}$ \\
-    \isoButaneHydro  & 7.67 & $1.75\times 10^{-2}$ \\
-    \isoButaneHerium  & 7.67 & $1.90\times 10^{-2}$ \\
+    \Methane  & 7.63 & $49.1$ \\
+    \MethaneHydro & 7.67 & $16.6$ \\
+    \MethaneHerium  & 7.67 & $20.5$ \\
+    \isoButaneHydro  & 7.67 & $17.5$ \\
+    \isoButaneHerium  & 7.67 & $19.0$ \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -458,14 +468,14 @@ $\bigcirc$が優，$\triangle$が可，$\times$が不可を表す．
 \MethaneHydro と \isoButaneHydro とで
 含まれる${}^{12}\mathrm{C}$の量を比較すると，
 \isoButaneHydro の方が4/3倍多い．
-よって，検出ガスには\isoButaneHydro~(\SI{100}{\hecto\pascal}) を用いる．
+よって，検出ガスには\SI{100}{\hecto\pascal}の\isoButaneHydro が最善であると判明した．
 \begin{table}
   \centering
   \caption{各検討項目に対する検出ガスの優劣．標的の量は\Methane に含まれる量を1とした．}
   \label{tab::result_summary}
   \begin{tabular}{ccccc}
     \toprule
-    gas & 解析効率 & ディフュージョン & 励起エネルギー分解能 & 標的の量 \\
+    gas & 解析効率 & 拡散効果 & 励起エネルギー分解能 & 標的の量 \\
     \midrule
     \Methane & $\times$ & $\times$ & $\triangle$ & 1 \\
     \MethaneHydro & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & 0.6 \\
