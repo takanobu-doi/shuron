@@ -247,7 +247,7 @@ FADC の入力インピーダンス\SI{50}{\ohm}で電流値を電圧値に変�
 MAIKo TPC から得られるトラックをGarfield++~\cite{garfield++}と
 Magboltz~\cite{magboltz}，SRIM~\cite{SRIM}を用いたシミュレーションによりMAIKo TPC で測定されるトラックの再現を試みた．
 シミュレーションでは，ドリフト電場，W値，電子増幅率，検出ガスの密度を固定した上で，
-最もよく測定結果を再現するTOTの閾値を探索した．
+最もよく測定結果を再現する信号の閾値を探索した．
 電子増幅率は$\alpha$線源を用いた測定値を用いた．
 シミュレーションは以下の手順%(図\ref{fig::simulation_flow})
 で行った．
@@ -263,12 +263,12 @@ Magboltz~\cite{magboltz}，SRIM~\cite{SRIM}を用いたシミュレーション�
   読み出し領域に到達した電子1つにつき図\ref{fig::mu-pic_readout}に示すような電気信号を
   各strip の信号波形に加算する．
 \item
-  設定した閾値により，信号波形をTOTに変換しanode image とcathode image を生成する．
+  設定した閾値により，信号波形を白黒画像に変換しanode image とcathode image を生成する．
 \end{enumerate}
 $\alpha$線源を用いた場合のシミュレーションと測定の比較を図\ref{fig::track_comp_ch4},
 \ref{fig::track_comp_ch4_h2}, \ref{fig::track_comp_ch4_he}, 
 \ref{fig::track_comp_ic4h10_h2}, \ref{fig::track_comp_ic4h10_he}に示す．
-TOTの閾値を\SI{0.1}{\milli\volt}とすると，それぞれの検出ガスでの$\alpha$線源によるトラックを，
+信号の閾値を\SI{0.1}{\milli\volt}とすると，それぞれの検出ガスでの$\alpha$線源によるトラックを，
 シミュレーションで再現できる．
 \begin{figure}
   \centering
