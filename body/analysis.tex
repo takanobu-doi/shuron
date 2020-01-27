@@ -16,7 +16,7 @@ $\alpha$粒子が停止した位置の座標である．
 anode image から$z, y$座標を，cathode image から$x, y$座標を決定することができる．
 $x, z$座標は$\mu$-PIC の信号を検出したstrip のチャンネル番号に\SI{400}{\micro\metre}をかけることで求めることができる．
 TPC では，$y$座標を荷電粒子が通過した位置から読み出し面に到達するまでの時間として測定する．
-そのため，anode image, cathode image のclock にドリフトスピードをかけることで$y$座標を求めることができる．
+そのため，anode image, cathode image のclock にドリフト速度をかけることで$y$座標を求めることができる．
 このようにして決定したanode image, cathode image の座標を合わせることで，
 3次元の座標を求めることができる．
 
@@ -174,7 +174,7 @@ eye-scanによって決定した$\alpha$粒子の運動エネルギー ($E_{\tex
   \end{tabular}
 \end{table}
 
-$E_{\text{eye-scan}}$をフィットした1次関数 ($f(x)$) で補正したエネルギーと$E_{\text{ideal}}$と
+$E_{\text{eye-scan}}$をフィットした1次関数 [$f(x)$] で補正したエネルギーと$E_{\text{ideal}}$と
 差分を$dE\ [=E_{\text{ideal}}-f(E_{\text{eye-scan}})]$とする．
 各検出ガスでの$dE$の分布を図\ref{fig::dE_ch4}, \ref{fig::dE_ch4_h2}, \ref{fig::dE_ch4_he},
 \ref{fig::dE_ic4h10_h2}, \ref{fig::dE_ic4h10_he}に，
