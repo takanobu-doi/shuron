@@ -5,22 +5,22 @@
 \chapter{iso-C$_{\text 4}$H$_{\text{10}}$ (10) + H$_{\text 2}$ (9) の検出ガス特性}
 %本章では検出ガスとして用いる\isoButaneHydro の特性について述べる．
 
-\section{ドリフトスピード}
-ドリフトスピードのドリフト電場依存性を調べた．
-Magboltz で求めたドリフトスピードが\SI{0.014}{\milli\metre\per\nano\second}となる
+\section{ドリフト速度}
+ドリフト速度のドリフト電場依存性を調べた．
+Magboltz を用いた計算によるとドリフト速度が\SI{0.014}{\milli\metre\per\nano\second}となる
 ドリフト電場は\SI{6.80}{\volt\per\milli\metre}である．
 ドリフト領域の長さは\SI{140}{\milli\metre}であるので，plateとgridの電位差は\SI{952}{\volt}となる．
 調整の行いやすさを考え\SI{955}{\volt}を中心に\SI{100}{\volt}間隔で
 \SIrange{455}{1455}{\volt}の範囲で変化させて計10点測定した．
-線源を用いて測定したドリフトスピードとMagboltz により求めたドリフトスピードを図\ref{fig::drift_speed_E_dep}に示す．
-線源を用いて測定したドリフトスピードと Magboltz で求めたドリフトスピードがおよそ一致していることが分かる．
-ただ，全体的に測定値のドリフトスピードの方が小さくなている．
+線源を用いて測定したドリフト速度とMagboltz を用いて計算したドリフト速度を図\ref{fig::drift_speed_E_dep}に示す．
+線源を用いて測定したドリフト速度と Magboltz を用いて計算したドリフト速度が概ね一致していることが分かる．
+ただ，全体的に測定値のドリフト速度の方が小さくなっている．
 これは測定で用いた検出ガスに水分などの不純物が含まれていることが原因と考えられる．
-水分によるドリフトスピードの変化は付録\ref{app::drift_speed_humid_dep}で述べる．
+水分によるドリフト速度の変化は付録\ref{app::drift_speed_humid_dep}で述べる．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{drift_E_dep.eps}
-  \caption{ドリフトスピードの電場依存性．点は測定したドリフトスピード，実線はMagboltz で求めたドリフトスピードを示す．}
+  \caption{ドリフト速度の電場依存性．黒い四角は測定したドリフト速度，実線はMagboltz を用いて計算したドリフト速度を示す．}
   \label{fig::drift_speed_E_dep}
 \end{figure}
 
@@ -34,7 +34,7 @@ $\mu$-PICのanode 電極の電圧を$V_{\mu\text{-PIC}}$とする．
 $\mu$-PICのcathode 電極は接地されている．
 表\ref{tab::voltage_configuration}にあるような電位差を基準として，
 各項目の電位差依存性を調べた．
-表\ref{tab::voltage_configuration}は\ref{chap::simulation}章でドリフトスピードを測定したときの構成である．
+表\ref{tab::voltage_configuration}は\ref{chap::simulation}章でドリフト速度を測定したときの構成である．
 増幅率の測定方法は\ref{chap::simulation}章で述べた通りである．
 本測定ではGEM，$\mu$-PICの増幅率や電子の収集効率をそれぞれで求めることができないので，
 それらを畳み込んだ増幅率として求める．
@@ -95,7 +95,7 @@ $\Delta V_{\text{grid-GEM}} = $\SI{700}{\volt}のとき，\SI{140}{\volt\per\mil
 \end{figure}
 
 \subsection{GEMによる電子増幅率}
-GEM は絶縁体のフィルムの両面を銅で被覆し，微細な穴を開けたものである．
+GEM は絶縁体のフィルムの両面を銅で被覆し，微細な穴を加工したものである．
 GEM の各面に電圧を印加することで高電場を形成し，電子が穴を通過する際にアバランシェ増幅を起こす．
 %$\Delta V_{\text{GEM}}$を変化させることで電子の増幅率が変化する．
 $\Delta V_{\text{GEM}}$を\SI{10}{\volt}間隔で\SIrange{300}{390}{\volt}の範囲で変化させて計10点測定した．
@@ -146,20 +146,20 @@ $\mu$-PICのanode 電極の周りにより強い電場が形成されること�
   \label{fig::gain_uPIC_V_dep}
 \end{figure}
 
-\section{電子のディフュージョン効果}
-ドリフトスピードが一定である場合は，電子の拡散は$\sqrt{L}$に比例する．
+\section{電子の拡散効果}
+ドリフト速度が一定である場合は，電子の拡散は$\sqrt{L}$（$L$は電子のドリフト距離）に比例する．
 線源は線源導入機によって，MAIKo チェンバーの気密性を保持したまま電子のドリフト方向に移動可能である．
 線源導入機は2016年度の森本修論~\cite{morimoto_thesis}で開発された．
 図\ref{pic::source_insirtion}は線源導入機の先に線源を取り付けたときの様子である．
 図\ref{pic::source_insirtion}中の矢印の方向に線源を移動させることができる．
 線源導入機によって線源の位置を変化させることで，拡散効果の$L$依存性を調べることができる．
-拡散効果とトラックの太さが比例していると仮定すると，track width $\sim\sqrt{L}$となる．
+拡散効果とトラックの太さが比例していると仮定すると，track width $\sim\sqrt{L}$と期待される．
 トラックの太さと線源の位置との依存性を図\ref{fig::diff_x}に示す．
 図\ref{fig::diff_x}の$L$は線源コリメータの\ang{0}穴とgridとのドリフト方向の距離である．
 この測定では表\ref{tab::config_diffusion_meas}の電圧で測定を行った．
 \begin{table}
   \centering
-  \caption{ディフージョン効果の距離依存性を測定したときの電圧設定．}
+  \caption{拡散効果の距離依存性を測定したときの電圧設定．}
   \label{tab::config_diffusion_meas}
   \begin{tabular}{cc}
     \toprule
@@ -196,13 +196,13 @@ $\sqrt{L}$に比例していることが確認された．
 
 TPC から得られるトラックの$y$軸は，\SI{10}{\nano\second}単位の時間として ($y_{\text{clk}}$) として取得される．
 $y_{\text{clk}}$を\si{\milli\metre}単位 ($y_{\text{length}}$) へ変換するには\eqref{eq::unit_convert}のように，
-ドリフトスピード $v_{\text{drift}}$ (\si{\milli\metre\per\nano\second}) を掛ければ良い．
+ドリフト速度 $v_{\text{drift}}$ (\si{\milli\metre\per\nano\second}) を掛ければ良い．
 \begin{equation}
   y_{\text{length}} = y_{\text{clk}}\times 10\times v_{\text{drift}} \label{eq::unit_convert}
 \end{equation}
-同様に測定より得られた係数 ($D_{\text{width}}$) にドリフトスピードを掛けることで，
-Magboltz で得られるディフュージョン係数の次元 ($D_{\text{exp}}$) に変換できる．
-ドリフトスピード $v_{\text{drift}}$は\SI{1.37e-2}{\milli\metre\per\nano\second}なので，
+同様に測定より得られた係数 ($D_{\text{width}}$) にドリフト速度を掛けることで，
+Magboltz を用いた計算から得られる拡散係数の次元 ($D_{\text{exp}}$) に変換できる．
+ドリフト速度 $v_{\text{drift}}$は\SI{1.37e-2}{\milli\metre\per\nano\second}なので，
 $D_{\text{exp}} = $%\SI{0.174\pm0.00375}{\sqrt{\milli\metre}}
 \SI{0.174\pm0.004}{\sqrt{\milli\metre}}
 %\begin{align}
@@ -210,8 +210,8 @@ $D_{\text{exp}} = $%\SI{0.174\pm0.00375}{\sqrt{\milli\metre}}
 %  & = 0.174\ (\si{\sqrt{\milli\metre}})\label{eq::diffusion_coefficiency}
 %\end{align}
 となる．
-Magboltz で得られるディフュージョン係数は\SI{0.144}{\sqrt{\milli\metre}}である．
-測定で得られたディフュージョン係数の方が大きくなっている．
+Magboltz を用いた計算から得られた拡散係数は\SI{0.144}{\sqrt{\milli\metre}}である．
+測定で得られた拡散係数の方が大きくなっている．
 Magboltz で係数を求めた際には，一様な電場を仮定しているが実際にはGEMや$\mu$-PICの周囲では一様電場ではない．
 また，電子によって誘起される信号も有限の幅を持つ．
 これらの効果を考慮しきれていないため，計算値より実測値のほうが大きくなっていると考えられる．
@@ -256,14 +256,14 @@ Magboltz で係数を求めた際には，一様な電場を仮定している�
 \ref{chap::collimator}章で考えた\SI{10}{\milli\metre}のコリメータを用いたときの検出効率は\SI{48.2}{\percent}であった．
 検出効率は散乱点，散乱角度に依存していると予想される．
 検出効率の散乱点の$z$座標依存性を図\ref{fig::detection_efficiency_beam_axis}に，
-${}^{12}\mathrm{C}$の重心系での散乱角依存性を図\ref{fig::detection_efficiency_theta_cm}に示す．
-$\theta_{\text{c.m.}}$は入射中性子の運動方向に対する${}^{12}\mathrm{C}$の極角である．
+${}^{12}\mathrm{C}$の重心系での散乱角 ($\theta_{\text{c.m.}}$) 依存性を図\ref{fig::detection_efficiency_theta_cm}に示す．
+%$\theta_{\text{c.m.}}$は入射中性子の運動方向に対する${}^{12}\mathrm{C}$の極角である．
 図\ref{fig::detection_efficiency_beam_axis}から分かるように，
 $z$座標が小さいまたは大きい場所で反応が起きた場合に，
 崩壊してできた$\alpha$粒子が有感領域から出やすくなるため検出効率が低下している．
 また，図\ref{fig::detection_efficiency_theta_cm}から分かるように，
 $\theta_{\text{c.m.}}$が小さいところで検出効率が低下している．
-これは，$\theta_{\text{c.m.}}$が小さいところでは後方散乱となり中性子から多くのエネルギーを受け取り，
+これは，$\theta_{\text{c.m.}}$が大きいところでは後方散乱となり中性子から多くのエネルギーを受け取り，
 崩壊した$\alpha$粒子が全体的に$z$軸正の方向にブーストされることで有感領域から出ていきやすくなるためである．
 \begin{figure}
   \centering
@@ -302,12 +302,12 @@ OKTAVIAN で現在得られるビーム量は最大で$4\pi$に\SI{5e9}{\per\sec
 %\SI{9.904e-3}{\per\cubic\milli\metre}%\rho = 2.3846e-5\gram\per\cubic\cm
 この時，${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}(0_{2}^{+})$反応の収量は
 \begin{align}
-  Y &= N_{\text{t}}\times N_{\text{b}}\times \sigma \times\varepsilon_{\text{det.}}\times\varepsilon_{\text{ana.}} \notag\\
+  Y &= N_{\text{t}}\times N_{\text{b}}\times \sigma \times\varepsilon_{\text{det}}\times\varepsilon_{\text{ana}} \notag\\
   &= \SI{1.01e17}{\per\square\milli\metre}\times\SI{1.95e4}{\per\second}\times\SI{8.36}{\milli\barn}
   \times\SI{48.2}{\percent}\times\SI{87}{\percent} \notag\\
   &= \SI{6.90e-4}{\per\second}
 \end{align}
 となる．
-24時間の測定で，収量が58.9~events と期待される．
+24時間の測定で，収量が59.6~events と期待される．
 
 \end{document}
