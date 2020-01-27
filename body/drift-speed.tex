@@ -1,12 +1,12 @@
 \documentclass[../master]{subfiles}
 
 \begin{document}
-\chapter{ドリフトスピード}
+\chapter{水蒸気混入によるドリフト速度の変化}
 \label{app::drift_speed_humid_dep}
-\section{水分のドリフトスピードへの影響}
+\section{水分のドリフト速度への影響}
 本研究では用いた検出ガスは低圧であるため，
 水分などの不純物からの影響が大きいと予想される．
-そこで，チェンバー中の水分をモニターしながらドリフトスピードの変化を測定した．
+そこで，チェンバー中の水分をモニターしながらドリフト速度の変化を測定した．
 水分は露点計で測定した．
 露点温度と水分濃度と蒸気密度の対応を表\ref{tab::dew_point_humidity}に示す．
 露点温度は水が凝結を始める温度であるので，高いほどガス中に含まれる水分が多いことを示す．
@@ -15,7 +15,7 @@
 不純物による影響が現れやすいと考えたためである．
 この測定での各部の電圧は表\ref{tab::configuration_for_drift_dep}の通りである．
 測定時は，検出ガスにを入れる前に可能な限り検出器中の水分を取るために，
-半日ほど真空ポンプで真空引きを行った．
+半日ほど真空ポンプで排気を行った．
 \begin{table}
   \centering
   \caption{露点温度と水分濃度と蒸気密度の対応．ppmはparts par millionの略であり, 10,000 ppm = \SI{1}{\percent} となる．}
@@ -54,23 +54,23 @@
 \end{table}
 
 時間経過によって，MAIKo チェンバー表面に吸着されていた水分が検出ガス中に放出され，検出ガスの露点温度が上昇する．
-また，露点温度の上昇に伴ってドリフトスピードが減少する．
-露点温度とドリフトスピードの時間経過を図\ref{fig::drift_time_dep}に示す．
+また，露点温度の上昇に伴ってドリフト速度が減少する．
+露点温度とドリフト速度の時間経過を図\ref{fig::drift_time_dep}に示す．
 表\ref{tab::configuration_for_drift_dep}に示したドリフト電場のとき，
-Magboltz によるドリフトスピードは\SI{0.0208}{\milli\metre\per\nano\second}である．
-また，露点温度とドリフトスピードの相関を図\ref{fig::drift_dew_dep}に示す．
+Magboltz によるドリフト速度の計算値は\SI{0.0208}{\milli\metre\per\nano\second}である．
+また，露点温度とドリフト速度の相関を図\ref{fig::drift_dew_dep}に示す．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{drift_time_dep.eps}
-  \caption[ドリフトスピードと露点温度の時間変化．]
-          {ドリフトスピードと露点温度の時間変化．
+  \caption[ドリフト速度と露点温度の時間変化．]
+          {ドリフト速度と露点温度の時間変化．
           横軸は日時を表す．}
   \label{fig::drift_time_dep}
 \end{figure}
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{drift_dew_dep.eps}
-  \caption{ドリフトスピードの露点温度依存性．}
+  \caption{ドリフト速度の露点温度依存性．}
   \label{fig::drift_dew_dep}
 \end{figure}
 %ドリフトスピードと露点温度の相関は
@@ -93,15 +93,15 @@ Magboltz によるドリフトスピードは\SI{0.0208}{\milli\metre\per\nano\s
 前節で述べたように時間経過とともにチェンバー表面から水分が放出される．
 検出ガスをフローさせることで，この影響の低減を試みた．
 図\ref{fig::gas_duct}に示すように，MAIKo チェンバーのinlet からガスを注入し，
-outlet からポンプで廃棄することで，
+outlet からポンプで排気することで，
 ガスが長時間チェンバー中に留まらないようにした．
 図\ref{fig::gas_duct}中の ``MFC'', ``PV'', ``MV'', ``FM'', ``SP'' はそれぞれ，
 マスフローコントローラ，ピエゾバルブ，メータリングバルブ，フローメータ，スクロールポンプを表す．
 ピエゾバルブとメータリングバルブで検出ガスの流量を調整するくことで，
 チェンバー内の圧力を一定に保ったまま検出ガスを循環させた．
-図\ref{fig::drift_time_cont}にドリフトスピードと露点温度の時間経過を示す．
+図\ref{fig::drift_time_cont}にドリフト速度と露点温度の時間経過を示す．
 点線より左側では検出ガスを循環させて，右側では循環させずに測定した．
-検出ガスを循環させると露点温度，ドリフトスピードともに変化が小さいことが分かる．
+検出ガスを循環させると露点温度，ドリフト速度ともに変化が小さいことが分かる．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.9\columnwidth]{FlowDuct_ver2.eps}
@@ -111,15 +111,15 @@ outlet からポンプで廃棄することで，
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{drift_time_cont.eps}
-  \caption{ドリフトスピードと露点温度の時間経過．}
+  \caption{ドリフト速度と露点温度の時間経過．}
   \label{fig::drift_time_cont}
 \end{figure}
 
-連続した測定で検出ガスの循環の有無で露点温度とドリフトスピードの変化の違いが分かった．
+連続した測定で検出ガスの循環の有無で露点温度とドリフト速度の変化の違いが分かった．
 このことより，チェンバー表面から多くの水分が検出ガスに放出されていることが確認された．
-また，ドリフトスピードがMagboltz で求めた値より小さくなる主な原因が検出ガス中に含まれる水分であることが分かった．
+また，ドリフトスピードがMagboltz の計算値より小さくなる主な原因が検出ガス中に含まれる水分であることが分かった．
 この影響を抑える方法として，今回行ったガスを循環させる方法が有効である．
-他の方法として，チェンバー中の水分を長時間に渡ってポンプで引くことで，
+他の方法として，チェンバー中の水分を長時間に渡ってポンプで排気することで，
 チェンバー表面の水分量を減らすことも有効であると考えられる．
 さらに，この2つの方法のどちらも行うことで，低い露点温度で安定して測定を行うことができると考える．
 
