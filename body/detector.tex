@@ -42,7 +42,7 @@ MAIKo TPC では3次元のトラックを2つの平面に射影した画像と�
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{IMG_20190731_110230_clpd.jpg}
   \caption[ドリフトケージの概観．]
-          {ドリフトケージの概観．ケージの上側に$\mu$-PICが取り付けられている．}
+          {ドリフトケージの概観．ケージの上側に読み出し面が取り付けられている．}
   \label{pic::MAIKo_cage}
 \end{figure}
 \begin{figure}
@@ -85,7 +85,7 @@ MAIKo TPC では3次元のトラックを2つの平面に射影した画像と�
 %\end{figure}
 
 図\ref{fig::MAIKo_cage}にドリフトケージの構造を示す．
-ドリフトケージはplate，wire，grid，GEM (gas electron multiplier)，$\mu$-PICからなる．
+ドリフトケージはplate，wire，grid，GEM (gas electron multiplier)，$\mu$-PIC~\cite{mupic}からなる．
 plate，grid，GEM，$\mu$-PICに高圧電源 (HV) が接続されている．
 plate，wire，girdの間は\SI{10}{\mega\ohm}の抵抗で繋がれている．
 GEM とHV は\SI{1}{\mega\ohm}と\SI{20}{\mega\ohm}の抵抗で繋がれている．
@@ -130,11 +130,11 @@ GEM は，図\ref{pic::GEM}のようにポリマーのフィルムの表面を�
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.7\columnwidth]{gem_structure.pdf}
-  \caption{GEM の拡大図~\cite{gem_compass}．}
+  \caption{COMPASS 実験で用いられたGEM の拡大図~\cite{gem_compass}．}
   \label{pic::GEM}  
 \end{figure}
 
-$\mu$-PIC は京都大学宇宙線研究室で開発されたMicro Pattern Gas Detector の一種である．
+$\mu$-PIC~\cite{mupic} は京都大学宇宙線研究室で開発されたMicro Pattern Gas Detector の一種である．
 $\mu$-PIC は図\ref{fig::mupic}のようにanode strip とcathode strip が直交するように配置されている．
 anode strip，cathode strip ともに\SI{400}{\micro\metre}間隔でそれぞれ256~ch分割されている．
 直径\SI{50}{\micro\metre}の円柱状のanode 電極に高電圧を印加し，
@@ -328,7 +328,7 @@ Magboltz~\cite{magboltz} によって求めたドリフト電場とドリフト�
 図\ref{fig::diffusion-image}のように広がりながらドリフトする．
 %電子が広がることを拡散と呼ぶ．
 この効果が大きくなると，図\ref{fig::diffusion-image}の左のように
-荷電粒子によって同じ場所に生成された電子が$\mu$-PICに到達するまでに広がるため，
+荷電粒子によって同じ場所に生成された電子が読み出し面に到達するまでに広がるため，
 トラックが太く検出される．
 トラックが太くなると，複数のトラックを分離することが難しくなる．
 そのため，図\ref{fig::diffusion-image}の右のように拡散の効果が小さいことが望まれる．
@@ -393,7 +393,7 @@ Ref~\cite{leo}によるとドリフト電場がない場合の電子の拡散は
   & = D_{\mathrm{Magboltz}}\times\sqrt{L}
 \end{align}
 となる．
-計算コードMagboltz によって得られた拡散係数を表\ref{tab::diffusion}に示す．
+計算コードMagboltz によって得られた拡散係数 ($D_{\mathrm{Magboltz}}$) を表\ref{tab::diffusion}に示す．
 表\ref{tab::diffusion}中の$D_{t}$はドリフト電場に対して垂直な方向への拡散，$D_{l}$は平行な方向への拡散の係数を表す．
 \Methane および\isoButane の単体では拡散係数が大きく，
 同じドリフト速度のとき，ドリフト電場が大きいほど拡散係数が小さいことが分かる．
