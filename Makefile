@@ -105,6 +105,13 @@ ${BODYDIR}/drift-speed.pdf: ${BODYDIR}/drift-speed.tex
 	$(TEX) drift-speed.tex;\
 	$(DVIPDF) drift-speed.dvi
 
+experiment: ${BODYDIR}/experiment.pdf
+
+${BODYDIR}/experiment.pdf: ${BODYDIR}/experiment.tex
+	cd ${BODYDIR}/;\
+	$(TEX) experiment.tex;\
+	$(DVIPDF) experiment.dvi
+
 acknowledge: ${BODYDIR}/acknowledge.pdf
 
 ${BODYDIR}/acknowledge.pdf: ${BODYDIR}/acknowledge.tex
