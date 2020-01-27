@@ -22,7 +22,7 @@
   \label{tab::dew_point_humidity}
   \begin{tabular}{ccc}
     \toprule
-    露点温度 \si{\degreeCelsius} & 水分濃度 (ppm) & 蒸気密度 \si{\gram/\cubic\metre} \\
+    露点温度 (\si{\degreeCelsius}) & 水分濃度 (ppm) & 蒸気密度 (\si{\gram/\cubic\metre}) \\
     \midrule
     $-80$ & 0.540 & 0.000613 \\
     $-70$ & 2.581 & 0.00279 \\
@@ -64,7 +64,7 @@ Magboltz によるドリフト速度の計算値は\SI{0.0208}{\milli\metre\per\
   \includegraphics[clip, width=0.8\columnwidth]{drift_time_dep.eps}
   \caption[ドリフト速度と露点温度の時間変化．]
           {ドリフト速度と露点温度の時間変化．
-          横軸は日時を表す．}
+          丸はドリフト速度，四角は露点温度，横軸は日時を表す．}
   \label{fig::drift_time_dep}
 \end{figure}
 \begin{figure}
@@ -104,14 +104,15 @@ outlet からポンプで排気することで，
 検出ガスを循環させると露点温度，ドリフト速度ともに変化が小さいことが分かる．
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.9\columnwidth]{FlowDuct_ver2.eps}
+  \includegraphics[clip, width=\columnwidth]{FlowDuct_ver2.eps}
   \caption{ガス配管の概観図．}
   \label{fig::gas_duct}
 \end{figure}
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{drift_time_cont.eps}
-  \caption{ドリフト速度と露点温度の時間経過．}
+  \caption{ドリフト速度と露点温度の時間経過．
+  丸はドリフト速度，四角は露点温度を表す．}
   \label{fig::drift_time_cont}
 \end{figure}
 
