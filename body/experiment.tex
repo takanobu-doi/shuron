@@ -57,7 +57,8 @@ DC ビームラインで生成された中性子はトリチウムターゲッ�
 %  \label{pic::neutron_collimator}
 %\end{figure}
 
-\section{ビームサイズを制限する必要性}
+\section{中性子ビーム}
+\subsection{ビームサイズを制限する必要性}
 中性子ビームは可能な限り空間的な広がりが小さいことが望ましい．
 例えば，半径\SI{50}{\milli\metre}の広がりを持つ中性子ビームを用いると，
 散乱点が$y$軸方向に\SI{100}{\milli\metre}の広がりを持つ．
@@ -93,7 +94,7 @@ DC ビームラインで生成された中性子はトリチウムターゲッ�
   \label{fig::sensitive_area}
 \end{figure}
 
-\section{立体角と検出効率によるビームサイズの決定}
+\subsection{立体角と検出効率によるビームサイズの決定}
 重照射室内のトリチウムターゲットから中性子が$4\pi$に等方的に放出していると仮定すると，
 中性子の収量はコリメータの立体角で決定される．
 重照射室の模式図を図\ref{fig::jushosha_room}に示す．
@@ -142,7 +143,7 @@ $\alpha$粒子の検出効率を求めた．
   \end{tabular}
 \end{table}
 
-\section{コリメータの材質}
+\subsection{コリメータの材質}
 中性子を遮蔽する物質として，陽子を多く含むポリエチレンや吸収断面積が大きいホウ素が広く用いられている．
 ポリエチレンとホウ素入りポリエチレンでの中性子の遮蔽度合いをPHITS (Particle and Heavy Ion Transport code System)
 ver.~3.14~\cite{phits}を用いて計算した．
@@ -211,7 +212,7 @@ PHITS の入力ファイルを付録\ref{chap::phits-input}に示す．
   \label{pic::collimator}
 \end{figure}
 
-\section{中性子の収量}
+\subsection{中性子の収量}
 PHITS による計算では\SIrange{0}{10}{\milli\metre}の範囲の
 \SIrange{13.9}{14.1}{\mega\electronvolt}の中性子が通過してくる割合は
 \SI{8.14e-4}{\percent}となる．
@@ -220,38 +221,7 @@ OKTAVIAN のDCビームラインで生成される中性子が\SI{5e9}{\per\seco
 コリメータを通過してくる\SI{14}{\mega\electronvolt}中性子の量は\SI{4.07e4}{\per\second}となる．
 
 \section{検出効率の散乱位置依存性と散乱角依存性}
-%測定されたトラックの長さから粒子のエネルギーを決定する．
-%しかし，散乱点や粒子の運動エネルギー，角度によってはMAIKo TPC の有感領域から外に出てしまう．
-%有感領域の外へ出てしまった粒子のトラックの長さは決定することができないので，
-%その粒子の運動エネルギーと運動量を決定できなくなってしまう．
-%\ref{chap::collimator}章で有感領域内で停止する割合（検出効率）を考えた．
-
-%ここでは，以下のようなで状況を考える．
-%\begin{itemize}
-%\item
-%  半径\SI{10}{\milli\metre}の\SI{14}{\mega\electronvolt}の中性子ビームが$z$軸正の向きでMAIKo TPC に入射している．
-%\item
-%  ビーム軸方向に一様に中性子と${}^{12}\mathrm{C}$の散乱が起きる．
-%\item
-%  散乱の角度分布は図\ref{fig::sig_angle_dist}とする．
-%\end{itemize}
-%半径\SI{10}{\milli\metre}の幅を持っている中性子ビームを用いると，
-%散乱点が$y$軸方向に\SI{20}{\milli\metre}の幅を持つ．
-%gridの座標を$y = \SI{0}{\milli\metre}$，plateの座標を$y = \SI{140}{\milli\metre}$とし，
-%ビームの中心が$y = \SI{70}{\milli\metre}$の位置にあるとする．
-%この時$y = \SI{80}{\milli\metre}$の位置で散乱が起きると，
-%見かけ上の有感領域はgrid方向に\SI{80}{\milli\metre}，plate方向に\SI{60}{\milli\metre}となる．
-%また，$y = \SI{60}{\milli\metre}$の位置で散乱が起きると，
-%見かけ上の有感領域はgrid方向に\SI{60}{\milli\metre}，plate方向に\SI{80}{\milli\metre}となる．
-%しかし，MAIKo TPC は$y$座標をトラックの周囲に発生した電子の読み出し面に到達する時間差を用いて検出しているため，
-%$y$座標の絶対値を決定することができない．
-%すると，$y = \SI{80}{\milli\metre}$と$y = \SI{60}{\milli\metre}$のどちらで散乱が起きたのかを区別できない．
-%どちらの場合でも確実に有感領域中で停止したと保証するためには，
-%散乱点から$y$軸方向に\SI{\pm60}{\milli\metre}を実質の有感領域としなければならない．
-%第\ref{chap::collimator}章で述べたように有限の大きさを持つ中性子ビームが入射した場合，
-%実質の有感領域をMAIKo ケージよりも小さくしなければならない．
-%
-%散乱点および3つの停止点が有感領域にある時に検出可能とすると，
+\subsection{14~MeV 中性子を用いたとき}
 \ref{chap::collimator}章で考えた\SI{10}{\milli\metre}のコリメータを用いたときの検出効率は\SI{48.2}{\percent}であった．
 検出効率は散乱点，散乱角度に依存していると予想される．
 検出効率の散乱点の$z$座標依存性を図\ref{fig::detection_efficiency_beam_axis}に，
@@ -289,6 +259,80 @@ $\theta_{\text{c.m.}}$が小さいところで検出効率が低下している�
 %  \label{fig::forward_sca_event}
 %\end{figure}
 
+\subsection{8.5~MeV 中性子を用いたとき}
+${}^{12}\mathrm{C}$を$0_2^+$状態に励起させることができる中性子エネルギーの閾値近傍の断面積が重要となる．
+そこで，\SI{8.5}{\mega\electronvolt}の中性子を用いた測定を考える．
+テスト実験と同様に\SI{50}{\hecto\pascal}の\isoButaneHydro を用いたMAIKo TPC の運用を仮定する．
+また，同じ中性子コリメータを用いるとする．
+すると，検出効率は\SI{51.6}{\percent}となる．
+微分断面積の角度分布は\SI{14}{\mega\electronvolt}の中性子と${}^{12}\mathrm{C}$の散乱と同じであると仮定した．
+検出効率の散乱点の$z$座標依存性を図\ref{fig::detection_efficiency_beam_axis_low}に，
+${}^{12}\mathrm{C}$の重心系での散乱角 ($\theta_{\text{c.m.}}$) 依存性を
+図\ref{fig::detection_efficiency_theta_cm_low}に示す．
+図\ref{fig::detection_efficiency_beam_axis}と比較して図\ref{fig::detection_efficiency_beam_axis_low}は，
+\SI{50}{\milli\metre}よりも大きいところで検出効率が小さく，小さいところでは検出効率が大きくなっていることが分かる．
+これは，前方散乱に置いて\SI{14}{\mega\electronvolt}中性子のほうが\SI{8.5}{\mega\electronvolt}中性子のほうが
+エネルギーの移行が小さいためである．
+例えば，$\theta_{\text{c.m.}} = \ang{0}$のとき，
+\SI{14}{\mega\electronvolt}中性子と散乱した${}^{12}\mathrm{C}(0_2^+)$の
+エネルギーは\SI{0.133}{\mega\electronvolt}であるのに対し，
+\SI{8.5}{\mega\electronvolt}中性子と散乱した${}^{12}\mathrm{C}(0_2^+)$のエネルギーは
+\SI{0.436}{\mega\electronvolt}である．
+すると，3つの$\alpha$粒子が前方にブーストされるため，有感領域の下流側で散乱すると検出率が低下すると考えられる．
+その一方，\SI{8.5}{\mega\electronvolt}中性子では，後方散乱したときと前方散乱したときとで${}^{12}\mathrm{C}(0_2^+)$の
+エネルギーがあまり変わらないので，横方向に大きく散乱されることがなくなる．
+そのため，有感領域の上流側で散乱が起きた場合には大きな検出効率となる．
+また，散乱角度によらずに${}^{12}\mathrm{C}(0_2^+)$のエネルギーが変わらないので，
+図\ref{fig::detection_efficiency_theta_cm_low}のように検出効率が散乱角度にあまり依存しない．
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.8\columnwidth]{detection_efficiency_beam_axis_85.eps}
+  \caption{\SI{8.5}{\mega\electronvolt}の中性子を用いたときの検出効率の散乱点の$z$軸依存性．}
+  \label{fig::detection_efficiency_beam_axis_low}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.8\columnwidth]{detection_efficiency_theta_cm_85.eps}
+  \caption{\SI{8.5}{\mega\electronvolt}の中性子を用いたときの検出効率の散乱角依存性．}
+  \label{fig::detection_efficiency_theta_cm_low}
+\end{figure}
+
+\SI{8.5}{\mega\electronvolt}の中性子を用いたときのシミュレーションから解析効率も評価した．
+図\ref{fig::three_alpha_low_En}にシミュレーションで得られた3$\alpha$イベントの一例を示す．
+\SI{14}{\mega\electronvolt}のときと同様にeye-scan によって解析を行った．
+eye-scan で決定したトラックの本数を表\ref{tab::eye-scan_low}に示す．
+\SI{14}{\mega\electronvolt}のときと同様に高い割合で3つのトラックを識別できていることが分かる．
+図\ref{fig::ExC_low}にeye-scan で決定した${}^{12}\mathrm{C}^{*}$の励起エネルギーを示す．
+励起エネルギー分布の平均は\SI{7.68}{\mega\electronvolt}，標準偏差は\SI{17.0}{\kilo\electronvolt}であり，
+励起エネルギーも良く再構成されていることが分かる．
+本研究で考えている実験条件では，中性子のエネルギーに関わらず測定を行うことができることが分かる．
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.8\columnwidth]{10040_2.eps}
+  \caption{\SI{8.5}{\mega\electronvolt}の中性子を用いたときのシミュレーショントラックの一例．}
+  \label{fig::three_alpha_low_En}
+\end{figure}
+\begin{table}
+  \caption{eye-scan によって決定したトラックの本数．}
+  \label{tab::eye-scan_low}
+  \centering
+  \begin{tabular}{cc}
+    \toprule
+    トラックの本数 & イベント数 \\
+    \midrule
+    3 & 93 \\
+    2 & 7 \\
+    1 & 0 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.8\columnwidth]{ExC_10040_fit.eps}
+  \caption{eye-scan によって再構成した励起エネルギー．}
+  \label{fig::ExC_low}
+\end{figure}
+
 \section{期待される収量}
 Ref.~\cite{takahashietal,kondoetal}によると${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}(0_{2}^{+})$の
 断面積 ($\sigma$) は\SI{8.36}{\milli\barn}である．
@@ -308,4 +352,5 @@ OKTAVIAN で現在得られるビーム量は最大で$4\pi$に\SI{5e9}{\per\sec
 \end{align}
 となる．
 24時間の測定で，収量が59.6~events と期待される．
+
 \end{document}
