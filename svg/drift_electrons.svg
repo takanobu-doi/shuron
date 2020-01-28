@@ -145,7 +145,7 @@
       <path
          id="path1494"
          d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
-         style="fill-rule:evenodd;stroke:#00a0ff;stroke-width:1pt;stroke-opacity:1;fill:#00a0ff;fill-opacity:1"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
          transform="scale(0.4) rotate(180) translate(10,0)" />
     </marker>
     <marker
@@ -326,9 +326,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.1085888"
-     inkscape:cx="47.95848"
-     inkscape:cy="346.68029"
+     inkscape:zoom="1.5677813"
+     inkscape:cx="190.31335"
+     inkscape:cy="476.34293"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
