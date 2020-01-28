@@ -12,7 +12,7 @@
 また，それらのデータから各ガスにおけるドリフト速度，ガスの電子増幅率，トラックの幅を決定した．
 測定には${}^{241}{\rm Am}$の$\alpha$線源を用いた．
 図\ref{fig::a_source_track}に$\alpha$線源のトラックの一例を示す．
-図\ref{fig::a_source_track}では検出ガスに\isoButaneHydro を用いた．
+図\ref{fig::a_source_track}では検出ガスに\SI{100}{\hecto\pascal}の\isoButaneHydro を用いた．
 \ref{sec::detection_gas_candidate}節では6種類の候補を考えたが，
 ここからは単体のiso-$\rm C_{4}H_{10}$を除いた5種類について考えていく．
 これは単体の\isoButane を検出ガスに用いた場合に，
@@ -77,7 +77,7 @@ MAIKo TPC で取得したトラックの横方向の変分を$\Delta strip$，�
   \end{minipage}
   \begin{minipage}{0.45\columnwidth}
     \centering
-    \includegraphics[clip, width=0.9\columnwidth]{drift_v_image.eps}
+    \includegraphics[clip, width=\columnwidth]{drift_v_image.eps}
   \end{minipage}
   \caption[\ang{30}に方向を限定した$\alpha$線と取得される画像データのイメージ．]
           {\ang{30}に方向を限定した$\alpha$線 (左) と取得される画像データ (右) のイメージ．}
@@ -89,9 +89,10 @@ $\alpha$線源を用いて測定したドリフト速度とMagboltz で計算し
 $\alpha$線源を用いて測定したドリフト速度と Magboltz を用いて計算したドリフト速度が概ね一致していることが分かる．
 ここで，Magboltz の計算値が\SI{0.014}{\milli\metre\per\nano\second}となっていないのは，
 MAIKo TPC の実際の運用を簡単にするために設定電圧を切りの良い値にしたためである．
-\Methane は実測とMagboltz による計算値に不一致が見られるが，検出ガスに含まれる水分の影響が疑われる．
-\Methane のみ\SI{50}{\hecto\pascal} とその他のガスと比較して圧力が半分であるため，不純物の影響が大きく出ていると考えられる．
-不純物のドリフト速度への影響は付録\ref{app::drift_speed_humid_dep}で述べる．
+\Methane は実測とMagboltz による計算値に不一致が見られるが，
+\Methane のみ\SI{50}{\hecto\pascal} とその他のガスと比較して圧力が半分であるため，
+不純物，特に水分の影響を強く受けていると考えられる．
+水分のドリフト速度へ与える影響は付録\ref{app::drift_speed_humid_dep}で述べる．
 \begin{table}
   \centering
   \caption{実測したドリフト速度とMagboltz を用いて計算したドリフト速度の比較．}
@@ -133,7 +134,8 @@ MAIKo TPC の実際の運用を簡単にするために設定電圧を切りの�
 %\end{figure}
 
 \subsection{電子増幅率}
-各部の電圧に対する電子増幅率の依存性を測定した．
+%各部の電圧に対する電子増幅率の依存性を測定した．
+GEM および$\mu$-PICによる電子の増幅率を測定した．
 増幅率は荷電粒子が検出ガス中を通過した際に発生させた電子数 ($N_{\mathrm{e}}$) と
 増幅後に$\mu$-PICによって収集された電子数 ($N'_{\mathrm{e}}$) から求めることができる．
 $N_{\mathrm{e}}$は検出ガス中での荷電粒子のエネルギー損失と検出ガスのW値（1つの電子対の生成に必要なエネルギー）から求める．
@@ -143,11 +145,12 @@ $N'_{\mathrm{e}}$は$\mu$-PICで収集した電荷から求める．
 検出ガス中で荷電粒子がエネルギーを損失すると，W値あたり平均1個の電子を電離する．
 そのため，荷電粒子のエネルギー損失をW値で除することで$N_{\mathrm{e}}$が求まる．
 各検出ガスにおけるエネルギー損失とW値~\cite{energy_per_ion_pair,pdg}を表\ref{tab::energy_loss_and_W_val}に示す．
+本研究ではでは${}^{241}\mathrm{Am}$からの$\alpha$線を用いて測定を行った．
 ${}^{241}\mathrm{Am}$からは\SI{5.48}{\mega\electronvolt}の$\alpha$線が放出される．
 今回の測定に用いた$\alpha$線源は線量を大きくするために，多くの${}^{241}\mathrm{Am}$が線源に含まれている．
 そのため，物質厚が大きくなっており，$\alpha$線が放出される前に線源中でエネルギーを損失してしまう．
 この線源から出ている$\alpha$粒子の持つエネルギーが平均\SI{4.2}{\mega\electronvolt}であることが過去の測定により確認している．
-今回の測定では\ang{0}方向の$\alpha$線を用いて測定した．
+今回の測定では\ang{0}方向に放出された$\alpha$線を用いて測定した．
 エネルギー損失は\SI{4.2}{\mega\electronvolt}の$\alpha$粒子が$\mu$-PIC 32 strip分の
 距離 (\SI{12.8}{\milli\metre}) で落とすエネルギーを示している．
 この距離で発生した電子が$\mu$-PIC の32 stripsで収集される．
@@ -184,6 +187,7 @@ FADC の入力インピーダンス\SI{50}{\ohm}で電流値を電圧値に変�
 \end{equation}
 各検出ガスの増幅率と電子の収集効率を畳み込んだ値を表\ref{tab::multiplying_rate}に示す．
 ここでは，GEMと$\mu$-PIC の両方による増幅率となっている．
+また，測定時のGEM や$\mu$-PICに印加した電圧を表\ref{tab::high_voltage_config_for_gain_meas}に示す．
 \begin{table}
   \centering
   \caption{各検出ガスの電子増幅率．}
@@ -200,6 +204,22 @@ FADC の入力インピーダンス\SI{50}{\ohm}で電流値を電圧値に変�
     \bottomrule
   \end{tabular}
 \end{table}
+\begin{table}
+  \caption{電子増幅率を測定した際の電圧設定．GEM のうちgrid 側をGEMt，$\mu$-PIC側をGEMbとする．}
+  \label{tab::high_voltage_config_for_gain_meas}
+  \centering
+  \begin{tabular}{cccccc}
+    \toprule
+    gas & plate (\si{\volt}) & grid (\si{\volt}) & GEMt (\si{\volt}) & GEMb (\si{\volt}) & $\mu$-PIC (\si{\volt}) \\
+    \midrule
+    \Methane         & $-1370$ & $-1290$ & $-560$ & $-150$ & $175$ \\
+    \MethaneHydro    & $-2105$ & $-1500$ & $-620$ & $-250$ & $420$ \\
+    \MethaneHerium   & $-1465$ & $-1200$ & $-600$ & $-250$ & $400$ \\
+    \isoButaneHydro  & $-2255$ & $-1300$ & $-600$ & $-250$ & $400$ \\
+    \isoButaneHerium & $-1430$ & $-970$ & $-600$ & $-250$ & $300$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 \subsection{トラックの幅}
 本実験の目的である3$\alpha$に崩壊するイベントでは観測されるトラックが太いと複数のトラックの区別が難しくなり，
@@ -207,9 +227,9 @@ FADC の入力インピーダンス\SI{50}{\ohm}で電流値を電圧値に変�
 そこで，\ang{0}の$\alpha$粒子によるトラックの幅を測定した．
 図\ref{fig::track_width}に示すように，
 トラックの幅にはanode strip 128~ch目のclock方向の幅を用いる．
-このようにして決定したトラックの幅を%表\ref{tab::track_width}，
+このようにして決定したトラックの幅とMagboltz を用いて計算した運動方向に対して垂直方向の拡散係数を%表\ref{tab::track_width}，
 図\ref{fig::diffusion_compare}に示す．
-図\ref{fig::diffusion_compare}から分かるようにトラックの幅と拡散係数には相関がある．
+図\ref{fig::diffusion_compare}から分かるようにトラックの幅と拡散係数には正の相関がある．
 拡散係数，トラックの幅ともに\isoButaneHydro が最も小さいことが分かる．
 \begin{figure}
   \centering
@@ -235,7 +255,6 @@ FADC の入力インピーダンス\SI{50}{\ohm}で電流値を電圧値に変�
 %    \bottomrule
 %  \end{tabular}
 %\end{table}
-
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.9\columnwidth]{diffusion_compare.eps}
@@ -258,16 +277,21 @@ Magboltz~\cite{magboltz}，SRIM~\cite{SRIM}を用いたシミュレーション�
 \item
   SrimTrack によりトラックの周囲に電子を生成する．
 \item
-  電子をMagboltz で求めたドリフト速度で読み出し領域へドリフトさせる．
+  電子をMagboltz で求めたドリフト速度と拡散係数に基づき読み出し領域へドリフトさせる．
 \item
-  読み出し領域に到達した電子1つにつき図\ref{fig::mu-pic_readout}に示すような電気信号を
+  電子のドリフト時間を信号処理回路の応答関数で畳み込む．
+  すなわち，読み出し領域に到達した電子1つにつき図\ref{fig::mu-pic_readout}に示すような電気信号を
   各strip の信号波形に加算する．
 \item
-  設定した閾値により，信号波形を白黒画像に変換しanode image とcathode image を生成する．
+  設定した信号波形の閾値に基づき，信号波形を白黒画像に変換しanode image とcathode image を生成する．
 \end{enumerate}
-$\alpha$線源を用いた場合のシミュレーションと測定の比較を図\ref{fig::track_comp_ch4},
-\ref{fig::track_comp_ch4_h2}, \ref{fig::track_comp_ch4_he}, 
-\ref{fig::track_comp_ic4h10_h2}, \ref{fig::track_comp_ic4h10_he}に示す．
+$\alpha$線源を用いた場合のシミュレーションと測定の比較を以下に示す．
+図\ref{fig::track_comp_ch4}は\SI{50}{\hecto\pascal}の\Methane におけるトラック,
+図\ref{fig::track_comp_ch4_h2}は\SI{100}{\hecto\pascal}の\MethaneHydro におけるトラック,
+図\ref{fig::track_comp_ch4_he}は\SI{100}{\hecto\pascal}の\MethaneHerium におけるトラック, 
+図\ref{fig::track_comp_ic4h10_h2}は\SI{100}{\hecto\pascal}の\isoButaneHydro におけるトラック,
+図\ref{fig::track_comp_ic4h10_he}は\SI{100}{\hecto\pascal}の\isoButaneHerium におけるトラックである．
+これらの$\alpha$線は図\ref{fig::drift_v_image}のように有感領域を貫通している．
 信号の閾値を\SI{0.1}{\milli\volt}とすると，それぞれの検出ガスでの$\alpha$線源によるトラックを，
 シミュレーションで再現できる．
 \begin{figure}
@@ -358,16 +382,22 @@ $\alpha$線源を用いた場合のシミュレーションと測定の比較を
 \end{figure}
 
 $\alpha$線源から放出される$\alpha$粒子のエネルギーは平均\SI{4.2}{\mega\electronvolt}である．
-一方で，本研究の目的である$0_2^+$状態からの崩壊$\alpha$粒子のエネルギーは数百\si{\kilo\electronvolt}である．
-そこで，$\alpha$線源の前に\SI{15}{\micro\metre}のカプトンを設置することで
+一方で，本研究で検出を目指している$0_2^+$状態からの崩壊$\alpha$粒子のエネルギーは数百\si{\kilo\electronvolt}である．
+そこで，$\alpha$線源の前に\SI{15}{\micro\metre}のカプトン膜を設置することで$\alpha$粒子のエネルギーを減衰させ，
 低エネルギー$\alpha$粒子での測定を行った．
-$\alpha$粒子のエネルギーは有感領域と線源の間にある検出ガスによってさらに低下し約\SI{1}{\mega\electronvolt}となる．
-図\ref{fig::track_ch4_loss}，\ref{fig::track_ch4_h2_loss}，\ref{fig::track_ch4_he_loss}，
-\ref{fig::track_ic4h10_h2_loss}，\ref{fig::track_ic4h10_he_loss}に示す．
-コリメータの\ang{30}の穴を用いたため，斜めのトラックとなっている．
+$\alpha$粒子のエネルギーは有感領域と線源の間にある検出ガスによってさらに低下し
+TPC の有感領域では約\SI{1}{\mega\electronvolt}となる．
+低エネルギー$\alpha$粒子のトラックを
+図\ref{fig::track_ch4_loss} [\Methane~(\SI{50}{\hecto\pascal})]，
+\ref{fig::track_ch4_h2_loss} [\MethaneHydro~(\SI{100}{\hecto\pascal})]，
+\ref{fig::track_ch4_he_loss} [\MethaneHerium~(\SI{100}{\hecto\pascal})]，
+\ref{fig::track_ic4h10_h2_loss} [\isoButaneHydro~(\SI{100}{\hecto\pascal})]，
+\ref{fig::track_ic4h10_he_loss} [\isoButaneHerium~(\SI{100}{\hecto\pascal})] に示す．
+コリメータによって$\alpha$線の方向を\ang{30}に制限したため，斜めのトラックとなっている．
 シミュレーションでは有感領域の横から\SI{500}{\kilo\electronvolt}の$\alpha$粒子を入射させた．
+これらの$\alpha$粒子はMAIKo TPC の有感領域中で停止している．
 $\alpha$線源から放出されるエネルギーに広がりがあるため，
-エネルギーを完全に一致できていないが，トラックの傾向は再現できている．
+エネルギーを完全に一致できていないが，トラックの太さの傾向は再現できている．
 \begin{figure}
   \centering
   \begin{subfigure}{0.48\columnwidth}
@@ -447,11 +477,11 @@ $\alpha$線源から放出されるエネルギーに広がりがあるため，
 \section{トリプルアルファ反応のシミュレーション}
 \label{sec::triple_alpha_simulation}
 $\alpha$線源から放出される$\alpha$粒子のトラックを再現することができたので，
-同じ設定で${}^{12}{\mathrm{C}}({\mathrm{n}},{\mathrm{n}}')3\alpha$のシミュレーションを行った．
+同じ設定で${}^{12}{\mathrm{C}}({\mathrm{n}},{\mathrm{n}}')3\alpha$反応をシミュレーションによって生成した．
 このシミュレーションでは以下のように3つの$\alpha$粒子を生成した．
 \begin{enumerate}
 \item
-  ${}^{12}\mathrm{C}$を\SI{14}{\mega\electronvolt}の中性子との散乱により$0_2^+$状態に励起させる．
+  ${}^{12}\mathrm{C}$を\SI{14}{\mega\electronvolt}の中性子との非弾性散乱により$0_2^+$状態に励起させる．
   この際，重心系で一様な散乱角で散乱させる．
 \item
   ${}^{12}\mathrm{C} (0_2^+)$を$\alpha$粒子と${}^{8}\mathrm{Be}$に位相空間で一様に崩壊させる．
@@ -460,13 +490,21 @@ $\alpha$線源から放出される$\alpha$粒子のトラックを再現する�
 \end{enumerate}
 このようにして得た$\alpha$粒子のトラックを生成する．
 トラックの生成方法は前節で述べた通りである．
-生成したトラックを図\ref{fig::three_alpha_ch4}, \ref{fig::three_alpha_ch4_h2}, \ref{fig::three_alpha_ch4_he},
-\ref{fig::three_alpha_ic4h10_h2}, \ref{fig::three_alpha_ic4h10_he}に示す．
+生成したトラックの例を
+図\ref{fig::three_alpha_ch4} [\Methane~(\SI{50}{\hecto\pascal})],
+\ref{fig::three_alpha_ch4_h2} [\Methane~(\SI{100}{\hecto\pascal})],
+\ref{fig::three_alpha_ch4_he} [\Methane~(\SI{100}{\hecto\pascal})],
+\ref{fig::three_alpha_ic4h10_h2} [\isoButaneHydro~(\SI{100}{\hecto\pascal})],
+\ref{fig::three_alpha_ic4h10_he} [\isoButaneHerium~(\SI{100}{\hecto\pascal})] に示す．
 ここでは，3つのトラックを確認できたイベントを示した．
 生成されたイベントの中には$\alpha$粒子のエネルギーと放出角度によっては，
-3本のトラックを確認できないイベントも含まれている．
-図\ref{fig::not_three_alpha_ch4}，\ref{fig::not_three_alpha_ch4_h2}，\ref{fig::not_three_alpha_ch4_he}，
-\ref{fig::not_three_alpha_ic4h10_h2}，\ref{fig::not_three_alpha_ic4h10_he}に2本しかトラックを確認できないイベントを示す．
+3本のトラックを個別に確認できないイベントも含まれている．
+図\ref{fig::not_three_alpha_ch4} [\Methane~(\SI{50}{\hecto\pascal})]，
+\ref{fig::not_three_alpha_ch4_h2} [\MethaneHydro~(\SI{100}{\hecto\pascal})]，
+\ref{fig::not_three_alpha_ch4_he} [\MethaneHerium~(\SI{100}{\hecto\pascal})]，
+\ref{fig::not_three_alpha_ic4h10_h2} [\isoButaneHydro~(\SI{100}{\hecto\pascal})]，
+\ref{fig::not_three_alpha_ic4h10_he} [\isoButaneHerium~(\SI{100}{\hecto\pascal})] に
+2本しかトラックを確認できないイベントの例を示す．
 
 \begin{figure}
   \centering
