@@ -8,13 +8,14 @@
 アクティブ標的TPC であるMAIKo TPC~\cite{MAIKo}を開発してきた．
 MAIKo TPC は検出ガスを封入する密封容器 (MAIKo チェンバー) と
 ドリフト電場を形成するケージ（ドリフトケージ）からなる．
-図\ref{pic::MAIKo_cage}に示すドリフトケージをMAIKo チェンバー内に設置して用いる．
-図\ref{fig::MAIKo_view}はMAIKo TPC 中で入射中性子と${}^{12}\mathrm{C}$の散乱によって，
-${}^{12}\mathrm{C} (0_2^+)$から3つの$\alpha$粒子が放出されたイベントを表す．
-MAIKo TPC は検出ガスを標的ガスとして用いるアクティブ標的であるため，
-$\alpha$粒子を大立体角で検出することができる．
+図\ref{fig::maiko_cage}および図\ref{pic::MAIKo_cage}にドリフトケージの模式図と写真を示す．
+ドリフトケージはMAIKo チェンバー内に設置して用いる．
+図\ref{fig::MAIKo_view}にMAIKo TPC 中で入射中性子と${}^{12}\mathrm{C}$の散乱によって，
+${}^{12}\mathrm{C} (0_2^+)$から放出された3つの$\alpha$粒子と取得されるトラック画像との対応を示す．
 MAIKo TPC では荷電粒子のトラックを2つの2次元平面に射影した画像として得られる．
 また，電荷を持たない中性子のトラックは検出されない．
+MAIKo TPC は検出ガスを標的ガスとして用いるアクティブ標的であるため，
+$\alpha$粒子を大立体角で検出することができる．
 
 TPC は荷電粒子のトラックを検出するために広く用いられているガス検出器である．
 図\ref{fig::drift_electrons}にTPC でトラックを検出するイメージを示す．
@@ -40,17 +41,25 @@ MAIKo TPC では3次元のトラックを2つの平面に射影した画像と�
 %%ドリフトケージはMAIKo チェンバー内に設置して用いる．
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.8\columnwidth]{IMG_20190731_110230_clpd.jpg}
+  \includegraphics[clip, width=0.65\columnwidth]{maiko.pdf}
+  \caption{MAIKo TPC の概観図．
+    検出ガスに含まれる${}^{12}\mathrm{C}$が右から入射した中性子（青色）と散乱し
+    3つの$\alpha$粒子に崩壊したときを模している．}
+  \label{fig::maiko_cage}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.6\columnwidth]{IMG_20190731_110230_clpd.jpg}
 %  \includegraphics[clip, width=0.8\columnwidth]{IMG_20190731_110230_drwd.jpg}
   \caption[ドリフトケージの概観．]
-          {ドリフトケージの概観．ケージの上側に読み出し面が取り付けられている．}
+          {ドリフトケージの概観．ケージの上側に読み出し面が取り付けられている．
+          図\ref{fig::maiko_cage}および図\ref{fig::MAIKo_view}とは上下が反転している．}
   \label{pic::MAIKo_cage}
 \end{figure}
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{MAIKo.eps}
-  \caption[MAIKo TPC の概観図．]{MAIKo TPC の概観図．
-    図\ref{fig::MAIKo_view}の模式図とはドリフト方向が上下が反転している．
+  \caption{MAIKo TPC で取得される画像と実際の荷電粒子のトラックとの対応．
     図ではTPC の中の${}^{12}\mathrm{C}$が右から入射した中性子 (青) と散乱し，
     3つの$\alpha$粒子 (赤) に崩壊した事象を表す．
     anode image ($zy$平面) と cathode image ($xy$平面) の2平面に荷電粒子のトラックが射影される（茶色の線）．
