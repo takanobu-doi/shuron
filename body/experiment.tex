@@ -92,7 +92,7 @@ DC ビームラインで生成された中性子はトリチウムターゲッ�
   \caption[大実験室およびパルスビームライン．]
           {大実験室およびパルスビームライン．
             写真中央にパルスビームラインのトリチウムターゲットが設置されている．
-          写真右手前から加速されたデューテリウムが照射される．}
+          写真左手前から加速されたデューテリウムが照射される．}
   \label{pic::pulse_beam_line}
 \end{figure}
 %\begin{figure}
@@ -194,8 +194,9 @@ $\alpha$粒子の検出効率を求めた．
 中性子を遮蔽する物質として，陽子を多く含むポリエチレンや吸収断面積が大きいホウ素が広く用いられている．
 ポリエチレンとホウ素入りポリエチレンでの中性子の遮蔽度合いをPHITS (Particle and Heavy Ion Transport code System)
 ver.~3.14~\cite{phits}を用いて計算した．
-PHITS は原子力機構が中心となって開発を行っている物質中での放射線の挙動をシミュレートするモンテカルロ計算コードである．
-PHITS の入力ファイルを付録\ref{chap::phits-input}に示す．
+PHITS は日本原子力研究開発機構が中心となって開発を行っている物質中での
+放射線の挙動をシミュレートするモンテカルロ計算コードである．
+今回の計算に用いたPHITS の入力ファイルを付録\ref{chap::phits-input}に示す．
 図\ref{collimator_xy_pos}は中性子がコリメータを通過したときの位置分布である．
 %ポリエチレンとホウ素入りポリエチレンの両方共，半径\SI{10}{\milli\metre}のみ多くの中性子が通過していることが分かる．
 %また，遮蔽されている部分は中心と比較して1桁以上中性子の量が少ないことが分かる．
@@ -206,7 +207,7 @@ PHITS の入力ファイルを付録\ref{chap::phits-input}に示す．
 ポリエチレン，ホウ素入りポリエチレンともにコリメータの穴の部分に対して遮蔽されている部分は
 中性子の量が2桁以上少なく，十分に遮蔽できていることが分かる．
 また，通過してきた中性子のエネルギーはほとんど\SI{14}{\mega\electronvolt}であり，
-単色エネルギーが損なわれていないことが分かる．
+エネルギーの単色性が損なわれていないことが分かる．
 \begin{figure}
   \centering
   \begin{subfigure}{\columnwidth}
@@ -260,7 +261,8 @@ PHITS の入力ファイルを付録\ref{chap::phits-input}に示す．
 \end{figure}
 
 \subsection{中性子の収量}
-PHITS による計算では\SIrange{0}{10}{\milli\metre}の範囲の
+PHITS による計算ではトリチウム標的で生成された中性子のうち，
+\SIrange{0}{10}{\milli\metre}の範囲で
 \SIrange{13.9}{14.1}{\mega\electronvolt}の中性子が通過してくる割合は
 \SI{8.14e-4}{\percent}となる．
 %\SI{4.07e-5}{\per\mega\electronvolt\per source}となる．
@@ -277,9 +279,9 @@ OKTAVIAN のDCビームラインで生成される中性子が\SI{5e9}{\per\seco
 %$\theta_{\text{c.m.}}$は入射中性子の運動方向に対する${}^{12}\mathrm{C}$の極角である．
 図\ref{fig::detection_efficiency_beam_axis}から分かるように，
 $z$座標が小さいまたは大きい場所で反応が起きた場合に，
-崩壊してできた$\alpha$粒子が有感領域から出やすくなるため検出効率が低下している．
+崩壊してできた$\alpha$粒子が有感領域から出る確率が大きくなるため検出効率が低下している．
 また，図\ref{fig::detection_efficiency_theta_cm}から分かるように，
-$\theta_{\text{c.m.}}$が小さいところで検出効率が低下している．
+$\theta_{\text{c.m.}}$が大きいところで検出効率が低下している．
 これは，$\theta_{\text{c.m.}}$が大きいところでは後方散乱となり中性子から多くのエネルギーを受け取り，
 崩壊した$\alpha$粒子が全体的に$z$軸正の方向にブーストされることで有感領域から出ていきやすくなるためである．
 \begin{figure}
@@ -319,7 +321,7 @@ ${}^{12}\mathrm{C}$を$0_2^+$状態に励起させることができる中性子
 図\ref{fig::detection_efficiency_theta_cm_low}に示す．
 図\ref{fig::detection_efficiency_beam_axis}と比較して図\ref{fig::detection_efficiency_beam_axis_low}は，
 \SI{50}{\milli\metre}よりも大きいところで検出効率が小さく，小さいところでは検出効率が大きくなっていることが分かる．
-これは，前方散乱において\SI{14}{\mega\electronvolt}中性子のほうが\SI{8.5}{\mega\electronvolt}中性子より
+これは，前方散乱では\SI{14}{\mega\electronvolt}中性子のほうが\SI{8.5}{\mega\electronvolt}中性子より
 エネルギーの移行が小さいためである．
 図\ref{fig::kinema_cm}に${}^{12}\mathrm{C}(-_2^+)$の重心系での散乱角とエネルギーの関係を示す．
 実線は\SI{14}{\mega\electronvolt}の中性子と散乱したとき，
@@ -366,7 +368,7 @@ ${}^{12}\mathrm{C}(0_2^2)$の持つエネルギーの広がりが小さいこと
 \SI{14}{\mega\electronvolt}のときと同様に100~events をeye-scan によって解析を行った．
 eye-scan で決定したトラックの本数を表\ref{tab::eye-scan_low}に示す．
 \SI{14}{\mega\electronvolt}のときと同様に高い割合で3つのトラックを識別できていることが分かる．
-図\ref{fig::ExC_low}にeye-scan で決定した${}^{12}\mathrm{C}^{*}$の励起エネルギーを示す．
+図\ref{fig::ExC_low}にeye-scan で決定した${}^{12}\mathrm{C}$の励起エネルギーを示す．
 励起エネルギー分布の平均は\SI{7.68}{\mega\electronvolt}，標準偏差は\SI{17.0}{\kilo\electronvolt}であり，
 励起エネルギーも良く再構成されていることが分かる．
 本研究で考えている実験条件では，中性子のエネルギーに関わらず測定を行うことができることが分かる．
@@ -398,9 +400,10 @@ eye-scan で決定したトラックの本数を表\ref{tab::eye-scan_low}に示
 \end{figure}
 
 \section{期待される収量}
-Ref.~\cite{takahashietal,kondoetal}によると${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}(0_{2}^{+})$の
-断面積 ($\sigma$) は\SI{8.36}{\milli\barn}である．
-OKTAVIAN で現在得られるビーム量は最大で$4\pi$に\SI{5e9}{\per\second}である．
+文献~\cite{takahashietal,kondoetal}によると\SI{14}{\mega\electronvolt}の中性子による
+${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}(0_{2}^{+})$反応の
+全断面積 ($\sigma$) は\SI{8.36}{\milli\barn}である．
+OKTAVIAN で現在得られる中性子ビーム強度は最大で$4\pi$に\SI{5e9}{\per\second}である．
 この時，半径\SI{10}{\milli\metre}のコリメータからは，$N_{\text{b}}=$\SI{1.95e4}{\per\second}の中性子が得られる．
 検出効率 ($\varepsilon_{\text{det.}}$) が\SI{48.2}{\percent}，
 解析効率 ($\varepsilon_{\text{ana.}}$) が\SI{87}{\percent}である．
