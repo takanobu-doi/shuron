@@ -77,7 +77,7 @@ MAIKo TPC で取得したトラックの横方向の変分を$\Delta strip$，�
   \end{minipage}
   \begin{minipage}{0.45\columnwidth}
     \centering
-    \includegraphics[clip, width=0.9\columnwidth]{drift_v_image.eps}
+    \includegraphics[clip, width=\columnwidth]{drift_v_image.eps}
   \end{minipage}
   \caption[\ang{30}に方向を限定した$\alpha$線と取得される画像データのイメージ．]
           {\ang{30}に方向を限定した$\alpha$線 (左) と取得される画像データ (右) のイメージ．}
@@ -89,9 +89,10 @@ $\alpha$線源を用いて測定したドリフト速度とMagboltz で計算し
 $\alpha$線源を用いて測定したドリフト速度と Magboltz を用いて計算したドリフト速度が概ね一致していることが分かる．
 ここで，Magboltz の計算値が\SI{0.014}{\milli\metre\per\nano\second}となっていないのは，
 MAIKo TPC の実際の運用を簡単にするために設定電圧を切りの良い値にしたためである．
-\Methane は実測とMagboltz による計算値に不一致が見られるが，検出ガスに含まれる水分の影響が疑われる．
-\Methane のみ\SI{50}{\hecto\pascal} とその他のガスと比較して圧力が半分であるため，不純物の影響が大きく出ていると考えられる．
-不純物のドリフト速度への影響は付録\ref{app::drift_speed_humid_dep}で述べる．
+\Methane は実測とMagboltz による計算値に不一致が見られるが，
+\Methane のみ\SI{50}{\hecto\pascal} とその他のガスと比較して圧力が半分であるため，
+不純物，特に水分の影響を強く受けていると考えられる．
+水分のドリフト速度へ与える影響は付録\ref{app::drift_speed_humid_dep}で述べる．
 \begin{table}
   \centering
   \caption{実測したドリフト速度とMagboltz を用いて計算したドリフト速度の比較．}
@@ -287,6 +288,7 @@ Magboltz~\cite{magboltz}，SRIM~\cite{SRIM}を用いたシミュレーション�
 $\alpha$線源を用いた場合のシミュレーションと測定の比較を図\ref{fig::track_comp_ch4},
 \ref{fig::track_comp_ch4_h2}, \ref{fig::track_comp_ch4_he}, 
 \ref{fig::track_comp_ic4h10_h2}, \ref{fig::track_comp_ic4h10_he}に示す．
+これらの$\alpha$線は図\ref{fig::drift_v_image}のように有感領域を貫通している．
 信号の閾値を\SI{0.1}{\milli\volt}とすると，それぞれの検出ガスでの$\alpha$線源によるトラックを，
 シミュレーションで再現できる．
 \begin{figure}
@@ -385,6 +387,7 @@ $\alpha$粒子のエネルギーは有感領域と線源の間にある検出ガ
 \ref{fig::track_ic4h10_h2_loss}，\ref{fig::track_ic4h10_he_loss}に示す．
 コリメータの\ang{30}の穴を用いたため，斜めのトラックとなっている．
 シミュレーションでは有感領域の横から\SI{500}{\kilo\electronvolt}の$\alpha$粒子を入射させた．
+これらの$\alpha$粒子はMAIKo TPC の有感領域中で停止している．
 $\alpha$線源から放出されるエネルギーに広がりがあるため，
 エネルギーを完全に一致できていないが，トラックの傾向は再現できている．
 \begin{figure}
