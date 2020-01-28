@@ -2,6 +2,49 @@
 \begin{document}
 \chapter{中性子ビームを用いた測定に向けて}
 \label{chap::experiment}
+\section{14 MeV 中性子}
+\SI{14}{\mega\electronvolt}は式\eqref{eq::dt}に示すデューテリウムとトリチウムの反応（DT 反応）を
+用いて生成可能なエネルギーである．
+この反応は2体反応であるため，放出角度により中性子のエネルギーが一意に決まる．%単色エネルギーの中性子となる．
+\begin{equation}
+  \mathrm{d} + \mathrm{t} \rightarrow \alpha\ (\SI{3.5}{\mega\electronvolt}) + \mathrm{n}\ (\SI{14}{\mega\electronvolt})
+  \label{eq::dt}
+\end{equation}
+単色エネルギーの中性子を用いることで，中性子のエネルギー測定を行う必要が無くなる．
+%核破砕で生成される
+%このDT 反応で生成される$14~{\rm MeV}$の中性子と炭素との反応は核融合炉の開発で重要である．
+ITER~\cite{iter}などの核融合炉ではこのDT 反応を用いて質量エネルギーを取り出す．
+核融合炉の中で生成される\SI{14}{\mega\electronvolt}の中性子は構造材の原子核と反応し損傷させるため，
+構造材の中に多く含まれる炭素との反応が詳しく調べられている~\cite{takahashietal,kondoetal}．
+${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'+3\alpha)$反応の全断面積は\SI{209}{\milli\barn}，
+分岐比は表\ref{tab::branchingratio}の通りである．
+%微分断面積の角度分布を図\ref{fig::sig_angle_dist}に示す．
+%これらの測定値と本研究での測定値を比較することによって測定方法の妥当性を確認することが可能となる．
+%単色エネルギーの中性子を生成可能であること，他データと測定結果の比較が可能であることの2点より，
+%測定方法の検証として\SI{14}{\mega\electronvolt}の中性子ビームを用いて
+%${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}(0_2^+)$反応の断面積の測定を行う．
+
+\begin{table}
+  \centering
+  \caption[${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'+3\alpha)$反応のチャンネルとその分岐比．]
+          {${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'+3\alpha)$反応のチャンネルとその分岐比~\cite{kondoetal}．
+            ${}^{12}\mathrm{C}$の励起状態から$3\alpha$に，${}^{9}\mathrm{Be}$の励起状態から$2\alpha$に崩壊する．}
+  \label{tab::branchingratio}
+  \begin{tabular}{lc}
+    \toprule
+    \multicolumn{1}{c}{Reaction channel} & Branching ratio (\%)\\
+    \midrule
+    ${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}^{*}$(\SI{7.65}{\mega\electronvolt}) & 4\\
+    ${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}^{*}$(\SI{9.64}{\mega\electronvolt}) & 33\\
+    ${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}^{*}$(\SI{10.3}{\mega\electronvolt}) & 16\\
+    ${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}^{*}$(\SI{10.84}{\mega\electronvolt}) & 6\\
+    ${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}^{*}$(\SI{11.83}{\mega\electronvolt}) & 4\\
+    ${}^{12}\mathrm{C}(\mathrm{n},\alpha){}^{9}\mathrm{Be}^{*}$(\SIrange{1.68}{3.05}{\mega\electronvolt}) & 24\\
+    ${}^{12}\mathrm{C}(\mathrm{n},\alpha){}^{9}\mathrm{Be}^{*}$(\SI{4.7}{\mega\electronvolt}) & 13\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
 \section{大阪大学14 MeV 中性子工学実験装置 (OKTAVIAN)}
 大阪大学工学研究科のOKTAVIAN~\cite{oktavian} ではDT 反応により\SI{14}{\mega\electronvolt}の中性子を発生させることができる．
 図\ref{pic::oktavian-sketch}にOKTAVIAN の施設図を示す．
