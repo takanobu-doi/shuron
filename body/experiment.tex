@@ -7,7 +7,7 @@
 図\ref{pic::oktavian-sketch}にOKTAVIAN の施設図を示す．
 OKTAVIAN は1981年から運転を開始し，核融合中性子工学研究に用いられてきた．
 コッククロフト・ワルトン型加速器を用いて加速したデューテリウムをトリチウムターゲットに照射することで，
-\SI{14}{\mega\electronvolt} の中性子を生成する．
+$\mathrm{t}(\mathrm{d},\alpha)\mathrm{n}$反応により\SI{14}{\mega\electronvolt} の中性子を生成する．
 OKTAVIAN にはパルスビームラインとDCビームラインの2つのビームラインがある．
 パルスビームラインは大実験室に設置されたトリチウムターゲットを用いて，
 DC ビームラインは重照射室に設置されたトリチウムターゲットを用いて中性子を生成する．
@@ -92,7 +92,7 @@ DC ビームラインで生成された中性子はトリチウムターゲッ�
   \includegraphics[clip, width=0.7\columnwidth]{sensitive_area.eps}
   \caption[ビームサイズが大きいときの散乱事象．]
           {ビームサイズが大きいときの散乱事象．
-            右上のように領域外にトラックが出ているのか，右下のように領域内で停止したのか区別ができない．}
+            右上のように領域外にトラックが出ているのか，右下のように領域内で停止したのか区別できない．}
   \label{fig::sensitive_area}
 \end{figure}
 
@@ -105,7 +105,7 @@ DC ビームラインで生成された中性子はトリチウムターゲッ�
 この壁に半径\SI{55}{\milli\metre}の穴が設けられており，そこから大実験室側へ中性子を取り出す．
 この壁の穴にコリメータを設置することで任意の形に中性子ビームの形状を設定できる．
 ここでは，円柱の中央に半径$r$~\si{\milli\metre}の穴が開いたコリメータを考える．
-すると，立体角は$\pi\times r^2/\left(2.46\times10^3\right)^2$となる．
+このとき，立体角は$\pi\times r^2/\left(2.46\times10^3\right)^2$となる．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.65\columnwidth]{jushosha_room.eps}
@@ -210,7 +210,7 @@ PHITS の入力ファイルを付録\ref{chap::phits-input}に示す．
   \caption[ポリエチレンで作成したコリメータ．]
           {ポリエチレンで作成したコリメータ．
             半径\SI{53}{\milli\metre}，長さ\SI{100}{\milli\metre}の円柱の中央に，
-          半径\SI{1}{\milli\metre}の穴が開いている．}
+          半径\SI{10}{\milli\metre}の穴が開いている．}
   \label{pic::collimator}
 \end{figure}
 
@@ -227,7 +227,8 @@ OKTAVIAN のDCビームラインで生成される中性子が\SI{5e9}{\per\seco
 \SI{10}{\milli\metre}のコリメータを用いたときの検出効率は\SI{48.2}{\percent}であった．
 検出効率は散乱点，散乱角度に依存していると予想される．
 検出効率の散乱点の$z$座標依存性を図\ref{fig::detection_efficiency_beam_axis}に，
-${}^{12}\mathrm{C}$の重心系での散乱角 ($\theta_{\text{c.m.}}$) 依存性を図\ref{fig::detection_efficiency_theta_cm}に示す．
+重心系での散乱角 ($\theta_{\text{c.m.}}$) 依存性を
+図\ref{fig::detection_efficiency_theta_cm}に示す．
 %$\theta_{\text{c.m.}}$は入射中性子の運動方向に対する${}^{12}\mathrm{C}$の極角である．
 図\ref{fig::detection_efficiency_beam_axis}から分かるように，
 $z$座標が小さいまたは大きい場所で反応が起きた場合に，
@@ -269,11 +270,11 @@ ${}^{12}\mathrm{C}$を$0_2^+$状態に励起させることができる中性子
 すると，検出効率は\SI{51.6}{\percent}となる．
 微分断面積の角度分布は\SI{14}{\mega\electronvolt}の中性子と${}^{12}\mathrm{C}$の散乱と同じであると仮定した．
 検出効率の散乱点の$z$座標依存性を図\ref{fig::detection_efficiency_beam_axis_low}に，
-${}^{12}\mathrm{C}$の重心系での散乱角 ($\theta_{\text{c.m.}}$) 依存性を
+重心系での散乱角 ($\theta_{\text{c.m.}}$) 依存性を
 図\ref{fig::detection_efficiency_theta_cm_low}に示す．
 図\ref{fig::detection_efficiency_beam_axis}と比較して図\ref{fig::detection_efficiency_beam_axis_low}は，
 \SI{50}{\milli\metre}よりも大きいところで検出効率が小さく，小さいところでは検出効率が大きくなっていることが分かる．
-これは，前方散乱に置いて\SI{14}{\mega\electronvolt}中性子のほうが\SI{8.5}{\mega\electronvolt}中性子のほうが
+これは，前方散乱において\SI{14}{\mega\electronvolt}中性子のほうが\SI{8.5}{\mega\electronvolt}中性子より
 エネルギーの移行が小さいためである．
 例えば，$\theta_{\text{c.m.}} = \ang{0}$のとき，
 \SI{14}{\mega\electronvolt}中性子と散乱した${}^{12}\mathrm{C}(0_2^+)$の
