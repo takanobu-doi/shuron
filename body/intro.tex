@@ -6,7 +6,7 @@
 \label{seq::nucleaosynthesis}
 身の回りには多種多様な物質が存在しており，
 これらの物質は全て原子から構成されている．
-現在の地球には水素（原子番号1）からウラン（原子番号92）までの元素が天然で存在してる．
+現在の地球には水素（原子番号1）からウラン（原子番号92）までの元素が天然に存在してる．
 原子は更に小さい原子核と電子から構成されており，原子核は陽子と中性子で構成されることが知られている．
 原子核に含まれる陽子の数が元素の原子番号となる．
 現在までに天然と人工を合わせて118種類の元素が確認されている．
@@ -14,19 +14,24 @@
 宇宙が膨張し温度が下がるにしたがって，陽子と中性子が生成された．
 その後，原子核反応を起こすことで様々な原子核が合成された．
 宇宙の初期には，水素とヘリウムと僅かな軽元素しか合成されなかった考えられている．
-これは，質量数 (A) が5と8の原子核に安定な原子核が存在しないことに由来する．
-初期の宇宙では陽子と中性子が融合して原子核が大きくなっていくが，
-A = 5と8の原子核が生成してもすぐにA = 4 以下の軽い原子核に分裂してしまうのである．
+これは，質量数 ($A$) が5と8の原子核に安定な原子核が存在しないことに由来する．
+初期の宇宙では陽子や中性子が融合して原子核が大きくなっていくが，
+$A = $5と8の原子核が生成してもすぐに$A = $4 以下の軽い原子核に分裂してしまうのである．
 
 %ヘリウムに比べて水素の方が多いため，水素を主成分とする恒星しか存在しなかったと考えられる．
 宇宙に存在する元素のうち殆どが水素であるため，生まれたばかりの恒星は水素を主成分とする．
 重力により収縮し中心温度が\SI{e7}{\kelvin}を超えると，
 陽子（水素）同士が連鎖的に反応するようになる (ppチェイン)．
 ppチェインでは図\ref{fig::pp_chain}に示した3つの系列が重要とされる．
+%chain~1 では3つの陽子から1つの${}^{3}\mathrm{He}$が形成され，
+%2つ${}^{3}\mathrm{He}$から1つの$\alpha粒子と2つの陽子が生成される．
+chain~1 では合計6つの陽子から1つの$\alpha$粒子と2つの陽子が生成される．
+chain~2, 3 では合計で4つの陽子と1つの$\alpha$粒子から2つの$\alpha$粒子が生成される．
+%chain~2, 3 では$A = $7
 どの系列も最終的に4つの陽子から1つの${}^{4}\mathrm{He}$原子核（$\alpha$粒子）が生成される．
-ppチェインのように粒子が順番に原子核に吸収される反応では，
-A = 5, 8の壁を超えることはできない．
-この壁を超えるためにはA = 4以下の原子核からA = 9以上の原子核が直接生成されなければならない．
+ppチェインのように粒子（陽子や$3{}^{3}\mathrm{He}$など）が順番に一つずつ原子核に吸収される反応では，
+$A = $8の壁を超えることはできない．
+この壁を超えるためには$A = $4以下の原子核から$A = $9以上の原子核が直接生成されなければならない．
 %\begin{gather}
 %  {\rm p}({\rm p},\beta^{+}\nu){\rm d}({\rm p},\gamma){}^{3}{\rm He}({}^{3}{\rm He},2{\rm p})\alpha\label{eq::pp1}\\
 %  {\rm p}({\rm p},\beta^{+}\nu){\rm d}({\rm p},\gamma){}^{3}{\rm He}(\alpha,\gamma){}^{7}{\rm Be}({\rm e}^{-},\nu){}^{7}{\rm Li}({\rm p},\alpha)\alpha\label{eq::pp2}\\
@@ -57,22 +62,23 @@ A = 5, 8の壁を超えることはできない．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.9\columnwidth]{pp_chain.eps}
-  \caption{代表的なpp チェイン．pp チェインでは4つの陽子から1つの$\alpha$が生成される．}
+  \caption{代表的なpp チェイン．pp チェインでは4つの陽子から1つの$\alpha$粒子が生成される．}
   \label{fig::pp_chain}
 \end{figure}
 
 ppチェインにより$\alpha$粒子が十分に生成された恒星では水素よりも重い$\alpha$粒子が
 より恒星の中心に集まり$\mathrm{He}$コアを生成する．
 $\mathrm{He}$コアが重力により圧縮され温度が約\SI{e8}{\kelvin}に達するとヘリウム燃焼が始まる．
-$\mathrm{He}$コアには十分な量の$\alpha$が存在するため，
-図\ref{fig::triple_alpha}のように2つの$\alpha$から2$\alpha$クラスター状態である${}^{8}\mathrm{Be}$が合成され，
-さらに，崩壊するより早くもう1つ$\alpha$が融合して${}^{12}\mathrm{C}^{*}$が生成される反応が起こる．
-このときに作られる${}^{12}\mathrm{C}^{*}$の多くはFred Hoyle が予言した$3\alpha$の
-共鳴状態 (Hoyle状態，${\rm Ex} = \SI{7.65}{\mega\electronvolt}$，$0_{2}^{+}$)~\cite{hoyle_state}となる．
+$\mathrm{He}$コアには十分な量の$\alpha$粒子が存在するため，
+図\ref{fig::triple_alpha}のように2つの$\alpha$粒子から2$\alpha$クラスター状態である${}^{8}\mathrm{Be}$が合成され，
+さらに，${}^{8}\mathrm{Be}$が崩壊するより早くもう1つの$\alpha$粒子が
+融合して${}^{12}\mathrm{C}$の励起状態 (${}^{12}\mathrm{C}^{*}$) が生成される反応が起こる．
+このときに作られる${}^{12}\mathrm{C}^{*}$の多くはFred Hoyle が予言した$3\alpha$粒子の
+共鳴状態 (Hoyle状態，$E_{x} = \SI{7.65}{\mega\electronvolt}$，$0_{2}^{+}$)~\cite{hoyle_state}となる．
 ${}^{12}{\rm C} (0_2^+)$が$\gamma$線を放出し脱励起することで安定な${}^{12}\mathrm{C}$原子核になる
  (図\ref{fig::triple_alpha}~左) ．
 この3つの$\alpha$粒子から${}^{12}\mathrm{C}$が直接合成される反応はトリプルアルファ反応と呼ばれる．
-トリプルアルファ反応が恒星中で起こることでA = 4からA = 12へと直接移るため，A = 5, 8の壁を乗り越えることができ，
+トリプルアルファ反応が恒星中で起こることで$A = $4から$A = $12へと直接移るため，$A = $5, 8の壁を乗り越えることができ，
 さらに重い$\mathrm{O}$や$\mathrm{Si}$などの合成へ進んでいく．
 そのため，トリプルアルファ反応は宇宙元素合成において重要な原子核反応の1つである．
 %\begin{equation}
@@ -101,10 +107,10 @@ $\gamma$線を放出することによって脱励起し，${}^{12}\mathrm{C}$�
 近年，高密度環境下では$\gamma$線による脱励起以外に，
 図\ref{fig::triple_alpha}~(右) のように粒子（陽子，中性子，$\alpha$粒子など）との
 非弾性散乱による脱励起の反応率が増加することが指摘されている~\cite{hotdensemedium}．
-これによりg.s.や$2_{1}^{+}\ ({\rm Ex} = \SI{4.44}{\mega\electronvolt})$ への脱励起が増加し，
+これにより$0_2^+$状態からg.s.や$2_{1}^{+}\ (E_{x} = \SI{4.44}{\mega\electronvolt})$ への脱励起が増加し，
 トリプルアルファ反応が劇的に促進されると考えられている．
 粒子の中でも中性子は電荷を持っておらず，クーロン斥力を受けずに反応することができるため，
-特にトリプルアルファ反応を促進する効果が大きいと考えられる．
+特にトリプルアルファ反応を促進する効果が大きい．
 
 %\begin{equation}
 %  \begin{array}{llll}
@@ -123,7 +129,7 @@ $\gamma$線を放出することによって脱励起し，${}^{12}\mathrm{C}$�
 %\end{figure}%
 
 %${}^{12}\mathrm{C}$と中性子の反応レートは
-まず，脱励起の逆反応である${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}(0_2^+)$反応を考える．
+${}^{12}\mathrm{C}(0_2^+)(\mathrm{n}',\mathrm{n}){}^{12}\mathrm{C}$反応の
 体積当たりの反応率は
 \begin{equation}
   r = N_{\text{n}}N_{{}^{12}\mathrm{C}}\braket{\sigma v}% \si[per-mode=reciprocal]{\per\cubic\centi\metre\per\second}
@@ -131,45 +137,46 @@ $\gamma$線を放出することによって脱励起し，${}^{12}\mathrm{C}$�
 \end{equation}
 で与えられる．
 ここで，$N_{\text{n}}$は中性子の個数密度，
-$N_{{}^{12}\mathrm{C}}$は${}^{12}\mathrm{C}$の個数密度を表す．
-$\sigma$は中性子との散乱により始状態 (g.s.または$2_{1}^{+}$) から$0_2^+$状態へ励起する全断面積であり，
+$N_{{}^{12}\mathrm{C}}$は${}^{12}\mathrm{C}(0_2^+)$の個数密度を表す．
+$\sigma$は中性子との散乱により始状態 ($0_2^+$) からg.s.または$2_{1}^{+}$状態へ脱励起する全断面積であり，
 $v$は中性子と${}^{12}\mathrm{C}$の相対速度である．
-相対速度がMaxwell分布に従うとすると，${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n'}){}^{12}\mathrm{C} (0_2^+)$では
+相対速度がMaxwell分布に従うとすると，${}^{12}\mathrm{C}(0_2^+)(\mathrm{n'},\mathrm{n}){}^{12}\mathrm{C}$では，
 \begin{equation}
-  \braket{\sigma v}_{\mathrm{nn'}} =
+  \braket{\sigma v}_{\mathrm{n'n}} =
   \left(\frac{8}{\pi\mu}\right)^{1/2}\left(\frac{1}{kT}\right)^{3/2}
-  \int^{\infty}_{0}E'\sigma_{\mathrm{nn'}}(E')\exp(-E'/kT)dE'
+  \int^{\infty}_{0}E'\sigma_{\mathrm{n'n}}(E')\exp(-E'/kT)dE'
   \label{eq::sigmann'}
 \end{equation}
 となる．
-$T$は温度，$\mu$は換算質量，$\sigma_{\mathrm{n}\mathrm{n}'}$は${}^{12}\mathrm{C}$の中性子非弾性散乱断面積である．
-我々が考える反応は上記の逆過程 ${}^{12}\mathrm{C}(0_2^+)(\mathrm{n}',\mathrm{n}){}^{12}\mathrm{C}$ なので，
+$T$は温度，$\mu$は換算質量，$\sigma_{\mathrm{n}'\mathrm{n}}$は${}^{12}\mathrm{C}(0_2^+)$の中性子非弾性散乱断面積である．
+ここで上記の逆過程である ${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}(0_2^+)$ を考えると，
 \begin{equation}
-  \braket{\sigma v}_{\mathrm{n'n}} = \left(\frac{2I+1}{2I'+1}\right)
-  \exp(-Q/kT)\braket{\sigma v}_{\mathrm{nn'}}
+  \braket{\sigma v}_{\mathrm{nn'}} = \left(\frac{2I'+1}{2I+1}\right)
+  \exp(Q/kT)\braket{\sigma v}_{\mathrm{n'n}}
   \label{eq::sigman'n}
 \end{equation}
-となる．
+という関係にある．
 ここで，$I$および$I'$はそれぞれ始状態 (g.s.または$2_{1}^{+}$)および終状態 ($0_2^+$状態) のスピンである．
 $Q$は\SI{-7.65}{\mega\electronvolt} (始状態がg.s.の場合) または
 \SI{-3.21}{\mega\electronvolt} (始状態が$2_{1}^{+}$の場合) となる．
 ${}^{12}\mathrm{C} (0_2^+)$の中性子非弾性散乱による脱励起の寿命は
 \begin{equation}
-  \tau_{\mathrm{n'n}}({}^{12}\mathrm{C} (0_2^+)) =
+  \tau_{\mathrm{n'n}}\left[{}^{12}\mathrm{C} (0_2^+)\right] =
   (N_{\mathrm{n}}\braket{\sigma v}_{\mathrm{n'n}})^{-1} %\si{\second}
   \label{eq::tau}
 \end{equation}
 となる．
 
 中性子非弾性散乱による脱励起の寿命と$\gamma$線による脱励起の寿命 ($\tau_{\gamma} = \SI{1.710e-13}{\second}$) との比を
-$R$とすると，式\eqref{eq::sigmann'}，\eqref{eq::sigman'n}，\eqref{eq::tau}
+$R$とすると，式\eqref{eq::sigmann'}，\eqref{eq::sigman'n}，\eqref{eq::tau}から
 \begin{equation}
   R = 6.557\times10^{-6}\times\rho_{\mathrm{n}}T_{9}^{-1.5}\mathrm{C}_{{\text{spin}}}
   \int^{\infty}_{0}\sigma_{\mathrm{nn}'}(E)(E-Q)\exp(-11.605E/T_{9})dE
   \label{eq::R}
 \end{equation}
 と表される．
-$E$はc.m.系の閾値からのエネルギー ($E=E'+Q$)，$\rho_{\mathrm{n}}$は中性子の質量密度 (\si{\gram\per\cubic\centi\metre})，
+$E$は重心系（c.m.系）の閾値からのエネルギー ($E=E'+Q$)，$\rho_{\mathrm{n}}$は
+中性子の質量密度 (\si{\gram\per\cubic\centi\metre})，
 $\sigma_{\mathrm{nn}'}(E)$は断面積 (\si{\milli\barn})，$T_{9}$は温度 ($\times$\SI{e9}{\kelvin}) である．
 $\mathrm{C}_{{\text{spin}}}$は反応がg.s.からの場合1，
 $2_{1}^{+}$からの場合5となる．
@@ -177,12 +184,14 @@ $2_{1}^{+}$からの場合5となる．
 他の粒子による脱励起の寿命を求めることができる．
 式\eqref{eq::R}からわかるように，粒子との非弾性散乱によって脱励起する寿命は
 温度に大きく依存する．
-Beard らによる$\rho = \SI{e6}{\gram\per\cubic\centi\metre}$における
+Beard らによる各粒子の密度が\SI{e6}{\gram\per\cubic\centi\metre}のときにおける
 $R$と温度の依存性の計算結果~\cite{hotdensemedium}を図\ref{fig::R}に示す．
+実線は$0_2^+$状態から$2_1^+$状態への，破線は$0_2^+$状態から基底状態への脱励起のときの値である．
+また，青色は中性子との，赤色は陽子との，緑色は$\alpha$粒子との散乱による脱励起のときの値である．
 $\rho = \SI{e6}{\gram\per\cubic\centi\metre}$という高密度下では$\gamma$線による脱励起に対して，
 粒子による脱励起の寄与が大きくなることが分かる．
 特に，中性子による寄与は$\gamma$線による寄与の40--100倍ととても大きい．
-また，温度が低い領域でも大きいことが分かる．
+また，温度が低い領域で大きいことが分かる．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.6\columnwidth]{R_T.eps}
@@ -213,7 +222,7 @@ $\rho\sim\SI{e6}{\gram\per\cubic\centi\metre}$のような高密度環境は宇�
 \section{測定を行うべき中性子のエネルギー}
 式\eqref{eq::R}から分かるように寿命の比$R$を計算するためには，
 中性子と${}^{12}\mathrm{C}$の非弾性散乱断面積 [$\sigma_\mathrm{nn'} (E)$] のエネルギー分布が必要となる．
-特に，式\eqref{eq::R}で$R$が$0_2^+$状態の励起エネルギーからのエネルギーに指数関数で依存しているので，
+特に，式\eqref{eq::R}から分かるように$R$が$0_2^+$状態の励起エネルギーからのエネルギーに指数関数で依存しているので，
 $0_2^+$状態へ励起させることができる中性子エネルギーの閾値付近における断面積が重要となる．
 基底状態からの励起を考えると，重心系のエネルギーでは，$E=\SI{7.65}{\mega\electronvolt}$，
 ${}^{12}\mathrm{C}$の静止系における中性子のエネルギーでは$E_{\text{lab}} = \SI{8.35}{\mega\electronvolt}$である．
@@ -224,10 +233,10 @@ ${}^{12}\mathrm{C}$の静止系における中性子のエネルギーでは$E_{
 %散乱後の中性子は$E_{\text{n}}\sim\SI{8}{\mega\electronvolt}$となる．
 %つまり，式\eqref{eq::tau}に示した脱励起の寿命の計算には
 %数 \si{\mega\electronvolt}のエネルギーを持つ中性子と${}^{12}\mathrm{C}$との断面積のエネルギー分布が必要となる．
-図\ref{fig::crosssection_pres}は${}^{12}\mathrm{C}$と中性子（上）または陽子（下）との
-非弾性散乱断面積のエネルギー分布を示す．
+図\ref{fig::crosssection_pres}~\cite{hotdensemedium}は${}^{12}\mathrm{C}$と中性子（上）または陽子（下）の
+各実験室系エネルギーにおける非弾性散乱断面積のエネルギー分布を示す．
 点で示される値は測定値，実線で示される値はTALYS による理論計算値を表す．
-しかし，図\ref{fig::crosssection_pres} (上) から分かるように，
+図\ref{fig::crosssection_pres} (上) から分かるように，
 %数 \si{\mega\electronvolt}の領域におけるg.s. $\rightarrow$ Hoyle状態のデータがない．
 $E_{\text{lab}} =$ \SIrange{8}{17}{\mega\electronvolt}の領域におけるg.s. $\rightarrow$ Hoyle状態の中性子の測定値がない．
 そのため，このエネルギー領域での ${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C} (0_2^+)$ の
@@ -241,62 +250,60 @@ $E_{\text{lab}} =$ \SIrange{8}{17}{\mega\electronvolt}の領域におけるg.s. 
   \label{fig::crosssection_pres}
 \end{figure}
 
-本研究ではその第一歩として
-$E_{\text{n}} = \SI{14}{\mega\electronvolt}$の中性子を用いて断面積の測定を行い，
-${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C} (0_2^+)$反応の断面積測定の実現可能性を確認する．
-\SI{14}{\mega\electronvolt}は式\eqref{eq::dt}に示すデューテリウムとトリチウムの反応（DT 反応）を
-用いて生成可能なエネルギーである．
-この反応は2体反応であるため，単色エネルギーの中性子となる．
-\begin{equation}
-  \mathrm{d} + \mathrm{t} \rightarrow \alpha\ (\SI{3.5}{\mega\electronvolt}) + \mathrm{n}\ (\SI{14}{\mega\electronvolt})
-  \label{eq::dt}
-\end{equation}
-単色エネルギーの中性子を用いることで，中性子のエネルギー測定を行う必要が無くなる．
-%核破砕で生成される
-%このDT 反応で生成される$14~{\rm MeV}$の中性子と炭素との反応は核融合炉の開発で重要である．
-ITER~\cite{iter}などの核融合炉ではこのDT 反応を用いて質量エネルギーを取り出す．
-核融合炉の中で生成される\SI{14}{\mega\electronvolt}の中性子は構造材の原子核と反応し損傷させるため，
-構造材の中に多く含まれる炭素との反応が詳しく調べられている~\cite{takahashietal,kondoetal}．
-${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'+3\alpha)$反応の全断面積は\SI{209}{\milli\barn}，
-分岐比は表\ref{tab::branchingratio}の通りである．
-また，微分断面積の角度分布を図\ref{fig::sig_angle_dist}に示す．
-これらの測定値と本研究での測定値を比較することによって測定方法の妥当性を確認することが可能となる．
-単色エネルギーの中性子を生成可能であること，他データと測定結果の比較が可能であることの2点より，
-測定方法の検証として\SI{14}{\mega\electronvolt}の中性子で断面積の測定を行う．
-
-\begin{table}
-  \centering
-  \caption[${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'+3\alpha)$反応のチャンネルとその分岐比．]
-          {${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'+3\alpha)$反応のチャンネルとその分岐比~\cite{kondoetal}．
-            ${}^{12}\mathrm{C}$の励起状態から$3\alpha$に，${}^{9}\mathrm{Be}$の励起状態から$2\alpha$に崩壊する．}
-  \label{tab::branchingratio}
-  \begin{tabular}{lc}
-    \toprule
-    \multicolumn{1}{c}{Reaction channel} & Branching ratio (\%)\\
-    \midrule
-    ${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}^{*}$(\SI{7.65}{\mega\electronvolt}) & 4\\
-    ${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}^{*}$(\SI{9.64}{\mega\electronvolt}) & 33\\
-    ${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}^{*}$(\SI{10.3}{\mega\electronvolt}) & 16\\
-    ${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}^{*}$(\SI{10.84}{\mega\electronvolt}) & 6\\
-    ${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}^{*}$(\SI{11.83}{\mega\electronvolt}) & 4\\
-    ${}^{12}\mathrm{C}(\mathrm{n},\alpha){}^{9}\mathrm{Be}^{*}$(\SIrange{1.68}{3.05}{\mega\electronvolt}) & 24\\
-    ${}^{12}\mathrm{C}(\mathrm{n},\alpha){}^{9}\mathrm{Be}^{*}$(\SI{4.7}{\mega\electronvolt}) & 13\\
-    \bottomrule
-  \end{tabular}
-\end{table}
-
-\begin{figure}
-  \centering
-  \includegraphics[clip, width=0.6\columnwidth]{cross_section_12C_n_n_12C_7.65.eps}
-  \caption[${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C} (0_2^+)$の微分断面積の角度分布．]
-          {${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C} (0_2^+)$の微分断面積の角度分布~\cite{kondoetal}．}
-  \label{fig::sig_angle_dist}
-\end{figure}
+%本研究ではその第一歩として
+%$E_{\text{n}} = \SI{14}{\mega\electronvolt}$の中性子を用いて断面積の測定を行い，
+%${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C} (0_2^+)$反応の断面積測定の実現可能性を確認する．
+%\SI{14}{\mega\electronvolt}は式\eqref{eq::dt}に示すデューテリウムとトリチウムの反応（DT 反応）を
+%用いて生成可能なエネルギーである．
+%この反応は2体反応であるため，放出角度により中性子のエネルギーが一意に決まる．%単色エネルギーの中性子となる．
+%\begin{equation}
+%  \mathrm{d} + \mathrm{t} \rightarrow \alpha\ (\SI{3.5}{\mega\electronvolt}) + \mathrm{n}\ (\SI{14}{\mega\electronvolt})
+%  \label{eq::dt}
+%\end{equation}
+%単色エネルギーの中性子を用いることで，中性子のエネルギー測定を行う必要が無くなる．
+%%核破砕で生成される
+%%このDT 反応で生成される$14~{\rm MeV}$の中性子と炭素との反応は核融合炉の開発で重要である．
+%ITER~\cite{iter}などの核融合炉ではこのDT 反応を用いて質量エネルギーを取り出す．
+%核融合炉の中で生成される\SI{14}{\mega\electronvolt}の中性子は構造材の原子核と反応し損傷させるため，
+%構造材の中に多く含まれる炭素との反応が詳しく調べられている~\cite{takahashietal,kondoetal}．
+%${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'+3\alpha)$反応の全断面積は\SI{209}{\milli\barn}，
+%分岐比は表\ref{tab::branchingratio}の通りである．
+%また，微分断面積の角度分布を図\ref{fig::sig_angle_dist}に示す．
+%これらの測定値と本研究での測定値を比較することによって測定方法の妥当性を確認することが可能となる．
+%単色エネルギーの中性子を生成可能であること，他データと測定結果の比較が可能であることの2点より，
+%測定方法の検証として\SI{14}{\mega\electronvolt}の中性子ビームを用いて
+%${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}(0_2^+)$反応の断面積の測定を行う．
+%
+%\begin{table}
+%  \centering
+%  \caption[${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'+3\alpha)$反応のチャンネルとその分岐比．]
+%          {${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'+3\alpha)$反応のチャンネルとその分岐比~\cite{kondoetal}．
+%            ${}^{12}\mathrm{C}$の励起状態から$3\alpha$に，${}^{9}\mathrm{Be}$の励起状態から$2\alpha$に崩壊する．}
+%  \label{tab::branchingratio}
+%  \begin{tabular}{lc}
+%    \toprule
+%    \multicolumn{1}{c}{Reaction channel} & Branching ratio (\%)\\
+%    \midrule
+%    ${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}^{*}$(\SI{7.65}{\mega\electronvolt}) & 4\\
+%    ${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}^{*}$(\SI{9.64}{\mega\electronvolt}) & 33\\
+%    ${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}^{*}$(\SI{10.3}{\mega\electronvolt}) & 16\\
+%    ${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}^{*}$(\SI{10.84}{\mega\electronvolt}) & 6\\
+%    ${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}^{*}$(\SI{11.83}{\mega\electronvolt}) & 4\\
+%    ${}^{12}\mathrm{C}(\mathrm{n},\alpha){}^{9}\mathrm{Be}^{*}$(\SIrange{1.68}{3.05}{\mega\electronvolt}) & 24\\
+%    ${}^{12}\mathrm{C}(\mathrm{n},\alpha){}^{9}\mathrm{Be}^{*}$(\SI{4.7}{\mega\electronvolt}) & 13\\
+%    \bottomrule
+%  \end{tabular}
+%\end{table}
 
 \section{測定に用いる実験装置}
 \label{seq::detector_using_experiment}
 ${}^{12}{\rm C} (0_2^+)$から崩壊して生成した3つの$\alpha$粒子を測定することで，断面積を決定する．
-図\ref{fig::sig_angle_dist}の微分断面積を仮定すると，${}^{12}\mathrm{C} (0_2^+)$から放出された$\alpha$粒子は
+図\ref{fig::sig_angle_dist}は\SI{14}{\mega\electronvolt}の中性子と${}^{12}\mathrm{C}$との非弾性散乱の微分断面積である．
+\SI{14}{\mega\electronvolt}の中性子と${}^{12}\mathrm{C}$の反応は
+\ref{chap::experiment}章で説明する理由により既に測定されている．
+入射中性子のエネルギーによらず図\ref{fig::sig_angle_dist}の微分断面積で散乱し，
+励起した${}^{12}\mathrm{C}(0_2^+)$から$\alpha$粒子が等方的に崩壊すると仮定すると，
+${}^{12}\mathrm{C} (0_2^+)$から放出された$\alpha$粒子は
 図\ref{fig::alpha_E_En_dep_w_l}に示すエネルギーの分布を持つ．
 横軸は入射中性子のエネルギー，縦軸は崩壊後の$\alpha$粒子のエネルギーである．
 図\ref{fig::alpha_E_En_dep_w_l}から中性子のエネルギーに関わらず
@@ -311,22 +318,33 @@ ${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}(0_2^+)$反応では�
 ${}^{12}\mathrm{C} (0_2^+)$が重心運動方向と異なる方向に散乱される確率が高い．
 そのため，$\alpha$粒子はあまり重心運動によってブーストされる効果を受けずに，
 中性子のエネルギーに関わらず\SI{0.1}{\mega\electronvolt}付近で最大となる．
-図\ref{fig::alpha_E_dist}は中性子のエネルギーが\SI{14}{\mega\electronvolt}のときの分布である．
-図\ref{fig::alpha_E_dist}の塗りつぶし部分は最大値を中心に全体の8割となる領域を示しており，
-\SIrange{0}{0.6}{\mega\electronvolt}の範囲である．
+中性子のエネルギーが\SI{14}{\mega\electronvolt}のときの分布を図\ref{fig::alpha_E_dist_high}に，
+\SI{8.5}{\mega\electronvolt}のときの分布を図\ref{fig::alpha_E_dist_low}に示す．
+図の塗りつぶし部分は最大値を中心に全体の8割となる領域を示している．
+図\ref{fig::alpha_E_dist_high}では\SIrange{0}{600}{\kilo\electronvolt}，
+図\ref{fig::alpha_E_dist_low}では\SIrange{0.015}{505}{\kilo\electronvolt}である．
 このような低エネルギーの$\alpha$粒子を効率よく検出するためには，
 標的中で$\alpha$粒子が停止しないようにしなければならない．
 例えば，\SI{500}{\kilo\electronvolt}の$\alpha$粒子ではおよそ\SI{350}{\micro\gram\per\square\centi\metre}の
 炭素箔標的で停止してしまう．
 更に低いエネルギーの$\alpha$粒子も検出しようとすると，更に標的を薄くしなければならない．
 このような低エネルギー粒子の測定には，検出器そのものが標的となるアクティブ標的が有効である．
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.6\columnwidth]{cross_section_12C_n_n_12C_7.65.eps}
+  \caption{\SI{14}{\mega\electronvolt}の中性子における
+    ${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C} (0_2^+)$の微分断面積の角度分布~\cite{kondoetal}．}
+  \label{fig::sig_angle_dist}
+\end{figure}
 
 図\ref{fig::alpha_theta_En_dep}は$\alpha$粒子の実験室系での角度分布である．
 横軸は入射中性子のエネルギー，縦軸は$\alpha$粒子の入射中性子の運動方向に対する角度を表す．
 $\alpha$粒子のエネルギー分布と同様に入射中性子のエネルギーにあまり依存していない．
-図\ref{fig::alpha_theta_dist}は入射中性子が\SI{14}{\mega\electronvolt}のときの角度分布である．
-図\ref{fig::alpha_theta_dist}の塗りつぶしは最大値を中心に全体の8割となる領域を示しており，
-\SIrange{7.5}{75.1}{\degree} である．
+入射中性子が\SI{14}{\mega\electronvolt}のときの角度分布を図\ref{fig::alpha_theta_dist_high}に，
+\SI{8.5}{\mega\electronvolt}のときの角度分布を図\ref{fig::alpha_theta_dist_low}に示す．
+図の塗りつぶしは最大値を中心に全体の8割となる領域を示している．
+図\ref{fig::alpha_theta_dist_high}では\SIrange{7.5}{75.1}{\degree} である，
+図\ref{fig::alpha_theat_dist_low}では\SIrange{5.5}{57.5}{\degree}である．
 %この図からもわかるように広い角度領域に$\alpha$粒子は崩壊する．
 このような広い角度に放出される3つの$\alpha$粒子すべてを効率的に検出するためには大立体角を覆う検出器が必要となる．
 
@@ -334,12 +352,13 @@ $\alpha$粒子のエネルギー分布と同様に入射中性子のエネルギ
 TPC は荷電粒子のトラックを検出することができるガス検出器であり，
 ALICE 実験~\cite{alice-tpc}やLEPS2~\cite{kobayakawa_thesis}などで広く用いられている．
 アクティブ標的TPC を用いることで，低エネルギー荷電粒子を大立体角で検出することが可能となる．
-近年，CAT~\cite{cat-tpc}やAT-TPC~\cite{at-tpc}などアクティブ標的を用いたTPC が開発されている．
+近年，不安定核実験のためにMAYA~\cite{maya}やCAT~\cite{cat-tpc}，AT-TPC~\cite{at-tpc}など
+様々なアクティブ標的TPC が世界中で開発されている~\cite{active-tpc}．
 その1つとして我々が開発したMAIKo ($\mu$-PIC based active target for inverse kinematics $_{\circ}$)
  TPC~\cite{maiko, mupic}がある．
 近年，RCNP でMAIKo TPC を用いて低エネルギー$\alpha$粒子を測定する実験~\cite{Furuno2019}が行われた．
 MAIKo TPC を用いることで低エネルギーの$\alpha$粒子を大立体角で検出することができる．
-そこで，本研究ではMAIKo TPC を用いて${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C} (0_2^+)$反応を測定する．
+本研究ではMAIKo TPC を用いて${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C} (0_2^+)$反応を測定することを目指す．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{alpha_E_En_dep_w_l.eps}
@@ -350,12 +369,21 @@ MAIKo TPC を用いることで低エネルギーの$\alpha$粒子を大立体�
 \end{figure}
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.8\columnwidth]{alpha_e_dist_sim_region.eps}
+  \includegraphics[clip, width=0.8\columnwidth]{alpha_E_dist_region_high.eps}
   \caption[${}^{12}{\rm C} (0_2^+)$から放出された$\alpha$粒子のエネルギー分布．]
           {$E_{\mathrm{n}}=\SI{14}{\mega\electronvolt}$のときの，
             ${}^{12}{\rm C} (0_2^+)$から放出された$\alpha$粒子のエネルギー分布．
             ${}^{12}\mathrm{C}$から放出される3つの$\alpha$粒子すべての分布を表している．}
-          \label{fig::alpha_E_dist}
+          \label{fig::alpha_E_dist_high}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.8\columnwidth]{alpha_E_dist_region_low.eps}
+  \caption[${}^{12}{\rm C} (0_2^+)$から放出された$\alpha$粒子のエネルギー分布．]
+          {$E_{\mathrm{n}}=\SI{8.5}{\mega\electronvolt}$のときの，
+            ${}^{12}{\rm C} (0_2^+)$から放出された$\alpha$粒子のエネルギー分布．
+            ${}^{12}\mathrm{C}$から放出される3つの$\alpha$粒子すべての分布を表している．}
+          \label{fig::alpha_E_dist_low}
 \end{figure}
 \begin{figure}
   \centering
@@ -365,13 +393,23 @@ MAIKo TPC を用いることで低エネルギーの$\alpha$粒子を大立体�
 \end{figure}
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.8\columnwidth]{alpha_theta_dist_region.eps}
+  \includegraphics[clip, width=0.8\columnwidth]{alpha_theta_dist_region_high.eps}
   \caption[${}^{12}{\rm C} (0_2^+)$から放出された$\alpha$粒子の角度分布．]
           {$E_{\mathrm{n}}=\SI{14}{\mega\electronvolt}$のときの，
             ${}^{12}{\rm C} (0_2^+)$から放出された$\alpha$粒子の角度分布．
             ${}^{12}\mathrm{C}$から放出される3つの$\alpha$粒子すべての分布を表している．
           }
-  \label{fig::alpha_theta_dist}
+  \label{fig::alpha_theta_dist_high}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.8\columnwidth]{alpha_theta_dist_region_low.eps}
+  \caption[${}^{12}{\rm C} (0_2^+)l$から放出された$\alpha$粒子の角度分布．]
+          {$E_{\mathrm{n}}=\SI{8.5}{\mega\electronvolt}$のときの，
+            ${}^{12}{\rm C} (0_2^+)$から放出された$\alpha$粒子の角度分布．
+            ${}^{12}\mathrm{C}$から放出される3つの$\alpha$粒子すべての分布を表している．
+          }
+  \label{fig::alpha_theta_dist_high}
 \end{figure}
 %ピーク周りに8割を取ってくると0.13 rad -- 1.31 rad, 0 -- 0.595 MeV
 
