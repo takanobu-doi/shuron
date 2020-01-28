@@ -14,9 +14,9 @@ MAIKo TCP の解析では背景事象の除去とトラック情報の抽出の2
 トラックの情報は中性子と${}^{12}\mathrm{C}$とが散乱した位置の座標，
 $\alpha$粒子が停止した位置の座標である．
 anode image から$z, y$座標を，cathode image から$x, y$座標を決定することができる．
-$x, z$座標は$\mu$-PIC の信号を検出したstrip のチャンネル番号に\SI{400}{\micro\metre}をかけることで求めることができる．
+$x, z$座標は$\mu$-PIC の信号を検出したstrip のチャンネル番号に\SI{400}{\micro\metre}を乗じることで求めることができる．
 TPC では，$y$座標を荷電粒子が通過した位置から読み出し面に到達するまでの時間として測定する．
-そのため，anode image, cathode image のclock にドリフト速度をかけることで$y$座標を求めることができる．
+そのため，anode image, cathode image のclock にドリフト速度を乗じることで$y$座標を求めることができる．
 このようにして決定したanode image, cathode image の座標を合わせることで，
 3次元の座標を求めることができる．
 
@@ -56,7 +56,7 @@ SRIM は，荷電粒子がが物質中を通過する際の，イオンの飛程
 %これまではHough 変換を使って解析を行ってきたが，
 %高速に処理をするためにニューラルネットワークを用いた解析方法を開発した．
 
-\section{eye-scanによるトラックの解析}
+\section{Eye-scanによるトラックの解析}
 本研究ではトラックの本数の識別と散乱点，停止点の抽出を人間の目 (eye-scan) で行った．
 ここではトラックが3本確認できるイベントを${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}')3\alpha$イベントとした．
 本研究では${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}')3\alpha$イベントに対して解析を行った．
@@ -68,8 +68,8 @@ SRIM は，荷電粒子がが物質中を通過する際の，イオンの飛程
 各$\alpha$粒子のエネルギーや放出角度，トラックの太さによっては3つのトラックを区別することができず，
 ${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}')3\alpha$イベントとして認識できない場合がある．
 そこで，eye-scanによって正しくトラックが3本と認識できる割合（解析効率）を評価する．
-eye-scanは各検出ガスについて100 events ずつ行った．
-eye-scanによって決定したトラックの本数の割合を表\ref{tab::track_number_ratio}に示す．
+Eye-scanは各検出ガスについて100 events ずつ行った．
+Eye-scanによって決定したトラックの本数の割合を表\ref{tab::track_number_ratio}に示す．
 表\ref{tab::track_number_ratio}の3本の割合が解析効率となる．
 \Methane 単体と\MethaneHerium 以外は約\SI{90}{\percent}の解析効率となっている．
 %\begin{table}
@@ -92,7 +92,7 @@ eye-scanによって決定したトラックの本数の割合を表\ref{tab::tr
 %\end{table}
 \begin{table}
   \centering
-  \caption{eye-scanによって決定したトラックの本数の割合．}
+  \caption{Eye-scanによって決定したトラックの本数の割合．}
   \label{tab::track_number_ratio}
   \begin{tabular}{cccc}
     \toprule
@@ -109,7 +109,7 @@ eye-scanによって決定したトラックの本数の割合を表\ref{tab::tr
 
 %\subsection{検出効率の角度依存性}
 \subsection{エネルギー分解能}
-eye-scanにより決定した$\alpha$粒子の飛行距離の分解能により，エネルギー分解能が決まる．
+Eye-scanにより決定した$\alpha$粒子の飛行距離の分解能により，エネルギー分解能が決まる．
 シミュレーションで粒子を生成した時に決定した$\alpha$粒子の運動エネルギー ($E_{\text{ideal}}$) と
 eye-scanによって決定した$\alpha$粒子の運動エネルギー ($E_{\text{eye-scan}}$) の相関を
 図\ref{fig::E_corr_ch4}, \ref{fig::E_corr_ch4_h2}, \ref{fig::E_corr_ch4_he},
@@ -253,7 +253,7 @@ $E_{\text{eye-scan}}$をフィットした1次関数 [$f(x)$] で補正したエ
 シミュレーションで決定した$\alpha$粒子の極角とeye-scanでの極角の差分を$d\theta$とする．
 各検出ガスでの$d\theta$の分布を図\ref{fig::dtheta_ch4}, \ref{fig::dtheta_ch4_h2}, \ref{fig::dtheta_ch4_he},
 \ref{fig::dtheta_ic4h10_h2}, \ref{fig::dtheta_ic4h10_he}に，
-ガウス分布でフィットした平均とと標準偏差を表\ref{tab::theta_resolution}に示す．
+ガウス分布でフィットした平均と標準偏差を表\ref{tab::theta_resolution}に示す．
 極角分解能は，\Methane 単体の場合に悪いことが分かる．
 \begin{figure}
   \centering
@@ -375,14 +375,15 @@ $E_{\text{eye-scan}}$をフィットした1次関数 [$f(x)$] で補正したエ
 ${}^{12}\mathrm{C}$の励起エネルギーの分解能が悪ければ各励起状態を特定することができない．
 シミュレーションでは$0_2^+$状態経由での崩壊を考えているので，
 ${}^{12}\mathrm{C}(0_2^+)$の励起エネルギーは\SI{7.65}{\mega\electronvolt} となる．
-eye-scanで決定した${}^{12}\mathrm{C}^{*}$の不変質量から基底状態の${}^{12}\mathrm{C}$の質量を引くことで励起エネルギーを求め，
+Eye-scanで決定した${}^{12}\mathrm{C}^{*}$の不変質量から
+基底状態の${}^{12}\mathrm{C}$の質量を減じることで励起エネルギーを求め，
 \SI{7.65}{\mega\electronvolt} を再構築できるか評価する．
 各検出ガスで再構成した励起エネルギーを図\ref{fig::Ex_ch4}, \ref{fig::Ex_ch4_h2}, \ref{fig::Ex_ch4_he},
 \ref{fig::Ex_ic4h10_h2}, \ref{fig::Ex_ic4h10_he}, 表\ref{tab::Ex_resolution}に示す．
 どの検出ガスにおいても$0_2^+$状態を再構成できていることが分かる．
-$0_2^+$状態と隣り合う${}^{12}\mathrm{C}$の励起状態は$2_1^+$の\SI{4.44}{\mega\electronvolt}と
+$0_2^+$状態に隣接する${}^{12}\mathrm{C}$の励起状態は$2_1^+$の\SI{4.44}{\mega\electronvolt}と
 $3_1^-$の\SI{9.64}{\mega\electronvolt}であるので，
-分解能も隣り合う励起状態と分けるのに十分良いことも分かる．
+分解能も隣接する励起状態と分けるのに十分良いことも分かる．
 \begin{figure}
   \centering
   \begin{minipage}{0.45\columnwidth}
@@ -428,7 +429,7 @@ $3_1^-$の\SI{9.64}{\mega\electronvolt}であるので，
   \label{tab::Ex_resolution}
   \begin{tabular}{ccc}
     \toprule
-    gas & Ex (\si{\mega\electronvolt}) & $\sigma_{\text{Ex}}$ (\si{\kilo\electronvolt}) \\
+    gas & $E_{x}$ (\si{\mega\electronvolt}) & $\sigma_{Ex}$ (\si{\kilo\electronvolt}) \\
     \midrule
     \Methane  & 7.63 & $49.1$ \\
     \MethaneHydro & 7.67 & $16.6$ \\
@@ -468,7 +469,7 @@ $\bigcirc$が優，$\triangle$が可，$\times$が不可を表す．
 \MethaneHydro と \isoButaneHydro とで
 含まれる${}^{12}\mathrm{C}$の量を比較すると，
 \isoButaneHydro の方が4/3倍多い．
-よって，検出ガスには\SI{100}{\hecto\pascal}の\isoButaneHydro が最善であると判明した．
+よって，検出ガスには\SI{100}{\hecto\pascal}の\isoButaneHydro が最善であると判断した．
 \begin{table}
   \centering
   \caption{各検討項目に対する検出ガスの優劣．標的の量は\Methane に含まれる量を1とした．}
