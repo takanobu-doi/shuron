@@ -119,7 +119,7 @@ $\Delta V_{\text{GEM}}$を大きくして，GEMの穴の中に生成される電
 %$\Delta V_{\rm GEM} = 350 {\rm V}$とそれ以外では測定するタイミングが2時間ほどずれている．
 %そのため，図\ref{fig::gain_GEM_V_dep}で$V_{\text{GEM}} = 350 {\text{V}}$のみ不連続に変化している．
 
-\subsection{GEMと$\mu$-PICとの電位差による電子の増幅率}
+\subsection{GEMと$\mu$-PIC間の電位差による電子の増幅率}
 $\Delta V_{\text{GEM-}\mu\text{-PIC}}$によってGEM で増幅された電子の$\mu$-PICによる収集率が変化する．
 $\Delta V_{\text{GEM-}\mu\text{-PIC}}$を\SI{50}{\volt}間隔で\SIrange{550}{750}{\volt}の範囲で変化させて計5点測定した．
 電子の増幅率の$\Delta V_{\text{GEM-}\mu\text{-PIC}}$による変化を図\ref{fig::gain_GEM_uPIC_V_dep}に示す．
@@ -163,7 +163,7 @@ $\sqrt{L}$（$L$は電子のドリフト距離）に比例する．
 拡散効果とトラックの太さが比例していると仮定すると，track width $\propto\sqrt{L}$と期待される．
 トラックの太さと線源の位置との依存性を図\ref{fig::diff_x}に示す．
 図\ref{fig::diff_x}の$L$は線源コリメータの\ang{0}穴とgridとのドリフト方向の距離である．
-この測定では表\ref{tab::config_diffusion_meas}の電圧で測定を行った．
+この測定では表\ref{tab::config_diffusion_meas}に示す電圧で測定を行った．
 \begin{table}
   \centering
   \caption{拡散効果の距離依存性を測定したときの電圧設定．}
@@ -180,7 +180,7 @@ $\sqrt{L}$（$L$は電子のドリフト距離）に比例する．
     \bottomrule
   \end{tabular}
 \end{table}
-
+測定結果に対して$f(L) = p_{0}\sqrt{L-p_{1}}+p_{2}$でフィットを行うと，
 $\text{track width} = 1.27\times\sqrt{L-19.2}+23.1$となり，
 $\sqrt{L}$に比例していることが確認された．
 トラックの幅の $\sqrt{L}$に対する係数$D_{\text{width}}$は
