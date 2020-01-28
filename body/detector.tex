@@ -52,7 +52,7 @@ MAIKo TPC では3次元のトラックを2つの平面に射影した画像と�
     図\ref{fig::MAIKo_view}の模式図とはドリフト方向が上下が反転している．
     図ではTPC の中の${}^{12}\mathrm{C}$が右から入射した中性子 (青) と散乱し，
     3つの$\alpha$粒子 (赤) に崩壊した事象を表す．
-    anode image ($zy$平面) と cathode image ($xy$平面) の2平面に荷電粒子のトラックが射影される．
+    anode image ($zy$平面) と cathode image ($xy$平面) の2平面に荷電粒子のトラックが射影される（茶色の線）．
     中性子は電荷を持たないためanode，cathode image にトラックとして検出されない．
   }
   \label{fig::MAIKo_view}
@@ -85,13 +85,13 @@ MAIKo TPC では3次元のトラックを2つの平面に射影した画像と�
 %\end{figure}
 
 図\ref{fig::MAIKo_cage}にドリフトケージの構造を示す．
-ドリフトケージはplate，wire，grid，GEM (gas electron multiplier)，$\mu$-PIC~\cite{mupic}からなる．
+ドリフトケージはplate，wire，grid，gas electron multiplier (GEM)，$\mu$-PIC~\cite{mupic}からなる．
 plate，grid，GEM，$\mu$-PICに高圧電源 (HV) が接続されている．
 plate，wire，girdの間は\SI{10}{\mega\ohm}の抵抗で繋がれている．
 GEM とHV は\SI{1}{\mega\ohm}と\SI{20}{\mega\ohm}の抵抗で繋がれている．
-plateからgridの間の領域をドリフト領域，
-gridから$\mu$-PICの間の領域を増幅領域，
-$\mu$-PICの周囲を読み出し領域と呼ぶ．
+plateからgridの間の領域（ドリフト領域）で発生した電子がgrid に向かってドリフトし，
+gridから$\mu$-PICの間の領域（増幅領域）にあるGEM と$\mu$-PICによって増幅され，
+$\mu$-PIC（読み出し領域）によって増幅された電子の2次元位置を読み出す．
 ドリフト領域は$y$軸方向に\SI{140}{\milli\metre}であり，
 読み出し面の大きさが\SI{102.4x102.4}{\milli\metre}であるので，
 有感領域の大きさは\SI{102.4x102.4x140}{\milli\metre}となる．
@@ -113,11 +113,11 @@ $\mu$-PICの周囲を読み出し領域と呼ぶ．
 \subsection{ドリフト領域}
 plate とgrid にそれぞれ高電圧を印加することでドリフト電場を形成し，
 grid からplate の方向 (図\ref{fig::MAIKo_cage}では上向き) にドリフト電場を形成することで
-トラックの周囲に発生した電子を増幅領域へドリフトさせる．
+入射した荷電粒子の周囲に発生した電子を増幅領域へドリフトさせる．
 ドリフト電場の一様性が高いほど，トラックの周囲に発生した電子雲の形状を保ったまま，
 電子をドリフトさせることができる．
 均等にドリフトしない場合，正しくトラックを検出することができなくなってしまう．
-ドリフト電場を一様に形成するために\SI{10}{\mega\ohm}の抵抗で接続されたwire が
+ドリフト電場を一様に形成するために\SI{10}{\mega\ohm}の抵抗で接続された直径\SI{125}{\micro\metre}のBe-Cu wire が
 \SI{5}{\milli\metre}間隔で二重で巻かれている~\cite{furuno}．
 
 \subsection{増幅領域}
@@ -127,6 +127,7 @@ GEM は，図\ref{pic::GEM}のようにポリマーのフィルムの表面を�
 100 個の密度で開けたものである．
 銅の2つの層はポリマーによって絶縁されている．
 銅の両面に電圧を印加することによって，穴の中に高電場が形成されドリフトしてきた電子が穴を通過する際に増幅される．
+MAIKo TPC では厚さ\SI{100}{\micro\metre}の約\SI{100x100}{\milli\metre}のGEM を用いている．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.7\columnwidth]{gem_structure.pdf}
@@ -138,8 +139,8 @@ $\mu$-PIC~\cite{mupic} は京都大学宇宙線研究室で開発されたMicro 
 $\mu$-PIC は図\ref{fig::mupic}のようにanode strip とcathode strip が直交するように配置されている．
 anode strip，cathode strip ともに\SI{400}{\micro\metre}間隔でそれぞれ256~ch分割されている．
 直径\SI{50}{\micro\metre}の円柱状のanode 電極に高電圧を印加し，
-cathode 電極を接地することで高電場を形成することができ，
-$\mu$-PICによって信号が読み出される直前に電子が増幅される．
+cathode 電極を接地することでanode 電極付近に強い電場を形成することができ，
+GEM で増幅された電子が$\mu$-PICによって更に増幅される．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.7\columnwidth]{upic_struc_xyz.eps}
@@ -223,8 +224,10 @@ MAIKo TPC では荷電粒子のトラックの長さと方向からエネルギ�
 そこで，検出する対象である$\alpha$粒子の $dE/dx$ が適切な大きさとなるガスの種類と圧力の候補を決定する必要がある．
 
 まず，代表的な炭化水素である\Methane を考える．
-ガス中で\SI{10}{\milli\metre} 以上飛行し，MAIKo TPC の有感領域中で停止する$\alpha$粒子を検出可能な$\alpha$粒子とする．
-3つの$\alpha$粒子を検出できたイベントの割合を検出率とする．
+${}^{12}\mathrm{C}(0_2^+)$からの崩壊$\alpha$粒子が，ガス中で\SI{10}{\milli\metre} 以上飛行し，
+MAIKo TPC の有感領域中で停止するとき，その$\alpha$粒子を検出可能な$\alpha$粒子とする．
+${}^{12}\mathrm{C}(0_2^+)$の全崩壊イベント数に対する，
+3つの$\alpha$粒子が全て検出可能であるイベント数の割合を検出率とする．
 %図\ref{fig::alpha_E_dist}に示したエネルギー分布の$\alpha$粒子に対する，
 図\ref{fig::sig_angle_dist}に示した微分断面積の角度分布を仮定したときの
 検出率の圧力依存性を図\ref{fig::efficiency_P_dist}に示す．
@@ -327,12 +330,12 @@ Magboltz~\cite{magboltz} によって求めたドリフト電場とドリフト�
 
 \subsection{電子の拡散の効果}
 ドリフト電場によって電子が移動する間に検出ガスとの散乱と電子の熱運動により，
-図\ref{fig::diffusion-image}のように広がりながらドリフトする．
+図\ref{fig::diffusion-image}のように電子は拡散しつつドリフトする．
 %電子が広がることを拡散と呼ぶ．
 この効果が大きくなると，図\ref{fig::diffusion-image}の左のように
-荷電粒子によって同じ場所に生成された電子が読み出し面に到達するまでに広がるため，
+荷電粒子によって同じ場所に生成された電子が読み出し面に到達するまでに拡散する，
 トラックが太く検出される．
-トラックが太くなると，複数のトラックを分離することが難しくなる．
+トラックが太くなると，${}^{12}\mathrm{C}(0_2^+)$から崩壊した3つの$\alpha$粒子のトラックを分離することが難しくなる．
 そのため，図\ref{fig::diffusion-image}の右のように拡散の効果が小さいことが望まれる．
 \begin{figure}
   \centering
@@ -343,7 +346,7 @@ Magboltz~\cite{magboltz} によって求めたドリフト電場とドリフト�
   \label{fig::diffusion-image}
 \end{figure}
 
-Ref~\cite{leo}によるとドリフト電場がない場合の電子の拡散は以下のように理解できる．
+文献~\cite{leo}によるとドリフト電場がない場合の電子の拡散は以下のように理解できる．
 電子は熱運動により発生点から拡散する．
 熱運動の平均速度$v$はMaxwell 分布より
 \begin{equation}
@@ -401,7 +404,7 @@ Ref~\cite{leo}によるとドリフト電場がない場合の電子の拡散は
 同じドリフト速度のとき，ドリフト電場が大きいほど拡散係数が小さいことが分かる．
 \isoButaneHydro の拡散係数が最も小さく，
 検出ガスの最有力候補である．
-シミュレーションにより生成した${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C} (0_2^+)$イベントを解析し，
+次章ではシミュレーションにより生成した${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C} (0_2^+)$イベントを解析し，
 その解析効率により検出ガスを決定する．
 \begin{table}
   \centering
