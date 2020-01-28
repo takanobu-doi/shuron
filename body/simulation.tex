@@ -12,7 +12,7 @@
 また，それらのデータから各ガスにおけるドリフト速度，ガスの電子増幅率，トラックの幅を決定した．
 測定には${}^{241}{\rm Am}$の$\alpha$線源を用いた．
 図\ref{fig::a_source_track}に$\alpha$線源のトラックの一例を示す．
-図\ref{fig::a_source_track}では検出ガスに\isoButaneHydro を用いた．
+図\ref{fig::a_source_track}では検出ガスに\SI{100}{\hecto\pascal}の\isoButaneHydro を用いた．
 \ref{sec::detection_gas_candidate}節では6種類の候補を考えたが，
 ここからは単体のiso-$\rm C_{4}H_{10}$を除いた5種類について考えていく．
 これは単体の\isoButane を検出ガスに用いた場合に，
@@ -133,7 +133,8 @@ MAIKo TPC の実際の運用を簡単にするために設定電圧を切りの�
 %\end{figure}
 
 \subsection{電子増幅率}
-各部の電圧に対する電子増幅率の依存性を測定した．
+%各部の電圧に対する電子増幅率の依存性を測定した．
+GEM および$\mu$-PICによる電子の増幅率を測定した．
 増幅率は荷電粒子が検出ガス中を通過した際に発生させた電子数 ($N_{\mathrm{e}}$) と
 増幅後に$\mu$-PICによって収集された電子数 ($N'_{\mathrm{e}}$) から求めることができる．
 $N_{\mathrm{e}}$は検出ガス中での荷電粒子のエネルギー損失と検出ガスのW値（1つの電子対の生成に必要なエネルギー）から求める．
@@ -143,11 +144,12 @@ $N'_{\mathrm{e}}$は$\mu$-PICで収集した電荷から求める．
 検出ガス中で荷電粒子がエネルギーを損失すると，W値あたり平均1個の電子を電離する．
 そのため，荷電粒子のエネルギー損失をW値で除することで$N_{\mathrm{e}}$が求まる．
 各検出ガスにおけるエネルギー損失とW値~\cite{energy_per_ion_pair,pdg}を表\ref{tab::energy_loss_and_W_val}に示す．
+本研究ではでは${}^{241}\mathrm{Am}$からの$\alpha$線を用いて測定を行った．
 ${}^{241}\mathrm{Am}$からは\SI{5.48}{\mega\electronvolt}の$\alpha$線が放出される．
 今回の測定に用いた$\alpha$線源は線量を大きくするために，多くの${}^{241}\mathrm{Am}$が線源に含まれている．
 そのため，物質厚が大きくなっており，$\alpha$線が放出される前に線源中でエネルギーを損失してしまう．
 この線源から出ている$\alpha$粒子の持つエネルギーが平均\SI{4.2}{\mega\electronvolt}であることが過去の測定により確認している．
-今回の測定では\ang{0}方向の$\alpha$線を用いて測定した．
+今回の測定では\ang{0}方向に放出された$\alpha$線を用いて測定した．
 エネルギー損失は\SI{4.2}{\mega\electronvolt}の$\alpha$粒子が$\mu$-PIC 32 strip分の
 距離 (\SI{12.8}{\milli\metre}) で落とすエネルギーを示している．
 この距離で発生した電子が$\mu$-PIC の32 stripsで収集される．
@@ -184,6 +186,7 @@ FADC の入力インピーダンス\SI{50}{\ohm}で電流値を電圧値に変�
 \end{equation}
 各検出ガスの増幅率と電子の収集効率を畳み込んだ値を表\ref{tab::multiplying_rate}に示す．
 ここでは，GEMと$\mu$-PIC の両方による増幅率となっている．
+また，測定時のGEM や$\mu$-PICに印加した電圧を表\ref{tab::high_voltage_config_for_gain_meas}に示す．
 \begin{table}
   \centering
   \caption{各検出ガスの電子増幅率．}
@@ -200,6 +203,22 @@ FADC の入力インピーダンス\SI{50}{\ohm}で電流値を電圧値に変�
     \bottomrule
   \end{tabular}
 \end{table}
+\begin{table}
+  \caption{電子増幅率を測定した際の電圧設定．GEM のうちgrid 側をGEMt，$\mu$-PIC側をGEMbとする．}
+  \label{tab::high_voltage_config_for_gain_meas}
+  \centering
+  \begin{tabular}{cccccc}
+    \toprule
+    gas & plate (\si{\volt}) & grid (\si{\volt}) & GEMt (\si{\volt}) & GEMb (\si{\volt}) & $\mu$-PIC (\si{\volt}) \\
+    \midrule
+    \Methane         & $-1370$ & $-1290$ & $-560$ & $-150$ & $175$ \\
+    \MethaneHydro    & $-2105$ & $-1500$ & $-620$ & $-250$ & $420$ \\
+    \MethaneHerium   & $-1465$ & $-1200$ & $-600$ & $-250$ & $400$ \\
+    \isoButaneHydro  & $-2255$ & $-1300$ & $-600$ & $-250$ & $400$ \\
+    \isoButaneHerium & $-1430$ & $-970$ & $-600$ & $-250$ & $300$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 \subsection{トラックの幅}
 本実験の目的である3$\alpha$に崩壊するイベントでは観測されるトラックが太いと複数のトラックの区別が難しくなり，
@@ -213,7 +232,7 @@ FADC の入力インピーダンス\SI{50}{\ohm}で電流値を電圧値に変�
 拡散係数，トラックの幅ともに\isoButaneHydro が最も小さいことが分かる．
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.5\columnwidth]{track_width.eps}
+  \includegraphics[clip, width=0.8\columnwidth]{track_width.eps}
   \caption{トラックの幅の決定方法のイメージ．
     トラックの幅は有感領域の中央であるanode strip 128~chのclock方向の幅を用いる．}
   \label{fig::track_width}
