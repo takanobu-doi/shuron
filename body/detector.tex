@@ -4,8 +4,8 @@
 
 \chapter{MAIKo TPC}
 \section{MAIKo TPC とは}
-我々は低エネルギー荷電粒子を大立体角で検出するために，
-アクティブ標的TPC であるMAIKo TPC を開発した．
+我々のグループでは低エネルギー荷電粒子を大立体角で検出するために，
+アクティブ標的TPC であるMAIKo TPC~\cite{MAIKo}を開発してきた．
 MAIKo TPC は検出ガスを封入する密封容器 (MAIKo チェンバー) と
 ドリフト電場を形成するケージ（ドリフトケージ）からなる．
 図\ref{pic::MAIKo_cage}に示すドリフトケージをMAIKo チェンバー内に設置して用いる．
@@ -228,7 +228,8 @@ MAIKo TPC では荷電粒子のトラックの長さと方向からエネルギ�
 %図\ref{fig::alpha_E_dist}に示したエネルギー分布の$\alpha$粒子に対する，
 図\ref{fig::sig_angle_dist}に示した微分断面積の角度分布を仮定したときの
 検出率の圧力依存性を図\ref{fig::efficiency_P_dist}に示す．
-ここでは，ビーム軸が有感領域の中央を通り，散乱点がビーム軸上に一様に分布していると仮定した．
+$\alpha$粒子の飛程の計算にはSRIM~\cite{SRIM}を用いた．
+また，ビーム軸が有感領域の中央を通り，散乱点がビーム軸上に一様に分布していると仮定した．
 図\ref{fig::efficiency_P_dist}から分かるように，\SI{50}{\hecto\pascal} で検出率が最大となっている．
 %\SI{50}{\hecto\pascal}のときの\Methane の各種の値は表\ref{tab::CH4_50_params}のとおりである．
 \SI{50}{\hecto\pascal}のときの\Methane の$dE/dx$と同程度となる，他の検出ガスを考え，
@@ -267,7 +268,8 @@ MAIKo TPC では荷電粒子のトラックの長さと方向からエネルギ�
             括弧内はガスの混合の割合を示す．
             エネルギー損失は$E_{\alpha}$が\SI{0.5}{\mega\electronvolt}の$\alpha$粒子が\SI{10}{\milli\metre}で
             落とすエネルギーを表す．
-            電場はMagboltz による計算でドリフト速度が\SI{0.014}{\milli\metre\per\nano\second}となる値である．}
+            電場はMagboltz~\cite{magboltz}による計算でドリフト速度が\SI{0.014}{\milli\metre\per\nano\second}となる値である．
+          }
   \label{tab::mixture}
   \begin{tabular}{ccccc}
     \toprule
@@ -393,7 +395,7 @@ Ref~\cite{leo}によるとドリフト電場がない場合の電子の拡散は
   & = D_{\mathrm{Magboltz}}\times\sqrt{L}
 \end{align}
 となる．
-計算コードMagboltz によって得られた拡散係数 ($D_{\mathrm{Magboltz}}$) を表\ref{tab::diffusion}に示す．
+計算コードMagboltz~\cite{magboltz}によって得られた拡散係数 ($D_{\mathrm{Magboltz}}$) を表\ref{tab::diffusion}に示す．
 表\ref{tab::diffusion}中の$D_{t}$はドリフト電場に対して垂直な方向への拡散，$D_{l}$は平行な方向への拡散の係数を表す．
 \Methane および\isoButane の単体では拡散係数が大きく，
 同じドリフト速度のとき，ドリフト電場が大きいほど拡散係数が小さいことが分かる．
