@@ -276,15 +276,19 @@ ${}^{12}\mathrm{C}$を$0_2^+$状態に励起させることができる中性子
 \SI{50}{\milli\metre}よりも大きいところで検出効率が小さく，小さいところでは検出効率が大きくなっていることが分かる．
 これは，前方散乱において\SI{14}{\mega\electronvolt}中性子のほうが\SI{8.5}{\mega\electronvolt}中性子より
 エネルギーの移行が小さいためである．
-例えば，$\theta_{\text{c.m.}} = \ang{0}$のとき，
-\SI{14}{\mega\electronvolt}中性子と散乱した${}^{12}\mathrm{C}(0_2^+)$の
-エネルギーは\SI{0.133}{\mega\electronvolt}であるのに対し，
-\SI{8.5}{\mega\electronvolt}中性子と散乱した${}^{12}\mathrm{C}(0_2^+)$のエネルギーは
-\SI{0.436}{\mega\electronvolt}である．
-すると，3つの$\alpha$粒子が前方にブーストされるため，有感領域の下流側で散乱すると検出率が低下すると考えられる．
-その一方，\SI{8.5}{\mega\electronvolt}中性子では，後方散乱したときと前方散乱したときとで${}^{12}\mathrm{C}(0_2^+)$の
-エネルギーがあまり変わらないので，横方向に大きく散乱されることがなくなる．
-そのため，有感領域の上流側で散乱が起きた場合には大きな検出効率となる．
+図\ref{fig::kinema_cm}に${}^{12}\mathrm{C}(-_2^+)$の重心系での散乱角とエネルギーの関係を示す．
+実線は\SI{14}{\mega\electronvolt}の中性子と散乱したとき，
+点線は\SI{8.5}{\mega\electronvolt}の中性子と散乱したときを表す．
+$\theta_{\text{c.m.}} = $\ang{0}のときのエネルギーは\SI{8.5}{\mega\electronvolt}の中性子との散乱の方が大きいことが分かる．
+すると，\SI{8.5}{\mega\electronvolt}の中性子と散乱した時は，3つの$\alpha$粒子が実験室系の前方へのブーストの効果が
+\SI{14}{\mega\electronvolt}の中性子と散乱したよりも大きくなるため，
+有感領域の下流側で散乱すると検出率が低下すると考えられる．
+\SI{14}{\mega\electronvolt}の中性子と散乱したときと比較して\SI{8.5}{\mega\electronvolt}の中性子と散乱したときは
+${}^{12}\mathrm{C}(0_2^2)$の持つエネルギーの広がりが小さいことが分かる．
+図\ref{fig::kinema_lab}は実験室系での${}^{12}\mathrm{C}(0_2^+)$の散乱角とエネルギーの関係である．
+\SI{8.5}{\mega\electronvolt}の中性子と散乱したときは散乱角が，
+\SI{14}{\mega\electronvolt}と散乱したときと比較して前方角度に集中していることが分かる．
+そのため，横方向に大きく散乱されることがなくなり，有感領域の上流側で散乱が起きた場合には大きな検出効率となる．
 また，散乱角度によらずに${}^{12}\mathrm{C}(0_2^+)$のエネルギーが変わらないので，
 図\ref{fig::detection_efficiency_theta_cm_low}のように検出効率が散乱角度にあまり依存しない．
 \begin{figure}
@@ -298,6 +302,18 @@ ${}^{12}\mathrm{C}$を$0_2^+$状態に励起させることができる中性子
   \includegraphics[clip, width=0.8\columnwidth]{detection_efficiency_theta_cm_85.eps}
   \caption{\SI{8.5}{\mega\electronvolt}の中性子を用いたときの検出効率の散乱角依存性．}
   \label{fig::detection_efficiency_theta_cm_low}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.8\columnwidth]{../pdf/kinema_cm.pdf}
+  \caption{運動学（重心系）}
+  \label{fig::kinema_cm}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[clip, width=0.8\columnwidth]{../pdf/kinema_lab.pdf}
+  \caption{運動学（実験室系）}
+  \label{fig::kinema_lab}
 \end{figure}
 
 \SI{8.5}{\mega\electronvolt}の中性子を用いたときのシミュレーションから解析効率も評価した．
