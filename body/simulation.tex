@@ -229,16 +229,17 @@ FADC の入力インピーダンス\SI{50}{\ohm}で電流値を電圧値に変�
 トラックを正しく抽出できなくなる．
 そこで，\ang{0}の$\alpha$粒子によるトラックの幅を測定した．
 図\ref{fig::track_width}に示すように，
-トラックの幅にはanode strip 128~ch目のclock方向の幅を用いる．
-このようにして決定したトラックの幅とMagboltz を用いて計算した運動方向に対して垂直方向の拡散係数を%表\ref{tab::track_width}，
+ドリフト方向のトラックの幅には\ang{0}方向に放出された$\alpha$粒子のトラックのanode image の128~strip目のclock方向の幅を，
+垂直方向の幅には\ang{30}方向に放出された$\apha$粒子のトラックのcathode image の200~clock目のstrip方向の幅を用いる．
+このようにして決定したトラックの幅とMagboltz を用いて計算した拡散係数を%表\ref{tab::track_width}，
 図\ref{fig::diffusion_compare}に示す．
 図\ref{fig::diffusion_compare}から分かるようにトラックの幅と拡散係数には正の相関がある．
 拡散係数，トラックの幅ともに\isoButaneHydro が最も小さいことが分かる．
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.5\columnwidth]{track_width.eps}
+  \includegraphics[clip, width=0.5\columnwidth]{track_width_2.eps}
   \caption{トラックの幅の決定方法のイメージ．
-    トラックの幅は有感領域の中央であるanode strip 128~chのclock方向の幅を用いる．}
+    ドリフト方向の幅にはanode image の128~strip目（左），垂直方向のトラックの幅はcathode image の200~clock目の幅を用いる．}
   \label{fig::track_width}
 \end{figure}
 
@@ -260,7 +261,18 @@ FADC の入力インピーダンス\SI{50}{\ohm}で電流値を電圧値に変�
 %\end{table}
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.9\columnwidth]{diffusion_compare.eps}
+  \begin{subfigure}{0.45\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth]{diffusion_track_l.eps}
+    \caption{ドリフト方向に対して平行な方向．}
+    \label{fig::diffusion_compare_l}
+  \end{subfigure}
+  \begin{subfigure}{0.45\columnwidth}
+    \centering
+    \includegraphics[clip, width=\columnwidth]{diffusion_track_t.eps}
+    \caption{ドリフト方向に対して垂直な方向．}
+    \label{fig::diffusion_compare_t}
+  \end{subfigure}
   \caption{Magboltz で計算した拡散係数と実測によるトラックの幅．}
   \label{fig::diffusion_compare}
 \end{figure}
