@@ -6,6 +6,7 @@
 %本章では検出ガスとして用いる\isoButaneHydro の特性について述べる．
 
 \section{ドリフト速度}
+前章で検出ガスに最適であると判断した\SI{100}{\hecto\pascal}の\isoButaneHydro について，
 ドリフト速度のドリフト電場依存性を調べた．
 Magboltz を用いた計算によるとドリフト速度が\SI{0.014}{\milli\metre\per\nano\second}となる
 ドリフト電場は\SI{6.80}{\volt\per\milli\metre}である．
@@ -16,6 +17,7 @@ Magboltz を用いた計算によるとドリフト速度が\SI{0.014}{\milli\me
 線源を用いて測定したドリフト速度と Magboltz を用いて計算したドリフト速度が概ね一致していることが分かる．
 ただ，全体的に測定値のドリフト速度の方が小さくなっている．
 これは測定で用いた検出ガスに水分などの不純物が含まれていることが原因と考えられる．
+この測定において検出ガスに含まれた水分濃度は約2.6~ppmであった．
 水分によるドリフト速度の変化は付録\ref{app::drift_speed_humid_dep}で述べる．
 \begin{figure}
   \centering
@@ -33,11 +35,11 @@ GEM の$\mu$-PIC側と$\mu$-PICとの電位差を$\Delta V_{\text{GEM-}\mu\text{
 $\mu$-PICのanode 電極の電圧を$V_{\mu\text{-PIC}}$とする．
 $\mu$-PICのcathode 電極は接地されている．
 表\ref{tab::voltage_configuration}にあるような電位差を基準として，
-各項目の電位差依存性を調べた．
-表\ref{tab::voltage_configuration}は\ref{chap::simulation}章でドリフト速度を測定したときの構成である．
+他の項目の電位差は固定したうえで，各項目の電位差依存性を調べた．
+表\ref{tab::voltage_configuration}に示す電圧値は\ref{chap::simulation}章でドリフト速度を測定したときの構成である．
 増幅率の測定方法は\ref{chap::simulation}章で述べた通りである．
-本測定ではGEM，$\mu$-PICの増幅率や電子の収集効率をそれぞれで求めることができないので，
-それらを畳み込んだ増幅率として求める．
+本測定ではGEM，$\mu$-PICの増幅率や電子の収集効率を独立に求めることができないので，
+合計の増幅率として求める．
 \begin{table}
   \centering
   \caption{基準となる電圧構成．}
@@ -72,8 +74,8 @@ $\mu$-PICのcathode 電極は接地されている．
 
 %ここで，GEMのうちgrid側をtop, $\mu$-PIC側をbottomと呼ぶ．
 
-\subsection{gridとGEMとの電位差による電子の増幅率}
-gridとGEMの間の電位差によって電子がドリフト領域から増幅領域へ移動する効率が変化することがわかっている~\cite{furuno}．
+\subsection{gridとGEM間の電位差による電子の増幅率}
+gridとGEMの間の電位差によって電子がドリフト領域から増幅領域へ移動する効率が変化することがわかっている．%~\cite{furuno}．
 $\Delta V_{\text{grid-GEM}}$を\SI{20}{\volt}間隔で\SI{600}{}--\SI{780}{\volt}の範囲で変化させて計10点測定した．
 電子の増幅率の$\Delta V_{\text{grid-GEM}}$による変化を図\ref{fig::gain_grid_GEM_V_dep}に示す．
 %$\Delta V_{\text{grid-GEM}}$にたいして増幅率が単調に増加していることが分かる．
@@ -123,7 +125,7 @@ $\Delta V_{\text{GEM-}\mu\text{-PIC}}$を\SI{50}{\volt}間隔で\SIrange{550}{75
 電子の増幅率の$\Delta V_{\text{GEM-}\mu\text{-PIC}}$による変化を図\ref{fig::gain_GEM_uPIC_V_dep}に示す．
 増幅率の変化は$\mathit{gain} = 0.767\times{\Delta V_{\text{GEM-}\mu\text{-PIC}}}-253$と
 表すことができる．
-GEMで増幅された電子をより強い電場で移動させることで，効率よく$\mu$-PICに電子が輸送されたと考えられる．
+GEMで増幅された電子をより強い電場で$\mu$-PIC近傍へ吸い出すことで，効率よく$\mu$-PICに電子が輸送されたと考えられる．
 \begin{figure}
   \centering
 %  \scalebox{0.7}{\input{gain_GEM_uPIC_V_dep.tex}}
@@ -151,7 +153,8 @@ $\mu$-PICのanode 電極の周りにより強い電場が形成されること�
 \end{figure}
 
 \section{電子の拡散効果}
-ドリフト速度が一定である場合は，電子の拡散は$\sqrt{L}$（$L$は電子のドリフト距離）に比例する．
+ドリフト速度が一定である場合は，電子の拡散は式\eqref{eq::diffusion_coef}より
+$\sqrt{L}$（$L$は電子のドリフト距離）に比例する．
 線源は線源導入機によって，MAIKo チェンバーの気密性を保持したまま電子のドリフト方向に移動可能である．
 線源導入機は2016年度の森本修論~\cite{morimoto_thesis}で開発された．
 図\ref{pic::source_insirtion}は線源導入機の先に線源を取り付けたときの様子である．
