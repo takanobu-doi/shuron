@@ -91,7 +91,7 @@ $\Delta V_{\text{grid-GEM}} = $\SI{700}{\volt}のとき，\SI{140}{\volt\per\mil
 %  \includegraphics[clip, width=0.8\columnwidth]{gain_grid_V_dep_fit.eps}
 %  \scalebox{0.7}{\input{gain_grid_V_dep.tex}}
   \includegraphics[clip, width=0.8\columnwidth]{gain_grid_V_dep.pdf} 
-  \caption{電子増幅率の$\Delta V_{\text{grid-GEM}}$依存性．}
+  \caption{電子増幅率の$\Delta V_{\text{grid-GEM}}$依存性．実線は2次関数でのフィット結果を示す．}
   \label{fig::gain_grid_GEM_V_dep}
 \end{figure}
 
@@ -110,7 +110,7 @@ $\Delta V_{\text{GEM}}$を大きくして，GEMの穴の中に生成される電
 % \includegraphics[clip, width=0.8\columnwidth]{gain_GEM_V_dep.eps}
 %  \scalebox{0.7}{\input{gain_GEM_V_dep.tex}}
   \includegraphics[clip, width=0.8\columnwidth]{gain_GEM_V_dep.pdf}
-  \caption{電子増幅率の$\Delta V_{\text{GEM}}$依存性．}
+  \caption{電子増幅率の$\Delta V_{\text{GEM}}$依存性．実線は2次関数でのフィット結果を示す．}
   \label{fig::gain_GEM_V_dep}
 \end{figure}
 
@@ -121,14 +121,14 @@ $\Delta V_{\text{GEM}}$を大きくして，GEMの穴の中に生成される電
 $\Delta V_{\text{GEM-}\mu\text{-PIC}}$によってGEM で増幅された電子の$\mu$-PICによる収集率が変化する．
 $\Delta V_{\text{GEM-}\mu\text{-PIC}}$を\SI{50}{\volt}間隔で\SIrange{550}{750}{\volt}の範囲で変化させて計5点測定した．
 電子の増幅率の$\Delta V_{\text{GEM-}\mu\text{-PIC}}$による変化を図\ref{fig::gain_GEM_uPIC_V_dep}に示す．
-増幅率の変化は$\mathit{gain} = 0.767\times{\Delta V_{\text{GEM-}\mu\text{-PIC}}}$と
+増幅率の変化は$\mathit{gain} = 0.767\times{\Delta V_{\text{GEM-}\mu\text{-PIC}}}-253$と
 表すことができる．
 GEMで増幅された電子をより強い電場で移動させることで，効率よく$\mu$-PICに電子が輸送されたと考えられる．
 \begin{figure}
   \centering
 %  \scalebox{0.7}{\input{gain_GEM_uPIC_V_dep.tex}}
   \includegraphics[clip, width=0.8\columnwidth]{gain_GEM_uPIC_V_dep.pdf}
-  \caption{電子増幅率の$\Delta V_{\text{GEM-}\mu\text{-PIC}}$依存性．}
+  \caption{電子増幅率の$\Delta V_{\text{GEM-}\mu\text{-PIC}}$依存性．実線は1次関数でのフィット結果を示す．}
   \label{fig::gain_GEM_uPIC_V_dep}
 \end{figure}
 
@@ -137,7 +137,7 @@ GEMで増幅された電子をより強い電場で移動させることで，�
 $V_{\mu\text{-PIC}}$を\SI{10}{\volt}間隔で\SIrange{350}{440}{\volt}の範囲で変化させて計10点測定した．
 電子の増幅率の$V_{\mu\text{-PIC}}$ による変化を図\ref{fig::gain_uPIC_V_dep}に示す．
 %$V_{\rm\mu-PIC}$に対して増幅率が単調に増加していることが分かる．
-増幅率の変化は$\mathit{gain} = 2.06\times{V_{\mu\text{-PIC}}}-253$と表すことができる．
+増幅率の変化は$\mathit{gain} = 2.06\times{V_{\mu\text{-PIC}}}-587$と表すことができる．
 $\mu$-PICのanode 電極の周りにより強い電場が形成されることで，より強く電子が増幅されることが確認された．
 %GEMによる増幅率と異なり，$\mu$-PICの電圧依存性はほぼ同時に測定したため，
 %図\ref{fig::gain_GEM_V_dep}に見られたような不連続性は見られない．
@@ -146,7 +146,7 @@ $\mu$-PICのanode 電極の周りにより強い電場が形成されること�
 %  \includegraphics[clip, width=0.8\columnwidth]{gain_uPIC_V_dep.eps}
 %  \scalebox{0.7}{\input{gain_uPIC_V_dep.tex}}
   \includegraphics[clip, width=0.8\columnwidth]{gain_uPIC_V_dep.pdf}
-  \caption{電子増幅率の$V_{\mu\text{-PIC}}$依存性．}
+  \caption{電子増幅率の$V_{\mu\text{-PIC}}$依存性．実線は1時間数でのフィット結果を示す．}
   \label{fig::gain_uPIC_V_dep}
 \end{figure}
 
@@ -194,7 +194,7 @@ $\sqrt{L}$に比例していることが確認された．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{diff_x.eps}
-  \caption{トラックの太さの位置依存性．}
+  \caption{トラックの太さの位置依存性．実線は$f(L) = p_{0}\sqrt{L-p_{1}}+p_{2}$でのフィット結果を示す．}
   \label{fig::diff_x}
 \end{figure}
 
