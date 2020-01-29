@@ -2,7 +2,7 @@
 \begin{document}
 
 %\chapter{iso-C$_{\text 4}$H$_{\text{10}}$ (10) + H$_{\text 2}$ (9)を用いたとき}
-\chapter{iso-C$_{\text 4}$H$_{\text{10}}$ (10) + H$_{\text 2}$ (9) の検出ガス特性}
+\chapter{iso-C$_{\text 4}$H$_{\text{10}}$ (1) + H$_{\text 2}$ (9) の検出ガス特性}
 %本章では検出ガスとして用いる\isoButaneHydro の特性について述べる．
 
 \section{ドリフト速度}
@@ -148,7 +148,7 @@ $\mu$-PICのanode 電極の周りにより強い電場が形成されること�
 %  \includegraphics[clip, width=0.8\columnwidth]{gain_uPIC_V_dep.eps}
 %  \scalebox{0.7}{\input{gain_uPIC_V_dep.tex}}
   \includegraphics[clip, width=0.8\columnwidth]{gain_uPIC_V_dep.pdf}
-  \caption{電子増幅率の$V_{\mu\text{-PIC}}$依存性．実線は1時間数でのフィット結果を示す．}
+  \caption{電子増幅率の$V_{\mu\text{-PIC}}$依存性．実線は1次関数でのフィット結果を示す．}
   \label{fig::gain_uPIC_V_dep}
 \end{figure}
 
@@ -202,7 +202,7 @@ $\sqrt{L}$に比例していることが確認された．
 \end{figure}
 
 TPC から得られるトラックの$y$軸は，\SI{10}{\nano\second}単位の時間として ($y_{\text{clk}}$) として取得される．
-$y_{\text{clk}}$を\si{\milli\metre}単位 ($y_{\text{length}}$) へ変換するには\eqref{eq::unit_convert}のように，
+$y_{\text{clk}}$を\si{\milli\metre}単位 ($y_{\text{length}}$) へ変換するには式\eqref{eq::unit_convert}のように，
 ドリフト速度 $v_{\text{drift}}$ (\si{\milli\metre\per\nano\second}) を掛ければ良い．
 \begin{equation}
   y_{\text{length}} = y_{\text{clk}}\times 10\times v_{\text{drift}} \label{eq::unit_convert}
