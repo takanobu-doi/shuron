@@ -2,9 +2,9 @@
 \begin{document}
 \chapter{中性子ビームを用いた測定に向けて}
 \label{chap::experiment}
-\section{14 MeV 中性子}
-\SI{14}{\mega\electronvolt}は式\eqref{eq::dt}に示すデューテリウムとトリチウムの反応（DT 反応）を
-用いて生成可能なエネルギーである．
+\section{14 MeV 中性子による${}^{\text{12}}\text{C}(\text{n},\text{n}')$反応}
+式\eqref{eq::dt}に示すデューテリウムとトリチウムの反応（DT 反応）では
+\SI{14}{\mega\electronvolt}の中性子ビームを生成することができる．
 この反応は2体反応であるため，放出角度により中性子のエネルギーが一意に決まる．%単色エネルギーの中性子となる．
 \begin{equation}
   \mathrm{d} + \mathrm{t} \rightarrow \alpha\ (\SI{3.5}{\mega\electronvolt}) + \mathrm{n}\ (\SI{14}{\mega\electronvolt})
@@ -18,7 +18,7 @@ ITER~\cite{iter}などの核融合炉ではこのDT 反応を用いて質量エ�
 構造材の中に多く含まれる炭素との反応が詳しく調べられている~\cite{takahashietal,kondoetal}．
 ${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'+3\alpha)$反応の全断面積は\SI{209}{\milli\barn}，
 分岐比は表\ref{tab::branchingratio}の通りである．
-\SI{14}{\mega\electronvolt}の中性子ビームを用いて測定を行うことで，
+\SI{14}{\mega\electronvolt}の中性子ビームを用いて測定を行えば，
 前章までのシミュレーションとの比較しシミュレーションによる測定方法の検討の妥当性を評価することができる．
 %微分断面積の角度分布を図\ref{fig::sig_angle_dist}に示す．
 %これらの測定値と本研究での測定値を比較することによって測定方法の妥当性を確認することが可能となる．
@@ -58,8 +58,8 @@ OKTAVIAN にはパルスビームラインとDCビームラインの2つのビ�
 DC ビームラインは重照射室に設置されたトリチウムターゲットを用いて中性子を生成する．
 
 DC ビームラインで生成された中性子はトリチウムターゲットを中心に放射状に重照射室へ放出される．
-図\ref{pic::hole}に示すように，この中性子を大実験室側へ取り出すための半径約\SI{55}{\milli\metre}の取り出し穴が
-重照射室と大実験室を隔てる壁に設けられている．
+図\ref{pic::hole}に示すように，この中性子を大実験室側へ取り出すために，
+半径約\SI{55}{\milli\metre}の取り出し穴が重照射室と大実験室を隔てる壁に設けられている．
 図\ref{pic::hole}は重照射室と大実験室を隔てる壁を大実験室から撮影した写真である．
 この取り出し穴から中性子を取り出すことで，
 半径約\SI{55}{\milli\metre}にコリメートされたDC 中性子ビームを得ることができる．
@@ -126,7 +126,7 @@ DC ビームラインで生成された中性子はトリチウムターゲッ�
 半径\SI{50}{\milli\metre}のビームを用いると，
 散乱点から$y$軸方向に\SI{\pm20}{\milli\metre}を実質の有感領域としなければならない．
 実質の有感領域が小さいと領域外に出ていく$\alpha$粒子の数が増えてしまい，
-解析に使えるイベントの割合（検出効率）が減少してしまう．
+解析に使えるイベントの割合（捕獲効率）が減少してしまう．
 そのため，中性子ビームの$y$軸方向のサイズは可能な限り小さいのもが望ましい．
 その反面，ビームを細くすると
 %標的で生成された中性子を制限することになるので，
@@ -141,7 +141,7 @@ DC ビームラインで生成された中性子はトリチウムターゲッ�
   \label{fig::sensitive_area}
 \end{figure}
 
-\subsection{立体角と検出効率によるビームサイズの決定}
+\subsection{立体角と捕獲効率によるビームサイズの決定}
 重照射室内のトリチウムターゲットから中性子が$4\pi$に等方的に放出していると仮定すると，
 中性子の収量はコリメータの立体角で決定される．
 重照射室の模式図を図\ref{fig::jushosha_room}に示す．
@@ -163,21 +163,21 @@ DC ビームラインで生成された中性子はトリチウムターゲッ�
 %ここで，MAIKo TPC の有感領域中で全ての$\alpha$粒子が停止する割合を検出効率とする．
 %検出効率が大きくなるような実験条件が望ましい．
 図\ref{fig::alpha_E_dist_high}のエネルギー分布，ビームの通る円柱内で一様な散乱点を仮定して，
-$\alpha$粒子の検出効率を求めた．
-半径\SIrange{1}{50}{\milli\metre}でのコリメータの立体角の割合と検出効率を
+$\alpha$粒子の捕獲効率を求めた．
+半径\SIrange{1}{50}{\milli\metre}でのコリメータの立体角の割合と捕獲効率を
 表\ref{tab::solid_angle_percent}に示す．
-検出効率は\SI{10}{\milli\metre}以下ではほとんど変化がない．
+捕獲効率は\SI{10}{\milli\metre}以下ではほとんど変化がない．
 \SIlist{1;5;10}{\milli\metre}を比較すると，
 立体角は\SI{10}{\milli\metre}が最も大きい．
-大きな検出効率を持ちつつ，立体角が大きい\SI{10}{\milli\metre}のコリメータを用いる．
+大きな捕獲効率を持ちつつ，立体角が大きい\SI{10}{\milli\metre}のコリメータを用いる．
 %コリメータの立体角と検出効率の積が最も大きくなるところが収量が最も大きくなる．
 \begin{table}
   \centering
-  \caption{コリメータの半径とコリメータの立体角，検出効率．}
+  \caption{コリメータの半径とコリメータの立体角，捕獲効率．}
   \label{tab::solid_angle_percent}
   \begin{tabular}{ccc}
     \toprule
-    コリメータの半径 (\si{\milli\metre}) & 立体角 (\si{\steradian}) & 検出効率 (\si{\percent})\\% & 積\\
+    コリメータの半径 (\si{\milli\metre}) & 立体角 (\si{\steradian}) & 捕獲効率 (\si{\percent})\\% & 積\\
     \midrule
      1 & $5.19\times10^{-7}$ & 48.9 \\
      5 & $1.30\times10^{-5}$ & 48.7 \\%& $6.33\times10^{-6}$ \\
@@ -269,31 +269,31 @@ PHITS による計算ではトリチウム標的で生成された中性子の�
 OKTAVIAN のDCビームラインで生成される中性子が\SI{5e9}{\per\second}であるとすると，
 コリメータを通過してくる\SI{14}{\mega\electronvolt}中性子の量は\SI{4.07e4}{\per\second}となる．
 
-\section{検出効率の散乱位置依存性と散乱角依存性}
+\section{捕獲効率の散乱位置依存性と散乱角依存性}
 \subsection{14~MeV 中性子を用いたとき}
-\SI{10}{\milli\metre}のコリメータを用いたときの検出効率は\SI{48.2}{\percent}であった．
-検出効率は散乱点，散乱角度に依存していると予想される．
-検出効率の散乱点の$z$座標依存性を図\ref{fig::detection_efficiency_beam_axis}に，
+\SI{10}{\milli\metre}のコリメータを用いたときの捕獲効率は\SI{48.2}{\percent}であった．
+捕獲効率は散乱点，散乱角度に依存していると予想される．
+捕獲効率の散乱点の$z$座標依存性を図\ref{fig::detection_efficiency_beam_axis}に，
 重心系での散乱角 ($\theta_{\text{c.m.}}$) 依存性を
 図\ref{fig::detection_efficiency_theta_cm}に示す．
 %$\theta_{\text{c.m.}}$は入射中性子の運動方向に対する${}^{12}\mathrm{C}$の極角である．
 図\ref{fig::detection_efficiency_beam_axis}から分かるように，
 $z$座標が小さいまたは大きい場所で反応が起きた場合に，
-崩壊してできた$\alpha$粒子が有感領域から出る確率が大きくなるため検出効率が低下している．
+崩壊してできた$\alpha$粒子が有感領域から出る確率が大きくなるため捕獲効率が低下している．
 また，図\ref{fig::detection_efficiency_theta_cm}から分かるように，
-$\theta_{\text{c.m.}}$が大きいところで検出効率が低下している．
+$\theta_{\text{c.m.}}$が大きいところで捕獲効率が低下している．
 これは，$\theta_{\text{c.m.}}$が大きいところでは後方散乱となり中性子から多くのエネルギーを受け取り，
 崩壊した$\alpha$粒子が全体的に$z$軸正の方向にブーストされることで有感領域から出ていきやすくなるためである．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{detection_efficiency_beam_axis.eps}
-  \caption{検出効率の散乱点の$z$座標依存性．}
+  \caption{捕獲効率の散乱点の$z$座標依存性．}
   \label{fig::detection_efficiency_beam_axis}
 \end{figure}
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{detection_efficiency_theta_cm.eps}
-  \caption{検出効率の重心系での散乱角依存性．}
+  \caption{捕獲効率の重心系での散乱角依存性．}
   \label{fig::detection_efficiency_theta_cm}
 \end{figure}
 %\begin{figure}
@@ -314,43 +314,43 @@ ${}^{12}\mathrm{C}$を$0_2^+$状態に励起させることができる中性子
 そこで，\SI{8.5}{\mega\electronvolt}の中性子を用いた測定を考える．
 テスト実験と同様に\SI{50}{\hecto\pascal}の\isoButaneHydro を用いたMAIKo TPC の運用を仮定する．
 また，同じ中性子コリメータを用いるとする．
-すると，検出効率は\SI{51.6}{\percent}となる．
+すると，捕獲効率は\SI{51.6}{\percent}となる．
 微分断面積の角度分布は\SI{14}{\mega\electronvolt}の中性子と${}^{12}\mathrm{C}$の散乱と同じであると仮定した．
-検出効率の散乱点の$z$座標依存性を図\ref{fig::detection_efficiency_beam_axis_low}に，
+捕獲効率の散乱点の$z$座標依存性を図\ref{fig::detection_efficiency_beam_axis_low}に，
 重心系での散乱角 ($\theta_{\text{c.m.}}$) 依存性を
 図\ref{fig::detection_efficiency_theta_cm_low}に示す．
 図\ref{fig::detection_efficiency_beam_axis}と比較して図\ref{fig::detection_efficiency_beam_axis_low}は，
-\SI{50}{\milli\metre}よりも大きいところで検出効率が小さく，小さいところでは検出効率が大きくなっていることが分かる．
+\SI{50}{\milli\metre}よりも大きいところで捕獲効率が小さく，小さいところでは捕獲効率が大きくなっていることが分かる．
 これは，前方散乱では\SI{14}{\mega\electronvolt}中性子のほうが\SI{8.5}{\mega\electronvolt}中性子より
 エネルギーの移行が小さいためである．
-図\ref{fig::kinema_cm}に${}^{12}\mathrm{C}(-_2^+)$の重心系での散乱角とエネルギーの関係を示す．
+図\ref{fig::kinema_cm}に${}^{12}\mathrm{C}(0_2^+)$の重心系での散乱角とエネルギーの関係を示す．
 実線は\SI{14}{\mega\electronvolt}の中性子と散乱したとき，
 点線は\SI{8.5}{\mega\electronvolt}の中性子と散乱したときを表す．
 $\theta_{\text{c.m.}} = \ang{0}$のときのエネルギーは\SI{8.5}{\mega\electronvolt}の中性子との散乱の方が大きいことが分かる．
 すると，\SI{8.5}{\mega\electronvolt}の中性子と散乱した時は，3つの$\alpha$粒子が実験室系の前方へのブーストの効果が
 \SI{14}{\mega\electronvolt}の中性子と散乱したよりも大きくなるため，
-有感領域の下流側で散乱すると検出率が低下すると考えられる．
-\SI{14}{\mega\electronvolt}の中性子と散乱したときと比較して\SI{8.5}{\mega\electronvolt}の中性子と散乱したときは
+有感領域の下流側で散乱すると捕獲効率が低下すると考えられる．
+\SI{14}{\mega\electronvolt}の中性子と散乱した場合と比較して，\SI{8.5}{\mega\electronvolt}の中性子と散乱した場合は
 ${}^{12}\mathrm{C}(0_2^2)$の持つエネルギーの広がりが小さいことが分かる．
 図\ref{fig::kinema_lab}は実験室系での${}^{12}\mathrm{C}(0_2^+)$の散乱角とエネルギーの関係である．
-\SI{8.5}{\mega\electronvolt}の中性子と散乱したときは散乱角が，
-\SI{14}{\mega\electronvolt}と散乱したときと比較して前方角度に集中していることが分かる．
-そのため，横方向に大きく散乱されることがなくなり，有感領域の上流側で散乱が起きた場合には大きな検出効率となる．
-$z < \SI{20}{\milli\metre}$において検出効率が\SI{100}{\percent}となっているが，
+\SI{8.5}{\mega\electronvolt}の中性子と散乱した場合は散乱角は，
+\SI{14}{\mega\electronvolt}と散乱した場合と比較して前方角度へ集中することが分かる．
+そのため，横方向に大きく散乱されることがなくなり，有感領域の上流側で散乱が起きた場合には捕獲効率が高くなる．
+$z < \SI{20}{\milli\metre}$において捕獲効率がほぼ\SI{100}{\percent}となっているが，
 崩壊$\alpha$粒子のうち実験室系でほとんど静止するものもあり，
 解析効率が低下することが予想される．
 また，散乱角度によらずに${}^{12}\mathrm{C}(0_2^+)$のエネルギーが変わらないので，
-図\ref{fig::detection_efficiency_theta_cm_low}のように検出効率が散乱角度にあまり依存しない．
+図\ref{fig::detection_efficiency_theta_cm_low}のように捕獲効率は散乱角度にあまり依存しない．
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{detection_efficiency_beam_axis_85.eps}
-  \caption{\SI{8.5}{\mega\electronvolt}の中性子を用いたときの検出効率の散乱点の$z$軸依存性．}
+  \caption{\SI{8.5}{\mega\electronvolt}の中性子を用いたときの捕獲効率の散乱点の$z$軸依存性．}
   \label{fig::detection_efficiency_beam_axis_low}
 \end{figure}
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{detection_efficiency_theta_cm_85.eps}
-  \caption{\SI{8.5}{\mega\electronvolt}の中性子を用いたときの検出効率の散乱角依存性．}
+  \caption{\SI{8.5}{\mega\electronvolt}の中性子を用いたときの捕獲効率の散乱角依存性．}
   \label{fig::detection_efficiency_theta_cm_low}
 \end{figure}
 \begin{figure}
@@ -375,7 +375,7 @@ eye-scan で決定したトラックの本数を表\ref{tab::eye-scan_low}に示
 \SI{14}{\mega\electronvolt}のときと同様に$93\pm2.6$\si{\percent}と高い割合で3つのトラックを識別できていることが分かる．
 図\ref{fig::ExC_low}にeye-scan で決定した${}^{12}\mathrm{C}$の励起エネルギーを示す．
 励起エネルギー分布の平均は\SI{7.68}{\mega\electronvolt}，標準偏差は\SI{17.0}{\kilo\electronvolt}であり，
-励起エネルギーも良く再構成されていることが分かる．
+励起エネルギーも精度良く再構成されていることが分かる．
 本研究で考えている実験条件では，中性子のエネルギーに関わらず測定を行うことができることが分かる．
 \begin{figure}
   \centering
@@ -410,7 +410,7 @@ ${}^{12}\mathrm{C}(\mathrm{n},\mathrm{n}'){}^{12}\mathrm{C}(0_{2}^{+})$反応の
 全断面積 ($\sigma$) は\SI{8.36}{\milli\barn}である．
 OKTAVIAN で現在得られる中性子ビーム強度は最大で$4\pi$に\SI{5e9}{\per\second}である．
 この時，半径\SI{10}{\milli\metre}のコリメータからは，$N_{\text{b}}=$\SI{1.95e4}{\per\second}の中性子が得られる．
-検出効率 ($\varepsilon_{\text{det.}}$) が\SI{48.2}{\percent}，
+捕獲効率 ($\varepsilon_{\text{det.}}$) が\SI{48.2}{\percent}，
 解析効率 ($\varepsilon_{\text{ana.}}$) が\SI{87}{\percent}である．
 \SI{100}{\hecto\pascal}の\isoButaneHydro における有感領域中の${}^{12}\mathrm{C}$の
 面密度 ($N_{\text{t}}$) は\SI{1.01e17}{\per\square\milli\metre}である．

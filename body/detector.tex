@@ -10,6 +10,8 @@ MAIKo TPC は検出ガスを封入する密封容器 (MAIKo チェンバー) と
 ドリフト電場を形成するケージ（ドリフトケージ）からなる．
 図\ref{fig::maiko_cage}および図\ref{pic::MAIKo_cage}にドリフトケージの模式図と写真を示す．
 ドリフトケージはMAIKo チェンバー内に設置して用いる．
+図\ref{fig::maiko_cage}では，検出ガスに含まれる${}^{12}\mathrm{C}$が右から入射した中性子と散乱し，
+3つの$\alpha$粒子に崩壊した様子を模している．
 図\ref{fig::MAIKo_view}にMAIKo TPC 中で入射中性子と${}^{12}\mathrm{C}$の散乱によって，
 ${}^{12}\mathrm{C} (0_2^+)$から放出された3つの$\alpha$粒子と取得されるトラック画像との対応を示す．
 MAIKo TPC では荷電粒子のトラックを$zy$平面と$xy$平面の2つの2次元平面に射影した画像
@@ -43,7 +45,7 @@ MAIKo TPC では3次元のトラックを2つの平面に射影した画像と�
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.65\columnwidth]{maiko.pdf}
-  \caption{MAIKo TPC の概観図．
+  \caption{ドリフトケージの概観図．
     検出ガスに含まれる${}^{12}\mathrm{C}$が右から入射した中性子（青色）と散乱し
     3つの$\alpha$粒子に崩壊したときを模している．}
   \label{fig::maiko_cage}
@@ -154,7 +156,8 @@ cathode 電極を接地することでanode 電極付近に強い電場を形成
 GEM で増幅された電子が$\mu$-PICによって更に増幅される．
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.7\columnwidth]{upic_struc_xyz.eps}
+  \includegraphics[clip, width=0.7\columnwidth]{uPIC.pdf}
+%  \includegraphics[clip, width=0.7\columnwidth]{upic_struc_xyz.eps}
   \caption[$\mu$-PICの概観図．]{$\mu$-PICの概観図~\cite{mupic}．
     図中の横方向にanode strip，奥行き方向にcathode strip が配置されている．
   }
@@ -240,14 +243,14 @@ MAIKo TPC では荷電粒子のトラックの長さと方向からエネルギ�
 ${}^{12}\mathrm{C}(0_2^+)$からの崩壊$\alpha$粒子が，ガス中で\SI{10}{\milli\metre} 以上飛行し，
 MAIKo TPC の有感領域中で停止するとき，その$\alpha$粒子を検出可能な$\alpha$粒子とする．
 ${}^{12}\mathrm{C}(0_2^+)$の全崩壊イベント数に対する，
-3つの$\alpha$粒子が全て検出可能であるイベント数の割合を検出率とする．
+3つの$\alpha$粒子が全て検出可能であるイベント数の割合を検出効率とする．
 %図\ref{fig::alpha_E_dist}に示したエネルギー分布の$\alpha$粒子に対する，
 図\ref{fig::sig_angle_dist}に示した微分断面積の角度分布を仮定したときの
-検出率の圧力依存性を図\ref{fig::efficiency_P_dist}に示す．
+検出効率の圧力依存性を図\ref{fig::efficiency_P_dist}に示す．
 $\alpha$粒子の飛程の計算にはSRIM~\cite{SRIM}を用いた．
-SRIM は，荷電粒子がが物質中を通過する際の，イオンの飛程，エネルギーロス等を算出するシミュレーションソフトウェアである．
+SRIM は，荷電粒子がが物質中を通過する際の，イオンの飛程や$dE/dx$等を算出するシミュレーションソフトウェアである．
 また，ビーム軸が有感領域の中央を通り，散乱点がビーム軸上に一様に分布していると仮定した．
-図\ref{fig::efficiency_P_dist}から分かるように，\SI{50}{\hecto\pascal} で検出率が最大となっている．
+図\ref{fig::efficiency_P_dist}から分かるように，\SI{50}{\hecto\pascal} で検出効率が最大となっている．
 %\SI{50}{\hecto\pascal}のときの\Methane の各種の値は表\ref{tab::CH4_50_params}のとおりである．
 \SI{50}{\hecto\pascal}のときの\Methane の$dE/dx$と同程度となる，他の検出ガスを考え，
 表\ref{tab::mixture}に示した6つを検出ガスの候補とした．

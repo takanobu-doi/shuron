@@ -86,7 +86,9 @@ MAIKo TPC で取得したトラックの横方向の変分を$\Delta strip$，�
 
 $\alpha$線源を用いて測定したドリフト速度とMagboltz で計算した値を
 表\ref{tab::drift_speed_compare}に示す．
-コリメータの穴は有限の大きさを持つため，測定したドリフト速度の分布も有限の広がりを持つ．
+コリメータの穴は直径\SI{0.5}{\milli\metre}であるため，コリメートした$\alpha$線の角度も広がりを持つ．
+本測定では放出された$\alpha$線の角度が読み出し面に対して\ang{30}であることを仮定してドリフト速度を求めているため，
+角度の広がりによって測定したドリフト速度の分布も広がってしまう．
 ここでは，ドリフト速度の分布に対してガウス分布でフィットした結果の標準偏差を誤差とした．
 $\alpha$線源を用いて測定したドリフト速度と Magboltz を用いて計算したドリフト速度が概ね一致していることが分かる．
 ここで，Magboltz の計算値が\SI{0.014}{\milli\metre\per\nano\second}となっていないのは，
@@ -189,7 +191,7 @@ FADC の入力インピーダンス\SI{50}{\ohm}で電流値を電圧値に変�
 \end{equation}
 各検出ガスの増幅率と電子の収集効率を畳み込んだ値を表\ref{tab::multiplying_rate}に示す．
 ここでは，GEMと$\mu$-PIC の両方による増幅率となっている．
-増幅率の分布をガウス分布でフィットした結果の標準偏差を誤差とした．
+増幅率の分布に対するガウス分布のフィッティング誤差を増幅率の誤差とした．
 また，測定時のGEM や$\mu$-PICに印加した電圧を表\ref{tab::high_voltage_config_for_gain_meas}に示す．
 \begin{table}
   \centering
@@ -199,11 +201,11 @@ FADC の入力インピーダンス\SI{50}{\ohm}で電流値を電圧値に変�
     \toprule
     gas & 増幅率 (倍) \\
     \midrule
-    \Methane         & $700\pm114$ \\
-    \MethaneHydro    & $354\pm54$ \\
-    \MethaneHerium   & $322\pm69$ \\
-    \isoButaneHydro  & $272\pm55$ \\
-    \isoButaneHerium & $392\pm47$ \\
+    \Methane         & $700\pm4.97$ \\
+    \MethaneHydro    & $354\pm1.65$ \\
+    \MethaneHerium   & $322\pm2.29$ \\
+    \isoButaneHydro  & $272\pm1.67$ \\
+    \isoButaneHerium & $392\pm0.994$ \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -227,7 +229,7 @@ FADC の入力インピーダンス\SI{50}{\ohm}で電流値を電圧値に変�
 \subsection{トラックの幅}
 本実験の目的である3$\alpha$に崩壊するイベントでは観測されるトラックが太いと複数のトラックの区別が難しくなり，
 トラックを正しく抽出できなくなる．
-そこで，\ang{0}の$\alpha$粒子によるトラックの幅を測定した．
+そこで，$\alpha$粒子によるトラックの幅を測定した．
 図\ref{fig::track_width}に示すように，
 ドリフト方向のトラックの幅には\ang{0}方向に放出された$\alpha$粒子のトラックのanode image の128~strip目のclock方向の幅を，
 垂直方向の幅には\ang{30}方向に放出された$\alpha$粒子のトラックのcathode image の200~clock目のstrip方向の幅を用いる．
@@ -237,9 +239,10 @@ FADC の入力インピーダンス\SI{50}{\ohm}で電流値を電圧値に変�
 拡散係数，トラックの幅ともに\isoButaneHydro が最も小さいことが分かる．
 \begin{figure}
   \centering
-  \includegraphics[clip, width=0.5\columnwidth]{track_width_2.eps}
+  \includegraphics[clip, width=0.8\columnwidth]{track_width_2.eps}
   \caption{トラックの幅の決定方法のイメージ．
-    ドリフト方向の幅にはanode image の128~strip目（左），垂直方向のトラックの幅はcathode image の200~clock目の幅を用いる．}
+    ドリフト方向の幅には\ang{0}方向に放出された$\alpha$粒子のanode image の128~strip目（左），
+    垂直方向の幅には\ang{30}方向に放出された$\alpha$粒子のcathode image の200~clock目の幅を用いる．}
   \label{fig::track_width}
 \end{figure}
 
@@ -261,13 +264,13 @@ FADC の入力インピーダンス\SI{50}{\ohm}で電流値を電圧値に変�
 %\end{table}
 \begin{figure}
   \centering
-  \begin{subfigure}{0.45\columnwidth}
+  \begin{subfigure}{0.8\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{diffusion_width_l.eps}
     \caption{ドリフト方向に対して平行な方向．}
     \label{fig::diffusion_compare_l}
   \end{subfigure}
-  \begin{subfigure}{0.45\columnwidth}
+  \begin{subfigure}{0.8\columnwidth}
     \centering
     \includegraphics[clip, width=\columnwidth]{diffusion_width_t.eps}
     \caption{ドリフト方向に対して垂直な方向．}
@@ -328,7 +331,7 @@ $\alpha$線源を用いた場合のシミュレーションと測定の比較を
     \includegraphics[width=\columnwidth, trim=0 0 50 0]{0160_5.eps}
     \caption{$\alpha$線源によるトラック．}
   \end{subfigure}
-  \caption{$\alpha$粒子のトラック（\Methane の場合）．}
+  \caption{$\alpha$粒子のトラック (\Methane の場合)．}
   \label{fig::track_comp_ch4}
 \end{figure}
 
@@ -344,7 +347,7 @@ $\alpha$線源を用いた場合のシミュレーションと測定の比較を
     \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{0207_7.eps}
     \caption{$\alpha$線源によるトラック．}
   \end{subfigure}
-  \caption{$\alpha$粒子のトラック（\MethaneHydro の場合）．}
+  \caption{$\alpha$粒子のトラック [\MethaneHydro の場合]．}
   \label{fig::track_comp_ch4_h2}
 \end{figure}
 
@@ -425,7 +428,7 @@ $\alpha$線源から放出されるエネルギーに広がりがあるため，
     \includegraphics[clip, width=\columnwidth, trim=0 0 50 0]{0146_16.eps}
     \caption{$\alpha$線源によるトラック．}
   \end{subfigure}
-  \caption{低エネルギー$\alpha$粒子のトラック [\Methane の場合]．}
+  \caption{低エネルギー$\alpha$粒子のトラック (\Methane の場合)．}
   \label{fig::track_ch4_loss}
 \end{figure}
 \begin{figure}
@@ -524,7 +527,7 @@ $\alpha$線源から放出される$\alpha$粒子のトラックを再現する�
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{10020_7.eps}
-  \caption{3$\alpha$のシミュレーション画像 [\Methane の場合]．}
+  \caption{3$\alpha$のシミュレーション画像 (\Methane の場合)．}
   \label{fig::three_alpha_ch4}
 \end{figure}
 
@@ -558,7 +561,7 @@ $\alpha$線源から放出される$\alpha$粒子のトラックを再現する�
 \begin{figure}
   \centering
   \includegraphics[clip, width=0.8\columnwidth]{10020_5.eps}
-  \caption{2本しかトラックを確認できないイベントの画像 [\Methane の場合]．}
+  \caption{2本しかトラックを確認できないイベントの画像 (\Methane の場合)．}
   \label{fig::not_three_alpha_ch4}
 \end{figure}
 \begin{figure}
