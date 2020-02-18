@@ -112,6 +112,13 @@ ${BODYDIR}/experiment.pdf: ${BODYDIR}/experiment.tex
 	$(TEX) experiment.tex;\
 	$(DVIPDF) experiment.dvi
 
+cross_section: ${BODYDIR}/cross_section.pdf
+
+${BODYDIR}/cross_section.pdf: ${BODYDIR}/cross_section.tex
+	cd ${BODYDIR}/;\
+	$(TEX) cross_section.tex;\
+	$(DVIPDF) cross_section.dvi
+
 acknowledge: ${BODYDIR}/acknowledge.pdf
 
 ${BODYDIR}/acknowledge.pdf: ${BODYDIR}/acknowledge.tex
